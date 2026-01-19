@@ -17,12 +17,7 @@ const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const BackgroundRemovalEditor = lazy(() => import('./components/BackgroundRemovalEditor'));
 const UpscaleEditor = lazy(() => import('./components/UpscaleEditor'));
 const BlogList = lazy(() => import('./components/BlogList'));
-const InstagramGuide = lazy(() => import('./components/articles/InstagramGuide'));
-const HeicGuide = lazy(() => import('./components/articles/HeicGuide'));
-const PassportGuide = lazy(() => import('./components/articles/PassportGuide'));
-const WebPGuide = lazy(() => import('./components/articles/WebPGuide'));
-const RemoveBackgroundGuide = lazy(() => import('./components/articles/RemoveBackgroundGuide'));
-const UpscaleGuide = lazy(() => import('./components/articles/UpscaleGuide'));
+const BlogPost = lazy(() => import('./components/BlogPost'));
 
 const PageLoader = () => (
   <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
@@ -189,12 +184,7 @@ const AppContent = () => {
 
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog/resize-instagram" element={<InstagramGuide />} />
-          <Route path="/blog/heic-to-jpg" element={<HeicGuide />} />
-          <Route path="/blog/passport-photo-guide" element={<PassportGuide />} />
-          <Route path="/blog/speed-up-website-webp" element={<WebPGuide />} />
-          <Route path="/blog/how-to-remove-background" element={<RemoveBackgroundGuide />} />
-          <Route path="/blog/ai-image-upscaler-guide" element={<UpscaleGuide />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
 
         </Routes>
       </Suspense>

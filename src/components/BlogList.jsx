@@ -2,51 +2,13 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Instagram, FileImage, Zap, Eraser } from 'lucide-react';
 import SeoWrapper from './SeoWrapper';
 
+import { articles } from '../data/articles';
+
+const iconMap = {
+  Zap, Eraser, Instagram, FileImage
+};
+
 const BlogList = () => {
-  const articles = [
-    {
-      slug: 'how-to-remove-background',
-      title: 'How to Remove Background from Image Free (2026 Guide)',
-      excerpt: 'The easiest AI-powered way to create transparent images in seconds. No Photoshop needed.',
-      icon: <Eraser size={32} color="#FF0080" />,
-      date: 'Jan 19, 2026'
-    },
-    {
-      slug: 'ai-image-upscaler-guide',
-      title: 'How to Upscale Images without Losing Quality',
-      excerpt: 'Turn blurry, low-resolution photos into crisp, high-definition images using AI.',
-      icon: <Zap size={32} color="#7928CA" />,
-      date: 'Jan 19, 2026'
-    },
-    {
-      slug: 'resize-instagram',
-      title: 'How to Resize Images for Instagram (2025 Guide)',
-      excerpt: 'Learn the perfect dimensions for Instagram Posts, Stories, and Reels to avoid cropping and blurs.',
-      icon: <Instagram size={32} color="#E1306C" />,
-      date: 'Jan 16, 2026'
-    },
-    {
-      slug: 'heic-to-jpg',
-      title: 'What is a HEIC file and how to convert it to JPG?',
-      excerpt: 'Why iPhone photos are HEIC and how to convert them to JPG for free.',
-      icon: <FileImage size={32} color="#007AFF" />,
-      date: 'Jan 15, 2026'
-    },
-    {
-      slug: 'passport-photo-guide',
-      title: 'How to Resize Photo for Passport (3.5x4.5cm)',
-      excerpt: 'Stop paying for visa photos. Crop them to the exact 35mm x 45mm standard instantly.',
-      icon: <FileImage size={32} color="#007AFF" />, 
-      date: 'Jan 16, 2026'
-    },
-    {
-      slug: 'speed-up-website-webp',
-      title: 'How to Speed Up Your Website with WebP Compression',
-      excerpt: 'Reduce file size by 80% and pass Google Core Web Vitals by converting to WebP.',
-      icon: <Zap size={32} color="#FFD700" />,
-      date: 'Jan 17, 2026'
-    }
-  ];
 
   return (
     <SeoWrapper 
@@ -63,7 +25,10 @@ const BlogList = () => {
           {articles.map((article) => (
             <Link to={`/blog/${article.slug}`} key={article.slug} className="article-card">
               <div className="article-icon">
-                {article.icon}
+                {(() => {
+                  const IconComponent = iconMap[article.iconName] || FileImage;
+                  return <IconComponent size={32} color={article.iconColor} />;
+                })()}
               </div>
               <div className="article-content">
                 <span className="article-date">{article.date}</span>
