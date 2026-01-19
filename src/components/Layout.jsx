@@ -21,6 +21,8 @@ const Layout = ({ children, onNavigate }) => {
         {children}
       </main>
 
+      <InstallPrompt />
+
       <footer className="footer">
         <p className="footer-text">
           &copy; {new Date().getFullYear()} OnlineImageShrinker. 100% Client-Side Privacy.
