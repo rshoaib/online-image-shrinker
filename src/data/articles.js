@@ -222,26 +222,60 @@ Most people get rejected because of bad cropping. The head should take up 70-80%
     author: 'Web Performance',
     category: 'Optimization',
     content: `
-Images are the #1 cause of slow websites. If you are uploading standard PNGs or JPEGs to your site, you are likely failing Google's Core Web Vitals tests. The solution? **WebP**.
+Images account for **50-75%** of the total byte weight of a typical webpage. If you are still using standard PNGs or JPEGs, you are likely failing Google's Core Web Vitals (specifically LCP). The solution is to switch to a modern, next-gen format: **WebP**.
 
-## What is WebP?
-WebP is a modern image format developed by Google. It supports:
-*   **Lossy Compression:** Like JPEG, but 25-34% smaller.
-*   **Transparency:** Like PNG, but 26% smaller.
-*   **Animation:** Like GIF, but much higher quality.
+## WebP vs PNG vs JPEG: The Data
 
-## Impact on SEO
-Google explicitly rewards faster sites. Using next-gen formats like WebP is a specific recommendation in PageSpeed Insights.
+WebP is a modern image format developed by Google that provides superior lossless and lossy compression for images on the web.
 
-## How to batch convert to WebP
+| Feature | PNG | JPEG | WebP |
+| :--- | :--- | :--- | :--- |
+| **Transparency** | ✅ Yes | ❌ No | ✅ Yes |
+| **Animation** | ❌ No | ❌ No | ✅ Yes |
+| **File Size** | Heavy | Medium | **Lightest** |
+| **Quality** | Lossless | Lossy | Hybrid |
 
-1.  Gather your website assets (logos, banners, product shots).
-2.  Go to [Compress Images](/tool/compress).
-3.  Upload up to 50 images at once.
-4.  The tool automatically optimizes them.
-5.  Replace the old images on your server.
+### Key Improvements:
+*   **26% smaller** than PNGs (while maintaining transparency).
+*   **25-34% smaller** than comparable JPEG images.
+*   **Supported by** Chrome, Firefox, Safari, and Edge (96% global support).
 
-[Optimize My Images](/tool/compress)
+---
+
+## Why Google Rewards WebP
+
+Google's ranking algorithm prioritizes User Experience. A faster site means a better experience.
+*   **LCP (Largest Contentful Paint):** Large banners load instantly as WebP.
+*   **Mobile Data:** Users on 4G/5G save data, reducing bounce rates.
+
+> "WebP is an incredibly efficient format... it allows you to create smaller, richer images that make the web faster." - *Google Developers*
+
+---
+
+## How to Convert to WebP (Batch Process)
+
+You don't need to export files one by one from Photoshop.
+
+1.  Gather your assets (logos, product shots, banners).
+2.  Go to our [WebP Converter Tool](/tool/compress).
+3.  **Drag & Drop** up to 50 images at once.
+4.  The tool automatically converts them to WebP.
+5.  Download the ZIP file.
+
+## Implementation Tip for Developers
+
+If you are coding a website, use the \`<picture>\` tag to provide a fallback for ancient browsers (like Internet Explorer).
+
+\`\`\`html
+<picture>
+  <source srcset="image.webp" type="image/webp">
+  <img src="image.png" alt="My Image">
+</picture>
+\`\`\`
+
+But for 99% of use cases in 2026, you can just use the \`.webp\` file directly!
+
+[Start Optimizing Now](/tool/compress)
     `
   },
   {
