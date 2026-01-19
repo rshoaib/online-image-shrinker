@@ -1,4 +1,4 @@
-import { Github } from 'lucide-react';
+import { Github, Coffee } from 'lucide-react';
 import InstallPrompt from './InstallPrompt';
 import logoUrl from '../assets/logo.png';
 
@@ -29,9 +29,17 @@ const Layout = ({ children, onNavigate }) => {
           &copy; {new Date().getFullYear()} OnlineImageShrinker. 100% Client-Side Privacy.
         </p>
         <div className="footer-links">
+           <a 
+             href="https://www.buymeacoffee.com" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             className="footer-link coffee-link"
+           >
+             <Coffee size={16} /> <span>Donate</span>
+           </a>
            <button onClick={() => onNavigate && onNavigate('privacy')} className="footer-link">Privacy Policy</button>
            <button onClick={() => onNavigate && onNavigate('blog')} className="footer-link">Guides</button>
-           <a href="#" className="footer-link"><Github size={16} /></a>
+           <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link"><Github size={16} /></a>
         </div>
       </footer>
 
@@ -142,6 +150,16 @@ const Layout = ({ children, onNavigate }) => {
         
         .footer-link:hover {
           color: var(--primary);
+        }
+
+        .coffee-link {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          color: #FFDD00;
+        }
+        .coffee-link:hover {
+          color: #FFC000;
         }
 
         .footer-links {
