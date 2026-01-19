@@ -6,6 +6,7 @@ import ToolSelector from './components/ToolSelector';
 import FeaturesSection from './components/FeaturesSection';
 import FAQSection from './components/FAQSection';
 import SeoWrapper from './components/SeoWrapper';
+import AnalyticsWrapper from './components/AnalyticsWrapper';
 
 // Lazy Load Heavy Components
 const ImageEditor = lazy(() => import('./components/ImageEditor'));
@@ -382,7 +383,9 @@ const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack })
 function App() {
   return (
     <BrowserRouter>
-      <AppContent />
+      <AnalyticsWrapper>
+        <AppContent />
+      </AnalyticsWrapper>
     </BrowserRouter>
   );
 }

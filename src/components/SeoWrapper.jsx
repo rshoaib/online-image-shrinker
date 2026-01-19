@@ -73,11 +73,10 @@ const SeoWrapper = ({ title, description, children }) => {
     };
     scriptJsonLd.textContent = JSON.stringify(schemaData);
 
-    // Google Analytics Page View
-    if (window.gtag) {
-      window.gtag('config', 'G-BXG2YD609L', {
-        'page_path': location.pathname + location.search
-      });
+    // Google Search Console Verification
+    const gscCode = import.meta.env.VITE_GSC_CODE;
+    if (gscCode) {
+       updateMeta('google-site-verification', gscCode);
     }
 
   }, [title, description, location]);
