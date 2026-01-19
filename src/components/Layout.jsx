@@ -1,4 +1,5 @@
 import { Github } from 'lucide-react';
+import InstallPrompt from './InstallPrompt';
 import logoUrl from '../assets/logo.png';
 
 const Layout = ({ children, onNavigate }) => {
