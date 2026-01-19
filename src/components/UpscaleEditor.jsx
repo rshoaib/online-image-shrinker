@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Upscaler from 'upscaler';
 import { Download, ArrowLeft, Zap, AlertCircle } from 'lucide-react';
 
@@ -75,6 +76,7 @@ const UpscaleEditor = ({ file, onBack }) => {
           <ArrowLeft size={20} /> Back
         </button>
         <h2>AI Image Upscaler</h2>
+        <Link to="/blog/ai-image-upscaler-guide" className="help-link">How to use?</Link>
       </div>
 
       <div className="editor-workspace">
@@ -160,6 +162,16 @@ const UpscaleEditor = ({ file, onBack }) => {
         }
         .back-btn:hover { color: var(--text-main); }
         
+        .back-btn:hover { color: var(--text-main); }
+        
+        .help-link {
+          font-size: 0.9rem;
+          color: var(--primary);
+          margin-left: auto;
+          text-decoration: none;
+        }
+        .help-link:hover { text-decoration: underline; }
+
         .editor-workspace {
           flex: 1;
           background: var(--bg-panel);

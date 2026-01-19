@@ -1,9 +1,23 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Instagram, FileImage, Zap } from 'lucide-react';
+import { ArrowRight, Instagram, FileImage, Zap, Eraser } from 'lucide-react';
 import SeoWrapper from './SeoWrapper';
 
 const BlogList = () => {
   const articles = [
+    {
+      slug: 'how-to-remove-background',
+      title: 'How to Remove Background from Image Free (2026 Guide)',
+      excerpt: 'The easiest AI-powered way to create transparent images in seconds. No Photoshop needed.',
+      icon: <Eraser size={32} color="#FF0080" />,
+      date: 'Jan 19, 2026'
+    },
+    {
+      slug: 'ai-image-upscaler-guide',
+      title: 'How to Upscale Images without Losing Quality',
+      excerpt: 'Turn blurry, low-resolution photos into crisp, high-definition images using AI.',
+      icon: <Zap size={32} color="#7928CA" />,
+      date: 'Jan 19, 2026'
+    },
     {
       slug: 'resize-instagram',
       title: 'How to Resize Images for Instagram (2025 Guide)',

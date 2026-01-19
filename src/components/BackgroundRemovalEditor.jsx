@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { removeBackground } from '@imgly/background-removal';
 import { Download, ArrowLeft, RefreshCw, AlertCircle, Layers } from 'lucide-react';
 
@@ -59,6 +60,7 @@ const BackgroundRemovalEditor = ({ file, onBack }) => {
           <ArrowLeft size={20} /> Back
         </button>
         <h2>Background Remover</h2>
+        <Link to="/blog/how-to-remove-background" className="help-link">How to use?</Link>
       </div>
 
       <div className="editor-workspace">
@@ -126,6 +128,16 @@ const BackgroundRemovalEditor = ({ file, onBack }) => {
           font-size: 1rem;
         }
         .back-btn:hover { color: var(--text-main); }
+        
+        .back-btn:hover { color: var(--text-main); }
+
+        .help-link {
+          font-size: 0.9rem;
+          color: var(--primary);
+          margin-left: auto;
+          text-decoration: none;
+        }
+        .help-link:hover { text-decoration: underline; }
         
         .editor-workspace {
           flex: 1;

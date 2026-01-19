@@ -21,6 +21,8 @@ const InstagramGuide = lazy(() => import('./components/articles/InstagramGuide')
 const HeicGuide = lazy(() => import('./components/articles/HeicGuide'));
 const PassportGuide = lazy(() => import('./components/articles/PassportGuide'));
 const WebPGuide = lazy(() => import('./components/articles/WebPGuide'));
+const RemoveBackgroundGuide = lazy(() => import('./components/articles/RemoveBackgroundGuide'));
+const UpscaleGuide = lazy(() => import('./components/articles/UpscaleGuide'));
 
 const PageLoader = () => (
   <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
@@ -191,6 +193,8 @@ const AppContent = () => {
           <Route path="/blog/heic-to-jpg" element={<HeicGuide />} />
           <Route path="/blog/passport-photo-guide" element={<PassportGuide />} />
           <Route path="/blog/speed-up-website-webp" element={<WebPGuide />} />
+          <Route path="/blog/how-to-remove-background" element={<RemoveBackgroundGuide />} />
+          <Route path="/blog/ai-image-upscaler-guide" element={<UpscaleGuide />} />
 
         </Routes>
       </Suspense>
