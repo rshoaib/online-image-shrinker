@@ -190,26 +190,50 @@ You don't need to install suspect software to convert your files.
     author: 'Travel Hacks',
     category: 'Workflow',
     content: `
-Applying for a visa or renewing a passport often requires a digital photo with very specific dimensions. The standard size for many countries (UK, Europe, Australia, etc.) is **35mm x 45mm**.
+Applying for a visa or renewing a passport is stressful enough without getting your photo rejected. Use this guide to create a compliant passport photo at home for free.
 
-## Requirements checklist
+## Global Standard Dimensions
 
-*   **Size:** 35mm width x 45mm height.
-*   **Background:** Plain white or light grey (use our [Background Remover](/tool/remove-bg) first!).
-*   **Expression:** Neutral expression, mouth closed, looking at camera.
-*   **Lighting:** Even lighting, no shadows on face.
+Different countries have different size rules. Our tool handles them all, but here are the most common:
 
-## How to crop correctly
+| Region | Dimensions | Aspect Ratio |
+| :--- | :--- | :--- |
+| **USA & India** | 2 x 2 inches (51x51mm) | 1:1 |
+| **UK, Europe, Australia** | 35mm x 45mm | 3.5:4.5 |
+| **China** | 33mm x 48mm | - |
+| **Canada** | 50mm x 70mm | 5:7 |
 
-Most people get rejected because of bad cropping. The head should take up 70-80% of the vertical height.
+---
 
-1.  Take a photo with your phone against a white wall.
-2.  Upload it to our [Crop Tool](/tool/crop).
-3.  Select the "Passport (3.5x4.5)" ratio.
-4.  Adjust the crop box so your face is centered.
-5.  Download and print or submit online.
+## 5 Rules for a Perfect Passport Photo
 
-[Create Passport Photo](/tool/crop)
+1.  **Lighting is Key**: Face a window for natural, even light. No shadows on your face or the background.
+2.  **Neutral Expression**: Mouth closed, eyes open, looking directly at the camera. No smiling (for most biometric passports).
+3.  **Plain Background**: Use a white or off-white wall. If you don't have one, use our **Background Remover** first.
+4.  **No Glasses**: Most countries (including the US) now ban glasses in passport photos to avoid glare.
+5.  **Recent**: The photo must be taken within the last 6 months.
+
+---
+
+## Step-by-Step Workflow
+
+**Step 1: Take the photo**
+Stand 1 meter away from a white wall. Have someone else take the photo (selfies often distort features). Leave plenty of space above your head.
+
+**Step 2: Remove Background (Optional)**
+If your wall isn't perfectly white, use our [AI Background Remover](/tool/remove-bg) to clean it up.
+
+**Step 3: Crop & Resize**
+1.  Go to our [Passport Crop Tool](/tool/crop).
+2.  Upload your photo.
+3.  Select the preset for your country (e.g., "Passport 3.5x4.5cm").
+4.  **Crucial:** Align your eyes with the grid guide. Your head should fill 70-80% of the frame.
+5.  Download the result.
+
+**Step 4: Print**
+Print the downloaded image on 4x6 inch (10x15cm) photo paper at any pharmacy (CVS, Boots, etc.). You'll typically fit 4-6 passport photos on one standard print.
+
+[Start Cropping Now](/tool/crop)
     `
   },
   {
