@@ -1,4 +1,4 @@
-import { Zap, Eraser, Instagram, FileImage } from 'lucide-react';
+import { Zap, Eraser, Instagram, FileImage, MessageCircle, ShoppingBag, HelpCircle } from 'lucide-react';
 
 export const articles = [
   {
@@ -336,6 +336,116 @@ Sending multiple image files via email is unprofessional and messy. Whether you 
 Unlike other sites, we **do not** upload your private documents to a server. The PDF conversion happens 100% inside your browser. Your data never leaves your device.
 
 [Convert Images to PDF](/tool/pdf)
+    `
+  },
+  {
+    slug: 'discord-emoji-size-guide',
+    title: 'How to Resize Images for Discord Emojis & Stickers (2025)',
+    excerpt: 'Make custom emojis that actually look good. The perfect dimensions and file size for Discord.',
+    iconName: 'MessageCircle',
+    iconColor: '#5865F2',
+    date: 'Jan 21, 2026',
+    author: 'Image Shrinker Team',
+    category: 'Social Media',
+    content: `
+Discord is the heart of gaming communities, and custom emojis are their language. But there is nothing worse than uploading a perfect meme only to have it rejected because the file size is too big, or looking blurry in chat.
+
+## Discord Emoji Requirements 2025
+
+Here are the strict rules you need to follow:
+
+| Type | Max File Size | Dimensions | Format |
+| :--- | :--- | :--- | :--- |
+| **Standard Emoji** | 256 KB | 128x128 px | JPG, PNG, GIF |
+| **Animated Emoji** | 256 KB | 128x128 px | GIF |
+| **Stickers** | 512 KB | 320x320 px | PNG, APNG, Lottie |
+
+## The "Wumboji" Effect
+If you post a message containing *only* emojis (and no text), they appear larger in the chat. This is called a Wumboji. To make sure these look crisp, you should upload them at the full **128x128** resolution, even though they scale down to 32x32 in normal text.
+
+## How to Create the Perfect Emoji
+
+### 1. Crop to a Square
+Discord will automatically crop your image, but it might cut off the best parts.
+*   Use our [Crop Tool](/tool/crop) to center the action.
+*   Select the "Square (1:1)" aspect ratio.
+
+### 2. Remove the Background
+Square photos look bad as emojis. You want the subject to "float" in the chat.
+*   Use the [Background Remover](/tool/remove-bg) first.
+*   Download as PNG (to keep transparency).
+
+### 3. Resize & Compress
+If your file is over 256KB, Discord won't accept it.
+*   Upload your PNG to our [Compress Tool](/tool/compress).
+*   It will reduce the file size without making it look pixelated.
+
+[Start Making Emojis](/tool/crop)
+    `
+  },
+  {
+    slug: 'amazon-image-requirements-2025',
+    title: 'Amazon Product Image Requirements: The 2025 Seller Guide',
+    excerpt: 'Avoid listing suppression. A checklist of strict image rules for Amazon FBA sellers.',
+    iconName: 'ShoppingBag',
+    iconColor: '#FF9900',
+    date: 'Jan 21, 2026',
+    author: 'Image Shrinker Team',
+    category: 'E-commerce',
+    content: `
+Amazon adds millions of products every year. To keep quality high, they have automated bots that suppress listings with bad images. Don't let that happen to you.
+
+## The "Main Image" Rules
+
+The first image customers see has the strictest rules. If you break these, your listing **will** be hidden.
+*   **Pure White Background:** RGB (255, 255, 255). No exceptions.
+*   **85% Coverage:** The product must take up at least 85% of the image frame.
+*   **No Text/Logos:** You cannot add "Best Seller" badges or your own watermark.
+*   **No Props:** Do not show accessories that aren't included.
+
+## Technical Specs
+*   **Minimum Size:** 500px on the longest side.
+*   **Zoom Capability:** 1000px+ (Recommended 1600px+).
+*   **Format:** JPEG is preferred. PNG and GIF are technically allowed but not recommended for the main image.
+*   **Color Mode:** sRGB.
+
+## How to Check Your Images
+1.  **Zoom Check:** Is your image at least 1000px wide? If not, use our [AI Upscaler](/tool/upscale) to double the resolution without blur.
+2.  **Background Check:** Is it pure white? Use our [Background Remover](/tool/remove-bg) to instantly isolate your product on white.
+
+[Optimize Amazon Images](/tool/remove-bg)
+    `
+  },
+  {
+    slug: 'image-compression-faq',
+    title: 'Image Compression FAQ: How to Reduce Size Without Losing Quality',
+    excerpt: 'Lossy vs Lossless? WebP or JPEG? We answer the most common questions about image optimization.',
+    iconName: 'HelpCircle',
+    iconColor: '#10B981',
+    date: 'Jan 21, 2026',
+    author: 'Image Shrinker Team',
+    category: 'Explained',
+    content: `
+We process thousands of images every day. Here are the most common questions we get about shrinking images.
+
+## 1. lossy vs. Lossless: What's the difference?
+*   **Lossless Compression:** Reduces file size by cleaning up metadata and inefficient coding. The image pixels remain *identical*. Good for a 10-20% reduction.
+*   **Lossy Compression:** intelligently merges similar colors that the human eye can't distinguish. This can reduce file size by **70-90%**. This is what most people need for the web.
+
+## 2. Will compression make my photo blurry?
+Not necessarily. Modern AI compression (like we use) is "visually lossless." It changes the data, but your eye usually can't tell the difference unless you zoom in 500%.
+
+## 3. Why should I use WebP?
+WebP is a modern format from Google.
+*   It supports transparency (like PNG).
+*   It compresses better than JPEG.
+*   It loads 30% faster on websites.
+*   **Recommendation:** Use our [WebP Converter](/tool/compress) for all website images.
+
+## 4. Why is my file size still big after resizing?
+If you resize an image from 4000px to 2000px, it's 4x smaller. But if the DPI is high or the quality setting is 100%, it might still be heavy. Use the **Compress** tool after resizing to get the best of both worlds.
+
+[Compress Your Images Now](/tool/compress)
     `
   }
 ];
