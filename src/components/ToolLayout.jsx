@@ -15,6 +15,8 @@ import UpscaleEditor from './UpscaleEditor';
 
 const ImageEditor = lazy(() => import('./ImageEditor'));
 const BatchEditor = lazy(() => import('./BatchEditor'));
+const GridSplitterEditor = lazy(() => import('./GridSplitterEditor'));
+const RedactEditor = lazy(() => import('./RedactEditor'));
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
   if (files.length === 0) {
@@ -31,6 +33,10 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
   switch (toolId) {
     case 'crop':
       return <CropEditor file={files[0]} onBack={onBack} />;
+    case 'grid-splitter':
+      return <GridSplitterEditor file={files[0]} onBack={onBack} />;
+    case 'redact':
+      return <RedactEditor file={files[0]} onBack={onBack} />;
     case 'watermark':
       return <WatermarkEditor file={files[0]} onBack={onBack} />;
     case 'pdf':

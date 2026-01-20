@@ -37,6 +37,8 @@ const STATIC_URLS = [
   '/compress-webp',
   '/remove-background',
   '/ai-image-upscaler',
+  '/instagram-grid-maker',
+  '/blur-image-online',
   '/blog'
 ];
 

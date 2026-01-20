@@ -177,6 +177,24 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/instagram-grid-maker" element={
+             <SeoLandingPage 
+               toolId="grid-splitter" 
+               title="Instagram Grid Maker - Split Images Online"
+               description="Split your photos into a 3x3 grid for your Instagram profile. Free, watermark-free, and works locally."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
+          <Route path="/blur-image-online" element={
+             <SeoLandingPage 
+               toolId="redact" 
+               title="Blur Image Online - Privacy Redactor"
+               description="Blur faces, text, or sensitive information on your images securely. Edits happen in your browser."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -201,6 +219,8 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'pdf': return { title: 'Images to PDF', desc: 'Convert multiple images into a single PDF document.' };
       case 'remove-bg': return { title: 'AI Background Remover', desc: 'Instantly remove backgrounds from your photos.' };
       case 'upscale': return { title: 'AI Image Upscaler', desc: 'Enhance and upscale images up to 4x with AI.' };
+      case 'grid-splitter': return { title: 'Instagram Grid Maker', desc: 'Split your photos into grids (3x1, 3x3) for Instagram.' };
+      case 'redact': return { title: 'Privacy Redactor', desc: 'Blur or pixelate sensitive parts of your image.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };

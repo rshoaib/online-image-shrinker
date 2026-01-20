@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff } from 'lucide-react';
 
 const ToolSelector = ({ onSelectTool }) => {
   return (
@@ -94,6 +94,32 @@ const ToolSelector = ({ onSelectTool }) => {
           <div className="card-content">
             <h3>AI Upscale <span className="badge">AI</span></h3>
             <p>Increase image resolution (2x, 4x) without losing quality.</p>
+          </div>
+          <div className="card-action">
+             <span>Select</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card grid" onClick={() => onSelectTool('grid-splitter')}>
+          <div className="icon-wrapper">
+             <Grid size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Grid Splitter</h3>
+            <p>Split images into 3x1, 3x2, or 3x3 grids for Instagram.</p>
+          </div>
+          <div className="card-action">
+             <span>Select</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card redact" onClick={() => onSelectTool('redact')}>
+          <div className="icon-wrapper">
+             <EyeOff size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Privacy Blur</h3>
+            <p>Redact sensitive info, faces, or text from screenshots.</p>
           </div>
           <div className="card-action">
              <span>Select</span> <ArrowRight size={16} />
