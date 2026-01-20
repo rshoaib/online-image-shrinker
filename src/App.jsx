@@ -7,16 +7,10 @@ import FeaturesSection from './components/FeaturesSection';
 import FAQSection from './components/FAQSection';
 import SeoWrapper from './components/SeoWrapper';
 import AnalyticsWrapper from './components/AnalyticsWrapper';
+import ToolLayout from './components/ToolLayout';
 
 // Lazy Load Heavy Components
-const ImageEditor = lazy(() => import('./components/ImageEditor'));
-const BatchEditor = lazy(() => import('./components/BatchEditor'));
-const CropEditor = lazy(() => import('./components/CropEditor'));
-const WatermarkEditor = lazy(() => import('./components/WatermarkEditor'));
-const PdfEditor = lazy(() => import('./components/PdfEditor'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
-const BackgroundRemovalEditor = lazy(() => import('./components/BackgroundRemovalEditor'));
-const UpscaleEditor = lazy(() => import('./components/UpscaleEditor'));
 const BlogList = lazy(() => import('./components/BlogList'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
 
@@ -225,28 +219,12 @@ const ToolPage = ({ files, setFiles, onBack }) => {
             </div>
             <DropZone onFileSelect={setFiles} />
         </div>
-      ) : toolId === 'crop' ? (
-         <CropEditor file={files[0]} onBack={onBack} />
-      ) : toolId === 'watermark' ? (
-         <WatermarkEditor file={files[0]} onBack={onBack} />
-      ) : toolId === 'pdf' ? (
-         <PdfEditor 
-            files={files} 
-            onBack={onBack} 
-            onRemove={(index) => setFiles(files.filter((_, i) => i !== index))}
-         />
-      ) : toolId === 'remove-bg' ? (
-        <BackgroundRemovalEditor file={files[0]} onBack={onBack} />
-      ) : toolId === 'upscale' ? (
-        <UpscaleEditor file={files[0]} onBack={onBack} />
-      ) : files.length === 1 ? (
-        <ImageEditor file={files[0]} onBack={onBack} mode={toolId} />
       ) : (
-        <BatchEditor 
+        <ToolLayout 
+          toolId={toolId} 
           files={files} 
+          setFiles={setFiles} 
           onBack={onBack} 
-          onRemove={(index) => setFiles(files.filter((_, i) => i !== index))}
-          mode={toolId}
         />
       )}
       <style>{`
@@ -296,11 +274,6 @@ const ToolPage = ({ files, setFiles, onBack }) => {
 const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack }) => {
   return (
     <SeoWrapper title={title} description={description}>
-       {/* Re-use ToolPage UI logic manually or just wrap the ToolPage logic. 
-           For simplicity, we replicate the ToolPage structure but force the mode. 
-           Ideally we just render ToolPage with a prop override, but ToolPage reads useParams.
-           So we render the inner content directly here.
-       */}
        <div className="seo-landing">
           {files.length === 0 ? (
             <div className="hero-section">
@@ -311,28 +284,12 @@ const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack })
                 </div>
                 <DropZone onFileSelect={setFiles} />
             </div>
-          ) : toolId === 'crop' ? (
-             <CropEditor file={files[0]} onBack={onBack} />
-          ) : toolId === 'watermark' ? (
-             <WatermarkEditor file={files[0]} onBack={onBack} />
-          ) : toolId === 'pdf' ? (
-             <PdfEditor 
-                files={files} 
-                onBack={onBack} 
-                onRemove={(index) => setFiles(files.filter((_, i) => i !== index))}
-             />
-          ) : toolId === 'remove-bg' ? (
-            <BackgroundRemovalEditor file={files[0]} onBack={onBack} />
-          ) : toolId === 'upscale' ? (
-            <UpscaleEditor file={files[0]} onBack={onBack} />
-          ) : files.length === 1 ? (
-            <ImageEditor file={files[0]} onBack={onBack} mode={toolId} />
           ) : (
-            <BatchEditor 
+            <ToolLayout 
+              toolId={toolId} 
               files={files} 
+              setFiles={setFiles} 
               onBack={onBack} 
-              onRemove={(index) => setFiles(files.filter((_, i) => i !== index))}
-              mode={toolId}
             />
           )}
           {/* Reuse styles */}

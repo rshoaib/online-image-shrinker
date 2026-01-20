@@ -192,6 +192,42 @@ const Layout = ({ children, onNavigate }) => {
            background: var(--bg-panel);
            color: var(--primary);
         }
+
+        @media (max-width: 600px) {
+          .header {
+            padding: 0 var(--spacing-md);
+            height: 60px;
+          }
+
+          .logo-text {
+            font-size: 1.1rem;
+          }
+
+          .logo-img {
+            width: 28px;
+            height: 28px;
+          }
+
+          .nav {
+             gap: var(--spacing-md);
+             font-size: 0.9rem;
+          }
+
+          .footer {
+            flex-direction: column;
+            gap: 20px;
+            text-align: center;
+          }
+          
+          .footer-links {
+             flex-wrap: wrap;
+             justify-content: center;
+          }
+          
+          .main-content {
+             padding: var(--spacing-md);
+          }
+        }
       `}</style>
     </div>
   );
