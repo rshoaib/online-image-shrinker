@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor } from 'lucide-react';
 
 const ToolSelector = ({ onSelectTool }) => {
   return (
@@ -94,6 +94,19 @@ const ToolSelector = ({ onSelectTool }) => {
           <div className="card-content">
             <h3>AI Upscale <span className="badge">AI</span></h3>
             <p>Increase image resolution (2x, 4x) without losing quality.</p>
+          </div>
+          <div className="card-action">
+             <span>Select</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card screenshot" onClick={() => onSelectTool('screenshot-beautifier')}>
+          <div className="icon-wrapper">
+             <Monitor size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Screenshot Mockups <span className="badge">New</span></h3>
+            <p>Add window frames, shadows, and backgrounds to screenshots.</p>
           </div>
           <div className="card-action">
              <span>Select</span> <ArrowRight size={16} />

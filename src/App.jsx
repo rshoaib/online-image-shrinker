@@ -204,6 +204,15 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/screenshot-beautifier" element={
+             <SeoLandingPage 
+               toolId="screenshot-beautifier" 
+               title="Screenshot Beautifier - Add Backgrounds & Window Frames"
+               description="Turn boring screenshots into beautiful mockups. Add window frames, shadows, and gradients instantly."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -231,6 +240,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'grid-splitter': return { title: 'Instagram Grid Maker', desc: 'Split your photos into grids (3x1, 3x3) for Instagram.' };
       case 'redact': return { title: 'Privacy Redactor', desc: 'Blur or pixelate sensitive parts of your image.' };
       case 'profile-picture': return { title: 'Profile Picture Maker', desc: 'Create perfect profile photos with custom backgrounds.' };
+      case 'screenshot-beautifier': return { title: 'Screenshot Beautifier', desc: 'Add professional window frames and backgrounds to your screenshots.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };

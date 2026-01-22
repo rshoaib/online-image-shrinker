@@ -18,6 +18,7 @@ const BatchEditor = lazy(() => import('./BatchEditor'));
 const GridSplitterEditor = lazy(() => import('./GridSplitterEditor'));
 const RedactEditor = lazy(() => import('./RedactEditor'));
 const ProfilePictureEditor = lazy(() => import('./ProfilePictureEditor'));
+const ScreenshotEditor = lazy(() => import('./ScreenshotEditor'));
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
   if (files.length === 0) {
@@ -48,6 +49,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <UpscaleEditor file={files[0]} onBack={onBack} />;
     case 'profile-picture':
       return <ProfilePictureEditor file={files[0]} onBack={onBack} />;
+    case 'screenshot-beautifier':
+      return <ScreenshotEditor file={files[0]} onBack={onBack} />;
     default:
       if (files.length === 1) {
         return <ImageEditor file={files[0]} onBack={onBack} mode={toolId} />;

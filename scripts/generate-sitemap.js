@@ -39,6 +39,8 @@ const STATIC_URLS = [
   '/ai-image-upscaler',
   '/instagram-grid-maker',
   '/blur-image-online',
+  '/profile-picture-maker',
+  '/screenshot-beautifier',
   '/blog'
 ];
 
