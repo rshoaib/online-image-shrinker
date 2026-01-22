@@ -447,5 +447,72 @@ If you resize an image from 4000px to 2000px, it's 4x smaller. But if the DPI is
 
 [Compress Your Images Now](/tool/compress)
     `
+  },
+  {
+    slug: 'instagram-grid-guide',
+    title: 'How to Split Photos for Instagram Grid (3x3 Layout)',
+    excerpt: 'Create a stunning profile layout by splitting one image into 9 squares. Free online tool.',
+    iconName: 'Grid',
+    iconColor: '#C13584',
+    date: 'Jan 22, 2026',
+    author: 'Social Media Team',
+    category: 'Guides',
+    content: `
+Instagram grids (also known as "split images" or "profile banners") are a creative way to turn your profile into a giant canvas. By splitting a single high-quality photo into 3, 6, or 9 separate posts, you can make a huge impact on anyone visiting your profile.
+
+## What is a 3x3 Grid?
+
+A 3x3 grid is simply one large image sliced into 9 equal squares. When uploaded to Instagram in the correct order, they fit together to reform the original image on your profile page.
+
+## How to Create a Grid Split
+You don't need Photoshop to do this. Our tool handles the math and slicing for you.
+
+1.  **Choose a High-Res Photo:** Since you are zooming in, make sure your original image is high quality.
+2.  **Go to the [Grid Splitter Tool](/instagram-grid-maker).**
+3.  **Upload your image.**
+4.  **Select Layout:** Choose "3x3" for a large square grid, or "3x1" for a row.
+5.  **Download:** We give you a ZIP file with all the numbered pieces.
+
+## How to Post (The Trick)
+The most important part is the order. You must post the **bottom-right** image first, and the **top-left** image last.
+*   Our tool numbers the files for you.
+*   If you see files named 1, 2, 3... post them in that order (1 first).
+
+[Create Your Grid Now](/instagram-grid-maker)
+    `
+  },
+  {
+    slug: 'how-to-blur-images',
+    title: 'How to Blur Faces and Text in Screenshots Online',
+    excerpt: 'Protect your privacy. Redact sensitive information from screenshots before sharing them.',
+    iconName: 'EyeOff',
+    iconColor: '#333333',
+    date: 'Jan 22, 2026',
+    author: 'Privacy Team',
+    category: 'Privacy',
+    content: `
+Sharing screenshots is part of daily life, but they often contain data you don't want the world to see: real names, addresses, passwords, or faces of bystanders.
+
+## Why you must redact
+*   **Doxing:** Small details can reveal your location.
+*   **Identity Theft:** Never share credit card numbers or IDs.
+*   **Professionalism:** Blur internal company data before sharing work.
+
+## The Problem with "Blacking Out"
+Using a black marker tool on your phone is sometimes risky. If you don't make it 100% opaque, hackers can sometimes reverse the contrast to read the text underneath. **Blurring or Pixelating** is often safer and looks cleaner.
+
+## How to Blur Securely (Client-Side)
+Most online tools upload your sensitive image to a server to process it. **We don't.** Our Privacy Redactor runs entirely in your browser.
+
+1.  Open the [Privacy Redactor](/blur-image-online).
+2.  **Upload** the screenshot.
+3.  **Click and Drag** over the area you want to hide.
+4.  Selected areas are instantly blurred/pixelated.
+5.  **Download** the clean version.
+
+Your original image never leaves your device.
+
+[Blur Your Image Now](/blur-image-online)
+    `
   }
 ];

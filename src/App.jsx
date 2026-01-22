@@ -195,6 +195,15 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/profile-picture-maker" element={
+             <SeoLandingPage 
+               toolId="profile-picture" 
+               title="Free Profile Picture Maker - Custom & Private"
+               description="Create professional profile pictures for LinkedIn, Instagram, and more. Remove background and add custom colors instantly."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -221,6 +230,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'upscale': return { title: 'AI Image Upscaler', desc: 'Enhance and upscale images up to 4x with AI.' };
       case 'grid-splitter': return { title: 'Instagram Grid Maker', desc: 'Split your photos into grids (3x1, 3x3) for Instagram.' };
       case 'redact': return { title: 'Privacy Redactor', desc: 'Blur or pixelate sensitive parts of your image.' };
+      case 'profile-picture': return { title: 'Profile Picture Maker', desc: 'Create perfect profile photos with custom backgrounds.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };

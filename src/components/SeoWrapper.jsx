@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const SeoWrapper = ({ title, description, children }) => {
+const SeoWrapper = ({ title, description, children, ...props }) => {
   const location = useLocation();
 
   useEffect(() => {
@@ -57,20 +57,36 @@ const SeoWrapper = ({ title, description, children }) => {
       scriptJsonLd.type = "application/ld+json";
       document.head.appendChild(scriptJsonLd);
     }
-    const schemaData = {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Online Image Shrinker",
-      "url": currentUrl,
-      "description": finalDescription,
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
-    };
+
+    let schemaData;
+    if (props.schemaType === 'Article') {
+      schemaData = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": finalTitle,
+        "image": [currentUrl], // Ideally this would be the specific article image
+        "datePublished": props.date,
+        "author": [{
+            "@type": "Person",
+            "name": props.author || "Image Shrinker Team"
+        }]
+      };
+    } else {
+       schemaData = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Online Image Shrinker",
+        "url": currentUrl,
+        "description": finalDescription,
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      };
+    }
     scriptJsonLd.textContent = JSON.stringify(schemaData);
 
     // Google Search Console Verification

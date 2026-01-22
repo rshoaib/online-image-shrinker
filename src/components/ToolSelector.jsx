@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User } from 'lucide-react';
 
 const ToolSelector = ({ onSelectTool }) => {
   return (
@@ -107,6 +107,19 @@ const ToolSelector = ({ onSelectTool }) => {
           <div className="card-content">
             <h3>Grid Splitter</h3>
             <p>Split images into 3x1, 3x2, or 3x3 grids for Instagram.</p>
+          </div>
+          <div className="card-action">
+             <span>Select</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card profile" onClick={() => onSelectTool('profile-picture')}>
+          <div className="icon-wrapper">
+             <User size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Profile Pic Maker <span className="badge">New</span></h3>
+            <p>Create professional profile pictures with custom backgrounds.</p>
           </div>
           <div className="card-action">
              <span>Select</span> <ArrowRight size={16} />

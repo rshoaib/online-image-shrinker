@@ -17,6 +17,9 @@ const BlogPost = () => {
     <SeoWrapper 
       title={`${article.title} - Online Image Shrinker`}
       description={article.excerpt}
+      schemaType="Article"
+      date={article.date}
+      author={article.author}
     >
       <div className="article-container">
         <Link to="/blog" className="back-link">
