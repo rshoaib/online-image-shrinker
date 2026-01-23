@@ -514,5 +514,77 @@ Your original image never leaves your device.
 
 [Blur Your Image Now](/blur-image-online)
     `
+  },
+  {
+    slug: 'screenshot-beautifier-guide',
+    title: 'How to Create Beautiful Screenshot Mockups Online',
+    excerpt: 'Turn boring screenshots into professional marketing assets. Add backgrounds, window frames, and shadows.',
+    iconName: 'Monitor',
+    iconColor: '#3B82F6',
+    date: 'Jan 24, 2026',
+    author: 'Design Team',
+    category: 'Design',
+    content: `
+Sharing raw screenshots on social media often looks messy. They blend into the background, have distracting desktop clutter, and lack visual hierarchy.
+
+## Why use a Screenshot Beautifier?
+
+A "beautified" screenshot adds padding, a nice background, and a drop shadow to make your image pop. It's the standard for:
+*   **Twitter/X Posts:** Making your app or code snippet stand out in the feed.
+*   **Landing Pages:** Showcasing your product with a professional window frame.
+*   **Newsletters:** Clean visuals that look good in email clients.
+
+## Features of our Tool
+Our [Screenshot Beautifier](/tool/screenshot-beautifier) provides:
+*   **Mac-style Window Frames:** Instantly add the red-yellow-green window controls.
+*   **Custom Backgrounds:** Choose from trendy gradients or solid brand colors.
+*   **Smart Shadows:** Add depth to lift the image off the page.
+*   **Rounded Corners:** Soften the harsh edges of rectangle screenshots.
+
+## How to use it:
+1.  Go to the [Screenshot Beautifier](/tool/screenshot-beautifier).
+2.  **Upload** your raw screenshot.
+3.  **Customize:**
+    *   Toggle "Show Window Frame" for that desktop app look.
+    *   Adjust the "Padding" slider to frame your image.
+    *   Pick a background gradient that matches your vibe.
+4.  **Download:** Get a high-resolution PNG ready for sharing.
+
+[Beautify Your Screenshot](/tool/screenshot-beautifier)
+    `
+  },
+  {
+    slug: 'profile-picture-guide',
+    title: 'Create Professional Profile Pictures for Free (AI)',
+    excerpt: 'Make a perfect LinkedIn or Instagram profile photo. Remove background and add a custom ring.',
+    iconName: 'User',
+    iconColor: '#8B5CF6',
+    date: 'Jan 24, 2026',
+    author: 'Image Shrinker Team',
+    category: 'Tutorials',
+    content: `
+A professional profile picture (PFP) can increase LinkedIn profile views by 14x. But you don't need a professional studio to get one. You just need a smartphone and our AI tool.
+
+## The Recipe for a Perfect PFP
+1.  **Good Lighting:** Face a window.
+2.  **Clean Background:** Distracting backgrounds kill professionalism.
+3.  **Focus on Face:** Your face should fill 60% of the frame.
+4.  **The "Ring":** A colored ring around your photo can make it stand out in feeds (standard used by many creators).
+
+## How our AI Tool Works
+We use browser-based AI to detect the person in the photo and remove everything else—**without uploading your photo to a server**. It's 100% private.
+
+## Step-by-Step Guide
+1.  Take a selfie or use an existing photo where you look approachable.
+2.  Open the [Profile Picture Maker](/tool/profile-picture-maker).
+3.  **Upload** your photo. The AI automatically removes the background.
+4.  **Style It:**
+    *   **Background:** Choose a solid color (like your brand color) or a gradient.
+    *   **Zoom/Position:** Use the sliders to center your face perfectly.
+    *   **Border Ring:** Add a colored circle border to match your brand.
+5.  **Download:** You get a perfect square image ready for any platform.
+
+[Create Profile Picture](/tool/profile-picture-maker)
+    `
   }
 ];
