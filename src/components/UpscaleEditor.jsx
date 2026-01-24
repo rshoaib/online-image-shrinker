@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Upscaler from 'upscaler';
 import { Download, ArrowLeft, Zap, AlertCircle } from 'lucide-react';
+import BeforeAfterSlider from './BeforeAfterSlider';
 
 const UpscaleEditor = ({ file, onBack }) => {
   const [originalUrl, setOriginalUrl] = useState(null);
@@ -86,6 +87,11 @@ const UpscaleEditor = ({ file, onBack }) => {
              <p>{error}</p>
              <button onClick={processImage}>Try Again</button>
            </div>
+        ) : processedUrl ? (
+           <div className="slider-wrapper" style={{width: '100%', maxWidth: '800px', margin: '0 auto'}}>
+              <BeforeAfterSlider beforeImage={originalUrl} afterImage={processedUrl} />
+              <p className="slider-hint">Drag the slider to compare details</p>
+           </div>
         ) : (
           <div className="comparison-view">
              <div className="image-card original">
@@ -99,10 +105,6 @@ const UpscaleEditor = ({ file, onBack }) => {
                  <div className="processing-overlay">
                    <div className="spinner"></div>
                    <p>{progress}</p>
-                 </div>
-               ) : processedUrl ? (
-                 <div className="result-wrapper">
-                    <img src={processedUrl} alt="Processed" />
                  </div>
                ) : (
                  <div className="start-prompt">
@@ -128,12 +130,17 @@ const UpscaleEditor = ({ file, onBack }) => {
 
       <div className="editor-actions">
          {processedUrl && (
-            <button 
-              className="action-btn primary" 
-              onClick={handleDownload}
-            >
-              <Download size={20} /> Download Upscaled Image
-            </button>
+            <>
+                <button className="action-btn secondary" onClick={() => setProcessedUrl(null)}>
+                    Back to Settings
+                </button>
+                <button 
+                  className="action-btn primary" 
+                  onClick={handleDownload}
+                >
+                  <Download size={20} /> Download Upscaled Image
+                </button>
+            </>
          )}
       </div>
 
@@ -301,6 +308,29 @@ const UpscaleEditor = ({ file, onBack }) => {
         .error-state {
           text-align: center;
           color: var(--error);
+        }
+        
+        .slider-wrapper {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           gap: 12px;
+        }
+        
+        .slider-hint {
+           color: var(--text-muted);
+           font-size: 0.9rem;
+           font-style: italic;
+        }
+
+        .action-btn.secondary {
+           background: var(--bg-surface);
+           border: 1px solid var(--border-active);
+           color: var(--text-main);
+        }
+        .action-btn.secondary:hover {
+           background: var(--bg-panel);
+           border-color: var(--text-muted);
         }
       `}</style>
     </div>
