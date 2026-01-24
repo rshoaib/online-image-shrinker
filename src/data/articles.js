@@ -586,5 +586,108 @@ We use browser-based AI to detect the person in the photo and remove everything 
 
 [Create Profile Picture](/tool/profile-picture-maker)
     `
+  },
+  {
+    slug: 'batch-watermark-photos',
+    title: 'How to Watermark Photos in Bulk (Free & Private)',
+    excerpt: 'Protect your extensive photo library in seconds. Add logos or text to hundreds of images at once without uploading them.',
+    iconName: 'Stamp',
+    iconColor: '#0ea5e9',
+    date: 'Jan 24, 2026',
+    author: 'Image Shrinker Team',
+    category: 'Workflow',
+    coverImage: '/guide-images/watermark-guide.png',
+    content: `
+Professional photographers know the pain: you shoot 500 photos at an event, edit them, and then need to watermark them all before sending proofs to the client. Using Photoshop actions is slow, and online tools usually require you to upload your gigabytes of data to their server.
+
+## The "Local" Advantage
+Our **Batch Watermarker** runs in your browser. This means:
+1.  **Speed**: No upload time. The tool reads files from your disk instantly.
+2.  **Privacy**: Your client's photos never leave your computer.
+3.  **Cost**: It's 100% free.
+
+## How to Watermark 50+ Photos at Once
+
+### Step 1: Open the Tool
+Navigate to the [Watermark Tool](/tool/watermark).
+
+### Step 2: Select Images
+Drag and drop your entire folder of JPGs or PNGs. Don't worry about quantity—our engine handles it.
+
+### Step 3: Customize Your Mark
+*   **Text Mode**: Type your copyright (e.g., "© 2026 Studio Name"). Choose a font and color.
+*   **Logo Mode**: Upload your transparent PNG logo.
+*   **Positioning**: Use the 9-point grid to snap the watermark to the bottom-right or center.
+
+### Step 4: Batch Export
+Click "Download All". We'll zip them up into a single archive for you.
+
+[Start Watermarking Now](/tool/watermark)
+    `
+  },
+  {
+    slug: 'youtube-thumbnail-size-2026',
+    title: 'YouTube Thumbnail Size Guide 2026 (Templates & Safe Zones)',
+    excerpt: 'The definitive guide to 1280x720 pixels. Learn about safe zones, file limits, and how to create click-worthy thumbs.',
+    iconName: 'Youtube',
+    iconColor: '#FF0000',
+    date: 'Jan 24, 2026',
+    author: 'Creator Team',
+    category: 'Social Media',
+    coverImage: '/guide-images/youtube-guide.png',
+    content: `
+A blurry or badly cropped thumbnail can kill a video's CTR (Click Through Rate) before it even gets a chance. YouTube's requirements seem simple, but there are hidden traps.
+
+## The Specs (2026 Update)
+*   **Resolution**: 1280 x 720 pixels (Minimum width 640px).
+*   **Aspect Ratio**: 16:9.
+*   **Max File Size**: 2MB.
+*   **Formats**: JPG, GIF, BMP, or PNG.
+
+## The "Safe Zone" Problem
+On mobile, the bottom-right corner of your thumbnail is covered by the **Timestamp** (e.g., "10:24").
+*   **Avoid:** Putting key text or logos in the bottom right corner.
+*   **Do:** Keep the action centered or to the left.
+
+## How to Check Your Thumbnail
+Don't guess. Use our specific [YouTube Resizer](/resize-for-youtube) tool.
+1.  Upload your image.
+2.  The tool automatically locks the aspect ratio to **16:9**.
+3.  It warns you if the resolution is too low.
+4.  You can crop exactly what you need.
+
+[Fix My Thumbnail](/resize-for-youtube)
+    `
+  },
+  {
+    slug: 'why-client-side-privacy-matters',
+    title: 'Why You Shouldn\'t Upload Photos to Cloud Compressors',
+    excerpt: 'The hidden cost of "free" online tools. How we process your images differently to keep your data safe.',
+    iconName: 'Shield',
+    iconColor: '#10b981',
+    date: 'Jan 24, 2026',
+    author: 'Riz',
+    category: 'Privacy',
+    coverImage: '/guide-images/privacy-manifesto.png',
+    content: `
+When you use a site like "TinyPNG" or "ILoveIMG", you are performing an **Upload**. You are physically sending your personal files—photos of your kids, scans of your documents, or expensive client work—to a server owned by a stranger.
+
+## What happens on the server?
+*   **Logging**: They might keep a copy of your file.
+*   **Metadata**: They can read the GPS location data from your photos.
+*   **Hacking Risk**: If their server gets breached, your data is exposed.
+
+## The "Client-Side" Revolution
+**Online Image Shrinker** is different. We use **WebAssembly (WASM)** technnology.
+*   When you "upload" a file here, it actually just opens in your browser's memory.
+*   The processing (compression, resizing, AI removal) happens on **your CPU**.
+*   The result is saved directly to your disk.
+
+**0 bytes** are sent to our server. You could literally turn off your WiFi after loading the page, and the tools would still work.
+
+This is the future of privacy.
+
+[Try Secure Compression](/tool/compress)
+    `
   }
 ];

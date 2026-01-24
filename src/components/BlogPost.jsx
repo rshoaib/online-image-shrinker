@@ -36,6 +36,12 @@ const BlogPost = () => {
             </div>
           </header>
 
+          {article.coverImage && (
+            <div className="post-cover-image">
+              <img src={article.coverImage} alt={article.title} />
+            </div>
+          )}
+
           <div className="post-content">
             <Markdown remarkPlugins={[remarkGfm]}>
               {article.content}
@@ -111,6 +117,19 @@ const BlogPost = () => {
           display: flex;
           align-items: center;
           gap: 6px;
+        }
+
+        .post-cover-image {
+          margin-bottom: 40px;
+          border-radius: var(--radius-lg);
+          overflow: hidden;
+          box-shadow: 0 10px 40px -10px rgba(0,0,0,0.2);
+        }
+        
+        .post-cover-image img {
+          width: 100%;
+          height: auto;
+          display: block;
         }
 
         /* Markdown Styles */

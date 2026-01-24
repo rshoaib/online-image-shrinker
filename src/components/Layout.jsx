@@ -30,7 +30,7 @@ const Layout = ({ children, onNavigate }) => {
         </p>
         <div className="footer-links">
            <a 
-             href="https://www.buymeacoffee.com" 
+             href="https://www.buymeacoffee.com/rshoaib" 
              target="_blank" 
              rel="noopener noreferrer" 
              className="footer-link coffee-link"
