@@ -57,7 +57,7 @@ const BlogList = () => {
           .blog-header h1 {
             font-size: 2.5rem;
             margin-bottom: 16px;
-            background: linear-gradient(to right, #fff, #a1a1aa);
+            background: linear-gradient(to right, #111, #555);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
