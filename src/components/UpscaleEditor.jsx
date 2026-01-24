@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Upscaler from 'upscaler';
 import { Download, ArrowLeft, Zap, AlertCircle } from 'lucide-react';
 import BeforeAfterSlider from './BeforeAfterSlider';
+import { triggerConfetti } from '../utils/confetti';
 
 const UpscaleEditor = ({ file, onBack }) => {
   const [originalUrl, setOriginalUrl] = useState(null);
@@ -62,6 +63,7 @@ const UpscaleEditor = ({ file, onBack }) => {
 
   const handleDownload = () => {
     if (!processedUrl) return;
+    triggerConfetti();
     const a = document.createElement('a');
     a.href = processedUrl;
     a.download = `upscaled-${scaleFactor}x-${file.name.split('.')[0]}.png`;
