@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { removeBackground } from '@imgly/background-removal';
-import { Download, ArrowLeft, RefreshCw, AlertCircle, Palette, Monitor } from 'lucide-react';
+import { Download, ArrowLeft, RefreshCw, AlertCircle, Palette, Monitor, Copy, Check } from 'lucide-react';
+import { copyCanvasToClipboard } from '../utils/clipboard';
 
 const ProfilePictureEditor = ({ file, onBack }) => {
   const [originalUrl, setOriginalUrl] = useState(null);
@@ -9,6 +10,7 @@ const ProfilePictureEditor = ({ file, onBack }) => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState(null);
   const [progress, setProgress] = useState('Initializing AI...');
+  const [isCopied, setIsCopied] = useState(false);
 
   // Design State
   const [bgColor, setBgColor] = useState('#e0e0e0'); // Default light gray
@@ -153,6 +155,15 @@ const ProfilePictureEditor = ({ file, onBack }) => {
     link.click();
   };
 
+  const handleCopy = async () => {
+    if (!canvasRef.current) return;
+    const success = await copyCanvasToClipboard(canvasRef.current);
+    if (success) {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    }
+  };
+
   return (
     <div className="editor-layout">
       <div className="toolbar">
@@ -233,9 +244,14 @@ const ProfilePictureEditor = ({ file, onBack }) => {
             )}
          </div>
 
-         <button className="download-btn-primary" onClick={handleDownload} disabled={isProcessing}>
-            <Download size={18} /> Download Profile Pic
-         </button>
+         <div className="action-buttons">
+            <button className="download-btn-secondary" onClick={handleCopy}>
+                {isCopied ? <Check size={18} /> : <Copy size={18} />} {isCopied ? 'Copied!' : 'Copy'}
+            </button>
+            <button className="download-btn-primary" onClick={handleDownload} disabled={isProcessing}>
+                <Download size={18} /> Download
+            </button>
+         </div>
       </div>
 
       <div className="preview-area">
@@ -333,7 +349,7 @@ const ProfilePictureEditor = ({ file, onBack }) => {
         .slider-row input { width: 60%; }
 
         .download-btn-primary {
-           margin-top: auto;
+           flex: 1;
            background: var(--primary);
            color: white;
            border: none;
@@ -349,6 +365,29 @@ const ProfilePictureEditor = ({ file, onBack }) => {
         }
         .download-btn-primary:hover { filter: brightness(1.1); }
         .download-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .action-buttons {
+           margin-top: auto;
+           display: flex;
+           gap: 12px;
+        }
+
+        .download-btn-secondary {
+           flex: 1;
+           background: var(--bg-surface);
+           border: 1px solid var(--border-active);
+           color: var(--text-main);
+           padding: 14px;
+           border-radius: var(--radius-md);
+           font-weight: 600;
+           cursor: pointer;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 8px;
+           font-size: 1rem;
+        }
+        .download-btn-secondary:hover { background: var(--bg-panel); }
 
         .preview-area {
            flex: 1;

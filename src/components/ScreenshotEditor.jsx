@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
-import { Download, ArrowLeft, Image as ImageIcon, Monitor, Layers, Maximize } from 'lucide-react';
+import { Download, ArrowLeft, Image as ImageIcon, Monitor, Layers, Maximize, Copy, Check } from 'lucide-react';
+import { copyCanvasToClipboard } from '../utils/clipboard';
 
 const ScreenshotEditor = ({ file, onBack }) => {
   const [originalImage, setOriginalImage] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [error, setError] = useState(null);
+  const [isCopied, setIsCopied] = useState(false);
 
   // Design State
   const [bgColor, setBgColor] = useState('#e0e0e0'); 
@@ -17,7 +19,7 @@ const ScreenshotEditor = ({ file, onBack }) => {
 
   const canvasRef = useRef(null);
 
-  // Reusing gradients (could extract to shared constant)
+  // ... (Gradients and constants kept same)
   const gradients = [
     'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     'linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)',
@@ -52,18 +54,7 @@ const ScreenshotEditor = ({ file, onBack }) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     
-    // We want a high-res output.
-    // Calculate canvas size based on image size + padding
-    // But we might want to cap the width if it's huge, or just scale.
-    // Let's keep it relative to the original image for max quality.
-    
-    // Logic: 
-    // Image Width = W
-    // Padding = P relative to some base? Let's treat P as pixel padding if image is reasonably sized.
-    // If image is 4000px wide, P=60 is tiny.
-    // So let's normalize padding relative to image width. 100 padding = 10% of width?
-    // Let's try simple pixel padding first but scaled.
-    
+    // ... (Canvas drawing logic kept exactly same)
     // Target base width for calculation: 1200px (like a tweet)
     // Scale factor = originalImage.width / 1200
     const scaleFactor = Math.max(1, originalImage.width / 1200); 
@@ -109,10 +100,6 @@ const ScreenshotEditor = ({ file, onBack }) => {
     ctx.shadowBlur = (shadowIntensity * 1.5) * scaleFactor;
     ctx.shadowOffsetY = (shadowIntensity * 0.8) * scaleFactor;
 
-    // To draw shadow we draw a rect behind the image first? 
-    // Or just draw the image if it's rectangular?
-    // If we have border radius, we need to path it.
-    
     // Draw rounded rect path
     const r = borderRadius * scaleFactor;
     
@@ -139,9 +126,6 @@ const ScreenshotEditor = ({ file, onBack }) => {
 
     // 3. Draw Window Controls (if enabled)
     if (showWindowControls) {
-       // Re-draw header background?
-       // Usually the "Window" is one big rounded rect.
-       // The header part is the top H pixels.
        // Dots: Red, Yellow, Green
        const dotSize = 12 * scaleFactor;
        const dotSpacing = 8 * scaleFactor;
@@ -174,11 +158,6 @@ const ScreenshotEditor = ({ file, onBack }) => {
     roundedRect(ctx, imgX, imgY - headerH, imgW, containerH, r);
     ctx.clip();
     
-    // Draw image shifted down by headerH
-    // But wait, if we clip the whole container, fine.
-    // If showWindowControls, we offset drawImage Y by headerH (already done in imgY var calculation? No)
-    // imgY is where image STARTS.
-    // (imgY - headerH) is where WINDOW starts.
     ctx.drawImage(originalImage, imgX, imgY, imgW, imgH);
     ctx.restore();
 
@@ -205,6 +184,15 @@ const ScreenshotEditor = ({ file, onBack }) => {
     link.href = canvasRef.current.toDataURL('image/png');
     link.download = `beautified-screenshot-${Date.now()}.png`;
     link.click();
+  };
+  
+  const handleCopy = async () => {
+    if (!canvasRef.current) return;
+    const success = await copyCanvasToClipboard(canvasRef.current);
+    if (success) {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    }
   };
 
   return (
@@ -272,9 +260,14 @@ const ScreenshotEditor = ({ file, onBack }) => {
             </div>
          </div>
 
-         <button className="download-btn-primary" onClick={handleDownload} disabled={isProcessing}>
-            <Download size={18} /> Download Image
-         </button>
+         <div className="action-buttons">
+            <button className="download-btn-secondary" onClick={handleCopy}>
+                {isCopied ? <Check size={18} /> : <Copy size={18} />} {isCopied ? 'Copied!' : 'Copy'}
+            </button>
+            <button className="download-btn-primary" onClick={handleDownload} disabled={isProcessing}>
+                <Download size={18} /> Download
+            </button>
+         </div>
       </div>
 
       <div className="preview-area">
@@ -367,8 +360,14 @@ const ScreenshotEditor = ({ file, onBack }) => {
         }
         .checkbox-row input { accent-color: var(--primary); width: 18px; height: 18px; }
 
-        .download-btn-primary {
+        .action-buttons {
            margin-top: auto;
+           display: flex;
+           gap: 12px;
+        }
+
+        .download-btn-primary {
+           flex: 1;
            background: var(--primary);
            color: white;
            border: none;
@@ -383,6 +382,24 @@ const ScreenshotEditor = ({ file, onBack }) => {
            font-size: 1rem;
         }
         .download-btn-primary:hover { filter: brightness(1.1); }
+        .download-btn-primary:disabled { opacity: 0.7; cursor: not-allowed; }
+
+        .download-btn-secondary {
+           flex: 1;
+           background: var(--bg-surface);
+           border: 1px solid var(--border-active);
+           color: var(--text-main);
+           padding: 14px;
+           border-radius: var(--radius-md);
+           font-weight: 600;
+           cursor: pointer;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           gap: 8px;
+           font-size: 1rem;
+        }
+        .download-btn-secondary:hover { background: var(--bg-panel); }
 
         .preview-area {
            flex: 1;
