@@ -1,0 +1,62 @@
+{
+  "common": {
+    "select": "Select",
+    "back": "Back",
+    "privacy_policy": "Privacy Policy",
+    "blog": "Blog"
+  },
+  "home": {
+    "title": "Select a Tool",
+    "subtitle": "Choose how you want to optimize your images today.",
+    "tools": {
+      "compress": {
+        "title": "Compress Image",
+        "desc": "Reduce file size while maintaining the best quality."
+      },
+      "resize": {
+        "title": "Resize Image",
+        "desc": "Change dimensions (width & height) by pixels or percentage."
+      },
+      "crop": {
+        "title": "Crop Image",
+        "desc": "Crop for Instagram, YouTube, and other social media platforms."
+      },
+      "watermark": {
+        "title": "Watermark",
+        "desc": "Protect your work by adding text or logo overlays."
+      },
+      "pdf": {
+        "title": "Images to PDF",
+        "desc": "Convert multiple images into a single PDF document instantly."
+      },
+      "remove_bg": {
+        "title": "Remove Background",
+        "desc": "Automatically remove image backgrounds in one click."
+      },
+      "upscale": {
+        "title": "AI Upscale",
+        "desc": "Increase image resolution (2x, 4x) without losing quality."
+      },
+      "screenshot": {
+        "title": "Screenshot Mockups",
+        "desc": "Add window frames, shadows, and backgrounds to screenshots."
+      },
+      "grid": {
+        "title": "Grid Splitter",
+        "desc": "Split images into 3x1, 3x2, or 3x3 grids for Instagram."
+      },
+      "profile": {
+        "title": "Profile Pic Maker",
+        "desc": "Create professional profile pictures with custom backgrounds."
+      },
+      "redact": {
+        "title": "Privacy Blur",
+        "desc": "Redact sensitive info, faces, or text from screenshots."
+      },
+      "exif": {
+        "title": "EXIF Viewer & Remover",
+        "desc": "View and remove hidden metadata (GPS, Date) for privacy."
+      }
+    }
+  }
+}

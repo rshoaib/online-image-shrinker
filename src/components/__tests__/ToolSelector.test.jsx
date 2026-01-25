@@ -2,8 +2,27 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import ToolSelector from '../ToolSelector';
 
-// Mock Lucide icons to avoid render issues in test env if any (though usually fine)
-// Actually standard rendering should be fine.
+import en from '../../locales/en.json';
+
+// Mock translation to use the actual English strings
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key) => {
+      // Simple deep object access for "home.tools.compress.title" style keys
+      const parts = key.split('.');
+      let current = en;
+      for (const part of parts) {
+        if (current[part] === undefined) return key;
+        current = current[part];
+      }
+      return current;
+    },
+    i18n: {
+      language: 'en',
+      changeLanguage: vi.fn(),
+    },
+  }),
+}));
 
 describe('ToolSelector Component', () => {
   it('renders all tool cards', () => {

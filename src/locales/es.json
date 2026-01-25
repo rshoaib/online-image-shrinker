@@ -1,0 +1,62 @@
+{
+  "common": {
+    "select": "Seleccionar",
+    "back": "Volver",
+    "privacy_policy": "Política de Privacidad",
+    "blog": "Blog"
+  },
+  "home": {
+    "title": "Selecciona una Herramienta",
+    "subtitle": "Elige cómo quieres optimizar tus imágenes hoy.",
+    "tools": {
+      "compress": {
+        "title": "Comprimir Imagen",
+        "desc": "Reduce el tamaño del archivo manteniendo la mejor calidad."
+      },
+      "resize": {
+        "title": "Redimensionar",
+        "desc": "Cambia las dimensiones (ancho y alto) por píxeles o porcentaje."
+      },
+      "crop": {
+        "title": "Recortar Imagen",
+        "desc": "Recorta para Instagram, YouTube y otras redes sociales."
+      },
+      "watermark": {
+        "title": "Marca de Agua",
+        "desc": "Protege tu trabajo añadiendo texto o logotipos."
+      },
+      "pdf": {
+        "title": "Imágenes a PDF",
+        "desc": "Convierte múltiples imágenes en un solo documento PDF al instante."
+      },
+      "remove_bg": {
+        "title": "Quitar Fondo",
+        "desc": "Elimina fondos de imágenes automáticamente con un clic."
+      },
+      "upscale": {
+        "title": "Mejorar con IA",
+        "desc": "Aumenta la resolución (2x, 4x) sin perder calidad."
+      },
+      "screenshot": {
+        "title": "Mockups de Capturas",
+        "desc": "Añade marcos de ventana, sombras y fondos a tus capturas."
+      },
+      "grid": {
+        "title": "Divisor de Cuadrícula",
+        "desc": "Divide imágenes en cuadrículas de 3x1, 3x2 o 3x3 para Instagram."
+      },
+      "profile": {
+        "title": "Foto de Perfil",
+        "desc": "Crea fotos de perfil profesionales con fondos personalizados."
+      },
+      "redact": {
+        "title": "Difuminar Privacidad",
+        "desc": "Censura info sensible, rostros o texto en capturas."
+      },
+      "exif": {
+        "title": "Visor y Borrador EXIF",
+        "desc": "Ver y eliminar metadatos ocultos (GPS, Fecha) por privacidad."
+      }
+    }
+  }
+}

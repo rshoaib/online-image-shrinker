@@ -1,0 +1,62 @@
+{
+  "common": {
+    "select": "Auswählen",
+    "back": "Zurück",
+    "privacy_policy": "Datenschutzerklärung",
+    "blog": "Blog"
+  },
+  "home": {
+    "title": "Wähle ein Werkzeug",
+    "subtitle": "Wähle, wie du deine Bilder heute optimieren möchtest.",
+    "tools": {
+      "compress": {
+        "title": "Bild Komprimieren",
+        "desc": "Dateigröße reduzieren bei bester Qualität."
+      },
+      "resize": {
+        "title": "Bildgröße Ändern",
+        "desc": "Abmessungen (Breite & Höhe) in Pixeln oder Prozent ändern."
+      },
+      "crop": {
+        "title": "Bild Zuschneiden",
+        "desc": "Zuschneiden für Instagram, YouTube und andere soziale Medien."
+      },
+      "watermark": {
+        "title": "Wasserzeichen",
+        "desc": "Schütze deine Arbeit durch Hinzufügen von Text oder Logos."
+      },
+      "pdf": {
+        "title": "Bilder zu PDF",
+        "desc": "Konvertiere mehrere Bilder sofort in ein einzelnes PDF-Dokument."
+      },
+      "remove_bg": {
+        "title": "Hintergrund Entfernen",
+        "desc": "Entferne Bildhintergründe automatisch mit einem Klick."
+      },
+      "upscale": {
+        "title": "KI Hochskalieren",
+        "desc": "Erhöhe die Bildauflösung (2x, 4x) ohne Qualitätsverlust."
+      },
+      "screenshot": {
+        "title": "Screenshot Mockups",
+        "desc": "Füge Fensterrahmen, Schatten und Hintergründe zu Screenshots hinzu."
+      },
+      "grid": {
+        "title": "Raster-Splitter",
+        "desc": "Teile Bilder in 3x1, 3x2 oder 3x3 Raster für Instagram."
+      },
+      "profile": {
+        "title": "Profilbild Ersteller",
+        "desc": "Erstelle professionelle Profilbilder mit benutzerdefinierten Hintergründen."
+      },
+      "redact": {
+        "title": "Privatsphäre Weichzeichner",
+        "desc": "Zensiere sensible Infos, Gesichter oder Text in Screenshots."
+      },
+      "exif": {
+        "title": "EXIF Viewer & Entferner",
+        "desc": "Versteckte Metadaten (GPS, Datum) zum Schutz der Privatsphäre ansehen und entfernen."
+      }
+    }
+  }
+}

@@ -1,8 +1,21 @@
-import { Github, Coffee } from 'lucide-react';
+import { Github, Coffee, Globe } from 'lucide-react';
 import InstallPrompt from './InstallPrompt';
 import logoUrl from '../assets/logo.png';
+import { useTranslation } from 'react-i18next';
 
 const Layout = ({ children, onNavigate }) => {
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    // Cycle: EN -> ES -> DE -> EN
+    const current = i18n.language;
+    let nextLang = 'en';
+    if (current === 'en') nextLang = 'es';
+    else if (current === 'es') nextLang = 'de';
+    
+    i18n.changeLanguage(nextLang);
+  };
+
   return (
     <div className="layout">
       <header className="header">
@@ -13,8 +26,12 @@ const Layout = ({ children, onNavigate }) => {
           </h1>
         </div>
         <nav className="nav">
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }} className="nav-link">Home</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('blog'); }} className="nav-link">Guides</a>
+          <button className="lang-btn" onClick={toggleLanguage}>
+             <Globe size={18} />
+             <span>{i18n.language === 'en' ? 'EN' : i18n.language === 'es' ? 'ES' : 'DE'}</span>
+          </button>
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }} className="nav-link">{t('common.back')}</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('blog'); }} className="nav-link">{t('common.blog')}</a>
         </nav>
       </header>
 
@@ -37,8 +54,8 @@ const Layout = ({ children, onNavigate }) => {
            >
              <Coffee size={16} /> <span>Donate</span>
            </a>
-           <button onClick={() => onNavigate && onNavigate('privacy')} className="footer-link">Privacy Policy</button>
-           <button onClick={() => onNavigate && onNavigate('blog')} className="footer-link">Guides</button>
+           <button onClick={() => onNavigate && onNavigate('privacy')} className="footer-link">{t('common.privacy_policy')}</button>
+           <button onClick={() => onNavigate && onNavigate('blog')} className="footer-link">{t('common.blog')}</button>
            <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link"><Github size={16} /></a>
         </div>
       </footer>
@@ -103,6 +120,28 @@ const Layout = ({ children, onNavigate }) => {
         .nav {
           display: flex;
           gap: var(--spacing-lg);
+          align-items: center;
+        }
+
+        .lang-btn {
+           background: transparent;
+           border: 1px solid var(--border-light);
+           color: var(--text-muted);
+           padding: 6px 12px;
+           border-radius: 20px;
+           cursor: pointer;
+           display: flex;
+           align-items: center;
+           gap: 6px;
+           font-size: 0.85rem;
+           font-weight: 600;
+           transition: 0.2s;
+        }
+
+        .lang-btn:hover {
+           background: var(--bg-surface);
+           color: var(--text-main);
+           border-color: var(--primary);
         }
 
         .nav-link {

@@ -1,11 +1,15 @@
 import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck } from 'lucide-react';
 
+import { useTranslation } from 'react-i18next';
+
 const ToolSelector = ({ onSelectTool }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="selector-container">
       <div className="selector-header">
-        <h2>Select a Tool</h2>
-        <p>Choose how you want to optimize your images today.</p>
+        <h2>{t('home.title')}</h2>
+        <p>{t('home.subtitle')}</p>
       </div>
 
       <div className="cards-grid">
@@ -14,11 +18,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Minimize2 size={32} />
           </div>
           <div className="card-content">
-            <h3>Compress Image</h3>
-            <p>Reduce file size while maintaining the best quality.</p>
+            <h3>{t('home.tools.compress.title')}</h3>
+            <p>{t('home.tools.compress.desc')}</p>
           </div>
           <div className="card-action">
-            <span>Select</span> <ArrowRight size={16} />
+            <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -27,11 +31,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Maximize2 size={32} />
           </div>
           <div className="card-content">
-            <h3>Resize Image</h3>
-            <p>Change dimensions (width & height) by pixels or percentage.</p>
+            <h3>{t('home.tools.resize.title')}</h3>
+            <p>{t('home.tools.resize.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -40,11 +44,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Crop size={32} />
           </div>
           <div className="card-content">
-            <h3>Crop Image</h3>
-            <p>Crop for Instagram, YouTube, and other social media platforms.</p>
+            <h3>{t('home.tools.crop.title')}</h3>
+            <p>{t('home.tools.crop.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -53,11 +57,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Type size={32} />
           </div>
           <div className="card-content">
-            <h3>Watermark</h3>
-            <p>Protect your work by adding text or logo overlays.</p>
+            <h3>{t('home.tools.watermark.title')}</h3>
+            <p>{t('home.tools.watermark.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -66,11 +70,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <FileText size={32} />
           </div>
           <div className="card-content">
-            <h3>Images to PDF</h3>
-            <p>Convert multiple images into a single PDF document instantly.</p>
+            <h3>{t('home.tools.pdf.title')}</h3>
+            <p>{t('home.tools.pdf.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -79,11 +83,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Eraser size={32} />
           </div>
           <div className="card-content">
-            <h3>Remove Background <span className="badge">AI</span></h3>
-            <p>Automatically remove image backgrounds in one click.</p>
+            <h3>{t('home.tools.remove_bg.title')} <span className="badge">AI</span></h3>
+            <p>{t('home.tools.remove_bg.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -92,11 +96,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Zap size={32} />
           </div>
           <div className="card-content">
-            <h3>AI Upscale <span className="badge">AI</span></h3>
-            <p>Increase image resolution (2x, 4x) without losing quality.</p>
+            <h3>{t('home.tools.upscale.title')} <span className="badge">AI</span></h3>
+            <p>{t('home.tools.upscale.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -105,11 +109,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Monitor size={32} />
           </div>
           <div className="card-content">
-            <h3>Screenshot Mockups <span className="badge">New</span></h3>
-            <p>Add window frames, shadows, and backgrounds to screenshots.</p>
+            <h3>{t('home.tools.screenshot.title')} <span className="badge">New</span></h3>
+            <p>{t('home.tools.screenshot.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -118,11 +122,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Grid size={32} />
           </div>
           <div className="card-content">
-            <h3>Grid Splitter</h3>
-            <p>Split images into 3x1, 3x2, or 3x3 grids for Instagram.</p>
+            <h3>{t('home.tools.grid.title')}</h3>
+            <p>{t('home.tools.grid.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -131,11 +135,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <User size={32} />
           </div>
           <div className="card-content">
-            <h3>Profile Pic Maker <span className="badge">New</span></h3>
-            <p>Create professional profile pictures with custom backgrounds.</p>
+            <h3>{t('home.tools.profile.title')} <span className="badge">New</span></h3>
+            <p>{t('home.tools.profile.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -144,11 +148,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <ShieldCheck size={32} />
           </div>
           <div className="card-content">
-            <h3>EXIF Viewer & Remover</h3>
-            <p>View and remove hidden metadata (GPS, Date) for privacy.</p>
+            <h3>{t('home.tools.exif.title')}</h3>
+            <p>{t('home.tools.exif.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -157,11 +161,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <EyeOff size={32} />
           </div>
           <div className="card-content">
-            <h3>Privacy Blur</h3>
-            <p>Redact sensitive info, faces, or text from screenshots.</p>
+            <h3>{t('home.tools.redact.title')}</h3>
+            <p>{t('home.tools.redact.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
       </div>
