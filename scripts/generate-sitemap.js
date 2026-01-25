@@ -41,6 +41,7 @@ const STATIC_URLS = [
   '/blur-image-online',
   '/profile-picture-maker',
   '/screenshot-beautifier',
+  '/exif-remover',
   '/blog'
 ];
 

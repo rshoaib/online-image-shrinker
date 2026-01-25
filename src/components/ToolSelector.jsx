@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck } from 'lucide-react';
 
 const ToolSelector = ({ onSelectTool }) => {
   return (
@@ -133,6 +133,19 @@ const ToolSelector = ({ onSelectTool }) => {
           <div className="card-content">
             <h3>Profile Pic Maker <span className="badge">New</span></h3>
             <p>Create professional profile pictures with custom backgrounds.</p>
+          </div>
+          <div className="card-action">
+             <span>Select</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card exif" onClick={() => onSelectTool('exif-remover')}>
+          <div className="icon-wrapper">
+             <ShieldCheck size={32} />
+          </div>
+          <div className="card-content">
+            <h3>EXIF Viewer & Remover</h3>
+            <p>View and remove hidden metadata (GPS, Date) for privacy.</p>
           </div>
           <div className="card-action">
              <span>Select</span> <ArrowRight size={16} />

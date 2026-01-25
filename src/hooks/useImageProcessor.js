@@ -57,6 +57,61 @@ const useImageProcessor = () => {
     
               // Draw image
               ctx.drawImage(img, 0, 0, settings.width, settings.height);
+
+              // --------------------------------------------------------
+              // WATERMARK LOGIC
+              // --------------------------------------------------------
+              if (settings.watermark && settings.watermark.text) {
+                  const { text, color = '#ffffff', opacity = 0.5, size = 48, position = 'center' } = settings.watermark;
+                  
+                  // Scale font size relative to image width (using 1000px as base)
+                  // This ensures consistency across different image sizes in the batch
+                  const scale = Math.max(settings.width, settings.height) / 1000;
+                  const fontSize = size * scale;
+
+                  ctx.font = `bold ${fontSize}px sans-serif`;
+                  ctx.fillStyle = color;
+                  ctx.globalAlpha = opacity;
+                  
+                  // Calculate Position
+                  let x = settings.width / 2;
+                  let y = settings.height / 2;
+                  const padding = 50 * scale;
+
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'middle';
+
+                  if (position === 'tl') { 
+                    x = padding; 
+                    y = padding; 
+                    ctx.textAlign = 'left'; 
+                    ctx.textBaseline='top'; 
+                  }
+                  else if (position === 'tr') { 
+                    x = settings.width - padding; 
+                    y = padding; 
+                    ctx.textAlign = 'right'; 
+                    ctx.textBaseline='top'; 
+                  }
+                  else if (position === 'bl') { 
+                    x = padding; 
+                    y = settings.height - padding; 
+                    ctx.textAlign = 'left'; 
+                    ctx.textBaseline='bottom'; 
+                  }
+                  else if (position === 'br') { 
+                    x = settings.width - padding; 
+                    y = settings.height - padding; 
+                    ctx.textAlign = 'right'; 
+                    ctx.textBaseline='bottom'; 
+                  }
+
+                  ctx.fillText(text, x, y);
+                  
+                  // Reset alpha for safety
+                  ctx.globalAlpha = 1.0;
+              }
+
               setProgress(75); // Drawn
     
               // Compress and Convert

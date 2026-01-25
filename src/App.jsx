@@ -13,6 +13,7 @@ import ToolLayout from './components/ToolLayout';
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const BlogList = lazy(() => import('./components/BlogList'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
+const ExifEditor = lazy(() => import('./components/ExifEditor'));
 
 const PageLoader = () => (
   <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
@@ -213,6 +214,15 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/exif-remover" element={
+             <SeoLandingPage 
+               toolId="exif" 
+               title="Free EXIF Data Viewer & Remover - View Metadata"
+               description="View hidden image metadata (GPS, Date, Camera) and remove it instantly. Protect your privacy before sharing photos."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -241,6 +251,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'redact': return { title: 'Privacy Redactor', desc: 'Blur or pixelate sensitive parts of your image.' };
       case 'profile-picture': return { title: 'Profile Picture Maker', desc: 'Create perfect profile photos with custom backgrounds.' };
       case 'screenshot-beautifier': return { title: 'Screenshot Beautifier', desc: 'Add professional window frames and backgrounds to your screenshots.' };
+      case 'exif': return { title: 'EXIF Data Viewer & Remover', desc: 'View and remove hidden metadata (GPS, Camera) from photos.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };

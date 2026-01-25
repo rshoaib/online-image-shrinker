@@ -15,6 +15,7 @@
     "@imgly/background-removal": "^1.7.0",
     "@tensorflow/tfjs": "4.11.0",
     "canvas-confetti": "^1.9.4",
+    "exif-js": "^2.3.0",
     "heic2any": "^0.0.4",
     "jspdf": "^4.0.0",
     "jszip": "^3.10.1",

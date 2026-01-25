@@ -2,6 +2,17 @@
 
 Use this file to track granular daily progress, ideas, and minor changes that might not warrant a full Changelog entry.
 
+## 2026-01-24
+- **Focus**: Bug fixes and Batch Watermarking.
+- **Completed**:
+  - Fixed broken "Profile Picture Maker" link in blog post and resolved syntax error in `articles.js`.
+  - Implemented **Batch Watermarking**: Updated `useImageProcessor` and `BatchEditor`, and fixed `ToolLayout` routing to support multi-file watermarking.
+  - Verified batch watermarking flow in browser.
+  - Deployed fixes to production.
+- **Next Steps**:
+  - Add "Celebration Mode" to more tools.
+  - Improve test coverage for new editors.
+
 ## 2026-01-23
 - **Focus**: Launching new creative tools (PFP Maker, Screenshot Beautifier).
 - **Completed**:

@@ -19,6 +19,7 @@ const GridSplitterEditor = lazy(() => import('./GridSplitterEditor'));
 const RedactEditor = lazy(() => import('./RedactEditor'));
 const ProfilePictureEditor = lazy(() => import('./ProfilePictureEditor'));
 const ScreenshotEditor = lazy(() => import('./ScreenshotEditor'));
+const ExifEditor = lazy(() => import('./ExifEditor'));
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
   if (files.length === 0) {
@@ -40,6 +41,16 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
     case 'redact':
       return <RedactEditor file={files[0]} onBack={onBack} />;
     case 'watermark':
+      if (files.length > 1) {
+        return (
+          <BatchEditor 
+            files={files} 
+            onBack={onBack} 
+            onRemove={handleRemove} 
+            mode={toolId} 
+          />
+        );
+      }
       return <WatermarkEditor file={files[0]} onBack={onBack} />;
     case 'pdf':
       return <PdfEditor files={files} onBack={onBack} onRemove={handleRemove} />;
@@ -48,12 +59,14 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
     case 'upscale':
       return <UpscaleEditor file={files[0]} onBack={onBack} />;
     case 'profile-picture':
-      return <ProfilePictureEditor file={files[0]} onBack={onBack} />;
+      return <ProfilePictureEditor files={files} setFiles={setFiles} onBack={onBack} />;
     case 'screenshot-beautifier':
-      return <ScreenshotEditor file={files[0]} onBack={onBack} />;
+      return <ScreenshotEditor files={files} setFiles={setFiles} onBack={onBack} />;
+    case 'exif':
+      return <ExifEditor files={files} setFiles={setFiles} onBack={onBack} />;
     default:
       if (files.length === 1) {
-        return <ImageEditor file={files[0]} onBack={onBack} mode={toolId} />;
+        return <ImageEditor files={files} setFiles={setFiles} onBack={onBack} mode={toolId} />;
       } else {
         return (
           <BatchEditor 

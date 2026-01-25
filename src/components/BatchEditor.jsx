@@ -11,7 +11,15 @@ const BatchEditor = ({ files, onBack, onRemove, mode }) => {
   const [settings, setSettings] = useState({
     width: 0, // 0 = original
     quality: 80,
+    quality: 80,
     format: 'jpeg',
+    watermark: {
+      text: '',
+      color: '#ffffff',
+      opacity: 0.5,
+      size: 48,
+      position: 'br'
+    }
   });
 
   const handleProcessAll = async () => {
@@ -111,6 +119,42 @@ const BatchEditor = ({ files, onBack, onRemove, mode }) => {
              </div>
            )}
 
+           {mode === 'watermark' && (
+             <>
+               <div className="input-group">
+                 <label>Text</label>
+                 <input 
+                   type="text" 
+                   value={settings.watermark.text} 
+                   placeholder="© My Name"
+                   onChange={(e) => setSettings({
+                      ...settings, 
+                      watermark: { ...settings.watermark, text: e.target.value }
+                   })}
+                   className="batch-input text"
+                 />
+               </div>
+               
+               <div className="input-group">
+                  <label>Position</label>
+                  <select
+                    value={settings.watermark.position}
+                    onChange={(e) => setSettings({
+                      ...settings, 
+                      watermark: { ...settings.watermark, position: e.target.value }
+                   })}
+                   className="format-select"
+                  >
+                    <option value="br">Bottom Right</option>
+                    <option value="bl">Bottom Left</option>
+                    <option value="tr">Top Right</option>
+                    <option value="tl">Top Left</option>
+                    <option value="center">Center</option>
+                  </select>
+               </div>
+             </>
+           )}
+
            <select 
              value={settings.format}
              onChange={(e) => setSettings({...settings, format: e.target.value})}
@@ -206,6 +250,10 @@ const BatchEditor = ({ files, onBack, onRemove, mode }) => {
           padding: 8px;
           border-radius: var(--radius-sm);
           width: 100px;
+        }
+        
+        .batch-input.text {
+          width: 180px;
         }
 
         .batch-range {
