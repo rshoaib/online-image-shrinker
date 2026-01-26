@@ -11,7 +11,6 @@ const BatchEditor = ({ files, onBack, onRemove, mode }) => {
   const [settings, setSettings] = useState({
     width: 0, // 0 = original
     quality: 80,
-    quality: 80,
     format: 'jpeg',
     watermark: {
       text: '',

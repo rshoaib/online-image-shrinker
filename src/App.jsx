@@ -223,6 +223,15 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/image-converter-online" element={
+             <SeoLandingPage 
+               toolId="image-converter" 
+               title="Free Image Converter - JPG, PNG, WebP"
+               description="Convert images between JPG, PNG, and WebP formats online. Secure, fast, and works locally in your browser."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -252,6 +261,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'profile-picture': return { title: 'Profile Picture Maker', desc: 'Create perfect profile photos with custom backgrounds.' };
       case 'screenshot-beautifier': return { title: 'Screenshot Beautifier', desc: 'Add professional window frames and backgrounds to your screenshots.' };
       case 'exif': return { title: 'EXIF Data Viewer & Remover', desc: 'View and remove hidden metadata (GPS, Camera) from photos.' };
+      case 'image-converter': return { title: 'Image Converter', desc: 'Convert images to JPG, PNG, and WebP formats.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };

@@ -20,6 +20,7 @@ const RedactEditor = lazy(() => import('./RedactEditor'));
 const ProfilePictureEditor = lazy(() => import('./ProfilePictureEditor'));
 const ScreenshotEditor = lazy(() => import('./ScreenshotEditor'));
 const ExifEditor = lazy(() => import('./ExifEditor'));
+const ImageConverterEditor = lazy(() => import('./ImageConverterEditor'));
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
   if (files.length === 0) {
@@ -64,6 +65,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <ScreenshotEditor files={files} setFiles={setFiles} onBack={onBack} />;
     case 'exif':
       return <ExifEditor files={files} setFiles={setFiles} onBack={onBack} />;
+    case 'image-converter':
+      return <ImageConverterEditor file={files[0]} onBack={onBack} />;
     default:
       if (files.length === 1) {
         return <ImageEditor files={files} setFiles={setFiles} onBack={onBack} mode={toolId} />;

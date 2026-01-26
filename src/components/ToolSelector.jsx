@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -166,6 +166,19 @@ const ToolSelector = ({ onSelectTool }) => {
           </div>
           <div className="card-action">
              <span>{t('common.select')}</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card converter" onClick={() => onSelectTool('image-converter')}>
+          <div className="icon-wrapper">
+             <RefreshCw size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Image Converter <span className="badge">New</span></h3>
+            <p>Convert images between JPG, PNG, and WebP formats instantly.</p>
+          </div>
+          <div className="card-action">
+             <span>Select</span> <ArrowRight size={16} />
           </div>
         </button>
       </div>
