@@ -232,6 +232,15 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/meme-generator-online" element={
+             <SeoLandingPage 
+               toolId="meme-generator" 
+               title="Free Meme Generator - Create Viral Memes"
+               description="Make memes online with custom Top and Bottom text. uses the classic Impact font. fast, free, and watermark-free."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -262,6 +271,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'screenshot-beautifier': return { title: 'Screenshot Beautifier', desc: 'Add professional window frames and backgrounds to your screenshots.' };
       case 'exif': return { title: 'EXIF Data Viewer & Remover', desc: 'View and remove hidden metadata (GPS, Camera) from photos.' };
       case 'image-converter': return { title: 'Image Converter', desc: 'Convert images to JPG, PNG, and WebP formats.' };
+      case 'meme-generator': return { title: 'Meme Generator', desc: 'Create viral memes with custom text instantly.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };
