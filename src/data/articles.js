@@ -765,5 +765,123 @@ Most online tools slap a giant watermark on your image or ask you to pay. **We d
 
 [Start Meme-ing Now](/tool/meme-generator)
     `
+  },
+  {
+    slug: 'remove-exif-data-iphone',
+    title: 'How to Remove Hidden Location Data from iPhone Photos',
+    excerpt: 'Your photos reveal more than you think. Learn how to scrub GPS coordinates and camera details instantly.',
+    iconName: 'Shield',
+    iconColor: '#DC2626',
+    date: 'Jan 28, 2026',
+    author: 'Privacy Team',
+    category: 'Privacy',
+    coverImage: '/guide-images/exif-demo.png',
+    content: `
+Did you know that every photo you take with your iPhone or Android phone contains hidden metadata? It's called **EXIF data**, and it can include:
+*   **GPS Coordinates:** The exact location where the photo was taken (down to the street meter).
+*   **Time & Date:** When the moment happened.
+*   **Device Info:** Your exact phone model and camera settings.
+
+## Why is this dangerous?
+If you upload a photo of your pet or your new house to social media or a forum, savvy users can download that image and see exactly where you live. This is a major privacy risk.
+
+## How to Check Your Photos
+You can't see this data in your standard gallery app. You need an EXIF Viewer.
+
+1.  Open our [EXIF Viewer & Remover](/tool/exif).
+2.  **Upload** your photo.
+3.  The tool will instantly show you all the hidden tags found in the file.
+4.  If you see a map pin, your location is exposed.
+
+## How to Remove It (The Easy Way)
+You don't need to change your camera settings permanently. Just clean the files before you share them.
+
+1.  In the EXIF Viewer tool, click **"Remove Metadata & Clean File"**.
+2.  Our tool scrubs 100% of the EXIF tags while keeping the image quality identical.
+3.  **Download** the safe, clean version.
+
+![Exif Tool Demo](/guide-images/exif-demo.png)
+
+Now you can post that photo safely!
+
+[Check Your Photos Now](/tool/exif)
+    `
+  },
+  {
+    slug: 'png-vs-jpg-vs-webp',
+    title: 'PNG vs JPG vs WebP: Which Format Should You Use?',
+    excerpt: 'The definitive guide to image formats in 2026. Stop guessing and start optimizing.',
+    iconName: 'FileText',
+    iconColor: '#3B82F6',
+    date: 'Jan 28, 2026',
+    author: 'Tech Guides',
+    category: 'Explained',
+    coverImage: '/guide-images/converter-demo.png',
+    content: `
+Choosing the wrong image format can make your website slow or your photos look blurry. Here is the simple breakdown you've been looking for.
+
+## 1. JPEG (Joint Photographic Experts Group)
+*   **Best for:** Photos, real-world images with millions of colors.
+*   **Pros:** Small file size, compatible with everything.
+*   **Cons:** No transparency, "lossy" compression (can look blocky if compressed too much).
+
+## 2. PNG (Portable Network Graphics)
+*   **Best for:** Logos, screenshots, and graphics with sharp lines.
+*   **Pros:** Supports **Transparency** (clear backgrounds). Lossless quality.
+*   **Cons:** Giant file sizes. Never use PNG for photos unless you need to.
+
+## 3. WebP (The Modern Standard)
+*   **Best for:** Everything on the web.
+*   **Pros:** 30% smaller than JPEG for the same quality. Supports transparency like PNG.
+*   **Cons:** Older computers (Windows 7 era) might not open them natively.
+
+## How to Convert Between Formats
+Need to turn a huge PNG into a small WebP for your website? Or open a WebP file in Photoshop?
+
+1.  Use our [Image Converter](/tool/image-converter).
+2.  Upload your file.
+3.  Select your target format (e.g., **WebP**).
+4.  Drag the **Quality** slider (80% is the sweet spot).
+5.  Click **Convert**.
+
+![Converter Tool Demo](/guide-images/converter-demo.png)
+
+[Convert Images Free](/tool/image-converter)
+    `
+  },
+  {
+    slug: 'linkedin-banner-size-2026',
+    title: 'The Perfect LinkedIn Banner Size (2026 Guide)',
+    excerpt: 'Stop your cover photo from getting cut off. The safe zones and dimensions you need.',
+    iconName: 'Crop',
+    iconColor: '#0077b5',
+    date: 'Jan 28, 2026',
+    author: 'Career Hacks',
+    category: 'Social Media',
+    content: `
+Your LinkedIn background photo (banner) is the first thing recruiters see. But LinkedIn has a tricky layout: your profile picture pokes a hole right through the bottom-left corner of the banner.
+
+## The Magic Dimensions
+*   **Recommended Size:** 1584 x 396 pixels.
+*   **Aspect Ratio:** 4:1.
+*   **File Size:** Max 8MB.
+
+## The "Safe Zone"
+On Mobile, your profile picture moves! It shifts from the left to the center. This means you have two "danger zones" where you should never put text.
+
+*   **Avoid:** Bottom-Left corner (Desktop overlap).
+*   **Avoid:** Bottom-Center (Mobile overlap).
+*   **Safe:** Top-Right corner is always visible.
+
+## How to Crop Perfectly
+Don't guess. Use our tool to slice your image to the exact pixel ratio.
+
+1.  Go to the [Social Media Cropper](/tool/crop).
+2.  Upload your professional image.
+3.  Select the **"Free Form"** or custom crop (we are adding a LinkedIn preset soon!).
+4.  Download and upload to your profile.
+
+[Resize for LinkedIn](/tool/crop)
+    `
   }
 ];
