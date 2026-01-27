@@ -174,11 +174,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <RefreshCw size={32} />
           </div>
           <div className="card-content">
-            <h3>Image Converter <span className="badge">New</span></h3>
-            <p>Convert images between JPG, PNG, and WebP formats instantly.</p>
+            <h3>{t('home.tools.converter.title')} <span className="badge">New</span></h3>
+            <p>{t('home.tools.converter.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -187,11 +187,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Smile size={32} />
           </div>
           <div className="card-content">
-            <h3>Meme Generator <span className="badge">Fun</span></h3>
-            <p>Create viral memes with custom top and bottom text.</p>
+            <h3>{t('home.tools.meme.title')} <span className="badge">Fun</span></h3>
+            <p>{t('home.tools.meme.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
 
@@ -200,11 +200,11 @@ const ToolSelector = ({ onSelectTool }) => {
              <Palette size={32} />
           </div>
           <div className="card-content">
-            <h3>Palette Generator <span className="badge">New</span></h3>
-            <p>Extract beautiful color palettes from any image instantly.</p>
+            <h3>{t('home.tools.palette.title')} <span className="badge">New</span></h3>
+            <p>{t('home.tools.palette.desc')}</p>
           </div>
           <div className="card-action">
-             <span>Select</span> <ArrowRight size={16} />
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
           </div>
         </button>
       </div>

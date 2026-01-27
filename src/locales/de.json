@@ -56,6 +56,18 @@
       "exif": {
         "title": "EXIF Viewer & Entferner",
         "desc": "Versteckte Metadaten (GPS, Datum) zum Schutz der Privatsphäre ansehen und entfernen."
+      },
+      "converter": {
+        "title": "Bild Konverter",
+        "desc": "Konvertiere Bilder sofort zwischen JPG, PNG und WebP Formaten."
+      },
+      "meme": {
+        "title": "Meme Generator",
+        "desc": "Erstelle virale Memes mit eigenem Text oben und unten."
+      },
+      "palette": {
+        "title": "Farbpalette Generator",
+        "desc": "Extrahiere sofort schöne Farbpaletten aus jedem Bild."
       }
     }
   }
