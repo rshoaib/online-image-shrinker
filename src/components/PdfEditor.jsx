@@ -30,7 +30,7 @@ const PdfEditor = ({ files: initialFiles, onBack, onRemove }) => {
         // Calculate dimensions to fit A4 (210mm x 297mm) maintaining aspect ratio
         const pageWidth = 210;
         const pageHeight = 297;
-        const pageRatio = pageWidth / pageHeight;
+
         const imgRatio = img.width / img.height;
 
         let renderWidth = pageWidth;

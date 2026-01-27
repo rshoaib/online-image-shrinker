@@ -5,7 +5,7 @@ import JSZip from 'jszip';
 const GridSplitterEditor = ({ file, onBack }) => {
   const [gridFormat, setGridFormat] = useState('3x3'); // 3x1, 3x2, 3x3, 3x4
   const [image, setImage] = useState(null);
-  const [previewUrl, setPreviewUrl] = useState(null);
+
   const [isProcessing, setIsProcessing] = useState(false);
   const canvasRef = useRef(null);
   const [splitPreviews, setSplitPreviews] = useState([]);
@@ -17,7 +17,7 @@ const GridSplitterEditor = ({ file, onBack }) => {
       img.src = url;
       img.onload = () => {
         setImage(img);
-        setPreviewUrl(url);
+        setImage(img);
         generatePreviews(img, gridFormat);
       };
     }

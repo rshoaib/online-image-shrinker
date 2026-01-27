@@ -7,7 +7,7 @@ const RedactEditor = ({ file, onBack }) => {
   const [isDrawing, setIsDrawing] = useState(false);
   const [startPos, setStartPos] = useState({ x: 0, y: 0 });
   const [currentRect, setCurrentRect] = useState(null);
-  const [blurIntensity, setBlurIntensity] = useState(10); // Not used in simple implementation yet
+
   
   const canvasRef = useRef(null);
   const containerRef = useRef(null);

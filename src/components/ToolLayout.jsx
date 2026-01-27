@@ -22,6 +22,8 @@ const ScreenshotEditor = lazy(() => import('./ScreenshotEditor'));
 const ExifEditor = lazy(() => import('./ExifEditor'));
 const ImageConverterEditor = lazy(() => import('./ImageConverterEditor'));
 const MemeEditor = lazy(() => import('./MemeEditor'));
+const ColorPaletteEditor = lazy(() => import('./ColorPaletteEditor'));
+
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
   if (files.length === 0) {
@@ -61,15 +63,17 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
     case 'upscale':
       return <UpscaleEditor file={files[0]} onBack={onBack} />;
     case 'profile-picture':
-      return <ProfilePictureEditor files={files} setFiles={setFiles} onBack={onBack} />;
+      return <ProfilePictureEditor file={files[0]} onBack={onBack} />;
     case 'screenshot-beautifier':
-      return <ScreenshotEditor files={files} setFiles={setFiles} onBack={onBack} />;
+      return <ScreenshotEditor file={files[0]} onBack={onBack} />;
     case 'exif':
-      return <ExifEditor files={files} setFiles={setFiles} onBack={onBack} />;
+      return <ExifEditor files={files} onBack={onBack} />;
     case 'image-converter':
       return <ImageConverterEditor file={files[0]} onBack={onBack} />;
     case 'meme-generator':
       return <MemeEditor file={files[0]} onBack={onBack} />;
+    case 'palette-generator':
+      return <ColorPaletteEditor file={files[0]} onBack={onBack} />;
     default:
       if (files.length === 1) {
         return <ImageEditor files={files} setFiles={setFiles} onBack={onBack} mode={toolId} />;

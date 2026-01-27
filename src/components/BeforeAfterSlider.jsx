@@ -14,8 +14,7 @@ const BeforeAfterSlider = ({ beforeImage, afterImage, className = "" }) => {
     setPosition(percent);
   };
 
-  const handleMouseDown = () => { isDragging.current = true; };
-  const handleMouseUp = () => { isDragging.current = false; };
+const handleMouseDown = () => { isDragging.current = true; };
   const handleMouseMove = (e) => { 
     if (isDragging.current) handleMove(e.clientX); 
   };

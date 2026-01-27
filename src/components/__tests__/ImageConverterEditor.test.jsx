@@ -13,11 +13,11 @@ describe('ImageConverterEditor', () => {
     HTMLCanvasElement.prototype.toBlob = vi.fn((callback) => callback(new Blob(['mock'], { type: 'image/jpeg' })));
 
     // Mock URL.createObjectURL
-    global.URL.createObjectURL = vi.fn(() => 'mock-url');
-    global.URL.revokeObjectURL = vi.fn();
+    globalThis.URL.createObjectURL = vi.fn(() => 'mock-url');
+    globalThis.URL.revokeObjectURL = vi.fn();
     
     // Mock Image
-    global.Image = class {
+    globalThis.Image = class {
       constructor() {
         setTimeout(() => {
            if (this.onload) this.onload(); // Auto-trigger onload

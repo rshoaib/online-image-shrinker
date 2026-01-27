@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+
 import Upscaler from 'upscaler';
 import { Download, ArrowLeft, Zap, AlertCircle, Copy, Check } from 'lucide-react';
 import BeforeAfterSlider from './BeforeAfterSlider';

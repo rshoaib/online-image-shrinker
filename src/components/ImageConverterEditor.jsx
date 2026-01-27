@@ -77,14 +77,7 @@ const ImageConverterEditor = ({ file, onBack }) => {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
   };
 
-  const getFormatLabel = (mime) => {
-    switch(mime) {
-      case 'image/jpeg': return 'JPG / JPEG';
-      case 'image/png': return 'PNG';
-      case 'image/webp': return 'WebP';
-      default: return mime;
-    }
-  };
+
 
   return (
     <div className="converter-editor">

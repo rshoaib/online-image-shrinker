@@ -3,8 +3,8 @@ import { Upload, X, MapPin, Calendar, Camera, Download, ShieldCheck, Eye, Refres
 import EXIF from 'exif-js';
 import Controls from './Controls';
 
-const ExifEditor = ({ files, setFiles, onBack }) => {
-  const [activeFile, setActiveFile] = useState(files[0] || null);
+const ExifEditor = ({ files, onBack }) => {
+  const [activeFile] = useState(files[0] || null);
   const [metadata, setMetadata] = useState(null);
   const [loading, setLoading] = useState(false);
   const [cleanedUrl, setCleanedUrl] = useState(null);

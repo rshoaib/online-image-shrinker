@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { removeBackground } from '@imgly/background-removal';
-import { Download, ArrowLeft, RefreshCw, AlertCircle, Layers } from 'lucide-react';
+import { Download, ArrowLeft, RefreshCw, AlertCircle } from 'lucide-react';
 
 const BackgroundRemovalEditor = ({ file, onBack }) => {
   const [originalUrl, setOriginalUrl] = useState(null);

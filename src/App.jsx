@@ -241,6 +241,15 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/color-palette-generator" element={
+             <SeoLandingPage 
+               toolId="palette-generator" 
+               title="Free Color Palette Generator - Extract Hex & RGB"
+               description="Extract beautiful color palettes from any image automatically. Get Hex, RGB, and color codes instantly."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -272,6 +281,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'exif': return { title: 'EXIF Data Viewer & Remover', desc: 'View and remove hidden metadata (GPS, Camera) from photos.' };
       case 'image-converter': return { title: 'Image Converter', desc: 'Convert images to JPG, PNG, and WebP formats.' };
       case 'meme-generator': return { title: 'Meme Generator', desc: 'Create viral memes with custom text instantly.' };
+      case 'palette-generator': return { title: 'Color Palette Generator', desc: 'Extract beautiful color palettes from images.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };

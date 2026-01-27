@@ -28,11 +28,11 @@ describe('ScreenshotEditor', () => {
     HTMLCanvasElement.prototype.toDataURL = vi.fn(() => 'data:image/png;base64,mock');
 
     // Mock URL.createObjectURL
-    global.URL.createObjectURL = vi.fn(() => 'mock-url');
-    global.URL.revokeObjectURL = vi.fn();
+    globalThis.URL.createObjectURL = vi.fn(() => 'mock-url');
+    globalThis.URL.revokeObjectURL = vi.fn();
     
     // Mock Image
-    global.Image = class {
+    globalThis.Image = class {
       constructor() {
         setTimeout(() => {
            if (this.onload) this.onload(); 

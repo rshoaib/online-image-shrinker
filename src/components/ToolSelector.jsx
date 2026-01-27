@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -189,6 +189,19 @@ const ToolSelector = ({ onSelectTool }) => {
           <div className="card-content">
             <h3>Meme Generator <span className="badge">Fun</span></h3>
             <p>Create viral memes with custom top and bottom text.</p>
+          </div>
+          <div className="card-action">
+             <span>Select</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card palette" onClick={() => onSelectTool('palette-generator')}>
+          <div className="icon-wrapper">
+             <Palette size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Palette Generator <span className="badge">New</span></h3>
+            <p>Extract beautiful color palettes from any image instantly.</p>
           </div>
           <div className="card-action">
              <span>Select</span> <ArrowRight size={16} />
