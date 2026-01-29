@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -39,6 +39,19 @@ const ToolSelector = ({ onSelectTool }) => {
           </div>
         </button>
 
+        <button className="tool-card passport" onClick={() => onSelectTool('resize-passport-photo')}>
+          <div className="icon-wrapper">
+             <Globe size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Passport Photo Maker <span className="badge">New</span></h3>
+            <p>Create biometric passport photos for US, UK, EU & more. Free & Private.</p>
+          </div>
+          <div className="card-action">
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
         <button className="tool-card crop" onClick={() => onSelectTool('crop')}>
           <div className="icon-wrapper">
              <Crop size={32} />
@@ -52,12 +65,12 @@ const ToolSelector = ({ onSelectTool }) => {
           </div>
         </button>
 
-       <button className="tool-card watermark" onClick={() => onSelectTool('watermark')}>
+       <button className="tool-card watermark" onClick={() => onSelectTool('watermark-photos-online')}>
           <div className="icon-wrapper">
              <Type size={32} />
           </div>
           <div className="card-content">
-            <h3>{t('home.tools.watermark.title')}</h3>
+            <h3>{t('home.tools.watermark.title')} <span className="badge">Updated</span></h3>
             <p>{t('home.tools.watermark.desc')}</p>
           </div>
           <div className="card-action">

@@ -46,7 +46,7 @@ const AppContent = () => {
       navigate('/privacy');
     } else if (dest === 'blog') {
       navigate('/blog');
-    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp'].includes(dest)) {
+    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online'].includes(dest)) {
       navigate(`/${dest}`);
     } else {
       navigate(`/tool/${dest}`);
@@ -144,9 +144,9 @@ const AppContent = () => {
 
         <Route path="/resize-passport-photo" element={
            <SeoLandingPage 
-             toolId="crop" 
+             toolId="passport" 
              title="Resize Photo for Passport (3.5x4.5cm) - Free Online"
-             description="Crop your photo to the standard 3.5x4.5cm passport size instantly. Private, secure, and no watermark."
+             description="Make biometrically compliant passport photos. US 2x2, UK, EU standards. Face guides included."
              files={files} setFiles={setFiles} onBack={handleBack}
           />
         } />
@@ -246,6 +246,15 @@ const AppContent = () => {
                toolId="palette-generator" 
                title="Free Color Palette Generator - Extract Hex & RGB"
                description="Extract beautiful color palettes from any image automatically. Get Hex, RGB, and color codes instantly."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
+          <Route path="/watermark-photos-online" element={
+             <SeoLandingPage 
+               toolId="watermark" 
+               title="Watermark Photos Online - Free & Private"
+               description="Add text and logo watermarks to your photos securely. Customizable fonts, colors, and opacity. Works locally in your browser."
                files={files} setFiles={setFiles} onBack={handleBack}
             />
           } />

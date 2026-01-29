@@ -172,10 +172,13 @@ const WatermarkEditor = ({ file, onBack }) => {
            padding: 20px;
         }
 
-        .Sidebar {
-           width: 300px;
-           background: var(--bg-panel);
-           border-left: 1px solid var(--border-light);
+        .sidebar {
+           width: 320px;
+           background: var(--bg-surface);
+           border-left: 1px solid var(--border);
+           display: flex;
+           flex-direction: column;
+           z-index: 10;
         }
 
         .controls-panel {

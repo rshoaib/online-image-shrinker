@@ -23,7 +23,7 @@ const STATIC_URLS = [
   '/tool/compress',
   '/tool/resize',
   '/tool/crop',
-  '/tool/watermark',
+  '/watermark-photos-online',
   '/tool/pdf',
   '/tool/remove-bg',
   '/tool/upscale',
