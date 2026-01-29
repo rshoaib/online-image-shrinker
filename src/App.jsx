@@ -259,6 +259,24 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/collage-maker" element={
+             <SeoLandingPage 
+               toolId="collage-maker" 
+               title="Free Photo Collage Maker - Join Photos Online"
+               description="Create beautiful photo collages online. Combine images side-by-side or in grids. No watermark, free and private."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
+          <Route path="/convert-heic-to-jpg" element={
+             <SeoLandingPage 
+               toolId="image-converter" 
+               title="HEIC to JPG Converter - Free Online"
+               description="Convert iPhone photos (HEIC) to JPG or PNG instantly. Works locally in your browser, no upload needed."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />

@@ -24,6 +24,7 @@ const ImageConverterEditor = lazy(() => import('./ImageConverterEditor'));
 const MemeEditor = lazy(() => import('./MemeEditor'));
 const ColorPaletteEditor = lazy(() => import('./ColorPaletteEditor'));
 const PassportEditor = lazy(() => import('./PassportEditor'));
+const CollageEditor = lazy(() => import('./CollageEditor'));
 
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
@@ -77,6 +78,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <ColorPaletteEditor file={files[0]} onBack={onBack} />;
     case 'passport':
       return <PassportEditor file={files[0]} onBack={onBack} />;
+    case 'collage-maker':
+      return <CollageEditor files={files} setFiles={setFiles} onBack={onBack} />;
     default:
       if (files.length === 1) {
         return <ImageEditor files={files} setFiles={setFiles} onBack={onBack} mode={toolId} />;

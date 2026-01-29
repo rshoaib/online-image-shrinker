@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ArrowLeft, Download, RefreshCw, AlertCircle } from 'lucide-react';
+import heic2any from 'heic2any';
 
 const ImageConverterEditor = ({ file, onBack }) => {
   const [imgSrc, setImgSrc] = useState(null);
@@ -11,16 +12,35 @@ const ImageConverterEditor = ({ file, onBack }) => {
 
   useEffect(() => {
     if (file) {
-      const url = URL.createObjectURL(file);
-      setImgSrc(url);
-      setOriginalSize(file.size);
-      
-      // Default target based on source
-      if (file.type === 'image/png') setTargetFormat('image/jpeg');
-      else if (file.type === 'image/jpeg') setTargetFormat('image/png');
-      else setTargetFormat('image/jpeg');
-
-      return () => URL.revokeObjectURL(url);
+      if (file.type === 'image/heic' || file.name.toLowerCase().endsWith('.heic')) {
+         // Convert HEIC to blob for preview 
+         heic2any({ blob: file, toType: "image/jpeg", quality: 0.8 })
+            .then((conversionResult) => {
+                // conversionResult can be an array if multi-image HEIC, take first
+                const blob = Array.isArray(conversionResult) ? conversionResult[0] : conversionResult;
+                const url = URL.createObjectURL(blob);
+                setImgSrc(url);
+                setOriginalSize(file.size);
+            })
+            .catch(e => {
+                console.error("HEIC Error", e);
+                alert("Could not decode HEIC file.");
+            });
+         
+         setTargetFormat('image/jpeg'); // Default target for HEIC
+      } else {
+          // Standard images
+          const url = URL.createObjectURL(file);
+          setImgSrc(url);
+          setOriginalSize(file.size);
+          
+          // Default target based on source
+          if (file.type === 'image/png') setTargetFormat('image/jpeg');
+          else if (file.type === 'image/jpeg') setTargetFormat('image/png');
+          else setTargetFormat('image/jpeg');
+    
+          return () => URL.revokeObjectURL(url);
+      }
     }
   }, [file]);
 

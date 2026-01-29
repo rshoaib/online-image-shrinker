@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -137,6 +137,19 @@ const ToolSelector = ({ onSelectTool }) => {
           <div className="card-content">
             <h3>{t('home.tools.grid.title')}</h3>
             <p>{t('home.tools.grid.desc')}</p>
+          </div>
+          <div className="card-action">
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card collage" onClick={() => onSelectTool('collage-maker')}>
+          <div className="icon-wrapper">
+             <LayoutTemplate size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Photo Collage Maker <span className="badge">New</span></h3>
+            <p>Combine multiple photos into one. Side-by-side, vertical sort, or grid layouts.</p>
           </div>
           <div className="card-action">
              <span>{t('common.select')}</span> <ArrowRight size={16} />
