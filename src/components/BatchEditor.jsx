@@ -7,9 +7,19 @@ const BatchEditor = ({ files, onBack, onRemove, mode }) => {
   const [isProcessingAll, setIsProcessingAll] = useState(false);
   const { processImage } = useImageProcessor();
 
+  // Presets Configuration
+  const PRESETS = {
+    'custom': { label: 'Custom', settings: {} },
+    'shopify': { label: 'Shopify (2048px JPG)', settings: { width: 2048, quality: 85, format: 'jpeg' } },
+    'insta_portrait': { label: 'IG Portrait (1080x1350)', settings: { width: 1080, height: 1350, quality: 100, format: 'png' } }, // Height needs logic support
+    'insta_square': { label: 'IG Square (1080px)', settings: { width: 1080, height: 1080, quality: 100, format: 'jpg' } },
+    'email': { label: 'Email (800px Low)', settings: { width: 800, quality: 60, format: 'jpeg' } }
+  };
+
   // Basic global settings for now
   const [settings, setSettings] = useState({
     width: 0, // 0 = original
+    height: 0,
     quality: 80,
     format: 'jpeg',
     watermark: {
@@ -20,6 +30,18 @@ const BatchEditor = ({ files, onBack, onRemove, mode }) => {
       position: 'br'
     }
   });
+
+  const applyPreset = (key) => {
+    if (key === 'custom') return;
+    const p = PRESETS[key].settings;
+    setSettings(prev => ({
+      ...prev,
+      width: p.width || 0,
+      height: p.height || 0,
+      quality: p.quality || 80,
+      format: p.format || 'jpeg'
+    }));
+  };
 
   const handleProcessAll = async () => {
     setIsProcessingAll(true);
@@ -35,11 +57,26 @@ const BatchEditor = ({ files, onBack, onRemove, mode }) => {
            // Get dims first if needed, but for batch we might just skip resizing if width=0
            // For MVP simpler logic: use original width if 0
            const dims = await getImageDimensions(file);
+           
+           let targetWidth = settings.width;
+           let targetHeight = settings.height;
+           const ratio = dims.width / dims.height;
+
+           // Auto-calculate missing dimension
+           if (targetWidth > 0 && targetHeight === 0) {
+              targetHeight = Math.round(targetWidth / ratio);
+           } else if (targetHeight > 0 && targetWidth === 0) {
+              targetWidth = Math.round(targetHeight * ratio);
+           } else if (targetWidth === 0 && targetHeight === 0) {
+              targetWidth = dims.width;
+              targetHeight = dims.height;
+           }
+
            const currentSettings = {
              ...settings,
              quality: effectiveQuality,
-             width: settings.width || dims.width,
-             height: settings.width ? 0 : dims.height // let simple logic handle ratio
+             width: targetWidth,
+             height: targetHeight
            };
            // Note: useImageProcessor logic for ratio handles 0/0 well? 
            // We might need to check useImageProcessor compatibility.
@@ -94,15 +131,38 @@ const BatchEditor = ({ files, onBack, onRemove, mode }) => {
         <h2>Batch Processing ({files.length} files)</h2>
         <div className="batch-actions">
            {mode === 'resize' && (
-             <div className="input-group">
-               <label>Width (0=Original)</label>
-               <input 
-                 type="number" 
-                 value={settings.width} 
-                 onChange={(e) => setSettings({...settings, width: parseInt(e.target.value) || 0})}
-                 className="batch-input"
-               />
-             </div>
+             <>
+               <div className="input-group">
+                  <label>Preset</label>
+                  <select onChange={(e) => applyPreset(e.target.value)} className="format-select">
+                    <option value="custom">Custom</option>
+                    <option value="shopify">Shopify</option>
+                    <option value="insta_portrait">IG Portrait</option>
+                    <option value="insta_square">IG Square</option>
+                    <option value="email">Email Optimized</option>
+                  </select>
+               </div>
+               <div className="input-group">
+                 <label>Width</label>
+                 <input 
+                   type="number" 
+                   value={settings.width} 
+                   onChange={(e) => setSettings({...settings, width: parseInt(e.target.value) || 0})}
+                   className="batch-input"
+                   placeholder="Auto"
+                 />
+               </div>
+               <div className="input-group">
+                 <label>Height</label>
+                 <input 
+                   type="number" 
+                   value={settings.height} 
+                   onChange={(e) => setSettings({...settings, height: parseInt(e.target.value) || 0})}
+                   className="batch-input"
+                   placeholder="Auto"
+                 />
+               </div>
+             </>
            )}
 
            {mode === 'compress' && (

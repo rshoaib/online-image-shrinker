@@ -922,5 +922,87 @@ Once you have your palette, apply it using this rule:
 
 [Start Extracting Palettes](/tool/palette-generator)
     `
+  },
+  {
+    slug: 'how-to-make-passport-photo',
+    title: 'How to Make a Passport Photo at Home (Free Online)',
+    excerpt: 'Create a biometric passport photo (3.5x4.5cm or 2x2") in seconds. Official country standards applied automatically.',
+    iconName: 'User',
+    iconColor: '#2563EB',
+    date: 'Jan 29, 2026',
+    author: 'Travel Hacks',
+    category: 'Tutorials',
+    content: `
+Getting a passport photo used to mean finding a photo booth, paying $15, and waiting in line. Now you can do it from your living room for free.
+
+## The Requirements
+
+Most countries (UK, EU, Australia) use the **35x45mm** standard. The US and India use **2x2 inches**.
+Key biometric rules:
+*   **Expression:** Neutral (no smiling).
+*   **Eyes:** Fully visible (no glasses).
+*   **Background:** Plain white or light grey.
+*   **Lighting:** Even lighting, no shadows on face.
+
+## How to use our Passport Photo Maker
+
+We built a tool specifically to handle these strict requirements.
+
+1.  **Take a Photo:** Stand against a white wall. Ask a friend to take a photo of you (selfies can distort your nose). Leave plenty of space above your head.
+2.  **Go to [Passport Photo Maker](/resize-passport-photo).**
+3.  **Upload:** Select your photo.
+4.  **Use the Overlay:** Our tool shows a "Face Guide". Align your eyes and chin with the guide lines.
+5.  **Crop:** Use the zoom slider to fit your head perfectly (70-80% of the image).
+6.  **Download:** Get a perfectly sized image ready for printing.
+
+[Create Passport Photo](/resize-passport-photo)
+    `
+  },
+  {
+    slug: 'aesthetic-photo-collage-guide',
+    title: 'How to Create Aesthetic Photo Collages for Instagram',
+    excerpt: 'Combine your favorite memories. Side-by-side comparisons, vertical stacks, and grids without watermarks.',
+    iconName: 'LayoutTemplate',
+    iconColor: '#8B5CF6',
+    date: 'Jan 29, 2026',
+    author: 'Design Team',
+    category: 'Social Media',
+    content: `
+Sometimes one photo isn't enough. Whether it's a "Before & After" shot, a fashion outfit check, or a mood board, a collage tells a complete story.
+
+## Why Collage?
+
+*   **Higher Engagement:** Stop users from scrolling by giving them 4x the content in one post.
+*   **Storytelling:** Show the start and end of a trip side-by-side.
+*   **Aesthetics:** A well-laid-out grid looks cleaner than a carousel dump.
+
+## Popular Layouts
+
+### 1. Side-by-Side (2 Photos)
+Perfect for:
+*   Before/After comparisons.
+*   "This or That" polls.
+*   Couple photos.
+
+### 2. Vertical Stack (2 Photos)
+Perfect for:
+*   Pinterest pins.
+*   Phone wallpapers.
+*   Outfit details (Zoom in vs Full body).
+
+### 3. Grid (4 Photos)
+The classic 2x2. Perfect for:
+*   Recaps of an event.
+*   Product showcases (Front, Back, Detail, Use).
+
+## How to Join Photos Online
+
+1.  Open the [Collage Maker](/collage-maker).
+2.  **Select Images:** Upload 2 to 4 photos.
+3.  **Choose Layout:** Pick Side-by-Side, Vertical, or Grid.
+4.  **Download:** Save one high-res image. No sign-up, no watermark.
+
+[Start Making Collages](/collage-maker)
+    `
   }
 ];

@@ -42,6 +42,10 @@ const STATIC_URLS = [
   '/profile-picture-maker',
   '/screenshot-beautifier',
   '/exif-remover',
+  '/image-converter-online',
+  '/meme-generator-online',
+  '/color-palette-generator',
+  '/collage-maker',
   '/blog'
 ];
 

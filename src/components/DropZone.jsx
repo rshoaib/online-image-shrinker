@@ -1,9 +1,30 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { UploadCloud } from 'lucide-react';
 
 const DropZone = ({ onFileSelect }) => {
   const [isDragging, setIsDragging] = useState(false);
   const inputRef = useRef(null);
+
+  // Global Paste Listener
+  useEffect(() => {
+    const handlePaste = (e) => {
+      if (e.clipboardData && e.clipboardData.items) {
+        const items = Array.from(e.clipboardData.items);
+        const imageFiles = items
+          .filter(item => item.type.startsWith('image/'))
+          .map(item => item.getAsFile())
+          .filter(file => file !== null);
+
+        if (imageFiles.length > 0) {
+          e.preventDefault();
+          handleFiles(imageFiles);
+        }
+      }
+    };
+
+    window.addEventListener('paste', handlePaste);
+    return () => window.removeEventListener('paste', handlePaste);
+  }, []);
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -72,7 +93,7 @@ const DropZone = ({ onFileSelect }) => {
         <h3 className="drop-title">
           {isDragging ? 'Drop it like it\'s hot!' : 'Drag & Drop your image here'}
         </h3>
-        <p className="drop-subtitle">or click to browse</p>
+        <p className="drop-subtitle">or click to browse or paste (Ctrl+V)</p>
       </div>
 
       <div className="supported-formats">

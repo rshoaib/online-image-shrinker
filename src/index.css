@@ -42,6 +42,18 @@
   --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+[data-theme='dark'] {
+  --bg-app: #0f172a;
+  --bg-panel: #1e293b;
+  --bg-surface: #334155;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --border-light: #334155;
+  --border-active: #475569;
+  --primary-glow: rgba(0, 102, 255, 0.4);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

@@ -1,10 +1,12 @@
-import { Github, Coffee, Globe } from 'lucide-react';
+import { Github, Coffee, Globe, Moon, Sun } from 'lucide-react';
 import InstallPrompt from './InstallPrompt';
 import logoUrl from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../contexts/ThemeContext';
 
 const Layout = ({ children, onNavigate }) => {
   const { t, i18n } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
 
   const toggleLanguage = () => {
     // Cycle: EN -> ES -> DE -> EN
@@ -26,6 +28,9 @@ const Layout = ({ children, onNavigate }) => {
           </h1>
         </div>
         <nav className="nav">
+          <button className="lang-btn" onClick={toggleTheme} title="Toggle Theme">
+             {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
           <button className="lang-btn" onClick={toggleLanguage}>
              <Globe size={18} />
              <span>{i18n.language === 'en' ? 'EN' : i18n.language === 'es' ? 'ES' : 'DE'}</span>

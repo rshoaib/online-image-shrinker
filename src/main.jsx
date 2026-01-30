@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { ThemeProvider } from './contexts/ThemeContext';
 import './index.css'
 import './styles/blog.css'
 import './i18n';
@@ -13,7 +14,7 @@ class ErrorBoundary extends React.Component {
     this.state = { hasError: false, error: null, errorInfo: null };
   }
 
-  static getDerivedStateFromError(_error) {
+  static getDerivedStateFromError(error) { // eslint-disable-line no-unused-vars
     return { hasError: true };
   }
 
@@ -44,7 +45,9 @@ class ErrorBoundary extends React.Component {
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ErrorBoundary>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </ErrorBoundary>
   </StrictMode>,
 )
