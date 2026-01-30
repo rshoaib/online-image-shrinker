@@ -1004,5 +1004,110 @@ The classic 2x2. Perfect for:
 
 [Start Making Collages](/collage-maker)
     `
+  },
+  {
+    slug: 'shopify-image-guide',
+    title: 'The Shopify Product Image Guide (2026)',
+    excerpt: 'Stop getting errors. Learn the exact dimensions and formats for high-converting product pages.',
+    iconName: 'ShoppingBag',
+    iconColor: '#96bf48',
+    date: 'Jan 30, 2026',
+    author: 'E-com Expert',
+    category: 'E-commerce',
+    content: `
+Building a Shopify store is hard work. Don't let blurry product photos ruin your conversion rate. Shopify has specific requirements for images, and getting them wrong can lead to slow loading speeds or pixelated zoom.
+
+## The Perfect Shopify Size: 2048 x 2048 px
+
+While Shopify allows images up to 4472 x 4472 px, we recommend **2048 x 2048 pixels** (Square).
+*   **Why?** It's the sweet spot for the "Zoom" feature. Customers can hover over the image to see texture details without the file being massive.
+*   **Minimum:** 800 x 800 px (Below this, zoom won't work).
+
+## Best Formats
+*   **JPEG:** For photographs (models, lifestyle shots). It offers the best color with small file sizes.
+*   **PNG:** Use ONLY if you need a transparent background. Otherwise, it makes the page load slower.
+*   **WebP:** Shopify now supports WebP, which is even faster.
+
+## How to Bulk Process Your Inventory
+If you have 50 product photos from your supplier, resizing them one by one is a nightmare.
+
+1.  Open our [Batch Editor](/tool/batch-editor).
+2.  **Drag & Drop** all 50 images.
+3.  Select the **"Shopify" Preset**.
+    *   This automatically sets the width to 2048px.
+    *   It converts them to High-Quality JPEG (85%).
+4.  Click **Process All**.
+5.  Download your optimized catalog in seconds.
+
+[Optimize for Shopify Now](/tool/batch-editor)
+    `
+  },
+  {
+    slug: 'instagram-portrait-hack',
+    title: 'Stop Cropping Your Art: The Instagram Portrait Hack',
+    excerpt: 'Why square posts are killing your engagement, and how to use the 4:5 ratio to take up more screen space.',
+    iconName: 'Instagram',
+    iconColor: '#E1306C',
+    date: 'Jan 30, 2026',
+    author: 'Social Media Team',
+    category: 'Social Media',
+    content: `
+Have you ever uploaded a beautiful vertical photo to Instagram, only to have the app forcibly crop off the top of your head or your shoes? The default "Square" (1:1) crop is a relic of 2010.
+
+## The Secret Ratio: 4:5
+The pros don't post squares. They post **Portraits**.
+*   **Square (1:1):** 1080 x 1080 px.
+*   **Portrait (4:5):** 1080 x 1350 px.
+
+**The Math:** The Portrait aspect ratio gives you **25% more screen space** on a user's phone. That's 25% more pixels to sell your product, show your art, or grab attention.
+
+## How to Fix Your Photos (Without Photoshop)
+You don't need to guess the crop.
+
+1.  Go to our [Batch Editor](/tool/batch-editor) (or the Crop tool).
+2.  Upload your photo.
+3.  Choose the **"IG Portrait" Preset**.
+    *   This intelligently resizes your image to **1080px width**.
+    *   It adjusts the height to **1350px**.
+4.  If your image is too tall (9:16), use the Crop tool to center the subject first.
+
+**Pro Tip:** This works perfectly for carousels too!
+
+[Resize for Instagram](/tool/batch-editor)
+    `
+  },
+  {
+    slug: 'client-side-privacy',
+    title: 'Is Your Data Safe? Why We Don\'t Use Servers',
+    excerpt: 'Most "free" tools upload your files to the cloud. We process everything on your device. Here is why that matters.',
+    iconName: 'Shield',
+    iconColor: '#10b981',
+    date: 'Jan 31, 2026',
+    author: 'Riz',
+    category: 'Privacy',
+    content: `
+We live in an era of data breaches. Every week, a major company leaks millions of user passwords or files. So why would you trust a random "Free PDF Converter" with your bank statements or passport scans?
+
+## The "Cloud" Problem
+99% of online tools work like this:
+1.  You upload file -> **Their Server**
+2.  Server processes it -> **Creates Copy**
+3.  Server sends back result -> **You Download**
+
+**The Risk:** once the file is on their server, you have lost control. They could be logging it, selling the metadata, or just have weak security that hackers can exploit.
+
+## The "Client-Side" Solution
+**Online Image Shrinker** is built differently. We use a technology called **WebAssembly (WASM)**.
+
+Think of it like downloading a small app that runs *inside* your browser tab.
+*   **No Uploads:** Your image never leaves your computer.
+*   **No Waiting:** Because it doesn't travel over the internet, processing is instant.
+*   **100% Secure:** You could disconnect your internet cable, and our tools would still work perfectly.
+
+## Test It Yourself
+Open our [Compress Tool](/tool/compress), load a file, and then turn off your WiFi. The tool will keep working. That is the proof that your data stays with you.
+
+[Try Secure Tools](/tool/compress)
+    `
   }
 ];
