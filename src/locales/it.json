@@ -1,0 +1,74 @@
+{
+  "common": {
+    "select": "Seleziona",
+    "back": "Indietro",
+    "privacy_policy": "Privacy Policy",
+    "blog": "Blog"
+  },
+  "home": {
+    "title": "Seleziona uno Strumento",
+    "subtitle": "Scegli come ottimizzare le tue immagini oggi.",
+    "tools": {
+      "compress": {
+        "title": "Comprimi Immagine",
+        "desc": "Riduci le dimensioni del file mantenendo la migliore qualità."
+      },
+      "resize": {
+        "title": "Ridimensiona",
+        "desc": "Modifica le dimensioni (larghezza e altezza) in pixel o percentuale."
+      },
+      "crop": {
+        "title": "Ritaglia Immagine",
+        "desc": "Ritaglia per Instagram, YouTube e altri social media."
+      },
+      "watermark": {
+        "title": "Filigrana",
+        "desc": "Proteggi il tuo lavoro aggiungendo sovrapposizioni di testo o logo."
+      },
+      "pdf": {
+        "title": "Immagini in PDF",
+        "desc": "Converti più immagini in un unico documento PDF istantaneamente."
+      },
+      "remove_bg": {
+        "title": "Rimuovi Sfondo",
+        "desc": "Rimuovi automaticamente lo sfondo dell'immagine con un clic."
+      },
+      "upscale": {
+        "title": "Upscale AI",
+        "desc": "Aumenta la risoluzione dell'immagine (2x, 4x) senza perdere qualità."
+      },
+      "screenshot": {
+        "title": "Mockup Screenshot",
+        "desc": "Aggiungi cornici finestre, ombre e sfondi agli screenshot."
+      },
+      "grid": {
+        "title": "Griglia Instagram",
+        "desc": "Dividi le immagini in griglie 3x1, 3x2 o 3x3 per Instagram."
+      },
+      "profile": {
+        "title": "Foto Profilo",
+        "desc": "Crea foto profilo professionali con sfondi personalizzati."
+      },
+      "redact": {
+        "title": "Sfocatura Privacy",
+        "desc": "Oscura informazioni sensibili, volti o testo dagli screenshot."
+      },
+      "exif": {
+        "title": "Visualizzatore EXIF",
+        "desc": "Visualizza e rimuovi i metadati nascosti (GPS, Data) per la privacy."
+      },
+      "converter": {
+        "title": "Convertitore Immagini",
+        "desc": "Converti istantaneamente immagini tra formati JPG, PNG e WebP."
+      },
+      "meme": {
+        "title": "Generatore Meme",
+        "desc": "Crea meme virali con testo personalizzato in alto e in basso."
+      },
+      "palette": {
+        "title": "Generatore Palette",
+        "desc": "Estrai bellissime palette di colori da qualsiasi immagine istantaneamente."
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "common": {
+    "select": "Sélectionner",
+    "back": "Retour",
+    "privacy_policy": "Politique de Confidentialité",
+    "blog": "Blog"
+  },
+  "home": {
+    "title": "Sélectionnez un outil",
+    "subtitle": "Choisissez comment vous souhaitez optimiser vos images aujourd'hui.",
+    "tools": {
+      "compress": {
+        "title": "Compresser Image",
+        "desc": "Réduisez la taille du fichier tout en maintenant la meilleure qualité."
+      },
+      "resize": {
+        "title": "Redimensionner",
+        "desc": "Modifiez les dimensions (largeur et hauteur) en pixels ou en pourcentage."
+      },
+      "crop": {
+        "title": "Recadrer Image",
+        "desc": "Recadrez pour Instagram, YouTube et d'autres réseaux sociaux."
+      },
+      "watermark": {
+        "title": "Filigrane",
+        "desc": "Protégez votre travail en ajoutant du texte ou un logo."
+      },
+      "pdf": {
+        "title": "Images en PDF",
+        "desc": "Convertissez plusieurs images en un seul document PDF instantanément."
+      },
+      "remove_bg": {
+        "title": "Supprimer Arrière-plan",
+        "desc": "Supprimez automatiquement l'arrière-plan des images en un clic."
+      },
+      "upscale": {
+        "title": "Amélioration IA",
+        "desc": "Augmentez la résolution de l'image (2x, 4x) sans perte de qualité."
+      },
+      "screenshot": {
+        "title": "Maquettes Capture",
+        "desc": "Ajoutez des cadres de fenêtre, ombres et arrière-plans aux captures d'écran."
+      },
+      "grid": {
+        "title": "Grille Instagram",
+        "desc": "Divisez les images en grilles 3x1, 3x2 ou 3x3 pour Instagram."
+      },
+      "profile": {
+        "title": "Photo de Profil",
+        "desc": "Créez des photos de profil professionnelles avec des arrière-plans personnalisés."
+      },
+      "redact": {
+        "title": "Flou de Confidentialité",
+        "desc": "Masquez les informations sensibles, visages ou textes des captures d'écran."
+      },
+      "exif": {
+        "title": "Visionneuse EXIF",
+        "desc": "Afficher et supprimer les métadonnées cachées (GPS, Date) pour la confidentialité."
+      },
+      "converter": {
+        "title": "Convertisseur Image",
+        "desc": "Convertissez instantanément des images entre les formats JPG, PNG et WebP."
+      },
+      "meme": {
+        "title": "Générateur Mèmes",
+        "desc": "Créez des mèmes viraux avec du texte personnalisé en haut et en bas."
+      },
+      "palette": {
+        "title": "Générateur Palette",
+        "desc": "Extrayez instantanément de belles palettes de couleurs de n'importe quelle image."
+      }
+    }
+  }
+}

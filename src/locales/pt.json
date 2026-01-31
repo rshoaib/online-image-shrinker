@@ -1,0 +1,74 @@
+{
+  "common": {
+    "select": "Selecionar",
+    "back": "Voltar",
+    "privacy_policy": "Política de Privacidade",
+    "blog": "Blog"
+  },
+  "home": {
+    "title": "Selecione uma Ferramenta",
+    "subtitle": "Escolha como você deseja otimizar suas imagens hoje.",
+    "tools": {
+      "compress": {
+        "title": "Comprimir Imagem",
+        "desc": "Reduza o tamanho do arquivo mantendo a melhor qualidade."
+      },
+      "resize": {
+        "title": "Redimensionar",
+        "desc": "Altere as dimensões (largura e altura) por pixels ou porcentagem."
+      },
+      "crop": {
+        "title": "Recortar Imagem",
+        "desc": "Recorte para Instagram, YouTube e outras redes sociais."
+      },
+      "watermark": {
+        "title": "Marca d'água",
+        "desc": "Proteja seu trabalho adicionando sobreposições de texto ou logotipo."
+      },
+      "pdf": {
+        "title": "Imagens para PDF",
+        "desc": "Converta várias imagens em um único documento PDF instantaneamente."
+      },
+      "remove_bg": {
+        "title": "Remover Fundo",
+        "desc": "Remova automaticamente o fundo da imagem com um clique."
+      },
+      "upscale": {
+        "title": "Upscale IA",
+        "desc": "Aumente a resolução da imagem (2x, 4x) sem perder qualidade."
+      },
+      "screenshot": {
+        "title": "Mockups de Captura",
+        "desc": "Adicione molduras de janela, sombras e fundos às capturas de tela."
+      },
+      "grid": {
+        "title": "Divisor de Grade",
+        "desc": "Divida imagens em grades 3x1, 3x2 ou 3x3 para o Instagram."
+      },
+      "profile": {
+        "title": "Foto de Perfil",
+        "desc": "Crie fotos de perfil profissionais com fundos personalizados."
+      },
+      "redact": {
+        "title": "Desfoque Privacidade",
+        "desc": "Oculte informações confidenciais, rostos ou textos em capturas de tela."
+      },
+      "exif": {
+        "title": "Visualizador EXIF",
+        "desc": "Visualize e remova metadados ocultos (GPS, Data) para privacidade."
+      },
+      "converter": {
+        "title": "Conversor Imagem",
+        "desc": "Converta imagens entre os formatos JPG, PNG e WebP instantaneamente."
+      },
+      "meme": {
+        "title": "Gerador de Memes",
+        "desc": "Crie memes virais com texto personalizado superior e inferior."
+      },
+      "palette": {
+        "title": "Gerador de Paleta",
+        "desc": "Extraia belas paletas de cores de qualquer imagem instantaneamente."
+      }
+    }
+  }
+}

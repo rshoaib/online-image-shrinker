@@ -8,15 +8,7 @@ const Layout = ({ children, onNavigate }) => {
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme } = useTheme();
 
-  const toggleLanguage = () => {
-    // Cycle: EN -> ES -> DE -> EN
-    const current = i18n.language;
-    let nextLang = 'en';
-    if (current === 'en') nextLang = 'es';
-    else if (current === 'es') nextLang = 'de';
-    
-    i18n.changeLanguage(nextLang);
-  };
+  // Language selector is now handled via the dropdown directly
 
   return (
     <div className="layout">
@@ -31,10 +23,21 @@ const Layout = ({ children, onNavigate }) => {
           <button className="lang-btn" onClick={toggleTheme} title="Toggle Theme">
              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
-          <button className="lang-btn" onClick={toggleLanguage}>
-             <Globe size={18} />
-             <span>{i18n.language === 'en' ? 'EN' : i18n.language === 'es' ? 'ES' : 'DE'}</span>
-          </button>
+          <div className="lang-selector-wrapper">
+             <Globe size={18} className="lang-icon"/>
+             <select 
+               className="lang-select" 
+               value={i18n.language} 
+               onChange={(e) => i18n.changeLanguage(e.target.value)}
+             >
+               <option value="en">English</option>
+               <option value="es">Español</option>
+               <option value="de">Deutsch</option>
+               <option value="fr">Français</option>
+               <option value="pt">Português</option>
+               <option value="it">Italiano</option>
+             </select>
+          </div>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }} className="nav-link">{t('common.back')}</a>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('blog'); }} className="nav-link">{t('common.blog')}</a>
         </nav>
@@ -128,25 +131,47 @@ const Layout = ({ children, onNavigate }) => {
           align-items: center;
         }
 
-        .lang-btn {
-           background: transparent;
-           border: 1px solid var(--border-light);
-           color: var(--text-muted);
-           padding: 6px 12px;
-           border-radius: 20px;
-           cursor: pointer;
+        .lang-selector-wrapper {
            display: flex;
            align-items: center;
+           background: transparent;
+           border: 1px solid var(--border-light);
+           border-radius: 20px;
+           padding: 2px 12px; /* Adjusted padding */
            gap: 6px;
-           font-size: 0.85rem;
-           font-weight: 600;
+           position: relative;
            transition: 0.2s;
         }
 
-        .lang-btn:hover {
+        .lang-selector-wrapper:hover {
            background: var(--bg-surface);
-           color: var(--text-main);
            border-color: var(--primary);
+        }
+
+        .lang-icon {
+           color: var(--text-muted);
+           pointer-events: none; /* Let clicks pass through if needed, though select handles it */
+        }
+
+        .lang-select {
+           background: transparent;
+           border: none;
+           color: var(--text-main);
+           font-size: 0.85rem;
+           font-weight: 600;
+           cursor: pointer;
+           outline: none;
+           appearance: none; /* Hides default arrow */
+           padding: 4px 16px 4px 4px; /* Space for custom arrow if we added one, or just clean look */
+           /* Re-enabling standard arrow for usability if appearance:none is too aggressive without replacement */
+           appearance: auto; 
+           -webkit-appearance: auto;
+           max-width: 100px;
+        }
+
+        .lang-select option {
+           background-color: var(--bg-panel);
+           color: var(--text-main);
         }
 
         .nav-link {
