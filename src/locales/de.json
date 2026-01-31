@@ -1,4 +1,22 @@
 {
+  "seo": {
+    "home": {
+      "title": "Online Bildverkleinerer - Kostenloses Datenschutz-First Tool",
+      "description": "Komprimieren, skalieren und optimieren Sie Bilder lokal in Ihrem Browser. Keine Uploads, 100% Datenschutz garantiert."
+    },
+    "compress_jpeg": {
+      "title": "JPEG Bilder Online Komprimieren - Kostenlos & Privat",
+      "description": "Reduzieren Sie die JPEG-Dateigröße um bis zu 90% ohne Qualitätsverlust. Optimieren Sie Ihre Fotos sofort für Web und Reisepässe."
+    },
+    "resize_instagram": {
+      "title": "Für Instagram Skalieren - Kein Zuschneiden & Porträtmodus",
+      "description": "Skalieren Sie Bilder für Instagram Stories, Reels und Posts. Vermeiden Sie Zuschneiden mit unseren intelligenten Hintergrund-Tools."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung - Online Bildverkleinerer",
+      "description": "Wir speichern Ihre Daten nicht. Erfahren Sie mehr über unsere 100% client-seitige Datenschutzverpflichtung."
+    }
+  },
   "common": {
     "select": "Auswählen",
     "back": "Zurück",

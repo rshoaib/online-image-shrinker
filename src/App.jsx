@@ -1,5 +1,6 @@
 import { useState, useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Layout from './components/Layout';
 import DropZone from './components/DropZone';
 import ToolSelector from './components/ToolSelector';
@@ -36,6 +37,7 @@ const PageLoader = () => (
 const AppContent = () => {
   const [files, setFiles] = useState([]);
   const navigate = useNavigate();
+  const { t } = useTranslation();
   
   // Custom navigation handler passed to Layout
   const handleNavigate = (dest) => {
@@ -73,7 +75,7 @@ const AppContent = () => {
 
           {/* PRIVACY ROUTE */}
           <Route path="/privacy" element={
-            <SeoWrapper title="Privacy Policy - Online Image Shrinker">
+            <SeoWrapper title={t('seo.privacy.title')} description={t('seo.privacy.description')}>
                <PrivacyPolicy onBack={() => navigate('/')} />
             </SeoWrapper>
           } />
@@ -91,17 +93,17 @@ const AppContent = () => {
           <Route path="/compress-jpeg" element={
             <SeoLandingPage 
                toolId="compress" 
-               title="Compress JPEG Images Online - Free & Private"
-               description="Reduce JPEG file size by up to 90% without losing quality. Optimize your photos for web and passports instantly."
+               title={t('seo.compress_jpeg.title')}
+               description={t('seo.compress_jpeg.description')}
                files={files} setFiles={setFiles} onBack={handleBack}
             />
           } />
           
           <Route path="/resize-for-instagram" element={
-             <SeoLandingPage 
-               toolId="crop" 
-               title="Resize Images for Instagram (Square & Story)"
-               description="Crop and resize images to fit Instagram posts and stories perfectly. No watermark, free online tool."
+            <SeoLandingPage 
+               toolId="resize" 
+               title={t('seo.resize_instagram.title')}
+               description={t('seo.resize_instagram.description')}
                files={files} setFiles={setFiles} onBack={handleBack}
             />
           } />
@@ -109,8 +111,8 @@ const AppContent = () => {
           <Route path="/convert-heic-to-jpg" element={
              <SeoLandingPage 
                toolId="compress" 
-               title="Convert HEIC to JPG Online - Instant & Secure"
-               description="Convert iPhone photos (HEIC) to standard JPG format. Works locally in your browser for maximum privacy."
+               title={t('seo.heic_to_jpg.title')}
+               description={t('seo.heic_to_jpg.description')}
                files={files} setFiles={setFiles} onBack={handleBack}
             />
           } />
@@ -118,8 +120,8 @@ const AppContent = () => {
           <Route path="/jpg-to-pdf" element={
              <SeoLandingPage 
                toolId="pdf" 
-               title="Convert JPG to PDF Online - Merge Images Free"
-               description="Turn your images into a PDF document in seconds. No upload needed, 100% private and secure."
+               title={t('seo.jpg_to_pdf.title')}
+               description={t('seo.jpg_to_pdf.description')}
                files={files} setFiles={setFiles} onBack={handleBack}
             />
           } />
@@ -127,8 +129,8 @@ const AppContent = () => {
         <Route path="/compress-png" element={
            <SeoLandingPage 
              toolId="compress" 
-             title="Compress PNG Images Online - Transparent & Clear"
-             description="Reduce PNG file size while keeping transparency perfect. Best for logos, icons, and graphics."
+             title={t('seo.compress_png.title')}
+             description={t('seo.compress_png.description')}
              files={files} setFiles={setFiles} onBack={handleBack}
           />
         } />
@@ -136,8 +138,8 @@ const AppContent = () => {
         <Route path="/compress-webp" element={
            <SeoLandingPage 
              toolId="compress" 
-             title="Compress WebP Images - Fast & Efficient"
-             description="Optimize next-gen WebP images for your website. Maximum speed, minimum file size."
+             title={t('seo.compress_webp.title')}
+             description={t('seo.compress_webp.description')}
              files={files} setFiles={setFiles} onBack={handleBack}
           />
         } />
@@ -145,8 +147,8 @@ const AppContent = () => {
         <Route path="/resize-passport-photo" element={
            <SeoLandingPage 
              toolId="passport" 
-             title="Resize Photo for Passport (3.5x4.5cm) - Free Online"
-             description="Make biometrically compliant passport photos. US 2x2, UK, EU standards. Face guides included."
+             title={t('seo.resize_passport.title')}
+             description={t('seo.resize_passport.description')}
              files={files} setFiles={setFiles} onBack={handleBack}
           />
         } />
@@ -379,15 +381,19 @@ const ToolPage = ({ files, setFiles, onBack }) => {
 };
 
 // Reusable SEO Landing Page Component
+// Reusable SEO Landing Page Component
 const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack }) => {
+  // If no specific title/desc passed, SeoWrapper will fallback to home page defaults.
+  // But for specific routes, we want to pass the translated strings.
+  
   return (
     <SeoWrapper title={title} description={description}>
        <div className="seo-landing">
           {files.length === 0 ? (
             <div className="hero-section">
                 <div className="hero-text">
-                  <button onClick={onBack} className="back-link">← View All Tools</button>
-                  <h1>{title.split(' - ')[0]}</h1>
+                  <button onClick={onBack} className="back-link">← {title ? 'Back' : 'View All Tools'}</button>
+                  <h1>{title ? title.split(' - ')[0] : 'Online Image Shrinker'}</h1>
                   <p>{description}</p>
                 </div>
                 <DropZone onFileSelect={setFiles} />
@@ -428,11 +434,11 @@ const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack })
             }
             .hero-text { text-align: center; }
             .hero-text h1 {
-               font-size: 2.5rem;
-               margin-bottom: 16px;
-               background: linear-gradient(to right, #111, #666);
-               -webkit-background-clip: text;
-               -webkit-text-fill-color: transparent;
+              font-size: 2.5rem;
+              margin-bottom: 16px;
+              background: linear-gradient(to right, #111, #666);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
             }
             .hero-text p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6; }
             @keyframes fadeIn {

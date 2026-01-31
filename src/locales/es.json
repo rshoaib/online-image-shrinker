@@ -1,4 +1,22 @@
 {
+  "seo": {
+    "home": {
+      "title": "Reductor de Imágenes Online - Herramienta Gratuita y Privada",
+      "description": "Comprime, redimensiona y optimiza imágenes localmente en tu navegador. Sin subidas, privacidad 100% garantizada."
+    },
+    "compress_jpeg": {
+      "title": "Comprimir Imágenes JPEG Online - Gratis y Privado",
+      "description": "Reduce el tamaño de archivo JPEG hasta un 90% sin perder calidad. Optimiza tus fotos para web y pasaportes al instante."
+    },
+    "resize_instagram": {
+      "title": "Redimensionar para Instagram - Sin Recorte y Modo Retrato",
+      "description": "Redimensiona imágenes para Historias, Reels y Posts de Instagram. Evita recortes con nuestras herramientas inteligentes."
+    },
+    "privacy": {
+      "title": "Política de Privacidad - Reductor de Imágenes Online",
+      "description": "No almacenamos tus datos. Conoce nuestro compromiso de privacidad 100% del lado del cliente."
+    }
+  },
   "common": {
     "select": "Seleccionar",
     "back": "Volver",

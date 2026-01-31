@@ -1,4 +1,42 @@
 {
+  "seo": {
+    "home": {
+      "title": "Réducteur d'Image en Ligne - Outil Gratuit et Privé",
+      "description": "Compressez, redimensionnez et optimisez les images localement dans votre navigateur. Aucun téléchargement, confidentialité garantie à 100%."
+    },
+    "compress_jpeg": {
+      "title": "Compresser Images JPEG en Ligne - Gratuit & Privé",
+      "description": "Réduisez la taille des fichiers JPEG jusqu'à 90% sans perte de qualité. Optimisez vos photos pour le web et les passeports instantanément."
+    },
+    "resize_instagram": {
+      "title": "Redimensionner pour Instagram - Sans Recadrage & Mode Portrait",
+      "description": "Redimensionnez les images pour les Stories, Reels et Posts Instagram. Évitez le recadrage grâce à nos outils intelligents."
+    },
+    "heic_to_jpg": {
+      "title": "Convertir HEIC en JPG en ligne - Instantané et sécurisé",
+      "description": "Convertissez les photos iPhone (HEIC) au format JPG standard. Fonctionne localement dans votre navigateur pour une confidentialité maximale."
+    },
+    "jpg_to_pdf": {
+      "title": "Convertir JPG en PDF en ligne - Fusionner des images gratuitement",
+      "description": "Transformez vos images en un document PDF en quelques secondes. Aucun téléchargement nécessaire, 100 % privé et sécurisé."
+    },
+    "compress_png": {
+      "title": "Compresser Images PNG en ligne - Transparent et clair",
+      "description": "Réduisez la taille du fichier PNG tout en gardant une transparence parfaite. Idéal pour les logos, les icônes et les graphiques."
+    },
+    "compress_webp": {
+      "title": "Compresser Images WebP - Rapide et efficace",
+      "description": "Optimisez les images WebP de nouvelle génération pour votre site Web. Vitesse maximale, taille de fichier minimale."
+    },
+    "resize_passport": {
+      "title": "Redimensionner Photo pour Passeport (3,5x4,5 cm) - Gratuit",
+      "description": "Créez des photos de passeport conformes à la biométrie. Normes américaines 2x2, britanniques et européennes. Guides de visage inclus."
+    },
+    "privacy": {
+      "title": "Politique de Confidentialité - Réducteur d'Image en Ligne",
+      "description": "Nous ne stockons pas vos données. Découvrez notre engagement de confidentialité 100% côté client."
+    }
+  },
   "common": {
     "select": "Sélectionner",
     "back": "Retour",

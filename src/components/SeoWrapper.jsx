@@ -1,15 +1,17 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const SeoWrapper = ({ title, description, children, ...props }) => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     // Determine the current full URL
     const currentUrl = window.location.href;
     const defaultImage = "https://onlineimageshrinker.com/og-image.jpg"; // Placeholder, needs actual image
-    const finalTitle = title || "Online Image Shrinker - Free Privacy-First Tool";
-    const finalDescription = description || "Compress, resize, and optimize images locally in your browser. No uploads, 100% privacy guaranteed.";
+    const finalTitle = title || t('seo.home.title');
+    const finalDescription = description || t('seo.home.description');
 
     // Update Title
     document.title = finalTitle;

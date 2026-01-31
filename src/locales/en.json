@@ -1,4 +1,42 @@
 {
+  "seo": {
+    "home": {
+      "title": "Online Image Shrinker - Free Privacy-First Tool",
+      "description": "Compress, resize, and optimize images locally in your browser. No uploads, 100% privacy guaranteed."
+    },
+    "compress_jpeg": {
+      "title": "Compress JPEG Images Online - Free & Private",
+      "description": "Reduce JPEG file size by up to 90% without losing quality. Optimize your photos for web and passports instantly."
+    },
+    "resize_instagram": {
+      "title": "Resize for Instagram - No Crop & Portrait Mode",
+      "description": "Resize images for Instagram Stories, Reels, and Posts. Avoid cropping with our intelligent background tools."
+    },
+    "heic_to_jpg": {
+      "title": "Convert HEIC to JPG Online - Instant & Secure",
+      "description": "Convert iPhone photos (HEIC) to standard JPG format. Works locally in your browser for maximum privacy."
+    },
+    "jpg_to_pdf": {
+      "title": "Convert JPG to PDF Online - Merge Images Free",
+      "description": "Turn your images into a PDF document in seconds. No upload needed, 100% private and secure."
+    },
+    "compress_png": {
+      "title": "Compress PNG Images Online - Transparent & Clear",
+      "description": "Reduce PNG file size while keeping transparency perfect. Best for logos, icons, and graphics."
+    },
+    "compress_webp": {
+      "title": "Compress WebP Images - Fast & Efficient",
+      "description": "Optimize next-gen WebP images for your website. Maximum speed, minimum file size."
+    },
+    "resize_passport": {
+      "title": "Resize Photo for Passport (3.5x4.5cm) - Free Online",
+      "description": "Make biometrically compliant passport photos. US 2x2, UK, EU standards. Face guides included."
+    },
+    "privacy": {
+      "title": "Privacy Policy - Online Image Shrinker",
+      "description": "We do not store your data. Learn about our 100% client-side privacy commitment."
+    }
+  },
   "common": {
     "select": "Select",
     "back": "Back",
