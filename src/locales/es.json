@@ -74,6 +74,22 @@
       "exif": {
         "title": "Visor y Borrador EXIF",
         "desc": "Ver y eliminar metadatos ocultos (GPS, Fecha) por privacidad."
+      },
+      "converter": {
+        "title": "Conversor de Imágenes",
+        "desc": "Convierte imágenes entre formatos JPG, PNG y WebP al instante."
+      },
+      "meme": {
+        "title": "Generador de Memes",
+        "desc": "Crea memes virales con texto superior e inferior personalizado."
+      },
+      "palette": {
+        "title": "Generador de Paletas",
+        "desc": "Extrae hermosas paletas de colores de cualquier imagen al instante."
+      },
+      "magic_eraser": {
+        "title": "Borrador Mágico",
+        "desc": "Elimina objetos no deseados, personas o texto de fotos al instante con IA."
       }
     }
   }

@@ -106,6 +106,10 @@
       "palette": {
         "title": "Palette Generator",
         "desc": "Extract beautiful color palettes from any image instantly."
+      },
+      "magic_eraser": {
+        "title": "Magic Eraser",
+        "desc": "Remove unwanted objects, people, or text from photos instantly with AI."
       }
     }
   }

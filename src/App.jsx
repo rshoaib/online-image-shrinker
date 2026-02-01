@@ -15,6 +15,7 @@ const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const BlogList = lazy(() => import('./components/BlogList'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
 const ExifEditor = lazy(() => import('./components/ExifEditor'));
+const MagicEraserEditor = lazy(() => import('./components/MagicEraserEditor'));
 
 const PageLoader = () => (
   <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
@@ -279,6 +280,15 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/magic-eraser" element={
+             <SeoLandingPage 
+               toolId="magic-eraser" 
+               title="Magic Eraser Online - Remove Unwanted Objects Free"
+               description="Erase unwanted objects, people, or text from photos instantly using AI Inpainting. Free and Private."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -311,6 +321,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'image-converter': return { title: 'Image Converter', desc: 'Convert images to JPG, PNG, and WebP formats.' };
       case 'meme-generator': return { title: 'Meme Generator', desc: 'Create viral memes with custom text instantly.' };
       case 'palette-generator': return { title: 'Color Palette Generator', desc: 'Extract beautiful color palettes from images.' };
+      case 'magic-eraser': return { title: 'Magic Eraser', desc: 'Remove unwanted objects and blemishes with AI.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };
