@@ -167,22 +167,14 @@ const MagicEraserEditor = ({ file, onBack }) => {
     setHistory([...history, currentUrl]);
 
     // Small timeout to allow UI to update (show loading state)
-    setTimeout(() => {
+    requestAnimationFrame(() => {
+     setTimeout(() => {
         try {
             const cv = window.cv;
-            
-            // 1. Read Image
-            // We read from the current state of canvas (which has the red lines drawn on it... wait!)
-            // PROBLEM: The main canvas currently has red lines drawn on it by the user. 
-            // We need to run inpaint on the *clean* image vs the *mask*.
-            // So we should maintain the "Current Clean State" separately? 
-            // OR: We can re-draw the clean image (image or resultImage) onto a temp canvas to read src.
-            
-            // Let's create temp mats
-            const srcMat = cv.imread(resultImage ? resultImage : image); // Helper 'imread' usually takes an ID. 
-            // cv.imread works on HTMLImageElement or Canvas ID.
-            
-            // Create a temp canvas to hold the CLEAN source (without red lines)
+            console.log("Starting Inpaint...");
+
+            // 1. Get Data from Canvases
+            // Source (Clean)
             const tempSrcCanvas = document.createElement('canvas');
             tempSrcCanvas.width = canvasRef.current.width;
             tempSrcCanvas.height = canvasRef.current.height;
@@ -192,14 +184,9 @@ const MagicEraserEditor = ({ file, onBack }) => {
             } else {
                 tempCtx.drawImage(image, 0, 0);
             }
+            const srcData = tempCtx.getImageData(0, 0, tempSrcCanvas.width, tempSrcCanvas.height);
             
-            // src
-            const src = cv.imread(tempSrcCanvas);
-            
-            // mask
-            // The maskCanvasRef has white lines on transparent bg. We need white on black.
-            // Let's fill black first? No, we needed to do that before drawing. 
-            // Fix: Composite "Source-Over" white lines on black bg.
+            // Mask (White on Black)
             const finalMaskCanvas = document.createElement('canvas');
             finalMaskCanvas.width = maskCanvasRef.current.width;
             finalMaskCanvas.height = maskCanvasRef.current.height;
@@ -207,50 +194,60 @@ const MagicEraserEditor = ({ file, onBack }) => {
             fCtx.fillStyle = 'black';
             fCtx.fillRect(0,0, finalMaskCanvas.width, finalMaskCanvas.height);
             fCtx.drawImage(maskCanvasRef.current, 0, 0);
+            const maskData = fCtx.getImageData(0, 0, finalMaskCanvas.width, finalMaskCanvas.height);
+
+            // 2. Create Mats
+            let src = cv.matFromImageData(srcData);
+            let mask = cv.matFromImageData(maskData);
+            let dst = new cv.Mat();
             
-            const mask = cv.imread(finalMaskCanvas);
+            console.log("Mats created. Src:", src.cols, src.rows, src.type(), "Mask:", mask.cols, mask.rows, mask.type());
+
+            // 3. Convert Formats
+            // src: RGBA (8UC4) -> RGB (8UC3)
+            cv.cvtColor(src, src, cv.COLOR_RGBA2RGB, 0);
             
-            // Convert to proper formats
-            // src needs 3 channels usually?
-            // mask needs 1 channel 8-bit
+            // mask: RGBA (8UC4) -> Gray (8UC1)
             cv.cvtColor(mask, mask, cv.COLOR_RGBA2GRAY, 0);
-            // cv.threshold(mask, mask, 10, 255, cv.THRESH_BINARY); // Ensure strict binary
+            cv.threshold(mask, mask, 10, 255, cv.THRESH_BINARY);
             
-            const dst = new cv.Mat();
-            
-            // INPAINT
-            // 3.0 is the radius
-            // cv.INPAINT_TELEA or cv.INPAINT_NS
+            console.log("Converted. Src:", src.type(), "Mask:", mask.type());
+
+            // 4. Inpaint
+            console.log("Running inpaint...");
             cv.inpaint(src, mask, dst, 3, cv.INPAINT_TELEA);
+            console.log("Inpaint done.");
             
-            // Show result
+            // 5. Show Result
             cv.imshow(canvasRef.current, dst);
             
-            // Save result to state so we can continue editing
+            // 6. Update State
             const newUrl = canvasRef.current.toDataURL();
             const newImg = new Image();
             newImg.src = newUrl;
             newImg.onload = () => {
                 setResultImage(newImg);
                 
-                // Clear the mask for next time
+                // Clear the mask
                 const maskCtx = maskCanvasRef.current.getContext('2d');
                 maskCtx.clearRect(0, 0, maskCanvasRef.current.width, maskCanvasRef.current.height);
                 
-                // Cleanup Mats
+                // Cleanup
                 src.delete();
                 mask.delete();
                 dst.delete();
                 setIsProcessing(false);
                 triggerConfetti();
+                console.log("Finished.");
             };
 
         } catch (e) {
-            console.error(e);
-            alert("Error running inpaint. See console.");
+            console.error("OpenCV Error:", e);
+            alert("Error running inpaint: " + (e.message || e));
             setIsProcessing(false);
         }
-    }, 100);
+     }, 100);
+    });
   };
 
   const handleUndo = () => {
