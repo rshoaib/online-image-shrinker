@@ -46,6 +46,7 @@ const STATIC_URLS = [
   '/meme-generator-online',
   '/color-palette-generator',
   '/collage-maker',
+  '/image-to-text',
   '/blog'
 ];
 

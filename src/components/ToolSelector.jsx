@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate, Sparkles } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate, Sparkles, ScanText } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -241,6 +241,19 @@ const ToolSelector = ({ onSelectTool }) => {
           <div className="card-content">
             <h3>Magic Eraser <span className="badge">Wow</span></h3>
             <p>Remove unwanted objects, people, or text from photos instantly with AI.</p>
+          </div>
+          <div className="card-action">
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card ocr" onClick={() => onSelectTool('image-to-text')}>
+          <div className="icon-wrapper">
+             <ScanText size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Image to Text <span className="badge">New</span></h3>
+            <p>Extract text from images, screenshots, or documents instantly (OCR).</p>
           </div>
           <div className="card-action">
              <span>{t('common.select')}</span> <ArrowRight size={16} />

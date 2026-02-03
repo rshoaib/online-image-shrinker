@@ -49,7 +49,7 @@ const AppContent = () => {
       navigate('/privacy');
     } else if (dest === 'blog') {
       navigate('/blog');
-    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online'].includes(dest)) {
+    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text'].includes(dest)) {
       navigate(`/${dest}`);
     } else {
       navigate(`/tool/${dest}`);
@@ -289,6 +289,15 @@ const AppContent = () => {
             />
           } />
 
+          <Route path="/image-to-text" element={
+             <SeoLandingPage 
+               toolId="ocr" 
+               title="Image to Text Converter - Free OCR Online"
+               description="Extract text from images, scanned documents, or screenshots instantly. 100% free and private OCR using your browser."
+               files={files} setFiles={setFiles} onBack={handleBack}
+            />
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -322,6 +331,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'meme-generator': return { title: 'Meme Generator', desc: 'Create viral memes with custom text instantly.' };
       case 'palette-generator': return { title: 'Color Palette Generator', desc: 'Extract beautiful color palettes from images.' };
       case 'magic-eraser': return { title: 'Magic Eraser', desc: 'Remove unwanted objects and blemishes with AI.' };
+      case 'ocr': return { title: 'Image to Text', desc: 'Extract text from images instantly (OCR).' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };

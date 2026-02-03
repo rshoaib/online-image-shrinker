@@ -26,6 +26,7 @@ const ColorPaletteEditor = lazy(() => import('./ColorPaletteEditor'));
 const PassportEditor = lazy(() => import('./PassportEditor'));
 const CollageEditor = lazy(() => import('./CollageEditor'));
 const MagicEraserEditor = lazy(() => import('./MagicEraserEditor'));
+const OcrEditor = lazy(() => import('./OcrEditor'));
 
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
@@ -83,6 +84,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <CollageEditor files={files} setFiles={setFiles} onBack={onBack} />;
     case 'magic-eraser':
       return <MagicEraserEditor file={files[0]} onBack={onBack} />;
+    case 'ocr':
+      return <OcrEditor file={files[0]} onBack={onBack} />;
     default:
       if (files.length === 1) {
         return <ImageEditor files={files} setFiles={setFiles} onBack={onBack} mode={toolId} />;
