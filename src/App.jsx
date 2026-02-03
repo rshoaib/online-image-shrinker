@@ -68,7 +68,7 @@ const AppContent = () => {
           {/* HOME ROUTE */}
           <Route path="/" element={
              <SeoWrapper>
-               <ToolSelector onSelectTool={(tool) => navigate(`/tool/${tool}`)} />
+               <ToolSelector onSelectTool={handleNavigate} />
                <FeaturesSection />
                <FAQSection />
              </SeoWrapper>
