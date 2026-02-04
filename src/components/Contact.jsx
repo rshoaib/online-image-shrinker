@@ -30,8 +30,8 @@ const Contact = () => {
               Click the button below to send us an email.
             </p>
             {/* REPLACE WITH ACTUAL EMAIL */}
-            <a href="mailto:support@onlineimageshrinker.com" className="contact-link">
-              support@onlineimageshrinker.com
+            <a href="mailto:segmentbi@gmail.com" className="contact-link">
+              segmentbi@gmail.com
             </a>
           </div>
 
