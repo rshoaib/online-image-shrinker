@@ -1,0 +1,64 @@
+
+> image-compressor@0.0.0 lint
+> eslint .
+
+
+C:\Projects\onlineimageshrinker\src\components\CollageEditor.jsx
+  3:10  error  'useTranslation' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+C:\Projects\onlineimageshrinker\src\components\CompareSlider.jsx
+  32:6  warning  React Hook useEffect has a missing dependency: 'resize'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Projects\onlineimageshrinker\src\components\ExifEditor.jsx
+  65:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  63 |     if (activeFile) {
+  64 |       setTimeout(() => extractExif(activeFile), 0);
+> 65 |       setCleanedUrl(null); // Reset cleaned state on new file
+     |       ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  66 |     }
+  67 |   }, [activeFile]);
+  68 |  react-hooks/set-state-in-effect
+
+C:\Projects\onlineimageshrinker\src\components\GridSplitterEditor.jsx
+   1:20  error    'useRef' is defined but never used. Allowed unused vars must match /^[A-Z_]/u                                  no-unused-vars
+  24:6   warning  React Hook useEffect has a missing dependency: 'gridFormat'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Projects\onlineimageshrinker\src\components\ImageConverterEditor.jsx
+  35:11  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  33 |           const url = URL.createObjectURL(file);
+  34 |           setTimeout(() => setImgSrc(url), 0);
+> 35 |           setOriginalSize(file.size);
+     |           ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  36 |           
+  37 |           // Default target based on source
+  38 |           setTimeout(() => {  react-hooks/set-state-in-effect
+
+C:\Projects\onlineimageshrinker\src\components\ImageEditor.jsx
+  44:6  warning  React Hook useEffect has missing dependencies: 'getImageDimensions' and 'previewUrl'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  65:6  warning  React Hook useEffect has missing dependencies: 'mode' and 'processImage'. Either include them or remove the dependency array              react-hooks/exhaustive-deps
+
+C:\Projects\onlineimageshrinker\src\components\OcrEditor.jsx
+  22:6  warning  React Hook useEffect has missing dependencies: 'previewUrl' and 'startOcr'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Projects\onlineimageshrinker\src\components\ScreenshotEditor.jsx
+  59:6  warning  React Hook useEffect has a missing dependency: 'gradients'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Projects\onlineimageshrinker\src\contexts\ThemeContext.jsx
+  29:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+✖ 11 problems (5 errors, 6 warnings)
+

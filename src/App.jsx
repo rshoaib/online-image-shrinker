@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense, lazy } from 'react';
+import { useState, Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Layout from './components/Layout';
@@ -16,6 +16,8 @@ const BlogList = lazy(() => import('./components/BlogList'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
 const ExifEditor = lazy(() => import('./components/ExifEditor'));
 const MagicEraserEditor = lazy(() => import('./components/MagicEraserEditor'));
+const TermsOfService = lazy(() => import('./components/TermsOfService'));
+const Contact = lazy(() => import('./components/Contact'));
 
 const PageLoader = () => (
   <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
@@ -51,6 +53,10 @@ const AppContent = () => {
       navigate('/blog');
     } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text'].includes(dest)) {
       navigate(`/${dest}`);
+    } else if (dest === 'terms') {
+      navigate('/terms');
+    } else if (dest === 'contact') {
+      navigate('/contact');
     } else {
       navigate(`/tool/${dest}`);
     }
@@ -78,6 +84,18 @@ const AppContent = () => {
           <Route path="/privacy" element={
             <SeoWrapper title={t('seo.privacy.title')} description={t('seo.privacy.description')}>
                <PrivacyPolicy onBack={() => navigate('/')} />
+            </SeoWrapper>
+          } />
+
+          {/* TERMS & CONTACT ROUTES */}
+          <Route path="/terms" element={
+            <SeoWrapper title="Terms of Service - Online Image Shrinker" description="Terms and conditions for using Online Image Shrinker.">
+               <TermsOfService />
+            </SeoWrapper>
+          } />
+           <Route path="/contact" element={
+            <SeoWrapper title="Contact Us - Online Image Shrinker" description="Get in touch with the Online Image Shrinker team.">
+               <Contact />
             </SeoWrapper>
           } />
 

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Download, Grid, ArrowLeft, Image as ImageIcon } from 'lucide-react';
 import JSZip from 'jszip';
 
@@ -7,7 +7,7 @@ const GridSplitterEditor = ({ file, onBack }) => {
   const [image, setImage] = useState(null);
 
   const [isProcessing, setIsProcessing] = useState(false);
-  const canvasRef = useRef(null);
+
   const [splitPreviews, setSplitPreviews] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const GridSplitterEditor = ({ file, onBack }) => {
         generatePreviews(img, gridFormat);
       };
     }
-  }, [file]);
+  }, [file, gridFormat]);
 
   useEffect(() => {
     if (image) {

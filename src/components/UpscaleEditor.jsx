@@ -15,9 +15,42 @@ const UpscaleEditor = ({ file, onBack }) => {
   const [scaleFactor, setScaleFactor] = useState(2); // Default to 2x
   const [isCopied, setIsCopied] = useState(false);
 
-  // ... (useEffect and processImage kept same)
+  useEffect(() => {
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setOriginalUrl(url);
+      return () => URL.revokeObjectURL(url);
+    }
+  }, [file]);
 
-  // ...
+  const processImage = async () => {
+    if (!originalUrl) return;
+    
+    try {
+      setIsProcessing(true);
+      setError(null);
+      setProgress('Loading AI Model...');
+      
+      const upscaler = new Upscaler();
+      setProgress('Upscaling Image...');
+      
+      const upscaledSrc = await upscaler.upscale(originalUrl, {
+        patchSize: 64,
+        padding: 2,
+        progress: (amount) => {
+          setProgress(`Processing... ${Math.round(amount * 100)}%`);
+        }
+      });
+
+      setProcessedUrl(upscaledSrc);
+      triggerConfetti();
+    } catch (err) {
+      console.error('Upscale error:', err);
+      setError('Failed to upscale image. Please try a smaller image.');
+    } finally {
+      setIsProcessing(false);
+    }
+  };
 
   const handleDownload = () => {
     if (!processedUrl) return;
@@ -41,7 +74,15 @@ const UpscaleEditor = ({ file, onBack }) => {
 
   return (
     <div className="editor-container">
-      {/* ... Header and Workspace ... */}
+      <div className="editor-header">
+        <button onClick={onBack} className="back-btn">
+          <ArrowLeft size={20} /> Back
+        </button>
+        <h2>AI Upscaler</h2>
+        <a href="https://upscalerjs.com" target="_blank" rel="noopener noreferrer" className="help-link">
+          Powered by UpscalerJS
+        </a>
+      </div>
       
       <div className="editor-workspace">
         {/* ... (Existing logic for workspace) ... */}

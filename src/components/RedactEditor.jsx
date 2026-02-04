@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Download, ArrowLeft, Eraser, Undo, Eye } from 'lucide-react';
 
 const RedactEditor = ({ file, onBack }) => {
@@ -23,11 +23,7 @@ const RedactEditor = ({ file, onBack }) => {
     }
   }, [file]);
 
-  useEffect(() => {
-    if (image && canvasRef.current) {
-      drawCanvas();
-    }
-  }, [image, blurRegions, currentRect]);
+
 
   const getMousePos = (e) => {
     const rect = canvasRef.current.getBoundingClientRect();
@@ -71,7 +67,7 @@ const RedactEditor = ({ file, onBack }) => {
     setCurrentRect(null);
   };
 
-  const drawCanvas = () => {
+  const drawCanvas = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas || !image) return;
     const ctx = canvas.getContext('2d');
@@ -122,7 +118,13 @@ const RedactEditor = ({ file, onBack }) => {
             ctx.strokeRect(x, y, w, h);
         }
     });
-  };
+  }, [image, blurRegions, currentRect]);
+
+  useEffect(() => {
+    if (image && canvasRef.current) {
+      drawCanvas();
+    }
+  }, [image, drawCanvas]);
 
   const handleDownload = () => {
     const link = document.createElement('a');

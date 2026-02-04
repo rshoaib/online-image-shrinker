@@ -1,9 +1,32 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, Download, LayoutTemplate, Plus, X } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 
-const CollageEditor = ({ files, setFiles, onBack }) => {
-  const { t } = useTranslation();
+const drawCover = (ctx, img, x, y, w, h) => {
+      // Scale image to cover the area x,y,w,h
+      const ratio = w / h;
+      const imgRatio = img.width / img.height;
+      
+      let sx, sy, sw, sh;
+      
+      if (imgRatio > ratio) {
+          // Image is wider than area, crop sides
+          sh = img.height;
+          sw = img.height * ratio;
+          sy = 0;
+          sx = (img.width - sw) / 2;
+      } else {
+          // Image is taller than area, crop top/bottom
+          sw = img.width;
+          sh = img.width / ratio;
+          sx = 0;
+          sy = (img.height - sh) / 2;
+      }
+      
+      ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+  };
+
+const CollageEditor = ({ files, onBack }) => {
+  // const { t } = useTranslation();
   const [layout, setLayout] = useState('2-side'); // '2-side', '2-vert', '4-grid'
   const [canvasUrl, setCanvasUrl] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -20,32 +43,13 @@ const CollageEditor = ({ files, setFiles, onBack }) => {
             file: f,
             url: URL.createObjectURL(f)
         }));
-        setImages(loaded.slice(0, 4)); // Max 4 for now
+        setTimeout(() => setImages(loaded.slice(0, 4)), 0); // Max 4 for now
     }
-  }, []);
+  }, [files]);
 
-  useEffect(() => {
-    if (images.length > 0) {
-        drawCollage();
-    }
-  }, [images, layout]);
 
-  const handleAddFile = (e) => {
-    if (e.target.files && e.target.files.length > 0 && images.length < 4) {
-        const newFiles = Array.from(e.target.files).map(f => ({
-            id: Math.random().toString(36),
-            file: f,
-            url: URL.createObjectURL(f)
-        }));
-        setImages(prev => [...prev, ...newFiles].slice(0, 4));
-    }
-  };
 
-  const handleRemove = (id) => {
-    setImages(prev => prev.filter(img => img.id !== id));
-  };
-
-  const drawCollage = async () => {
+  const drawCollage = useCallback(async () => {
     setLoading(true);
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
@@ -107,31 +111,32 @@ const CollageEditor = ({ files, setFiles, onBack }) => {
 
     setCanvasUrl(canvas.toDataURL('image/jpeg', 0.9));
     setLoading(false);
+  }, [images, layout]);
+
+
+
+  useEffect(() => {
+    if (images.length > 0) {
+        setTimeout(() => drawCollage(), 0);
+    }
+  }, [images, drawCollage]);
+
+  const handleAddFile = (e) => {
+    if (e.target.files && e.target.files.length > 0 && images.length < 4) {
+        const newFiles = Array.from(e.target.files).map(f => ({
+            id: Math.random().toString(36),
+            file: f,
+            url: URL.createObjectURL(f)
+        }));
+        setImages(prev => [...prev, ...newFiles].slice(0, 4));
+    }
   };
 
-  const drawCover = (ctx, img, x, y, w, h) => {
-      // Scale image to cover the area x,y,w,h
-      const ratio = w / h;
-      const imgRatio = img.width / img.height;
-      
-      let sx, sy, sw, sh;
-      
-      if (imgRatio > ratio) {
-          // Image is wider than area, crop sides
-          sh = img.height;
-          sw = img.height * ratio;
-          sy = 0;
-          sx = (img.width - sw) / 2;
-      } else {
-          // Image is taller than area, crop top/bottom
-          sw = img.width;
-          sh = img.width / ratio;
-          sx = 0;
-          sy = (img.height - sh) / 2;
-      }
-      
-      ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+  const handleRemove = (id) => {
+    setImages(prev => prev.filter(img => img.id !== id));
   };
+
+
 
   const handleDownload = () => {
       if (!canvasUrl) return;

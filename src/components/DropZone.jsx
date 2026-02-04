@@ -1,9 +1,22 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { UploadCloud } from 'lucide-react';
 
 const DropZone = ({ onFileSelect }) => {
   const [isDragging, setIsDragging] = useState(false);
   const inputRef = useRef(null);
+
+  const handleFiles = useCallback((files) => {
+    const validFiles = files.filter(file => 
+      file.type.startsWith('image/') || 
+      file.name.toLowerCase().endsWith('.heic') || 
+      file.name.toLowerCase().endsWith('.heif')
+    );
+    if (validFiles.length > 0) {
+      onFileSelect(validFiles);
+    } else {
+      alert('Please upload image files (JPG, PNG, WebP, HEIC).');
+    }
+  }, [onFileSelect]);
 
   // Global Paste Listener
   useEffect(() => {
@@ -24,7 +37,7 @@ const DropZone = ({ onFileSelect }) => {
 
     window.addEventListener('paste', handlePaste);
     return () => window.removeEventListener('paste', handlePaste);
-  }, []);
+  }, [handleFiles]);
 
   const handleDragOver = (e) => {
     e.preventDefault();
@@ -55,18 +68,7 @@ const DropZone = ({ onFileSelect }) => {
     }
   };
 
-  const handleFiles = (files) => {
-    const validFiles = files.filter(file => 
-      file.type.startsWith('image/') || 
-      file.name.toLowerCase().endsWith('.heic') || 
-      file.name.toLowerCase().endsWith('.heif')
-    );
-    if (validFiles.length > 0) {
-      onFileSelect(validFiles);
-    } else {
-      alert('Please upload image files (JPG, PNG, WebP, HEIC).');
-    }
-  };
+
 
   return (
     <div 

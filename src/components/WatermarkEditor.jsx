@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { ArrowLeft, Type, Download } from 'lucide-react';
 
 const WatermarkEditor = ({ file, onBack }) => {
@@ -7,20 +7,16 @@ const WatermarkEditor = ({ file, onBack }) => {
   const [color, setColor] = useState('#ffffff');
   const [size, setSize] = useState(48);
   const [position, setPosition] = useState('center'); // center, tl, tr, bl, br
-  const [previewUrl, setPreviewUrl] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
   
   const canvasRef = useRef(null);
 
-  useEffect(() => {
-    if (file) {
-      setPreviewUrl(URL.createObjectURL(file));
-      drawPreview();
-    }
-  }, [file, text, opacity, color, size, position]);
 
-  const drawPreview = () => {
+
+  const drawPreview = useCallback(() => {
+      if (!imageUrl) return;
       const img = new Image();
-      img.src = URL.createObjectURL(file);
+      img.src = imageUrl;
       img.onload = () => {
          const canvas = canvasRef.current;
          if (!canvas) return;
@@ -54,7 +50,21 @@ const WatermarkEditor = ({ file, onBack }) => {
 
          ctx.fillText(text, x, y);
       };
-  };
+  }, [imageUrl, text, size, color, opacity, position]);
+
+  useEffect(() => {
+    if (file) {
+        const url = URL.createObjectURL(file);
+        setTimeout(() => setImageUrl(url), 0);
+        return () => URL.revokeObjectURL(url);
+    }
+  }, [file]);
+
+  useEffect(() => {
+    if (imageUrl) {
+      drawPreview();
+    }
+  }, [imageUrl, drawPreview]);
 
   const handleDownload = () => {
      if (canvasRef.current) {

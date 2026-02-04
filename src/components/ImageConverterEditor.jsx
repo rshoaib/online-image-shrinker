@@ -27,17 +27,19 @@ const ImageConverterEditor = ({ file, onBack }) => {
                 alert("Could not decode HEIC file.");
             });
          
-         setTargetFormat('image/jpeg'); // Default target for HEIC
+         setTimeout(() => setTargetFormat('image/jpeg'), 0); // Default target for HEIC
       } else {
           // Standard images
           const url = URL.createObjectURL(file);
-          setImgSrc(url);
-          setOriginalSize(file.size);
+          setTimeout(() => setImgSrc(url), 0);
+          setTimeout(() => setOriginalSize(file.size), 0);
           
           // Default target based on source
-          if (file.type === 'image/png') setTargetFormat('image/jpeg');
-          else if (file.type === 'image/jpeg') setTargetFormat('image/png');
-          else setTargetFormat('image/jpeg');
+          setTimeout(() => {
+              if (file.type === 'image/png') setTargetFormat('image/jpeg');
+              else if (file.type === 'image/jpeg') setTargetFormat('image/png');
+              else setTargetFormat('image/jpeg');
+          }, 0);
     
           return () => URL.revokeObjectURL(url);
       }

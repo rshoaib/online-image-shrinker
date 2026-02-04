@@ -2,7 +2,7 @@ import { Github, Coffee, Globe, Moon, Sun } from 'lucide-react';
 import InstallPrompt from './InstallPrompt';
 import logoUrl from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '../hooks/useTheme';
 
 const Layout = ({ children, onNavigate }) => {
   const { t, i18n } = useTranslation();
@@ -62,8 +62,10 @@ const Layout = ({ children, onNavigate }) => {
            >
              <Coffee size={16} /> <span>Donate</span>
            </a>
-           <button onClick={() => onNavigate && onNavigate('privacy')} className="footer-link">{t('common.privacy_policy')}</button>
-           <button onClick={() => onNavigate && onNavigate('blog')} className="footer-link">{t('common.blog')}</button>
+            <button onClick={() => onNavigate && onNavigate('privacy')} className="footer-link">{t('common.privacy_policy')}</button>
+            <button onClick={() => onNavigate && onNavigate('terms')} className="footer-link">Terms</button>
+            <button onClick={() => onNavigate && onNavigate('contact')} className="footer-link">Contact</button>
+            <button onClick={() => onNavigate && onNavigate('blog')} className="footer-link">{t('common.blog')}</button>
            <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link"><Github size={16} /></a>
         </div>
       </footer>

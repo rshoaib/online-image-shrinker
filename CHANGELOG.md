@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [1.2.1] - 2026-02-04
+### Fixed
+- **Site Health**: Resolved numerous linting errors and synchronous state update issues across multiple editors.
+- **Performance**: Refactored `useImageProcessor` and `ThemeContext` for better stability and Fast Refresh support.
+
+### Added
+- **Legal Pages**: Added `TermsOfService` and `Contact` pages.
+- **Navigation**: Updated footer with links to new legal pages.
+
 ## [1.2.0] - 2026-01-23
 ### Added
 - **Screenshot Beautifier**: New tool to add backgrounds, shadows, and window frames to screenshots (`/screenshot-beautifier`).

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, FileText, Copy, Download, RefreshCw, AlertCircle } from 'lucide-react';
 import Tesseract from 'tesseract.js';
 import ShareCard from './ShareCard';
@@ -11,17 +11,8 @@ const OcrEditor = ({ file, onBack }) => {
   const [error, setError] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
 
-  useEffect(() => {
-    if (file) {
-      setPreviewUrl(URL.createObjectURL(file));
-      startOcr(); // Auto-start
-    }
-    return () => {
-      if (previewUrl) URL.revokeObjectURL(previewUrl);
-    };
-  }, [file]);
-
-  const startOcr = async () => {
+  // Wrap startOcr first so it can be used in effect
+  const startOcr = useCallback(async () => {
     if (!file) return;
 
     setIsProcessing(true);
@@ -54,7 +45,18 @@ const OcrEditor = ({ file, onBack }) => {
     } finally {
       setIsProcessing(false);
     }
-  };
+  }, [file]);
+
+  useEffect(() => {
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setPreviewUrl(url);
+      startOcr(); // Auto-start
+      return () => {
+        URL.revokeObjectURL(url);
+      };
+    }
+  }, [file, startOcr]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(text);

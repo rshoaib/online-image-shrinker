@@ -36,12 +36,12 @@ const ImageEditor = ({ file, onBack, mode }) => {
         }));
       });
       // Initial preview
-      setPreviewUrl(URL.createObjectURL(file));
+      setTimeout(() => setPreviewUrl(URL.createObjectURL(file)), 0);
     }
     return () => {
       if (previewUrl) URL.revokeObjectURL(previewUrl);
     };
-  }, [file]);
+  }, [file, getImageDimensions]);
 
   // Debounced Processing
   useEffect(() => {
@@ -62,7 +62,7 @@ const ImageEditor = ({ file, onBack, mode }) => {
       }
     }, 500); // 500ms debounce
 
-  }, [settings, file, originalDimensions]);
+  }, [settings, file, originalDimensions, mode, processImage]);
 
   const handleDownload = () => {
     if (!processedImage) return;

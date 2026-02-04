@@ -2,25 +2,21 @@ import { useState, useEffect, useRef } from 'react';
 import { Download, ArrowLeft, Image as ImageIcon, Monitor, Layers, Maximize, Copy, Check } from 'lucide-react';
 import { copyCanvasToClipboard } from '../utils/clipboard';
 
-const ScreenshotEditor = ({ file, onBack }) => {
-  const [originalImage, setOriginalImage] = useState(null);
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [error, setError] = useState(null);
-  const [isCopied, setIsCopied] = useState(false);
+const roundedRect = (ctx, x, y, width, height, radius) => {
+  ctx.beginPath();
+  ctx.moveTo(x + radius, y);
+  ctx.lineTo(x + width - radius, y);
+  ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+  ctx.lineTo(x + width, y + height - radius);
+  ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+  ctx.lineTo(x + radius, y + height);
+  ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+  ctx.lineTo(x, y + radius);
+  ctx.quadraticCurveTo(x, y, x + radius, y);
+  ctx.closePath();
+};
 
-  // Design State
-  const [bgColor, setBgColor] = useState('#e0e0e0'); 
-  const [bgType, setBgType] = useState('gradient');
-  const [padding, setPadding] = useState(60); // Padding around image
-  const [borderRadius, setBorderRadius] = useState(12); // Image corners
-  const [shadowIntensity, setShadowIntensity] = useState(30);
-  const [showWindowControls, setShowWindowControls] = useState(true);
-  const [aspectOne, setAspectOne] = useState(false); // Force 1:1 if needed, usually no for screenshots
-
-  const canvasRef = useRef(null);
-
-  // ... (Gradients and constants kept same)
-  const gradients = [
+const gradients = [
     'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     'linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%)',
     'linear-gradient(120deg, #f093fb 0%, #f5576c 100%)',
@@ -33,6 +29,23 @@ const ScreenshotEditor = ({ file, onBack }) => {
   const solidColors = [
     '#ffffff', '#000000', '#f3f4f6', '#3b82f6', '#ef4444', '#10b981', '#f59e0b', '#8b5cf6'
   ];
+
+const ScreenshotEditor = ({ file, onBack }) => {
+  const [originalImage, setOriginalImage] = useState(null);
+  const [isCopied, setIsCopied] = useState(false);
+
+  // Design State
+  const [bgColor, setBgColor] = useState('#e0e0e0'); 
+  const [bgType, setBgType] = useState('gradient');
+  const [padding, setPadding] = useState(60); // Padding around image
+  const [borderRadius, setBorderRadius] = useState(12); // Image corners
+  const [shadowIntensity, setShadowIntensity] = useState(30);
+  const [showWindowControls, setShowWindowControls] = useState(true);
+
+  const canvasRef = useRef(null);
+
+  // ... (Gradients and constants kept same)
+
 
   useEffect(() => {
     if (file) {
@@ -164,19 +177,7 @@ const ScreenshotEditor = ({ file, onBack }) => {
   }, [originalImage, bgColor, bgType, padding, borderRadius, shadowIntensity, showWindowControls]);
 
   // Helper for rounded rect
-  const roundedRect = (ctx, x, y, width, height, radius) => {
-    ctx.beginPath();
-    ctx.moveTo(x + radius, y);
-    ctx.lineTo(x + width - radius, y);
-    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
-    ctx.lineTo(x + width, y + height - radius);
-    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-    ctx.lineTo(x + radius, y + height);
-    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
-    ctx.lineTo(x, y + radius);
-    ctx.quadraticCurveTo(x, y, x + radius, y);
-    ctx.closePath();
-  };
+
 
   const handleDownload = () => {
     if (!canvasRef.current) return;
@@ -264,7 +265,7 @@ const ScreenshotEditor = ({ file, onBack }) => {
             <button className="download-btn-secondary" onClick={handleCopy}>
                 {isCopied ? <Check size={18} /> : <Copy size={18} />} {isCopied ? 'Copied!' : 'Copy'}
             </button>
-            <button className="download-btn-primary" onClick={handleDownload} disabled={isProcessing}>
+            <button className="download-btn-primary" onClick={handleDownload} >
                 <Download size={18} /> Download
             </button>
          </div>

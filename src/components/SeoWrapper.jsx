@@ -97,7 +97,7 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
        updateMeta('google-site-verification', gscCode);
     }
 
-  }, [title, description, location]);
+  }, [title, description, location, t, props.schemaType, props.date, props.author]);
 
   return children;
 };

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { ArrowLeft, Download, Smile, Move } from 'lucide-react';
 
 const MemeEditor = ({ file, onBack }) => {
@@ -26,13 +26,7 @@ const MemeEditor = ({ file, onBack }) => {
     }
   }, [file]);
 
-  useEffect(() => {
-    if (imgSrc) {
-      renderMeme();
-    }
-  }, [topText, bottomText, fontSize, imgSrc, topPos, bottomPos]);
-
-  const renderMeme = () => {
+  const renderMeme = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas || !imgSrc) return;
 
@@ -68,7 +62,15 @@ const MemeEditor = ({ file, onBack }) => {
         ctx.strokeText(bottomText.toUpperCase(), x, y);
         ctx.fillText(bottomText.toUpperCase(), x, y);
     }
-  };
+  }, [imgSrc, topText, bottomText, fontSize, topPos, bottomPos]);
+
+  useEffect(() => {
+    if (imgSrc) {
+      renderMeme();
+    }
+  }, [imgSrc, renderMeme]);
+
+
 
   const getCanvasCoordinates = (e) => {
     const canvas = canvasRef.current;

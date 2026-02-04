@@ -155,7 +155,7 @@ const useImageProcessor = () => {
     });
   }, []);
 
-  const getImageDimensions = (file) => {
+  const getImageDimensions = useCallback((file) => {
     return new Promise((resolve) => {
       const img = new Image();
       img.src = URL.createObjectURL(file);
@@ -163,7 +163,7 @@ const useImageProcessor = () => {
         resolve({ width: img.width, height: img.height });
       };
     });
-  };
+  }, []);
 
   return {
     processImage,

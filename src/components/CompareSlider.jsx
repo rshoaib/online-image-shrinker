@@ -1,7 +1,7 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { ArrowLeftRight } from 'lucide-react';
 
-const CompareSlider = ({ originalUrl, processedUrl, width, height }) => {
+const CompareSlider = ({ originalUrl, processedUrl }) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isResizing, setIsResizing] = useState(false);
   const containerRef = useRef(null);
@@ -9,14 +9,14 @@ const CompareSlider = ({ originalUrl, processedUrl, width, height }) => {
   const startResizing = () => setIsResizing(true);
   const stopResizing = () => setIsResizing(false);
 
-  const resize = (e) => {
+  const resize = useCallback((e) => {
     if (isResizing && containerRef.current) {
       const { left, width } = containerRef.current.getBoundingClientRect();
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       const newPos = ((clientX - left) / width) * 100;
       setSliderPosition(Math.min(100, Math.max(0, newPos)));
     }
-  };
+  }, [isResizing]);
 
   useEffect(() => {
     window.addEventListener('mousemove', resize);
@@ -29,7 +29,7 @@ const CompareSlider = ({ originalUrl, processedUrl, width, height }) => {
       window.removeEventListener('touchmove', resize);
       window.removeEventListener('touchend', stopResizing);
     };
-  }, [isResizing]);
+  }, [isResizing, resize]);
 
   return (
     <div 

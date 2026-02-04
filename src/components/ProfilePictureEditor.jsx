@@ -4,7 +4,7 @@ import { Download, ArrowLeft, RefreshCw, AlertCircle, Palette, Monitor, Copy, Ch
 import { copyCanvasToClipboard } from '../utils/clipboard';
 
 const ProfilePictureEditor = ({ file, onBack }) => {
-  const [originalUrl, setOriginalUrl] = useState(null);
+
   // processedBitmap is the ImageBitmap/HTMLImageElement of the person with transp background
   const [processedImage, setProcessedImage] = useState(null); 
   const [isProcessing, setIsProcessing] = useState(false);
@@ -65,8 +65,8 @@ const ProfilePictureEditor = ({ file, onBack }) => {
   useEffect(() => {
     if (file) {
       const url = URL.createObjectURL(file);
-      setOriginalUrl(url);
-      processImage(url);
+
+      setTimeout(() => processImage(url), 0);
       return () => URL.revokeObjectURL(url);
     }
   }, [file]);

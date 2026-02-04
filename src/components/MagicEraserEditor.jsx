@@ -8,7 +8,7 @@ const MagicEraserEditor = ({ file, onBack }) => {
   const [isDrawing, setIsDrawing] = useState(false);
   const [brushSize, setBrushSize] = useState(20);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [opencvLoaded, setOpencvLoaded] = useState(false);
+  const [opencvLoaded, setOpencvLoaded] = useState(!!window.cv);
   const [history, setHistory] = useState([]); // For Undo
   
   const canvasRef = useRef(null);
@@ -18,7 +18,6 @@ const MagicEraserEditor = ({ file, onBack }) => {
   // Load OpenCV.js dynamically
   useEffect(() => {
     if (window.cv) {
-      setOpencvLoaded(true);
       return;
     }
 
@@ -64,7 +63,8 @@ const MagicEraserEditor = ({ file, onBack }) => {
       
       // 2. Setup Mask Canvas (Hidden/Overlay)
       const maskCanvas = maskCanvasRef.current;
-      const maskCtx = maskCtxRef.current = maskCanvas.getContext('2d', { willReadFrequently: true });
+      const maskCtx = maskCanvas.getContext('2d', { willReadFrequently: true });
+      maskCtxRef.current = maskCtx;
 
       // Match dimensions
       canvas.width = image.width;

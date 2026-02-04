@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Upload, X, MapPin, Calendar, Camera, Download, ShieldCheck, Eye, RefreshCw } from 'lucide-react';
 import EXIF from 'exif-js';
 import Controls from './Controls';
@@ -9,13 +9,6 @@ const ExifEditor = ({ files, onBack }) => {
   const [loading, setLoading] = useState(false);
   const [cleanedUrl, setCleanedUrl] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
-
-  useEffect(() => {
-    if (activeFile) {
-      extractExif(activeFile);
-      setCleanedUrl(null); // Reset cleaned state on new file
-    }
-  }, [activeFile]);
 
   // Extract EXIF Data using exif-js
   const extractExif = (file) => {
@@ -65,6 +58,15 @@ const ExifEditor = ({ files, onBack }) => {
     };
     reader.readAsArrayBuffer(file);
   };
+
+  useEffect(() => {
+    if (activeFile) {
+      setTimeout(() => extractExif(activeFile), 0);
+      setTimeout(() => setCleanedUrl(null), 0); // Reset cleaned state on new file
+    }
+  }, [activeFile]);
+
+
 
   const removeMetadata = () => {
     if (!activeFile) return;
