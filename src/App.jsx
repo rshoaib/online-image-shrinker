@@ -51,7 +51,7 @@ const AppContent = () => {
       navigate('/privacy');
     } else if (dest === 'blog') {
       navigate('/blog');
-    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text'].includes(dest)) {
+    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text', 'signature-maker'].includes(dest)) {
       navigate(`/${dest}`);
     } else if (dest === 'terms') {
       navigate('/terms');
@@ -314,6 +314,12 @@ const AppContent = () => {
                description="Extract text from images, scanned documents, or screenshots instantly. 100% free and private OCR using your browser."
                files={files} setFiles={setFiles} onBack={handleBack}
             />
+          } />
+
+          <Route path="/signature-maker" element={
+              <SeoWrapper title="Free Online Signature Maker - Create Digital Signatures">
+                <ToolLayout toolId="signature-maker" files={files} setFiles={setFiles} onBack={handleBack} />
+              </SeoWrapper>
           } />
 
           {/* BLOG ROUTES */}

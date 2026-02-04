@@ -3,10 +3,12 @@ import InstallPrompt from './InstallPrompt';
 import logoUrl from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/useTheme';
+import { usePWA } from '../hooks/usePWA';
 
 const Layout = ({ children, onNavigate }) => {
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme } = useTheme();
+  const { isInstallable, install } = usePWA();
 
   // Language selector is now handled via the dropdown directly
 
@@ -65,6 +67,11 @@ const Layout = ({ children, onNavigate }) => {
             <button onClick={() => onNavigate && onNavigate('privacy')} className="footer-link">{t('common.privacy_policy')}</button>
             <button onClick={() => onNavigate && onNavigate('terms')} className="footer-link">Terms</button>
             <button onClick={() => onNavigate && onNavigate('contact')} className="footer-link">Contact</button>
+            {isInstallable && (
+              <button onClick={install} className="footer-link install-btn-footer">
+                Install App
+              </button>
+            )}
             <button onClick={() => onNavigate && onNavigate('blog')} className="footer-link">{t('common.blog')}</button>
            <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link"><Github size={16} /></a>
         </div>
@@ -262,6 +269,11 @@ const Layout = ({ children, onNavigate }) => {
         .quick-links a:hover {
            background: var(--bg-panel);
            color: var(--primary);
+        }
+
+        .install-btn-footer {
+          color: var(--primary);
+          font-weight: 600;
         }
 
         @media (max-width: 600px) {

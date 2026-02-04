@@ -21,7 +21,17 @@
     "select": "Seleccionar",
     "back": "Volver",
     "privacy_policy": "Política de Privacidad",
-    "blog": "Blog"
+    "blog": "Blog",
+    "tip": "Consejo"
+  },
+  "signature": {
+    "title": "Creador de Firma Digital",
+    "download": "Descargar PNG",
+    "penColor": "Color del Lápiz",
+    "thickness": "Grosor",
+    "clear": "Borrar Firma",
+    "tip": "Descarga como PNG para mantener el fondo transparente. Perfecto para firmar PDFs.",
+    "placeholder": "Firma Aquí"
   },
   "home": {
     "title": "Selecciona una Herramienta",

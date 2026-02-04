@@ -41,7 +41,17 @@
     "select": "Select",
     "back": "Back",
     "privacy_policy": "Privacy Policy",
-    "blog": "Blog"
+    "blog": "Blog",
+    "tip": "Tip"
+  },
+  "signature": {
+    "title": "Digital Signature Creator",
+    "download": "Download PNG",
+    "penColor": "Pen Color",
+    "thickness": "Thickness",
+    "clear": "Clear Signature",
+    "tip": "Download as PNG to keep the background transparent. Perfect for signing PDFs.",
+    "placeholder": "Sign Here"
   },
   "home": {
     "title": "Select a Tool",

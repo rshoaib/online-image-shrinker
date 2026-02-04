@@ -41,7 +41,17 @@
     "select": "Sélectionner",
     "back": "Retour",
     "privacy_policy": "Politique de Confidentialité",
-    "blog": "Blog"
+    "blog": "Blog",
+    "tip": "Conseil"
+  },
+  "signature": {
+    "title": "Créateur de Signature Numérique",
+    "download": "Télécharger PNG",
+    "penColor": "Couleur du Stylo",
+    "thickness": "Épaisseur",
+    "clear": "Effacer la Signature",
+    "tip": "Téléchargez en PNG pour conserver l'arrière-plan transparent. Idéal pour signer des PDF.",
+    "placeholder": "Signer Ici"
   },
   "home": {
     "title": "Sélectionnez un outil",

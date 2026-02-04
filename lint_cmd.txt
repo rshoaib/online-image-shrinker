@@ -1,0 +1,43 @@
+
+> image-compressor@1.2.1 lint
+> eslint .
+
+
+C:\Projects\onlineimageshrinker\src\components\ImageEditor.jsx
+  44:6  warning  React Hook useEffect has a missing dependency: 'previewUrl'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+C:\Projects\onlineimageshrinker\src\components\InstallPrompt.jsx
+  11:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+   9 |   useEffect(() => {
+  10 |     if (isInstallable) {
+> 11 |       setShowToast(true);
+     |       ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  12 |     }
+  13 |   }, [isInstallable]);
+  14 |  react-hooks/set-state-in-effect
+
+C:\Projects\onlineimageshrinker\src\components\SignatureEditor.jsx
+  33:7  error  Error: This value cannot be modified
+
+Modifying a value returned from 'useState()', which should not be modified directly. Use the setter function to update instead.
+
+  31 |   useEffect(() => {
+  32 |     if (ctx) {
+> 33 |       ctx.strokeStyle = penColor;
+     |       ^^^ `ctx` cannot be modified
+  34 |       ctx.lineWidth = penWidth;
+  35 |     }
+  36 |   }, [ctx, penColor, penWidth]);  react-hooks/immutability
+
+C:\Projects\onlineimageshrinker\src\contexts\ThemeContext.jsx
+  1:10  error  'useContext' is defined but never used. Allowed unused vars must match /^[A-Z_]/u  no-unused-vars
+
+✖ 4 problems (3 errors, 1 warning)
+

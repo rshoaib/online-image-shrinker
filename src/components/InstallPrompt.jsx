@@ -1,48 +1,18 @@
 import { useState, useEffect } from 'react';
 import { Download, X } from 'lucide-react';
+import { usePWA } from '../hooks/usePWA';
 
 const InstallPrompt = () => {
-  const [deferredPrompt, setDeferredPrompt] = useState(null);
-  const [showPrompt, setShowPrompt] = useState(false);
+  const { isInstallable, install } = usePWA();
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
-    const handleBeforeInstallPrompt = (e) => {
-      // Prevent the mini-infobar from appearing on mobile
-      e.preventDefault();
-      // Stash the event so it can be triggered later.
-      setDeferredPrompt(e);
-      // Update UI notify the user they can install the PWA
-      setShowPrompt(true);
-    };
-
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-    return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    };
-  }, []);
-
-  const handleInstallClick = async () => {
-    if (!deferredPrompt) return;
-    
-    // Show the install prompt
-    deferredPrompt.prompt();
-    
-    // Wait for the user to respond to the prompt
-    const { outcome } = await deferredPrompt.userChoice;
-    
-    if (outcome === 'accepted') {
-      console.log('User accepted the install prompt');
-    } else {
-      console.log('User dismissed the install prompt');
+    if (isInstallable) {
+      setTimeout(() => setShowToast(true), 0);
     }
-    
-    // We've used the prompt, so clear it
-    setDeferredPrompt(null);
-    setShowPrompt(false);
-  };
+  }, [isInstallable]);
 
-  if (!showPrompt) return null;
+  if (!showToast || !isInstallable) return null;
 
   return (
     <div className="install-prompt-toast">
@@ -56,8 +26,8 @@ const InstallPrompt = () => {
          </div>
       </div>
       <div className="install-actions">
-        <button onClick={handleInstallClick} className="install-btn">Install</button>
-        <button onClick={() => setShowPrompt(false)} className="close-btn"><X size={16} /></button>
+        <button onClick={install} className="install-btn">Install</button>
+        <button onClick={() => setShowToast(false)} className="close-btn"><X size={16} /></button>
       </div>
       <style>{`
         .install-prompt-toast {

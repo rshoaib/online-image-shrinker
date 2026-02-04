@@ -22,6 +22,7 @@ const ScreenshotEditor = lazy(() => import('./ScreenshotEditor'));
 const ExifEditor = lazy(() => import('./ExifEditor'));
 const ImageConverterEditor = lazy(() => import('./ImageConverterEditor'));
 const MemeEditor = lazy(() => import('./MemeEditor'));
+const SignatureEditor = lazy(() => import('./SignatureEditor'));
 const ColorPaletteEditor = lazy(() => import('./ColorPaletteEditor'));
 const PassportEditor = lazy(() => import('./PassportEditor'));
 const CollageEditor = lazy(() => import('./CollageEditor'));
@@ -86,6 +87,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <MagicEraserEditor file={files[0]} onBack={onBack} />;
     case 'ocr':
       return <OcrEditor file={files[0]} onBack={onBack} />;
+    case 'signature-maker':
+      return <SignatureEditor onBack={onBack} />;
     default:
       if (files.length === 1) {
         return <ImageEditor files={files} setFiles={setFiles} onBack={onBack} mode={toolId} />;

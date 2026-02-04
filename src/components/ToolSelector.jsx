@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate, Sparkles, ScanText } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate, Sparkles, ScanText, PenTool } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -254,6 +254,19 @@ const ToolSelector = ({ onSelectTool }) => {
           <div className="card-content">
             <h3>Image to Text <span className="badge">New</span></h3>
             <p>Extract text from images, screenshots, or documents instantly (OCR).</p>
+          </div>
+          <div className="card-action">
+             <span>{t('common.select')}</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card signature" onClick={() => onSelectTool('signature-maker')}>
+          <div className="icon-wrapper">
+             <PenTool size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Signature Maker <span className="badge">New</span></h3>
+            <p>Create transparent digital signatures to sign PDFs and documents.</p>
           </div>
           <div className="card-action">
              <span>{t('common.select')}</span> <ArrowRight size={16} />
