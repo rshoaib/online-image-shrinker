@@ -2,6 +2,10 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import ImageConverterEditor from '../ImageConverterEditor';
 
+vi.mock('heic2any', () => ({
+  default: vi.fn(() => Promise.resolve(new Blob(['mock-heic'], { type: 'image/jpeg' })))
+}));
+
 describe('ImageConverterEditor', () => {
   beforeEach(() => {
     // Mock HTMLCanvasElement
@@ -10,7 +14,11 @@ describe('ImageConverterEditor', () => {
       drawImage: vi.fn(),
       fillRect: vi.fn(),
     }));
-    HTMLCanvasElement.prototype.toBlob = vi.fn((callback) => callback(new Blob(['mock'], { type: 'image/jpeg' })));
+    HTMLCanvasElement.prototype.toBlob = vi.fn((callback) => {
+        setTimeout(() => {
+            callback(new Blob(['mock'], { type: 'image/jpeg' }));
+        }, 10);
+    });
 
     // Mock URL.createObjectURL
     globalThis.URL.createObjectURL = vi.fn(() => 'mock-url');
@@ -27,6 +35,18 @@ describe('ImageConverterEditor', () => {
         this.width = 1000;
         this.height = 1000;
       }
+    };
+
+    // Mock Worker for heic2any
+    globalThis.Worker = class {
+      constructor(stringUrl) {
+        this.url = stringUrl;
+        this.onmessage = () => {};
+      }
+      postMessage(msg) {
+        /* no-op or trigger onmessage if needed */
+      }
+      terminate() {}
     };
   });
 
@@ -70,6 +90,8 @@ describe('ImageConverterEditor', () => {
   it('handles conversion process', async () => {
      render(<ImageConverterEditor file={mockFile} onBack={() => {}} />);
      
+     await screen.findByAltText('Preview'); // Wait for image to load
+
      const convertBtn = screen.getByText('Convert & Download');
      fireEvent.click(convertBtn);
      

@@ -28,10 +28,12 @@ const PassportEditor = lazy(() => import('./PassportEditor'));
 const CollageEditor = lazy(() => import('./CollageEditor'));
 const MagicEraserEditor = lazy(() => import('./MagicEraserEditor'));
 const OcrEditor = lazy(() => import('./OcrEditor'));
+const QrCodeEditor = lazy(() => import('./QrCodeEditor'));
+
 
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
-  if (files.length === 0) {
+  if (files.length === 0 && toolId !== 'signature-maker' && toolId !== 'qr-code-generator') {
     return null; // The parent handles the "Hero" or "Empty" state usually, or we can handle it here if we pass more props.
     // In App.jsx, the "Empty" state (Hero section) is handled inside the ToolPage/SeoLandingPage 
     // BEFORE calling the editor logic.
@@ -89,6 +91,9 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <OcrEditor file={files[0]} onBack={onBack} />;
     case 'signature-maker':
       return <SignatureEditor onBack={onBack} />;
+    case 'qr-code-generator':
+      return <QrCodeEditor onBack={onBack} />;
+
     default:
       if (files.length === 1) {
         return <ImageEditor files={files} setFiles={setFiles} onBack={onBack} mode={toolId} />;

@@ -47,6 +47,8 @@ const STATIC_URLS = [
   '/color-palette-generator',
   '/collage-maker',
   '/image-to-text',
+  '/signature-maker',
+  '/qr-code-generator',
   '/blog'
 ];
 

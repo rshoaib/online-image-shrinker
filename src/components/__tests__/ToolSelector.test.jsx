@@ -25,34 +25,49 @@ vi.mock('react-i18next', () => ({
 }));
 
 describe('ToolSelector Component', () => {
-  it('renders all tool cards', () => {
-    const mockSelect = vi.fn();
-    render(<ToolSelector onSelectTool={mockSelect} />);
+    it('renders all tool cards', () => {
+        const mockSelect = vi.fn();
+        render(<ToolSelector onSelectTool={mockSelect} />);
 
-    // Check for headings of our main tools
-    expect(screen.getByText(/Compress Image/i)).toBeInTheDocument();
-    expect(screen.getByText(/Resize Image/i)).toBeInTheDocument();
-    expect(screen.getByText(/Crop Image/i)).toBeInTheDocument();
-    expect(screen.getByText(/Watermark/i)).toBeInTheDocument();
-    expect(screen.getByText(/Images to PDF/i)).toBeInTheDocument();
-    expect(screen.getByText(/Remove Background/i)).toBeInTheDocument();
-    expect(screen.getByText(/AI Upscale/i)).toBeInTheDocument();
-    
-    // Check for NEW tools
-    expect(screen.getByText(/Grid Splitter/i)).toBeInTheDocument();
-    expect(screen.getByText(/Privacy Blur/i)).toBeInTheDocument();
-  });
+        // Standard tools
+        expect(screen.getByText(/Compress Image/i)).toBeInTheDocument();
+        expect(screen.getByText(/Resize Image/i)).toBeInTheDocument();
+        expect(screen.getByText(/Crop Image/i)).toBeInTheDocument();
+        expect(screen.getByText(/Watermark/i)).toBeInTheDocument();
+        expect(screen.getByText(/Images to PDF/i)).toBeInTheDocument();
+        expect(screen.getByText(/Remove Background/i)).toBeInTheDocument();
+        expect(screen.getByText(/AI Upscale/i)).toBeInTheDocument();
+        
+        // New tools
+        expect(screen.getByText(/Grid Splitter/i)).toBeInTheDocument();
+        expect(screen.getByText(/Privacy Blur/i)).toBeInTheDocument();
+        expect(screen.getByText(/Screenshot Mockups/i)).toBeInTheDocument();
+        expect(screen.getByText(/Profile Pic Maker/i)).toBeInTheDocument();
+        expect(screen.getByText(/EXIF Viewer/i)).toBeInTheDocument();
+        
+        // Latest additions
+        expect(screen.getByText(/Image Converter/i)).toBeInTheDocument();
+        expect(screen.getByText(/Meme Generator/i)).toBeInTheDocument();
+        expect(screen.getByText(/Palette Generator/i)).toBeInTheDocument();
+        expect(screen.getByText(/Magic Eraser/i)).toBeInTheDocument();
+    });
 
-  it('calls onSelectTool with correct ID when clicked', () => {
-    const mockSelect = vi.fn();
-    render(<ToolSelector onSelectTool={mockSelect} />);
+    it('calls onSelectTool with correct ID when clicked', () => {
+        const mockSelect = vi.fn();
+        render(<ToolSelector onSelectTool={mockSelect} />);
 
-    // Click Grid Splitter
-    fireEvent.click(screen.getByText(/Grid Splitter/i));
-    expect(mockSelect).toHaveBeenCalledWith('grid-splitter');
+        const tools = [
+            { text: 'Compress Image', id: 'compress' },
+            { text: 'Resize Image', id: 'resize' },
+            { text: 'Grid Splitter', id: 'grid-splitter' },
+            { text: 'Privacy Blur', id: 'redact' },
+            { text: 'Image Converter', id: 'image-converter' },
+            { text: 'Magic Eraser', id: 'magic-eraser' } // updated id based on common patterns
+        ];
 
-    // Click Privacy Blur
-    fireEvent.click(screen.getByText(/Privacy Blur/i));
-    expect(mockSelect).toHaveBeenCalledWith('redact');
-  });
+        tools.forEach(({ text, id }) => {
+            fireEvent.click(screen.getByText(new RegExp(text, 'i')));
+            expect(mockSelect).toHaveBeenCalledWith(id);
+        });
+    });
 });

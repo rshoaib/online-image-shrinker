@@ -53,6 +53,21 @@
     "tip": "Download as PNG to keep the background transparent. Perfect for signing PDFs.",
     "placeholder": "Sign Here"
   },
+  "qrcode": {
+    "title": "Premium QR Studio",
+    "content": "Content / URL",
+    "colors": "Custom Colors",
+    "foreground": "Foreground",
+    "background": "Background",
+    "logo": "Brand Logo",
+    "uploadLogo": "Upload Logo",
+    "changeLogo": "Change Logo",
+    "logoSize": "Logo Size",
+    "settings": "Settings",
+    "size": "Resolution",
+    "includeMargin": "Include Margin",
+    "previewHint": "Preview reduced. High resolution generated on download."
+  },
   "home": {
     "title": "Select a Tool",
     "subtitle": "Choose how you want to optimize your images today.",

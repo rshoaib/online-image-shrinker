@@ -51,7 +51,7 @@ const AppContent = () => {
       navigate('/privacy');
     } else if (dest === 'blog') {
       navigate('/blog');
-    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text', 'signature-maker'].includes(dest)) {
+    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text', 'signature-maker', 'qr-code-generator'].includes(dest)) {
       navigate(`/${dest}`);
     } else if (dest === 'terms') {
       navigate('/terms');
@@ -322,6 +322,12 @@ const AppContent = () => {
               </SeoWrapper>
           } />
 
+          <Route path="/qr-code-generator" element={
+               <SeoWrapper title="Free QR Code Generator - Custom Colors & Logos" description="Create custom QR codes with logos, colors, and frames. High resolution PNG downloads. Free and private.">
+                 <ToolLayout toolId="qr-code-generator" files={files} setFiles={setFiles} onBack={handleBack} />
+               </SeoWrapper>
+          } />
+
           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -356,6 +362,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'palette-generator': return { title: 'Color Palette Generator', desc: 'Extract beautiful color palettes from images.' };
       case 'magic-eraser': return { title: 'Magic Eraser', desc: 'Remove unwanted objects and blemishes with AI.' };
       case 'ocr': return { title: 'Image to Text', desc: 'Extract text from images instantly (OCR).' };
+      case 'qr-code-generator': return { title: 'QR Code Generator', desc: 'Create custom QR codes with logos instantly.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };
