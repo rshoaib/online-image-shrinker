@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate, Sparkles, ScanText, PenTool, QrCode } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate, Sparkles, ScanText, PenTool, QrCode, Video } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -13,6 +13,19 @@ const ToolSelector = ({ onSelectTool }) => {
       </div>
 
       <div className="cards-grid">
+        <button className="tool-card video-compressor" onClick={() => onSelectTool('video-compressor')}>
+          <div className="icon-wrapper">
+             <Video size={32} />
+          </div>
+          <div className="card-content">
+            <h3>{t('tools.video_compressor.title')} <span className="badge">New</span></h3>
+            <p>{t('tools.video_compressor.desc')}</p>
+          </div>
+          <div className="card-action">
+            <span>{t('common.select')}</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
         <button className="tool-card compress" onClick={() => onSelectTool('compress')}>
           <div className="icon-wrapper">
              <Minimize2 size={32} />

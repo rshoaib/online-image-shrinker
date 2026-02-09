@@ -16,6 +16,7 @@ const BlogList = lazy(() => import('./components/BlogList'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
 const ExifEditor = lazy(() => import('./components/ExifEditor'));
 const MagicEraserEditor = lazy(() => import('./components/MagicEraserEditor'));
+const VideoEditor = lazy(() => import('./components/VideoEditor'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const Contact = lazy(() => import('./components/Contact'));
 const About = lazy(() => import('./components/About'));
@@ -105,6 +106,14 @@ const AppContent = () => {
            <Route path="/about" element={
             <SeoWrapper title="About Us - Online Image Shrinker" description="Learn more about our privacy-first mission and the team behind Image Shrinker.">
                <About />
+            </SeoWrapper>
+          } />
+
+           <Route path="/tool/video-compressor" element={
+            <SeoWrapper title="Free Video Compressor - Reduce MP4 Size Online" description="Compress video files locally in your browser. No upload, no limit, privacy-first.">
+              <ToolLayout toolId="video-compressor">
+                 <VideoEditor />
+              </ToolLayout>
             </SeoWrapper>
           } />
 

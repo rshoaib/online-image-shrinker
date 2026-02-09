@@ -72,6 +72,10 @@
     "title": "Select a Tool",
     "subtitle": "Choose how you want to optimize your images today.",
     "tools": {
+      "video_compressor": {
+        "title": "Video Compressor",
+        "desc": "Reduce MP4/MOV size significantly without losing quality. 100% Client-Side."
+      },
       "compress": {
         "title": "Compress Image",
         "desc": "Reduce file size while maintaining the best quality."
