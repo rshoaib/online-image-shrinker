@@ -67,6 +67,7 @@ const Layout = ({ children, onNavigate }) => {
             <button onClick={() => onNavigate && onNavigate('privacy')} className="footer-link">{t('common.privacy_policy')}</button>
             <button onClick={() => onNavigate && onNavigate('terms')} className="footer-link">Terms</button>
             <button onClick={() => onNavigate && onNavigate('contact')} className="footer-link">Contact</button>
+            <button onClick={() => onNavigate && onNavigate('about')} className="footer-link">About Us</button>
             {isInstallable && (
               <button onClick={install} className="footer-link install-btn-footer">
                 Install App

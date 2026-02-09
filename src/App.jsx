@@ -18,6 +18,8 @@ const ExifEditor = lazy(() => import('./components/ExifEditor'));
 const MagicEraserEditor = lazy(() => import('./components/MagicEraserEditor'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const Contact = lazy(() => import('./components/Contact'));
+const About = lazy(() => import('./components/About'));
+import CookieConsent from './components/CookieConsent';
 
 const PageLoader = () => (
   <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
@@ -57,6 +59,8 @@ const AppContent = () => {
       navigate('/terms');
     } else if (dest === 'contact') {
       navigate('/contact');
+    } else if (dest === 'about') {
+      navigate('/about');
     } else {
       navigate(`/tool/${dest}`);
     }
@@ -98,6 +102,11 @@ const AppContent = () => {
                <Contact />
             </SeoWrapper>
           } />
+           <Route path="/about" element={
+            <SeoWrapper title="About Us - Online Image Shrinker" description="Learn more about our privacy-first mission and the team behind Image Shrinker.">
+               <About />
+            </SeoWrapper>
+          } />
 
           {/* TOOL ROUTES (Compress, Resize, etc) */}
           <Route path="/tool/:toolId" element={
@@ -123,15 +132,6 @@ const AppContent = () => {
                toolId="resize" 
                title={t('seo.resize_instagram.title')}
                description={t('seo.resize_instagram.description')}
-               files={files} setFiles={setFiles} onBack={handleBack}
-            />
-          } />
-
-          <Route path="/convert-heic-to-jpg" element={
-             <SeoLandingPage 
-               toolId="compress" 
-               title={t('seo.heic_to_jpg.title')}
-               description={t('seo.heic_to_jpg.description')}
                files={files} setFiles={setFiles} onBack={handleBack}
             />
           } />
@@ -508,6 +508,7 @@ function App() {
     <BrowserRouter>
       <AnalyticsWrapper>
         <AppContent />
+        <CookieConsent />
       </AnalyticsWrapper>
     </BrowserRouter>
   );
