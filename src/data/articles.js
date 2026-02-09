@@ -808,6 +808,146 @@ Now you can post that photo safely!
     `
   },
   {
+    slug: 'compress-pdf-email',
+    title: 'How to Compress PDF for Email Attachment (Free)',
+    excerpt: 'File too large to email? Reduce PDF size instantly without losing readability.',
+    iconName: 'FileText',
+    iconColor: '#EA4335',
+    date: 'Feb 10, 2026',
+    author: 'Productivity Team',
+    category: 'Tutorials',
+    content: `
+Most email providers (Gmail, Outlook, Yahoo) limit attachments to **25MB**. If you have a scanned document or a portfolio with high-res images, it's easy to hit that limit.
+
+## Why is my PDF so big?
+PDFs are usually large because they contain uncompressed images. A single scanned page can be 5MB-10MB if scanned at high DPI.
+
+## The Fix: Images to Optimized PDF
+If you have the source images, you can create a perfectly optimized PDF from scratch:
+
+1.  Go to [Images to PDF](/tool/pdf).
+2.  **Upload** your JPGs or PNGs.
+3.  Our tool automatically compresses the visual data while keeping the text sharp.
+4.  **Download** a PDF that is often 10x smaller than the original scans.
+
+## Privacy Note
+Don't upload your bank statements or contracts to shady "online compressors." Our tool runs **100% on your device**. Your sensitive documents never leave your computer.
+
+[Compress and Merge PDF](/tool/pdf)
+    `
+  },
+  {
+    slug: 'us-visa-photo-size',
+    title: 'How to Resize Photo for US Visa (2x2 inch)',
+    excerpt: 'Create a compliant US Visa or Passport photo at home. Free 2x2 inch (51x51mm) cropper.',
+    iconName: 'Globe',
+    iconColor: '#4285F4',
+    date: 'Feb 10, 2026',
+    author: 'Travel Hacks',
+    category: 'Workflow',
+    content: `
+Getting a US Visa photo rejected can delay your application by weeks. Requirements for the **DS-160** form are strict.
+
+## US Visa Photo Requirements (2026)
+*   **Size:** 2 x 2 inches (51 x 51 mm).
+*   **Resolution:** Minimum 600 x 600 pixels, Maximum 1200 x 1200 pixels.
+*   **Background:** Plain white or off-white.
+*   **Expression:** Neutral, both eyes open.
+*   **Glasses:** NOT allowed (since 2016).
+
+## How to Crop Perfectly
+1.  Take a photo against a white wall with good lighting.
+2.  Go to our [Passport Photo Tool](/resize-passport-photo).
+3.  **Upload** your photo.
+4.  Select the **"US Visa (2x2 inch)"** preset.
+5.  Align your eyes with the guide lines.
+6.  **Download** the JPG.
+
+## Printing
+If you need a physical copy, print the downloaded file on 4x6 inch photo paper. You will get 2-6 photos per sheet.
+
+[Make US Visa Photo](/resize-passport-photo)
+    `
+  },
+  {
+    slug: 'discord-transparent-background',
+    title: 'How to Make Transparent Background for Discord PFP',
+    excerpt: 'Create a clean, professional profile picture for Discord that blends into any theme.',
+    iconName: 'MessageCircle',
+    iconColor: '#5865F2',
+    date: 'Feb 11, 2026',
+    author: 'Gamer Team',
+    category: 'Social Media',
+    content: `
+Discord has distinct "Light" and "Dark" themes. If you upload a JPG with a white box around your head, it looks terrible on Dark Mode. You need a **PNG with transparency**.
+
+## The Solution
+1.  Find your favorite avatar image.
+2.  Go to our [Background Remover](/tool/remove-bg).
+3.  **Upload** the image.
+4.  The AI instantly detects the subject and deletes the background.
+5.  **Download** as PNG.
+
+## Usage Tips
+*   **Nitro Users:** If you have Discord Nitro, you can upload an animated GIF. Use a tool to remove the background from each frame (advanced).
+*   **Standard Users:** Use our tool to create a clean static image that looks great on any server.
+
+[Remove Background Now](/tool/remove-bg)
+    `
+  },
+  {
+    slug: 'webp-to-jpg-converter',
+    title: 'How to Convert WebP to JPG (For Old Devices)',
+    excerpt: 'Cannot open a .webp file? Convert it to standard JPG or PNG instantly.',
+    iconName: 'Image',
+    iconColor: '#FF9800',
+    date: 'Feb 11, 2026',
+    author: 'Tech Support',
+    category: 'Explained',
+    content: `
+You saved an image from Google Images, but it's a **.webp** file. Now you can't open it in your old version of Photoshop or Word.
+
+## What is WebP?
+It's a web-optimized format. Great for websites, bad for compatibility with older desktop software.
+
+## How to Fix It
+1.  Open our [Image Converter](/image-converter-online).
+2.  **Drag & Drop** your stubborn WebP files.
+3.  Select **"to JPG"** or **"to PNG"**.
+4.  Click **Convert**.
+
+The conversion happens in your browser, so it's instant. No meaningful quality loss.
+
+[Convert WebP to JPG](/image-converter-online)
+    `
+  },
+  {
+    slug: 'digital-signature-maker',
+    title: 'Free Online Digital Signature Maker (No Sign-up)',
+    excerpt: 'Draw your signature and download it as a transparent PNG. Sign PDFs and Docs easily.',
+    iconName: 'PenTool',
+    iconColor: '#000000',
+    date: 'Feb 12, 2026',
+    author: 'Business Team',
+    category: 'Productivity',
+    content: `
+Remote work means signing endless digital documents. Printing, signing, and scanning is a waste of time.
+
+## How to Create a Digital Signature
+1.  Go to the [Signature Maker](/signature-maker).
+2.  **Draw** your signature using your mouse or trackpad. (Touchscreens work best!).
+3.  **Adjust**: Change the color (Blue, Black, Red) and line thickness.
+4.  **Download**: We save it as a transparent PNG.
+
+## Any Document, Anytime
+Once you have your signature file:
+*   **Word/Docs:** Just "Insert Image" and drag it over the signature line.
+*   **PDF:** Most PDF readers allow you to "Stamp" an image. Use your new PNG.
+
+[Create Signature](/signature-maker)
+    `
+  },
+  {
     slug: 'png-vs-jpg-vs-webp',
     title: 'PNG vs JPG vs WebP: Which Format Should You Use?',
     excerpt: 'The definitive guide to image formats in 2026. Stop guessing and start optimizing.',
