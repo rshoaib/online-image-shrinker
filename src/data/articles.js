@@ -1249,5 +1249,83 @@ Open our [Compress Tool](/tool/compress), load a file, and then turn off your Wi
 
 [Try Secure Tools](/tool/compress)
     `
+  },
+  {
+    slug: 'real-estate-photo-guide',
+    title: 'Real Estate Photography: How to Edit Photos for MLS (Free)',
+    excerpt: 'Brighten dark rooms, resize for MLS, and watermark your listings in seconds. A guide for Realtors.',
+    iconName: 'Home',
+    iconColor: '#2563EB',
+    date: 'Feb 10, 2026',
+    author: 'Realtor Hub',
+    category: 'Guides',
+    content: `
+Professional photos sell homes 32% faster. But most Realtors don't have time to master Photoshop. You need a fast, free workflow to get your listings from your camera to the MLS.
+
+## The MLS Standard (Don't Get Rejected)
+
+Most Multiple Listing Services (MLS) have strict requirements.
+*   **Resolution**: Usually **3000px** on the wide side.
+*   **Size Limit**: Under **10MB** (or 5MB for some).
+*   **Format**: JPG only.
+
+If you upload raw 20MB files from a DSLR, they will likely be rejected or compressed badly.
+
+## The 3-Step Workflow for Realtors
+
+### 1. Brighten Dark Rooms
+A dark living room looks small and depressing.
+*   **The Fix**: Use our **[Image Upscaler](/tool/upscale)**.
+*   It doesn't just make images bigger; it uses AI to hallucinate details and balance lighting in dark areas.
+
+### 2. Branding (Watermarking)
+You worked hard for that listing. Don't let other aggregators steal your photos without credit.
+*   **The Fix**: Use the **[Watermark Tool](/tool/watermark)**.
+*   Upload your agency logo (Remax, KW, etc.) and stamp it in the bottom corner of 50 photos at once.
+
+### 3. Resize for MLS
+*   **The Fix**: Use our **[Bulk Resizer](/tool/resize)**.
+*   Set the width to **3000px**. this is the sweet spot for Zillow, Redfin, and Realtor.com.
+
+## specialized Tool for Agents
+We built a dedicated page just for you. It groups all these tools into one dashboard.
+
+[Visit the Realtor Hub](/solutions/for-realtors)
+    `
+  },
+  {
+    slug: 'etsy-image-size-guide-2026',
+    title: 'Etsy Image Size Guide 2026: Listing Photos that Sell',
+    excerpt: 'Stop getting your product photos cropped awkwardly. The definitive guide to Etsy ratios and sizes.',
+    iconName: 'ShoppingBag',
+    iconColor: '#F97316',
+    date: 'Feb 10, 2026',
+    author: 'E-commerce Hub',
+    category: 'E-commerce',
+    content: `
+On Etsy, the photo *is* the product. A blurry or badly cropped thumbnail means zero clicks. Here is the cheat sheet for 2026.
+
+## The Golden Ratio: 4:3
+
+Etsy recommends a ratio of **4:3** for your main listing photo.
+*   **Minimum Size**: 2000px wide.
+*   **Ideal Size**: 3000px x 2250px.
+*   **DPI**: 72 is fine for web.
+
+## The Thumbnail Trap (1:1)
+While the listing page shows a 4:3 image, **Etsy search results often crop to a square (1:1)**.
+*   **Crucial Tip**: Keep your product centered! If you fill the entire 4:3 frame, your product's edges will be chopped off in search results.
+
+## White Backgrounds = More Sales
+Google Shopping integration requires a pure white background. If your photo is on a rug or table, Google might ignore it.
+*   **Solution**: Use our **[Background Remover](/tool/remove-bg)** to instantly swap your messy table for pure white (#FFFFFF).
+
+## How to optimize for Etsy
+1.  **Crop** your raw photo to 4:3 using our [Crop Tool](/tool/crop).
+2.  **Compress** it so it loads fast (Etsy ranks faster pages higher).
+3.  **Rename** your file from "IMG_9921.jpg" to "handmade-silver-ring.jpg" for SEO.
+
+[Visit the Ecommerce Hub](/solutions/for-ecommerce)
+    `
   }
 ];
