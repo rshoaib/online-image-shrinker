@@ -103,7 +103,6 @@ const Layout = ({ children, onNavigate }) => {
           padding: 0 var(--spacing-xl);
           height: 80px;
           border-bottom: 1px solid var(--border-light);
-          border-bottom: 1px solid var(--border-light);
           background-color: var(--bg-panel);
           opacity: 0.95;
           backdrop-filter: blur(10px);

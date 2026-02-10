@@ -503,4 +503,134 @@
     <priority>0.8</priority>
     <lastmod>2026-02-10</lastmod>
   </url>
+
+  <!-- Social Media Pages -->
+  <url>
+    <loc>https://onlineimageshrinker.com/resize-for-instagram-story</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/resize-for-instagram-portrait</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/resize-for-instagram-post</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/resize-for-facebook-cover</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/resize-for-facebook-post</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/resize-for-youtube-thumbnail</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/resize-for-twitter-header</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/resize-for-linkedin-banner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+
+  <!-- Print Ready Pages -->
+  <url>
+    <loc>https://onlineimageshrinker.com/print-a4</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/print-a3</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/print-a5</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/print-letter</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/print-business-card</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+
+  <!-- Passport Photo Pages -->
+  <url>
+    <loc>https://onlineimageshrinker.com/passport-photo-us-passport</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/passport-photo-uk-passport</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/passport-photo-eu-passport</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/passport-photo-india-passport</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-02-11</lastmod>
+  </url>
+
+  <!-- Essential Pages -->
+  <url>
+    <loc>https://onlineimageshrinker.com/privacy</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/terms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://onlineimageshrinker.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
