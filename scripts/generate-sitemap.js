@@ -15,6 +15,7 @@ const __dirname = path.dirname(__filename);
 // without setting up a babel transpiler for this script.
 
 const articlesPath = path.join(__dirname, '../src/data/articles.js');
+const seoTemplatesPath = path.join(__dirname, '../src/data/seoTemplates.js');
 const sitemapPath = path.join(__dirname, '../public/sitemap.xml');
 const BASE_URL = 'https://onlineimageshrinker.com';
 
@@ -54,13 +55,39 @@ const STATIC_URLS = [
 
 function getArticles() {
   const content = fs.readFileSync(articlesPath, 'utf8');
-  // Regex to match slug: 'some-slug'
   const matches = content.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
   const slugs = [];
   for (const match of matches) {
     slugs.push(match[1]);
   }
   return slugs;
+}
+
+function getProgrammaticPages() {
+  const content = fs.readFileSync(seoTemplatesPath, 'utf8');
+  
+  // Extract PDF Pages
+  const pdfMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*size/g);
+  const pdfPages = [];
+  for (const match of pdfMatches) {
+    pdfPages.push(`compress-pdf-to-${match[1]}`);
+  }
+
+  // Extract Resize Pages
+  const resizeMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width/g);
+  const resizePages = [];
+  for (const match of resizeMatches) {
+     resizePages.push(`resize-image-to-${match[1]}`);
+  }
+  
+  // Extract Conversion Pages
+  const convMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*from/g);
+  const convPages = [];
+  for (const match of convMatches) {
+     convPages.push(`convert-${match[1]}`);
+  }
+
+  return [...pdfPages, ...resizePages, ...convPages];
 }
 
 function generateSitemap() {
@@ -92,10 +119,21 @@ function generateSitemap() {
 `;
   });
 
+  const programmaticPages = getProgrammaticPages();
+  programmaticPages.forEach(slug => {
+    xml += `  <url>
+    <loc>${BASE_URL}/${slug}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>${date}</lastmod>
+  </url>
+`;
+  });
+
   xml += `</urlset>`;
 
   fs.writeFileSync(sitemapPath, xml);
-  console.log(`✅ Sitemap generated with ${STATIC_URLS.length + slugs.length} URLs`);
+  console.log(`✅ Sitemap generated with ${STATIC_URLS.length + slugs.length + programmaticPages.length} URLs`);
 }
 
 generateSitemap();

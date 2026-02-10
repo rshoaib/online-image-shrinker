@@ -20,6 +20,7 @@ const VideoEditor = lazy(() => import('./components/VideoEditor'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const Contact = lazy(() => import('./components/Contact'));
 const About = lazy(() => import('./components/About'));
+import { pdfSizePages, imageResizePages, conversionPages } from './data/seoTemplates';
 import CookieConsent from './components/CookieConsent';
 
 const PageLoader = () => (
@@ -297,6 +298,56 @@ const AppContent = () => {
                files={files} setFiles={setFiles} onBack={handleBack}
             />
           } />
+
+          
+          {/* PROGRAMMATIC SEO ROUTES */}
+          {/* PDF Compression by Size */}
+          {pdfSizePages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/compress-pdf-to-${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId="pdf" 
+                  title={`Compress PDF to ${page.size} Online (Free)`}
+                  description={`Instantly reduce PDF file size to ${page.size} or less. Works locally in your browser for maximum privacy.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+
+          {/* Image Resizing */}
+          {imageResizePages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/resize-image-to-${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId="resize" 
+                  title={`Resize Image to ${page.label || page.width + 'x' + page.height} (Free)`}
+                  description={`Resize JPG, PNG, or WebP images to ${page.label || page.width + 'x' + page.height} pixels instantly. No upload required.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+
+          {/* Conversions */}
+          {conversionPages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/convert-${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId="image-converter" 
+                  title={`Convert ${page.from} to ${page.to} Online (Free)`}
+                  description={`Fastest way to convert ${page.from} images to ${page.to} format. Batch processing supported, 100% private.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
 
           <Route path="/convert-heic-to-jpg" element={
              <SeoLandingPage 
