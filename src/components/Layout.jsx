@@ -42,6 +42,8 @@ const Layout = ({ children, onNavigate }) => {
           </div>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }} className="nav-link">{t('common.back')}</a>
           <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('blog'); }} className="nav-link">{t('common.blog')}</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('about'); }} className="nav-link">About</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('contact'); }} className="nav-link">Contact</a>
         </nav>
       </header>
 

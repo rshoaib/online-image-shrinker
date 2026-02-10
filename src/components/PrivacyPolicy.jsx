@@ -60,6 +60,48 @@ const PrivacyPolicy = ({ onBack }) => {
             </p>
           </section>
 
+          <section>
+            <h2>5. Advertising</h2>
+            <p>
+              We use Google AdSense to display advertisements on our website. Google and its advertising partners 
+              may use cookies to serve ads based on your prior visits to this website or other websites on the internet.
+            </p>
+            <p>
+              Google's use of advertising cookies enables it and its partners to serve ads based on your visit to 
+              this site and/or other sites on the Internet. You may opt out of personalized advertising by visiting{' '}
+              <a href="https://www.google.com/settings/ads" target="_blank" rel="noreferrer">Google Ads Settings</a>.
+            </p>
+            <p>
+              For more information about how Google uses data when you use our site, please visit{' '}
+              <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noreferrer">
+                How Google uses information from sites that use its services
+              </a>.
+            </p>
+          </section>
+
+          <section>
+            <h2>6. Cookies</h2>
+            <p>
+              We use cookies for the following purposes:
+            </p>
+            <ul style={{ color: 'var(--text-muted)', lineHeight: '1.8', paddingLeft: '20px' }}>
+              <li><strong>Essential cookies:</strong> To remember your preferences (theme, language).</li>
+              <li><strong>Analytics cookies:</strong> Google Analytics 4 uses cookies to measure traffic (non-personally identifiable).</li>
+              <li><strong>Advertising cookies:</strong> Google AdSense uses cookies to display relevant advertisements.</li>
+            </ul>
+            <p>
+              You can manage or delete cookies through your browser settings at any time.
+            </p>
+          </section>
+
+          <section>
+            <h2>7. Changes to This Policy</h2>
+            <p>
+              We may update this Privacy Policy from time to time. Any changes will be reflected on this page 
+              with an updated "Last Updated" date.
+            </p>
+          </section>
+
           <section className="contact-section">
             <EyeOff size={24} />
             <p>
