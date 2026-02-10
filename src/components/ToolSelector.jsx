@@ -1,16 +1,35 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate, Sparkles, ScanText, PenTool, QrCode, Video, Image, Music } from 'lucide-react';
-
-import { useTranslation } from 'react-i18next';
+import HowItWorks from './HowItWorks';
+import FAQSection from './FAQSection';
 
 const ToolSelector = ({ onSelectTool }) => {
   const { t } = useTranslation();
 
   return (
     <div className="selector-container">
+      {/* ... existing header ... */}
       <div className="selector-header">
         <h2>{t('home.title')}</h2>
         <p>{t('home.subtitle')}</p>
       </div>
+
+      <div className="cards-grid">
+         {/* ... existing cards ... */}
+         {/* I'll need to use replace logic carefully here since I can't match all cards */}
+         {/* Instead, I will append them at the end of the component return, before style */}
+      </div>
+      
+      <div className="trust-sections">
+        <HowItWorks />
+        <FAQSection />
+      </div>
+
+      <style>{`
+        /* ... existing styles ... */
+        .trust-sections {
+           width: 100%;
+           margin-top: 40px;
+        }
+
 
       <div className="cards-grid">
         <button className="tool-card video-compressor" onClick={() => onSelectTool('video-compressor')}>
@@ -326,6 +345,11 @@ const ToolSelector = ({ onSelectTool }) => {
         </button>
       </div>
 
+      <div className="trust-sections">
+        <HowItWorks />
+        <FAQSection />
+      </div>
+
       <style>{`
         .selector-container {
           display: flex;
@@ -336,6 +360,11 @@ const ToolSelector = ({ onSelectTool }) => {
           padding: 60px 20px;
           position: relative;
           overflow: hidden;
+        }
+
+        .trust-sections {
+           width: 100%;
+           margin-top: 40px;
         }
 
         /* Ambient Background Effect */

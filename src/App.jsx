@@ -19,6 +19,8 @@ const MagicEraserEditor = lazy(() => import('./components/MagicEraserEditor'));
 const VideoEditor = lazy(() => import('./components/VideoEditor'));
 const VideoToGif = lazy(() => import('./components/VideoToGif'));
 const VideoToAudio = lazy(() => import('./components/VideoToAudio'));
+const RealtorHub = lazy(() => import('./components/RealtorHub'));
+const EcommerceHub = lazy(() => import('./components/EcommerceHub'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const Contact = lazy(() => import('./components/Contact'));
 const About = lazy(() => import('./components/About'));
@@ -133,6 +135,19 @@ const AppContent = () => {
               <ToolLayout toolId="video-to-audio">
                  <VideoToAudio />
               </ToolLayout>
+            </SeoWrapper>
+          } />
+
+          {/* SOLUTIONS HUBS */}
+          <Route path="/solutions/for-realtors" element={
+            <SeoWrapper title="Real Estate Photo Editor & Resizer" description="Optimize property photos for MLS & Zillow. Resize, brighten, and watermark images instantly.">
+              <RealtorHub />
+            </SeoWrapper>
+          } />
+
+          <Route path="/solutions/for-ecommerce" element={
+            <SeoWrapper title="E-commerce Product Photo Optimizer" description="Prepare product photos for Shopify, Etsy & Amazon. Remove backgrounds and crop for sales.">
+              <EcommerceHub />
             </SeoWrapper>
           } />
 
