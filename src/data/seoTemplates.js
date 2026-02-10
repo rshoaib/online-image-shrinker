@@ -25,3 +25,16 @@ export const conversionPages = [
   { slug: 'webp-to-jpg', from: 'WebP', to: 'JPG' },
   { slug: 'heic-to-png', from: 'HEIC', to: 'PNG' }
 ];
+
+export const videoToGifPages = [
+  { slug: 'mp4-to-gif', from: 'MP4', to: 'GIF' },
+  { slug: 'mov-to-gif', from: 'MOV', to: 'GIF' },
+  { slug: 'webm-to-gif', from: 'WebM', to: 'GIF' }
+];
+
+export const videoToAudioPages = [
+  { slug: 'mp4-to-mp3', from: 'MP4', to: 'MP3' },
+  { slug: 'mov-to-mp3', from: 'MOV', to: 'MP3' },
+  { slug: 'webm-to-mp3', from: 'WebM', to: 'MP3' },
+  { slug: 'extract-audio-from-mp4', from: 'MP4', to: 'Audio' }
+];

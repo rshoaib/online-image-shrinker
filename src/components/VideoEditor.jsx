@@ -1,58 +1,14 @@
 import { useState, useRef, useEffect } from 'react';
 import { ArrowLeft, Video, Download, Settings, Loader2, AlertTriangle, Play } from 'lucide-react';
-import { FFmpeg } from '@ffmpeg/ffmpeg';
-import { fetchFile, toBlobURL } from '@ffmpeg/util';
+import { fetchFile } from '@ffmpeg/util';
+import { useFfmpeg } from '../hooks/useFfmpeg';
 
 const VideoEditor = ({ file, onBack }) => {
-  const [ffmpeg, setFfmpeg] = useState(null);
-  const [loaded, setLoaded] = useState(false);
+  const { ffmpeg, loaded, message, setMessage, progress, setProgress } = useFfmpeg();
   const [processing, setProcessing] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [message, setMessage] = useState('Loading FFmpeg core...');
   const [outputUrl, setOutputUrl] = useState(null);
   const [outputSize, setOutputSize] = useState(0);
   const videoRef = useRef(null);
-  const messageRef = useRef('Initializing...');
-
-  // Settings
-  const [quality, setQuality] = useState('medium'); // low, medium, high
-  const [resolution, setResolution] = useState('original'); // original, 720p, 480p
-
-  const loadFfmpeg = async () => {
-    const ffmpegInstance = new FFmpeg();
-    
-    ffmpegInstance.on('log', ({ message }) => {
-      messageRef.current = message;
-      // Parse progress if possible (complex for ffmpeg raw logs, but cleaner to just show message)
-    });
-
-    ffmpegInstance.on('progress', ({ progress, time }) => {
-      setProgress(Math.round(progress * 100));
-    });
-
-    try {
-      // Load ffmpeg.wasm from unpkg (standard CDN approach)
-      // We need to use toBlobURL to bypass some CSP/MIME issues in certain envs
-      const baseURL = 'https://unpkg.com/@ffmpeg/core-mt@0.12.6/dist/esm';
-      
-      await ffmpegInstance.load({
-        coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, 'text/javascript'),
-        wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, 'application/wasm'),
-        workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, 'text/javascript'),
-      });
-
-      setFfmpeg(ffmpegInstance);
-      setLoaded(true);
-      setMessage('Ready to compress');
-    } catch (error) {
-      console.error('FFmpeg load error:', error);
-      setMessage('Error loading video engine. Your browser might not support SharedArrayBuffer.');
-    }
-  };
-
-  useEffect(() => {
-    loadFfmpeg();
-  }, []);
 
   const getCompressionArgs = () => {
     // Basic compression mapping

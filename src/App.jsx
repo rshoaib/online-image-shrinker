@@ -17,10 +17,12 @@ const BlogPost = lazy(() => import('./components/BlogPost'));
 const ExifEditor = lazy(() => import('./components/ExifEditor'));
 const MagicEraserEditor = lazy(() => import('./components/MagicEraserEditor'));
 const VideoEditor = lazy(() => import('./components/VideoEditor'));
+const VideoToGif = lazy(() => import('./components/VideoToGif'));
+const VideoToAudio = lazy(() => import('./components/VideoToAudio'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const Contact = lazy(() => import('./components/Contact'));
 const About = lazy(() => import('./components/About'));
-import { pdfSizePages, imageResizePages, conversionPages } from './data/seoTemplates';
+import { pdfSizePages, imageResizePages, conversionPages, videoToAudioPages, videoToGifPages } from './data/seoTemplates';
 import CookieConsent from './components/CookieConsent';
 
 const PageLoader = () => (
@@ -114,6 +116,22 @@ const AppContent = () => {
             <SeoWrapper title="Free Video Compressor - Reduce MP4 Size Online" description="Compress video files locally in your browser. No upload, no limit, privacy-first.">
               <ToolLayout toolId="video-compressor">
                  <VideoEditor />
+              </ToolLayout>
+            </SeoWrapper>
+          } />
+
+          <Route path="/tool/video-to-gif" element={
+            <SeoWrapper title="Free Video to GIF Converter - High Quality" description="Convert MP4 to GIF online with high quality palette generation. 100% Client-Side.">
+              <ToolLayout toolId="video-to-gif">
+                 <VideoToGif />
+              </ToolLayout>
+            </SeoWrapper>
+          } />
+
+           <Route path="/tool/video-to-audio" element={
+            <SeoWrapper title="Free Video to MP3 Converter - Extract Audio" description="Extract MP3 audio from video files locally. Safe, private, and fast.">
+              <ToolLayout toolId="video-to-audio">
+                 <VideoToAudio />
               </ToolLayout>
             </SeoWrapper>
           } />
@@ -349,13 +367,45 @@ const AppContent = () => {
             />
           ))}
 
+          {/* Video to GIF */}
+          {videoToGifPages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/convert-${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId="video-to-gif" 
+                  title={`Convert ${page.from} to ${page.to} Online (Free)`}
+                  description={`Make high quality GIFs from ${page.from} videos without uploading. Control FPS and size.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+
+          {/* Video to Audio */}
+          {videoToAudioPages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/convert-${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId="video-to-audio" 
+                  title={`Convert ${page.from} to ${page.to} Online (Free)`}
+                  description={`Extract high quality MP3 audio from ${page.from} video files. Fast, free, and private.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+          
           <Route path="/convert-heic-to-jpg" element={
              <SeoLandingPage 
                toolId="image-converter" 
                title="HEIC to JPG Converter - Free Online"
-               description="Convert iPhone photos (HEIC) to JPG or PNG instantly. Works locally in your browser, no upload needed."
+               description="Convert HEIC/HEIF photos from iPhone to JPG format. Batch conversion supported."
                files={files} setFiles={setFiles} onBack={handleBack}
-            />
+             />
           } />
 
           <Route path="/magic-eraser" element={

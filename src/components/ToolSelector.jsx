@@ -1,4 +1,4 @@
-import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate, Sparkles, ScanText, PenTool, QrCode, Video } from 'lucide-react';
+import { Minimize2, Maximize2, ArrowRight, Crop, Type, FileText, Eraser, Zap, Grid, EyeOff, User, Monitor, ShieldCheck, RefreshCw, Smile, Palette, Globe, LayoutTemplate, Sparkles, ScanText, PenTool, QrCode, Video, Image, Music } from 'lucide-react';
 
 import { useTranslation } from 'react-i18next';
 
@@ -20,6 +20,32 @@ const ToolSelector = ({ onSelectTool }) => {
           <div className="card-content">
             <h3>{t('tools.video_compressor.title')} <span className="badge">New</span></h3>
             <p>{t('tools.video_compressor.desc')}</p>
+          </div>
+          <div className="card-action">
+            <span>{t('common.select')}</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card gif" onClick={() => onSelectTool('video-to-gif')}>
+          <div className="icon-wrapper">
+             <Image size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Video to GIF <span className="badge">New</span></h3>
+            <p>Convert MP4 to high-quality animated GIFs. Control FPS and size.</p>
+          </div>
+          <div className="card-action">
+            <span>{t('common.select')}</span> <ArrowRight size={16} />
+          </div>
+        </button>
+
+        <button className="tool-card mp3" onClick={() => onSelectTool('video-to-audio')}>
+          <div className="icon-wrapper">
+             <Music size={32} />
+          </div>
+          <div className="card-content">
+            <h3>Video to MP3 <span className="badge">New</span></h3>
+            <p>Extract audio from video files. Save as MP3 instantly.</p>
           </div>
           <div className="card-action">
             <span>{t('common.select')}</span> <ArrowRight size={16} />
