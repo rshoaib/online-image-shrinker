@@ -1,27 +1,48 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 
-const FAQSection = () => {
+const FAQSection = ({ toolType = 'general' }) => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
-    {
-      question: "Is my data private? Do you upload my photos?",
-      answer: "Yes, your data is 100% private. All processing happens locally in your browser. Your photos are never uploaded to our servers, ensuring maximum security for your personal and professional images."
-    },
-    {
-      question: "Is this tool really free?",
-      answer: "Yes, our base tools are completely free to use without limits. We believe in providing accessible, high-quality tools for everyone. We may introduce premium features for power users in the future."
-    },
-    {
-      question: "What file formats do you support?",
-      answer: "We support all major image formats including JPG, PNG, WebP, GIF, and HEIC (iPhone photos). We also handle PDF compression and MP4 video processing."
-    },
-    {
-      question: "Can I use this on my phone?",
-      answer: "Absolutely! Our website is fully responsive and works perfectly on iPhone, Android, and tablets. It's like having a pro photo editor in your pocket."
-    }
-  ];
+  const getFaqs = () => {
+    const commonFaqs = [
+      {
+        question: "Is my data private? Do you upload my photos?",
+        answer: "Yes, your data is 100% private. All processing happens locally in your browser. Your photos are never uploaded to our servers."
+      },
+      {
+        question: "Is this tool really free?",
+        answer: "Yes, our base tools are completely free to use without limits. We believe in providing accessible, high-quality tools for everyone."
+      }
+    ];
+
+    const specifics = {
+      'pdf': [
+        { question: "Does this reduce PDF quality?", answer: "We optimize the PDF structure and images to reduce size while maintaining readability. You can choose different compression levels." },
+        { question: "Can I merge PDF files?", answer: "Currently we focus on compression, but merging features are coming soon!" }
+      ],
+      'resize': [
+        { question: "Will my image lose quality?", answer: "Resizing down (shrinking) usually maintains quality. Upscaling may cause pixelation unless you use our AI Upscaler." },
+        { question: "What dimensions should I use for Instagram?", answer: "For posts use 1080x1080, for stories use 1080x1920." }
+      ],
+      'crop': [
+        { question: "Do you have presets for Social Media?", answer: "Yes! We have built-in presets for Instagram, Facebook, Twitter, YouTube, and LinkedIn." },
+        { question: "Can I crop specifically for passport photos?", answer: "Yes, check our Passport Photo tool for specific country requirements." }
+      ],
+      'passport': [
+        { question: "Is this guaranteed to be accepted?", answer: "We provide the correct aspect ratio and dimensions, but please ensure your lighting and background meet official requirements." },
+        { question: "How do I print this?", answer: "Download the image and print it on 4x6 inch photo paper at a local kiosk or pharmacy." }
+      ],
+      'compress': [
+        { question: "How much can I reduce the file size?", answer: "Typically we can reduce file size by 50-80% without noticeable quality loss using advanced compression algorithms." },
+        { question: "Does it work with WebP?", answer: "Yes, we support JPG, PNG, and WebP compression." }
+      ]
+    };
+
+    return [...(specifics[toolType] || []), ...commonFaqs];
+  };
+
+  const faqs = getFaqs();
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);

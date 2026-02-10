@@ -1,6 +1,43 @@
 import { Upload, Cpu, Download } from 'lucide-react';
 
-const HowItWorks = () => {
+const HowItWorks = ({ toolType = 'general' }) => {
+  const getSteps = () => {
+    switch (toolType) {
+      case 'pdf':
+        return [
+          { title: 'Upload PDF', desc: 'Select your PDF document. Files stay on your device.' },
+          { title: 'Compress', desc: 'Choose your compression level (Extreme, Recommended, Less).' },
+          { title: 'Download', desc: 'Get your smaller PDF instantly.' }
+        ];
+      case 'resize':
+        return [
+          { title: 'Upload Image', desc: 'Upload JPG, PNG, or WebP images.' },
+          { title: 'Set Dimensions', desc: 'Enter width/height or choose a percentage.' },
+          { title: 'Download', desc: 'Save your resized image instantly.' }
+        ];
+      case 'crop':
+        return [
+          { title: 'Upload Photo', desc: 'Select the photo you want to crop.' },
+          { title: 'Crop', desc: 'Choose a preset (e.g. Instagram) or drag handles.' },
+          { title: 'Download', desc: 'Get your perfectly cropped image.' }
+        ];
+      case 'passport':
+        return [
+          { title: 'Upload Photo', desc: 'Use a photo with even lighting and plain background.' },
+          { title: 'Select Country', desc: 'Choose US, UK, EU, or Custom size.' },
+          { title: 'Download', desc: 'Download the printable sheet or single photo.' }
+        ];
+      default:
+        return [
+          { title: 'Upload', desc: 'Select your photos or videos. Files processed locally.' },
+          { title: 'Process', desc: 'Our powerful engine optimizes your files instantly.' },
+          { title: 'Download', desc: 'Get your optimized files immediately.' }
+        ];
+    }
+  };
+
+  const steps = getSteps();
+
   return (
     <div className="hiw-container">
       <div className="hiw-header">
@@ -12,8 +49,8 @@ const HowItWorks = () => {
         <div className="step-card">
           <div className="step-number">1</div>
           <div className="step-icon"><Upload size={32} /></div>
-          <h3>Upload</h3>
-          <p>Select your photos or videos. Files are strictly processed locally on your device.</p>
+          <h3>{steps[0].title}</h3>
+          <p>{steps[0].desc}</p>
         </div>
 
         <div className="step-line"></div>
@@ -21,8 +58,8 @@ const HowItWorks = () => {
         <div className="step-card">
           <div className="step-number">2</div>
           <div className="step-icon"><Cpu size={32} /></div>
-          <h3>Process</h3>
-          <p>Our powerful engine resizes, compresses, or edits your files instantly.</p>
+          <h3>{steps[1].title}</h3>
+          <p>{steps[1].desc}</p>
         </div>
 
         <div className="step-line"></div>
@@ -30,8 +67,8 @@ const HowItWorks = () => {
         <div className="step-card">
           <div className="step-number">3</div>
           <div className="step-icon"><Download size={32} /></div>
-          <h3>Download</h3>
-          <p>Get your optimized files immediately. No watermarks, no sign-up required.</p>
+          <h3>{steps[2].title}</h3>
+          <p>{steps[2].desc}</p>
         </div>
       </div>
 

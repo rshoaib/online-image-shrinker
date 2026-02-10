@@ -6,6 +6,7 @@ import DropZone from './components/DropZone';
 import ToolSelector from './components/ToolSelector';
 import FeaturesSection from './components/FeaturesSection';
 import FAQSection from './components/FAQSection';
+import HowItWorks from './components/HowItWorks';
 import SeoWrapper from './components/SeoWrapper';
 import AnalyticsWrapper from './components/AnalyticsWrapper';
 import ToolLayout from './components/ToolLayout';
@@ -24,7 +25,10 @@ const EcommerceHub = lazy(() => import('./components/EcommerceHub'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const Contact = lazy(() => import('./components/Contact'));
 const About = lazy(() => import('./components/About'));
-import { pdfSizePages, imageResizePages, conversionPages, videoToAudioPages, videoToGifPages } from './data/seoTemplates';
+import { 
+  pdfSizePages, imageResizePages, conversionPages, videoToAudioPages, videoToGifPages,
+  socialMediaPages, printReadyPages, passportPages 
+} from './data/seoTemplates';
 import CookieConsent from './components/CookieConsent';
 
 const PageLoader = () => (
@@ -398,6 +402,55 @@ const AppContent = () => {
             />
           ))}
 
+          
+          {/* Social Media Pages */}
+          {socialMediaPages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/resize-for-${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId={page.toolId} 
+                  title={`${page.label} Resizer - Free Online Tool`}
+                  description={`Resize images for ${page.label} (${page.width}x${page.height}) instantly. No watermark, privacy-first.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+
+          {/* Print Ready Pages */}
+          {printReadyPages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/print-${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId={page.toolId} 
+                  title={`${page.label} Maker - Free Online`}
+                  description={`Create ${page.label} formatted images instantly. 300 DPI ready for printing. Private & Free.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+
+          {/* Passport Pages */}
+          {passportPages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/passport-photo-${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId={page.toolId} 
+                  title={`Free ${page.label} Maker - Biometric Standard`}
+                  description={`Create valid ${page.label}s online. AI background removal and correct sizing. 100% Client-side privacy.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+
           {/* Video to Audio */}
           {videoToAudioPages.map(page => (
             <Route 
@@ -583,6 +636,12 @@ const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack })
               onBack={onBack} 
             />
           )}
+          {/* Add Content Sections Below Tool */}
+          <div style={{ marginTop: '60px' }}>
+             <HowItWorks toolType={toolId} />
+             <FAQSection toolType={toolId} />
+          </div>
+
           {/* Reuse styles */}
           <style>{`
             .back-link {
