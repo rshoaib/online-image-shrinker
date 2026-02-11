@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { 
   Maximize2, Zap, Type, FileText, Eraser, Crop, Grid, EyeOff, 
   User, Monitor, Settings, Repeat, Palette, PenTool, ScanLine, 
-  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile 
+  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles 
 } from 'lucide-react';
 
 const ToolSelector = ({ onSelectTool }) => {
@@ -32,6 +32,7 @@ const ToolSelector = ({ onSelectTool }) => {
     { id: 'exif', icon: <Settings size={32} />, title: 'EXIF Data', desc: 'View & Remove metadata' },
     { id: 'palette-generator', icon: <Palette size={32} />, title: 'Palette', desc: 'Extract colors' },
     { id: 'meme-generator', icon: <Smile size={32} />, title: 'Meme', desc: 'Make memes' },
+    { id: 'photo-filters', icon: <Sparkles size={32} />, title: 'Filters', desc: 'Brightness & effects' },
     { id: 'video-compressor', icon: <Video size={32} />, title: 'Compress', desc: 'Reduce MP4 size' },
     { id: 'video-to-gif', icon: <Film size={32} />, title: 'To GIF', desc: 'Video to GIF' },
     { id: 'video-to-audio', icon: <Music size={32} />, title: 'To MP3', desc: 'Extract audio' },

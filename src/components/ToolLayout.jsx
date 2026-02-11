@@ -29,6 +29,7 @@ const CollageEditor = lazy(() => import('./CollageEditor'));
 const MagicEraserEditor = lazy(() => import('./MagicEraserEditor'));
 const OcrEditor = lazy(() => import('./OcrEditor'));
 const QrCodeEditor = lazy(() => import('./QrCodeEditor'));
+const PhotoFilterEditor = lazy(() => import('./PhotoFilterEditor'));
 
 
 
@@ -93,6 +94,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <SignatureEditor onBack={onBack} />;
     case 'qr-code-generator':
       return <QrCodeEditor onBack={onBack} />;
+    case 'photo-filters':
+      return <PhotoFilterEditor file={files[0]} onBack={onBack} />;
 
     default:
       if (files.length === 1) {

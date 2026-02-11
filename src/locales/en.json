@@ -139,6 +139,10 @@
       "magic_eraser": {
         "title": "Magic Eraser",
         "desc": "Remove unwanted objects, people, or text from photos instantly with AI."
+      },
+      "photo_filters": {
+        "title": "Photo Filters",
+        "desc": "Adjust brightness, contrast, saturation and apply beautiful preset filters."
       }
     }
   }

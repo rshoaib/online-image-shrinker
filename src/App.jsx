@@ -63,7 +63,7 @@ const AppContent = () => {
       navigate('/privacy');
     } else if (dest === 'blog') {
       navigate('/blog');
-    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text', 'signature-maker', 'qr-code-generator'].includes(dest)) {
+    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text', 'signature-maker', 'qr-code-generator', 'photo-filters-online'].includes(dest)) {
       navigate(`/${dest}`);
     } else if (dest === 'terms') {
       navigate('/terms');
@@ -506,7 +506,17 @@ const AppContent = () => {
                </SeoWrapper>
           } />
 
-          {/* BLOG ROUTES */}
+          
+           <Route path="/photo-filters-online" element={
+              <SeoLandingPage 
+                toolId="photo-filters" 
+                title="Free Photo Filters - Online Editor"
+                description="Adjust brightness, contrast, saturation, temperature, and apply beautiful preset filters. 100% free and private."
+                files={files} setFiles={setFiles} onBack={handleBack}
+             />
+           } />
+
+           {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
 
@@ -541,6 +551,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'magic-eraser': return { title: 'Magic Eraser', desc: 'Remove unwanted objects and blemishes with AI.' };
       case 'ocr': return { title: 'Image to Text', desc: 'Extract text from images instantly (OCR).' };
       case 'qr-code-generator': return { title: 'QR Code Generator', desc: 'Create custom QR codes with logos instantly.' };
+      case 'photo-filters': return { title: 'Photo Filters & Adjustments', desc: 'Adjust brightness, contrast, saturation and apply beautiful preset filters.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };
