@@ -37,4 +37,25 @@ export default defineConfig({
       },
     })
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Core vendor - React + Router (loaded on every page)
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          
+          // i18n bundle - loaded on every page but can be cached separately
+          'vendor-i18n': ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
+
+          // Icons - loaded on most pages
+          'vendor-icons': ['lucide-react'],
+
+          // Heavy libs - PDF, QR, etc
+          'vendor-pdf': ['jspdf'],
+        }
+      }
+    },
+    // Increase warning limit since we expect some large AI chunks
+    chunkSizeWarningLimit: 1000,
+  },
 })

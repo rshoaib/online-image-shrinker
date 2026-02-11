@@ -26,11 +26,14 @@ const Layout = ({ children, onNavigate }) => {
              {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
           <div className="lang-selector-wrapper">
-             <Globe size={18} className="lang-icon"/>
+             <Globe size={18} className="lang-icon" aria-hidden="true"/>
+             <label htmlFor="language-select" className="sr-only">Select Language</label>
              <select 
+               id="language-select"
                className="lang-select" 
                value={i18n.language} 
                onChange={(e) => i18n.changeLanguage(e.target.value)}
+               aria-label="Select language"
              >
                <option value="en">English</option>
                <option value="es">Español</option>
@@ -76,7 +79,7 @@ const Layout = ({ children, onNavigate }) => {
               </button>
             )}
             <a href="/blog" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('blog'); }} className="footer-link">{t('common.blog')}</a>
-           <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link"><Github size={16} /></a>
+           <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="View source code on GitHub"><Github size={16} aria-hidden="true" /></a>
         </div>
       </footer>
 
