@@ -99,18 +99,18 @@ function getProgrammaticPages() {
     convPages.push(`convert-${match[1]}`);
   }
 
-  // Social media pages: crop-for-{slug}
+  // Social media pages: resize-for-{slug}
   const socialMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label:\s*['"][^'"]+['"],\s*toolId:\s*['"]crop['"]/g);
   const socialPages = [];
   for (const match of socialMatches) {
-    socialPages.push(`crop-for-${match[1]}`);
+    socialPages.push(`resize-for-${match[1]}`);
   }
 
-  // Print-ready pages: print-ready-{slug}
+  // Print-ready pages: print-{slug}
   const printMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label:\s*['"][^'"]+['"],\s*toolId:\s*['"]resize['"]/g);
   const printPages = [];
   for (const match of printMatches) {
-    printPages.push(`print-ready-${match[1]}`);
+    printPages.push(`print-${match[1]}`);
   }
 
   // Passport pages: passport-photo-{slug}

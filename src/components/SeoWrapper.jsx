@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 const SeoWrapper = ({ title, description, children, ...props }) => {
   const location = useLocation();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     // Determine the current full URL
