@@ -25,6 +25,7 @@ const EcommerceHub = lazy(() => import('./components/EcommerceHub'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
 const Contact = lazy(() => import('./components/Contact'));
 const About = lazy(() => import('./components/About'));
+const NotFound = lazy(() => import('./components/NotFound'));
 import { 
   pdfSizePages, imageResizePages, conversionPages, videoToAudioPages, videoToGifPages,
   socialMediaPages, printReadyPages, passportPages 
@@ -519,6 +520,9 @@ const AppContent = () => {
            {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+
+          {/* 404 CATCH-ALL */}
+          <Route path="*" element={<NotFound />} />
 
         </Routes>
       </Suspense>

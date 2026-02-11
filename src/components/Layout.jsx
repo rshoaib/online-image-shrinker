@@ -17,9 +17,9 @@ const Layout = ({ children, onNavigate }) => {
       <header className="header">
         <div className="logo-container" onClick={() => onNavigate && onNavigate('home')} style={{cursor: 'pointer'}}>
           <img src={logoUrl} alt="Online Image Shrinker" className="logo-img" />
-          <h1 className="logo-text">
+          <div className="logo-text">
             Online<span className="text-highlight">ImageShrinker</span>
-          </h1>
+          </div>
         </div>
         <nav className="nav">
           <button className="lang-btn" onClick={toggleTheme} title="Toggle Theme">
@@ -40,10 +40,10 @@ const Layout = ({ children, onNavigate }) => {
                <option value="it">Italiano</option>
              </select>
           </div>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }} className="nav-link">{t('common.back')}</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('blog'); }} className="nav-link">{t('common.blog')}</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('about'); }} className="nav-link">About</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('contact'); }} className="nav-link">Contact</a>
+          <a href="/" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('home'); }} className="nav-link">{t('common.back')}</a>
+          <a href="/blog" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('blog'); }} className="nav-link">{t('common.blog')}</a>
+          <a href="/about" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('about'); }} className="nav-link">About</a>
+          <a href="/contact" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('contact'); }} className="nav-link">Contact</a>
         </nav>
       </header>
 
@@ -66,27 +66,32 @@ const Layout = ({ children, onNavigate }) => {
            >
              <Coffee size={16} /> <span>Donate</span>
            </a>
-            <button onClick={() => onNavigate && onNavigate('privacy')} className="footer-link">{t('common.privacy_policy')}</button>
-            <button onClick={() => onNavigate && onNavigate('terms')} className="footer-link">Terms</button>
-            <button onClick={() => onNavigate && onNavigate('contact')} className="footer-link">Contact</button>
-            <button onClick={() => onNavigate && onNavigate('about')} className="footer-link">About Us</button>
+            <a href="/privacy" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('privacy'); }} className="footer-link">{t('common.privacy_policy')}</a>
+            <a href="/terms" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('terms'); }} className="footer-link">Terms</a>
+            <a href="/contact" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('contact'); }} className="footer-link">Contact</a>
+            <a href="/about" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('about'); }} className="footer-link">About Us</a>
             {isInstallable && (
               <button onClick={install} className="footer-link install-btn-footer">
                 Install App
               </button>
             )}
-            <button onClick={() => onNavigate && onNavigate('blog')} className="footer-link">{t('common.blog')}</button>
+            <a href="/blog" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('blog'); }} className="footer-link">{t('common.blog')}</a>
            <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link"><Github size={16} /></a>
         </div>
       </footer>
 
       <div className="quick-links">
         <span>Popular Tools:</span>
-        <a href="/resize-passport-photo" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('resize-passport-photo'); }}>Passport Photo Maker</a>
-        <a href="/resize-for-youtube" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('resize-for-youtube'); }}>YouTube Thumbnail Resizer</a>
+        <a href="/resize-passport-photo" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('resize-passport-photo'); }}>Passport Photo</a>
+        <a href="/resize-for-youtube" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('resize-for-youtube'); }}>YouTube Thumbnail</a>
         <a href="/jpg-to-pdf" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('jpg-to-pdf'); }}>Image to PDF</a>
         <a href="/compress-png" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('compress-png'); }}>Compress PNG</a>
         <a href="/resize-for-instagram" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('resize-for-instagram'); }}>Instagram Resizer</a>
+        <a href="/photo-filters-online" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('photo-filters-online'); }}>Photo Filters</a>
+        <a href="/qr-code-generator" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('qr-code-generator'); }}>QR Code Generator</a>
+        <a href="/remove-background" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('remove-background'); }}>Remove Background</a>
+        <a href="/collage-maker" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('collage-maker'); }}>Collage Maker</a>
+        <a href="/meme-generator-online" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('meme-generator-online'); }}>Meme Generator</a>
       </div>
 
       <style>{`
@@ -130,6 +135,7 @@ const Layout = ({ children, onNavigate }) => {
           font-size: 1.5rem;
           font-weight: 700;
           letter-spacing: -0.5px;
+          margin: 0;
         }
 
         .text-highlight {

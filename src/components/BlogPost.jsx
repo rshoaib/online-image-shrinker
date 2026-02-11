@@ -52,7 +52,7 @@ const BlogPost = () => {
              <div className="share-cta">
                <h3>Find this helpful?</h3>
                <p>Check out our free tools to speed up your workflow.</p>
-               <Link to="/" className="cta-button">Exlore Tools</Link>
+               <Link to="/" className="cta-button">Explore Tools</Link>
              </div>
           </div>
         </article>

@@ -2,17 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Helper to handle ES modules in Node scripts
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
-// Import data - we need to read the file content manually because 
-// importing a module with JSX/React dependencies in Node might ensure errors
-// or we can just import it if it's pure JS data.
-// However, our articles.js has `content: ...` which is fine, 
-// but if it has imports like 'lucide-react', Node will fail.
-// So we will employ a regex strategy to extract slugs to be safe/lazy 
-// without setting up a babel transpiler for this script.
 
 const articlesPath = path.join(__dirname, '../src/data/articles.js');
 const seoTemplatesPath = path.join(__dirname, '../src/data/seoTemplates.js');
@@ -20,22 +11,31 @@ const sitemapPath = path.join(__dirname, '../public/sitemap.xml');
 const BASE_URL = 'https://onlineimageshrinker.com';
 
 const STATIC_URLS = [
+  // Homepage
   '/',
+
+  // Core Tool Pages
   '/tool/compress',
   '/tool/resize',
   '/tool/crop',
-  '/watermark-photos-online',
   '/tool/pdf',
   '/tool/remove-bg',
   '/tool/upscale',
+  '/tool/photo-filters',
+  '/tool/video-compressor',
+  '/tool/video-to-gif',
+  '/tool/video-to-audio',
+
+  // SEO Landing Pages (tools)
   '/compress-jpeg',
-  '/resize-for-instagram',
-  '/convert-heic-to-jpg',
-  '/jpg-to-pdf',
-  '/resize-passport-photo',
-  '/resize-for-youtube',
   '/compress-png',
   '/compress-webp',
+  '/resize-for-instagram',
+  '/resize-for-youtube',
+  '/resize-passport-photo',
+  '/convert-heic-to-jpg',
+  '/jpg-to-pdf',
+  '/watermark-photos-online',
   '/remove-background',
   '/ai-image-upscaler',
   '/instagram-grid-maker',
@@ -50,7 +50,19 @@ const STATIC_URLS = [
   '/image-to-text',
   '/signature-maker',
   '/qr-code-generator',
-  '/blog'
+  '/photo-filters-online',
+  '/magic-eraser',
+
+  // Solutions / Growth Hubs
+  '/solutions/for-realtors',
+  '/solutions/for-ecommerce',
+
+  // Info Pages
+  '/blog',
+  '/about',
+  '/contact',
+  '/privacy',
+  '/terms',
 ];
 
 function getArticles() {
@@ -66,28 +78,49 @@ function getArticles() {
 function getProgrammaticPages() {
   const content = fs.readFileSync(seoTemplatesPath, 'utf8');
   
-  // Extract PDF Pages
+  // PDF size pages: compress-pdf-to-{slug}
   const pdfMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*size/g);
   const pdfPages = [];
   for (const match of pdfMatches) {
     pdfPages.push(`compress-pdf-to-${match[1]}`);
   }
 
-  // Extract Resize Pages
-  const resizeMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width/g);
+  // Image resize pages: resize-image-to-{slug}
+  const resizeMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label/g);
   const resizePages = [];
   for (const match of resizeMatches) {
-     resizePages.push(`resize-image-to-${match[1]}`);
+    resizePages.push(`resize-image-to-${match[1]}`);
   }
   
-  // Extract Conversion Pages
+  // Conversion pages: convert-{slug}
   const convMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*from/g);
   const convPages = [];
   for (const match of convMatches) {
-     convPages.push(`convert-${match[1]}`);
+    convPages.push(`convert-${match[1]}`);
   }
 
-  return [...pdfPages, ...resizePages, ...convPages];
+  // Social media pages: crop-for-{slug}
+  const socialMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label:\s*['"][^'"]+['"],\s*toolId:\s*['"]crop['"]/g);
+  const socialPages = [];
+  for (const match of socialMatches) {
+    socialPages.push(`crop-for-${match[1]}`);
+  }
+
+  // Print-ready pages: print-ready-{slug}
+  const printMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label:\s*['"][^'"]+['"],\s*toolId:\s*['"]resize['"]/g);
+  const printPages = [];
+  for (const match of printMatches) {
+    printPages.push(`print-ready-${match[1]}`);
+  }
+
+  // Passport pages: passport-photo-{slug}
+  const passportMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label:\s*['"][^'"]+['"],\s*toolId:\s*['"]passport['"]/g);
+  const passportPages = [];
+  for (const match of passportMatches) {
+    passportPages.push(`passport-photo-${match[1]}`);
+  }
+
+  return [...pdfPages, ...resizePages, ...convPages, ...socialPages, ...printPages, ...passportPages];
 }
 
 function generateSitemap() {
@@ -104,6 +137,7 @@ function generateSitemap() {
     <loc>${BASE_URL}${url}</loc>
     <changefreq>weekly</changefreq>
     <priority>${url === '/' ? '1.0' : '0.9'}</priority>
+    <lastmod>${date}</lastmod>
   </url>
 `;
   });
@@ -119,6 +153,7 @@ function generateSitemap() {
 `;
   });
 
+  // Add Programmatic SEO Pages
   const programmaticPages = getProgrammaticPages();
   programmaticPages.forEach(slug => {
     xml += `  <url>

@@ -52,6 +52,27 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
     }
     linkCanonical.href = currentUrl;
 
+    // Hreflang tags for multilingual SEO
+    const supportedLangs = ['en', 'es', 'de', 'fr', 'pt', 'it'];
+    // Remove any old hreflang link tags
+    document.querySelectorAll('link[hreflang]').forEach(el => el.remove());
+    supportedLangs.forEach(lang => {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = lang;
+      link.href = currentUrl; // Same URL, language handled client-side
+      document.head.appendChild(link);
+    });
+    // x-default hreflang
+    const xDefault = document.createElement('link');
+    xDefault.rel = 'alternate';
+    xDefault.hreflang = 'x-default';
+    xDefault.href = currentUrl;
+    document.head.appendChild(xDefault);
+
+    // Dynamic html lang attribute
+    document.documentElement.lang = i18n.language || 'en';
+
     // JSON-LD Structured Data
     let scriptJsonLd = document.querySelector('script[type="application/ld+json"]');
     if (!scriptJsonLd) {
@@ -97,7 +118,7 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
        updateMeta('google-site-verification', gscCode);
     }
 
-  }, [title, description, location, t, props.schemaType, props.date, props.author]);
+  }, [title, description, location, t, i18n.language, props.schemaType, props.date, props.author]);
 
   return children;
 };
