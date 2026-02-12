@@ -517,6 +517,15 @@ const AppContent = () => {
              />
            } />
 
+           <Route path="/compare-images-online" element={
+              <SeoLandingPage 
+                toolId="image-compare" 
+                title="Compare Images Online - Free Side-by-Side Tool"
+                description="Upload two images and compare them side by side with slider, overlay, or split view. 100% private, works locally in your browser."
+                files={files} setFiles={setFiles} onBack={handleBack}
+             />
+           } />
+
            {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -556,6 +565,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'ocr': return { title: 'Image to Text', desc: 'Extract text from images instantly (OCR).' };
       case 'qr-code-generator': return { title: 'QR Code Generator', desc: 'Create custom QR codes with logos instantly.' };
       case 'photo-filters': return { title: 'Photo Filters & Adjustments', desc: 'Adjust brightness, contrast, saturation and apply beautiful preset filters.' };
+      case 'image-compare': return { title: 'Image Comparison Tool', desc: 'Compare two images side by side with a slider.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };

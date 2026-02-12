@@ -30,6 +30,7 @@ const MagicEraserEditor = lazy(() => import('./MagicEraserEditor'));
 const OcrEditor = lazy(() => import('./OcrEditor'));
 const QrCodeEditor = lazy(() => import('./QrCodeEditor'));
 const PhotoFilterEditor = lazy(() => import('./PhotoFilterEditor'));
+const ImageCompareEditor = lazy(() => import('./ImageCompareEditor'));
 
 
 
@@ -96,6 +97,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <QrCodeEditor onBack={onBack} />;
     case 'photo-filters':
       return <PhotoFilterEditor file={files[0]} onBack={onBack} />;
+    case 'image-compare':
+      return <ImageCompareEditor file={files[0]} onBack={onBack} />;
 
     default:
       if (files.length === 1) {

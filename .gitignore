@@ -7,6 +7,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Build/lint/test debug artifacts
+build_*.txt
+lint_*.txt
+lint_*.json
+test_*.txt
+test-result*.json
+simple.test.js
+
 node_modules
 dist
 dist-ssr
