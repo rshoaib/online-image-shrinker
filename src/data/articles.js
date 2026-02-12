@@ -1327,5 +1327,250 @@ Google Shopping integration requires a pure white background. If your photo is o
 
 [Visit the Ecommerce Hub](/solutions/for-ecommerce)
     `
+  },
+  {
+    slug: 'reduce-image-size-for-email',
+    title: 'How to Reduce Image Size for Email Attachments (2026)',
+    excerpt: 'Stop getting "attachment too large" errors. Compress photos to fit Gmail, Outlook, and Yahoo limits instantly.',
+    iconName: 'Mail',
+    iconColor: '#EA4335',
+    date: 'Feb 12, 2026',
+    author: 'Productivity Team',
+    category: 'Tutorials',
+    content: `
+Every email provider has attachment limits. When you try to send vacation photos, scanned documents, or product images, you've probably seen the dreaded **"Attachment too large"** error.
+
+## Email Attachment Limits (2026)
+
+| Provider | Max Attachment | Max Total per Email |
+| :--- | :--- | :--- |
+| **Gmail** | 25 MB | 25 MB |
+| **Outlook** | 20 MB | 20 MB |
+| **Yahoo Mail** | 25 MB | 25 MB |
+| **iCloud Mail** | 20 MB | 20 MB |
+| **ProtonMail** | 25 MB | 25 MB |
+
+A single photo from a modern smartphone is **3-8 MB**. That means you can only attach 3-4 photos before hitting the limit.
+
+---
+
+## Method 1: Compress Without Resizing
+
+If you need to keep the original dimensions (for printing later), compression is your best option.
+
+1.  Go to the [Compress Tool](/tool/compress).
+2.  **Drag & Drop** your images.
+3.  Adjust the quality slider — **70-80%** gives a great balance of size and quality.
+4.  Download the compressed versions.
+
+**Typical results:**
+*   5 MB iPhone photo → **800 KB** (84% smaller)
+*   8 MB DSLR photo → **1.2 MB** (85% smaller)
+
+---
+
+## Method 2: Resize + Compress (Maximum Reduction)
+
+For email, nobody needs a 4000px wide image. Screens are typically 1920px or less.
+
+1.  Go to the [Resize Tool](/tool/resize).
+2.  Set the **width to 1600px** (more than enough for any screen).
+3.  The height adjusts automatically to keep proportions.
+4.  Then run the result through the [Compress Tool](/tool/compress).
+
+**Result:** A 7 MB photo becomes **200-400 KB** — you can attach 50+ photos in one email!
+
+---
+
+## Method 3: Convert to WebP
+
+WebP is 25-34% smaller than JPEG at the same quality.
+
+1.  Use the [Image Converter](/tool/image-converter).
+2.  Select **WebP** as the output format.
+3.  Download.
+
+> **Tip:** Most modern email clients can display WebP inline. However, if the recipient uses older software, stick with JPG.
+
+---
+
+## Pro Tips
+
+*   **Batch process:** Select multiple images at once to save time.
+*   **Check the total:** Add up all attachment sizes before hitting send.
+*   **Privacy first:** Our tools run in your browser — your photos never leave your device.
+
+[Start Compressing Now](/tool/compress)
+    `
+  },
+  {
+    slug: 'create-qr-code-for-business',
+    title: 'How to Create a QR Code for Your Business Card (Free)',
+    excerpt: 'Generate custom QR codes with your logo and brand colors. Link to your website, menu, or contact info.',
+    iconName: 'QrCode',
+    iconColor: '#000000',
+    date: 'Feb 12, 2026',
+    author: 'Business Team',
+    category: 'Guides',
+    content: `
+QR codes are everywhere in 2026 — restaurant menus, business cards, product packaging, event tickets, and posters. They bridge the physical and digital worlds with a single scan.
+
+## What Can a QR Code Link To?
+
+| Use Case | What to Encode | Example |
+| :--- | :--- | :--- |
+| **Business Card** | Your website URL | \`https://yoursite.com\` |
+| **Restaurant Menu** | PDF or page link | \`https://menu.yoursite.com\` |
+| **WiFi Access** | Network credentials | Auto-connects guests |
+| **Payment** | PayPal/Venmo link | One-tap payment |
+| **Social Media** | Instagram/LinkedIn profile | Quick follow |
+| **App Download** | App Store link | Direct install |
+
+---
+
+## How to Create a Custom QR Code
+
+Our [QR Code Generator](/qr-code-generator) lets you create branded QR codes with custom colors and logos — for free.
+
+### Step 1: Enter Your Content
+Type or paste the URL, text, or WiFi credentials you want to encode.
+
+### Step 2: Customize Colors
+*   **Foreground:** Match your brand color (e.g., your logo's hex code).
+*   **Background:** White works best for printing, but you can use any light color.
+*   **Tip:** Ensure high contrast between foreground and background for reliable scanning.
+
+### Step 3: Add Your Logo
+Upload your company logo as a PNG. It gets placed in the center of the QR code. QR codes have built-in error correction, so the logo doesn't break the scan.
+
+### Step 4: Download
+Choose your resolution (up to 1024px for print quality) and download as a high-res PNG.
+
+---
+
+## Design Best Practices
+
+1.  **Size matters:** For business cards, the QR code should be at least **2cm x 2cm** (0.8 inches). Smaller codes are hard to scan.
+2.  **Test before printing:** Always scan your QR code with at least 2 different phones before sending it to the printer.
+3.  **Don't invert colors:** Dark foreground on light background. Never the other way around — most scanners struggle with inverted codes.
+4.  **Add a CTA:** Print "Scan me" or "Visit our site" next to the code. People scan 30% more often when prompted.
+5.  **Use a short URL:** Long URLs create dense, harder-to-scan patterns. Use a link shortener if needed.
+
+---
+
+## QR Codes on Business Cards
+
+The modern business card includes:
+*   Your name, title, and company
+*   A QR code linking to your **digital portfolio or LinkedIn**
+*   A clean design with plenty of whitespace
+
+This way, someone can scan the card instead of manually typing your URL. It's faster and prevents typos.
+
+[Create Your QR Code](/qr-code-generator)
+    `
+  },
+  {
+    slug: 'best-image-formats-2026',
+    title: 'Best Image Formats in 2026: WebP vs AVIF vs JPEG vs PNG',
+    excerpt: 'A practical comparison of modern image formats. Which one should you use for websites, social media, and print?',
+    iconName: 'FileImage',
+    iconColor: '#8B5CF6',
+    date: 'Feb 12, 2026',
+    author: 'Web Performance',
+    category: 'Explained',
+    content: `
+Choosing the right image format can make or break your website's speed, your social media quality, or your print output. Here's the definitive 2026 comparison.
+
+## The Format Showdown
+
+| Feature | JPEG | PNG | WebP | AVIF |
+| :--- | :--- | :--- | :--- | :--- |
+| **Compression** | Lossy | Lossless | Both | Both |
+| **Transparency** | ❌ | ✅ | ✅ | ✅ |
+| **Animation** | ❌ | ❌ | ✅ | ✅ |
+| **File Size** | Medium | Large | **Small** | **Smallest** |
+| **Quality at Low Size** | Good | N/A | Better | **Best** |
+| **Browser Support** | 100% | 100% | 97% | 93% |
+| **Best For** | Photos | Logos/Icons | Web images | Cutting edge |
+
+---
+
+## JPEG — The Reliable Veteran
+
+**Use when:** You need maximum compatibility and the image is a photo.
+
+*   ✅ Supported literally everywhere (email, social media, printers).
+*   ✅ Good compression for photographs.
+*   ❌ No transparency support.
+*   ❌ Quality degrades each time you re-save.
+
+**Verdict:** Still the safest choice for email attachments and situations where you don't control the viewer.
+
+---
+
+## PNG — The Quality King
+
+**Use when:** You need transparency or pixel-perfect graphics.
+
+*   ✅ Lossless — never loses quality.
+*   ✅ Supports transparency (alpha channel).
+*   ❌ File sizes are 5-10x larger than JPEG for photos.
+*   ❌ Overkill for photographs.
+
+**Verdict:** Perfect for logos, icons, screenshots, and any graphic with text.
+
+---
+
+## WebP — The Modern Standard
+
+**Use when:** You're building a website or sharing images online.
+
+*   ✅ 25-34% smaller than JPEG at equal quality.
+*   ✅ Supports transparency AND animation.
+*   ✅ 97% browser support in 2026.
+*   ❌ Some older software can't open it.
+
+**Verdict:** The best all-around format for the web in 2026. If you're not using WebP on your website, you're leaving performance on the table.
+
+---
+
+## AVIF — The Future
+
+**Use when:** You want the absolute smallest file sizes and your audience uses modern browsers.
+
+*   ✅ 50% smaller than JPEG at equal quality.
+*   ✅ Supports HDR, wide color gamut, and transparency.
+*   ❌ Slower to encode (takes more CPU).
+*   ❌ 93% browser support — still gaps on older devices.
+
+**Verdict:** Technically superior to WebP, but not yet universally supported. Use it if you can serve fallbacks.
+
+---
+
+## Which Format Should You Pick?
+
+| Scenario | Recommended Format |
+| :--- | :--- |
+| Website hero images | **WebP** (with JPEG fallback) |
+| Logo or icon | **PNG** or **SVG** |
+| Email attachment | **JPEG** |
+| Social media post | **JPEG** or **PNG** |
+| E-commerce product photo | **WebP** |
+| Cutting-edge web app | **AVIF** (with WebP fallback) |
+| Print (flyer, poster) | **PNG** or **TIFF** |
+
+## Convert Between Formats Instantly
+
+Don't waste time exporting from Photoshop. Our [Image Converter](/tool/image-converter) lets you convert between JPG, PNG, and WebP in one click — right in your browser.
+
+*   Drag and drop your file.
+*   Select the target format.
+*   Download instantly.
+
+No upload, no server, no quality loss.
+
+[Convert Images Now](/tool/image-converter)
+    `
   }
 ];

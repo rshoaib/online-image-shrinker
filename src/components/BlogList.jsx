@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Instagram, FileImage, Zap, Eraser } from 'lucide-react';
+import { ArrowRight, Instagram, FileImage, Zap, Eraser, Mail, QrCode } from 'lucide-react';
 import SeoWrapper from './SeoWrapper';
 
 import { articles } from '../data/articles';
 
 const iconMap = {
-  Zap, Eraser, Instagram, FileImage
+  Zap, Eraser, Instagram, FileImage, Mail, QrCode
 };
 
 const BlogList = () => {
