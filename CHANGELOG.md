@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+### Added
+- **Social Media Preview Generator**: New tool to create platform-ready images for Twitter/X, Facebook, LinkedIn, Instagram (Post & Story), YouTube, and Pinterest. Features gradient/solid/image backgrounds, heading & subheading text overlays, and one-click export (`/social-media-preview-generator`).
+
 ## [1.2.1] - 2026-02-04
 ### Fixed
 - **Site Health**: Resolved numerous linting errors and synchronous state update issues across multiple editors.

@@ -52,6 +52,7 @@ const STATIC_URLS = [
   '/qr-code-generator',
   '/photo-filters-online',
   '/magic-eraser',
+  '/social-media-preview-generator',
 
   // Solutions / Growth Hubs
   '/solutions/for-realtors',

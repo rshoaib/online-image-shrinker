@@ -31,6 +31,7 @@ const OcrEditor = lazy(() => import('./OcrEditor'));
 const QrCodeEditor = lazy(() => import('./QrCodeEditor'));
 const PhotoFilterEditor = lazy(() => import('./PhotoFilterEditor'));
 const ImageCompareEditor = lazy(() => import('./ImageCompareEditor'));
+const SocialPreviewEditor = lazy(() => import('./SocialPreviewEditor'));
 
 
 
@@ -99,6 +100,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <PhotoFilterEditor file={files[0]} onBack={onBack} />;
     case 'image-compare':
       return <ImageCompareEditor file={files[0]} onBack={onBack} />;
+    case 'social-preview':
+      return <SocialPreviewEditor file={files[0]} onBack={onBack} />;
 
     default:
       if (files.length === 1) {

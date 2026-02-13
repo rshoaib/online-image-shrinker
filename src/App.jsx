@@ -526,6 +526,15 @@ const AppContent = () => {
              />
            } />
 
+           <Route path="/social-media-preview-generator" element={
+              <SeoLandingPage 
+                toolId="social-preview" 
+                title="Free Social Media Preview Generator - Create Platform-Ready Images"
+                description="Create stunning social media preview images for Twitter, Facebook, LinkedIn, Instagram, and YouTube. Add text overlays, gradients, and download instantly. Free and private."
+                files={files} setFiles={setFiles} onBack={handleBack}
+             />
+           } />
+
            {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -566,6 +575,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
       case 'qr-code-generator': return { title: 'QR Code Generator', desc: 'Create custom QR codes with logos instantly.' };
       case 'photo-filters': return { title: 'Photo Filters & Adjustments', desc: 'Adjust brightness, contrast, saturation and apply beautiful preset filters.' };
       case 'image-compare': return { title: 'Image Comparison Tool', desc: 'Compare two images side by side with a slider.' };
+      case 'social-preview': return { title: 'Social Media Preview Generator', desc: 'Create platform-perfect preview images for social media.' };
       default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
     }
   };

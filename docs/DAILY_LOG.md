@@ -2,6 +2,16 @@
 
 Use this file to track granular daily progress, ideas, and minor changes that might not warrant a full Changelog entry.
 
+## 2026-02-13
+- **Focus**: Social Media Preview Generator tool.
+- **Completed**:
+  - Built `SocialPreviewEditor.jsx` — canvas-based editor with 7 platform presets (Twitter/X, Facebook, LinkedIn, Instagram Post/Story, YouTube Thumbnail, Pinterest Pin).
+  - Features: gradient/solid/image backgrounds, text overlays with word-wrap, heading + subheading, font size sliders, text alignment, overlay opacity, zoom, download PNG + copy to clipboard.
+  - Integrated into `ToolSelector.jsx`, `ToolLayout.jsx`, `App.jsx` (route + SEO landing page), and sitemap.
+- **Next Steps**:
+  - Monitor tool usage analytics.
+  - Consider adding logo/brand watermark uploads.
+
 ## 2026-01-24
 - **Focus**: Bug fixes and Batch Watermarking.
 - **Completed**:

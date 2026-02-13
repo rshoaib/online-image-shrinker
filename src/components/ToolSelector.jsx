@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { 
   Maximize2, Zap, Type, FileText, Eraser, Crop, Grid, EyeOff, 
   User, Monitor, Settings, Repeat, Palette, PenTool, ScanLine, 
-  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles, ArrowLeftRight 
+  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles, ArrowLeftRight, Share2 
 } from 'lucide-react';
 
 const ToolSelector = ({ onSelectTool }) => {
@@ -29,6 +29,7 @@ const ToolSelector = ({ onSelectTool }) => {
     { id: 'grid-splitter', icon: <Grid size={32} />, title: 'Grid Split', desc: 'Instagram grids' },
     { id: 'redact', icon: <EyeOff size={32} />, title: 'Redact', desc: 'Blur sensitive info' },
     { id: 'screenshot-beautifier', icon: <Monitor size={32} />, title: 'Screenshot', desc: 'Add aesthetic frame' },
+    { id: 'social-preview', icon: <Share2 size={32} />, title: 'Social Preview', desc: 'Platform-ready images' },
     { id: 'exif', icon: <Settings size={32} />, title: 'EXIF Data', desc: 'View & Remove metadata' },
     { id: 'palette-generator', icon: <Palette size={32} />, title: 'Palette', desc: 'Extract colors' },
     { id: 'meme-generator', icon: <Smile size={32} />, title: 'Meme', desc: 'Make memes' },
