@@ -86,6 +86,50 @@
       "palette": {
         "title": "Gerador de Paleta",
         "desc": "Extraia belas paletas de cores de qualquer imagem instantaneamente."
+      },
+      "video_compressor": {
+        "title": "Compressor de Vídeo",
+        "desc": "Reduza o tamanho de arquivos MP4/MOV sem perder qualidade. 100% do lado do cliente."
+      },
+      "magic_eraser": {
+        "title": "Borracha Mágica",
+        "desc": "Remova objetos, pessoas ou texto indesejados das fotos com IA."
+      },
+      "photo_filters": {
+        "title": "Filtros de Foto",
+        "desc": "Ajuste brilho, contraste, saturação e aplique belos filtros predefinidos."
+      },
+      "collage": {
+        "title": "Colagem de Fotos",
+        "desc": "Combine várias fotos em belos layouts de colagem."
+      },
+      "ocr": {
+        "title": "Escanear Texto (OCR)",
+        "desc": "Extraia texto de imagens e documentos digitalizados instantaneamente."
+      },
+      "qr_code": {
+        "title": "Gerador de QR Code",
+        "desc": "Crie códigos QR personalizados com cores, logos e alta resolução."
+      },
+      "signature": {
+        "title": "Assinatura Digital",
+        "desc": "Crie assinaturas digitais profissionais para documentos e PDFs."
+      },
+      "video_to_gif": {
+        "title": "Vídeo para GIF",
+        "desc": "Converta clipes de vídeo em GIFs animados de alta qualidade."
+      },
+      "video_to_audio": {
+        "title": "Vídeo para MP3",
+        "desc": "Extraia faixas de áudio de arquivos de vídeo instantaneamente."
+      },
+      "social_preview": {
+        "title": "Prévia Social",
+        "desc": "Crie imagens de prévia prontas para redes sociais."
+      },
+      "image_compare": {
+        "title": "Comparar Imagens",
+        "desc": "Compare duas imagens lado a lado com controle deslizante ou sobreposição."
       }
     }
   }

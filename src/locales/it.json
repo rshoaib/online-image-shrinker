@@ -86,6 +86,50 @@
       "palette": {
         "title": "Generatore Palette",
         "desc": "Estrai bellissime palette di colori da qualsiasi immagine istantaneamente."
+      },
+      "video_compressor": {
+        "title": "Compressore Video",
+        "desc": "Riduci le dimensioni dei file MP4/MOV senza perdere qualità. 100% lato client."
+      },
+      "magic_eraser": {
+        "title": "Gomma Magica",
+        "desc": "Rimuovi oggetti, persone o testo indesiderati dalle foto con l'IA."
+      },
+      "photo_filters": {
+        "title": "Filtri Foto",
+        "desc": "Regola luminosità, contrasto, saturazione e applica bellissimi filtri."
+      },
+      "collage": {
+        "title": "Collage Foto",
+        "desc": "Combina più foto in bellissimi layout collage."
+      },
+      "ocr": {
+        "title": "Scansiona Testo (OCR)",
+        "desc": "Estrai testo da immagini e documenti scansionati istantaneamente."
+      },
+      "qr_code": {
+        "title": "Generatore QR Code",
+        "desc": "Crea codici QR personalizzati con colori, loghi e alta risoluzione."
+      },
+      "signature": {
+        "title": "Firma Digitale",
+        "desc": "Crea firme digitali professionali per documenti e PDF."
+      },
+      "video_to_gif": {
+        "title": "Video in GIF",
+        "desc": "Converti clip video in GIF animate di alta qualità."
+      },
+      "video_to_audio": {
+        "title": "Video in MP3",
+        "desc": "Estrai tracce audio dai file video istantaneamente."
+      },
+      "social_preview": {
+        "title": "Anteprima Social",
+        "desc": "Crea immagini di anteprima pronte per i social media."
+      },
+      "image_compare": {
+        "title": "Confronta Immagini",
+        "desc": "Confronta due immagini fianco a fianco con cursore o sovrapposizione."
       }
     }
   }

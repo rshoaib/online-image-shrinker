@@ -100,6 +100,46 @@
       "magic_eraser": {
         "title": "Borrador Mágico",
         "desc": "Elimina objetos no deseados, personas o texto de fotos al instante con IA."
+      },
+      "video_compressor": {
+        "title": "Compresor de Video",
+        "desc": "Reduce el tamaño de archivos MP4/MOV sin perder calidad. 100% del lado del cliente."
+      },
+      "photo_filters": {
+        "title": "Filtros de Foto",
+        "desc": "Ajusta brillo, contraste, saturación y aplica hermosos filtros preestablecidos."
+      },
+      "collage": {
+        "title": "Collage de Fotos",
+        "desc": "Combina múltiples fotos en hermosos diseños de collage."
+      },
+      "ocr": {
+        "title": "Escanear Texto (OCR)",
+        "desc": "Extrae texto de imágenes y documentos escaneados al instante."
+      },
+      "qr_code": {
+        "title": "Generador de QR",
+        "desc": "Crea códigos QR personalizados con colores, logos y alta resolución."
+      },
+      "signature": {
+        "title": "Firma Digital",
+        "desc": "Crea firmas digitales profesionales para documentos y PDFs."
+      },
+      "video_to_gif": {
+        "title": "Video a GIF",
+        "desc": "Convierte clips de video en GIFs animados de alta calidad."
+      },
+      "video_to_audio": {
+        "title": "Video a MP3",
+        "desc": "Extrae pistas de audio de archivos de video al instante."
+      },
+      "social_preview": {
+        "title": "Vista Previa Social",
+        "desc": "Crea imágenes de vista previa listas para redes sociales."
+      },
+      "image_compare": {
+        "title": "Comparar Imágenes",
+        "desc": "Compara dos imágenes lado a lado con control deslizante o superposición."
       }
     }
   }

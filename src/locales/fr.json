@@ -116,6 +116,50 @@
       "palette": {
         "title": "Générateur Palette",
         "desc": "Extrayez instantanément de belles palettes de couleurs de n'importe quelle image."
+      },
+      "video_compressor": {
+        "title": "Compresseur Vidéo",
+        "desc": "Réduisez la taille des fichiers MP4/MOV sans perte de qualité. 100% côté client."
+      },
+      "magic_eraser": {
+        "title": "Gomme Magique",
+        "desc": "Supprimez les objets, personnes ou textes indésirables des photos avec l'IA."
+      },
+      "photo_filters": {
+        "title": "Filtres Photo",
+        "desc": "Ajustez luminosité, contraste, saturation et appliquez de beaux filtres."
+      },
+      "collage": {
+        "title": "Collage Photo",
+        "desc": "Combinez plusieurs photos dans de belles mises en page de collage."
+      },
+      "ocr": {
+        "title": "Scanner Texte (OCR)",
+        "desc": "Extrayez le texte des images et documents numérisés instantanément."
+      },
+      "qr_code": {
+        "title": "Générateur QR Code",
+        "desc": "Créez des QR codes personnalisés avec couleurs, logos et haute résolution."
+      },
+      "signature": {
+        "title": "Signature Numérique",
+        "desc": "Créez des signatures numériques professionnelles pour documents et PDF."
+      },
+      "video_to_gif": {
+        "title": "Vidéo en GIF",
+        "desc": "Convertissez des clips vidéo en GIF animés de haute qualité."
+      },
+      "video_to_audio": {
+        "title": "Vidéo en MP3",
+        "desc": "Extrayez les pistes audio des fichiers vidéo instantanément."
+      },
+      "social_preview": {
+        "title": "Aperçu Social",
+        "desc": "Créez des images d'aperçu prêtes pour les réseaux sociaux."
+      },
+      "image_compare": {
+        "title": "Comparer Images",
+        "desc": "Comparez deux images côte à côte avec curseur ou superposition."
       }
     }
   }

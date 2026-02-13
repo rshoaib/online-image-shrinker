@@ -86,6 +86,50 @@
       "palette": {
         "title": "Farbpalette Generator",
         "desc": "Extrahiere sofort schöne Farbpaletten aus jedem Bild."
+      },
+      "video_compressor": {
+        "title": "Video Kompressor",
+        "desc": "Reduziere die Größe von MP4/MOV-Dateien ohne Qualitätsverlust. 100% Client-seitig."
+      },
+      "magic_eraser": {
+        "title": "Magischer Radierer",
+        "desc": "Entferne unerwünschte Objekte, Personen oder Text aus Fotos mit KI."
+      },
+      "photo_filters": {
+        "title": "Foto Filter",
+        "desc": "Passe Helligkeit, Kontrast, Sättigung an und wende schöne Filter an."
+      },
+      "collage": {
+        "title": "Foto Collage",
+        "desc": "Kombiniere mehrere Fotos in schönen Collage-Layouts."
+      },
+      "ocr": {
+        "title": "Text Scannen (OCR)",
+        "desc": "Extrahiere Text aus Bildern und gescannten Dokumenten sofort."
+      },
+      "qr_code": {
+        "title": "QR Code Generator",
+        "desc": "Erstelle benutzerdefinierte QR-Codes mit Farben, Logos und hoher Auflösung."
+      },
+      "signature": {
+        "title": "Digitale Unterschrift",
+        "desc": "Erstelle professionelle digitale Unterschriften für Dokumente und PDFs."
+      },
+      "video_to_gif": {
+        "title": "Video zu GIF",
+        "desc": "Wandle Videoclips in hochwertige animierte GIFs um."
+      },
+      "video_to_audio": {
+        "title": "Video zu MP3",
+        "desc": "Extrahiere Audiospuren aus Videodateien sofort."
+      },
+      "social_preview": {
+        "title": "Social Media Vorschau",
+        "desc": "Erstelle plattformgerechte Vorschaubilder für soziale Medien."
+      },
+      "image_compare": {
+        "title": "Bilder Vergleichen",
+        "desc": "Vergleiche zwei Bilder nebeneinander mit Schieberegler oder Überlagerung."
       }
     }
   }

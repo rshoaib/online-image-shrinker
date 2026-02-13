@@ -551,33 +551,30 @@ const AppContent = () => {
 // Component to handle Tool Logic (replaces old activeTool switch)
 const ToolPage = ({ files, setFiles, onBack }) => {
   const { toolId } = useParams();
+  const { t } = useTranslation();
   
+  // Map toolId to i18n key
+  const toolI18nMap = {
+    'compress': 'compress', 'resize': 'resize', 'crop': 'crop',
+    'watermark': 'watermark', 'pdf': 'pdf', 'remove-bg': 'remove_bg',
+    'upscale': 'upscale', 'grid-splitter': 'grid', 'redact': 'redact',
+    'profile-picture': 'profile', 'screenshot-beautifier': 'screenshot',
+    'exif': 'exif', 'image-converter': 'converter', 'meme-generator': 'meme',
+    'palette-generator': 'palette', 'magic-eraser': 'magic_eraser',
+    'ocr': 'ocr', 'qr-code-generator': 'qr_code', 'photo-filters': 'photo_filters',
+    'image-compare': 'image_compare', 'social-preview': 'social_preview',
+    'video-compressor': 'video_compressor', 'video-to-gif': 'video_to_gif',
+    'video-to-audio': 'video_to_audio', 'collage-maker': 'collage',
+    'signature-maker': 'signature',
+  };
+
   // Map toolId to display text
   const getToolInfo = () => {
-    switch(toolId) {
-      case 'compress': return { title: 'Compress Images', desc: 'Reduce file size while maintaining quality.' };
-      case 'resize': return { title: 'Resize Images', desc: 'Change dimensions and scale images.' };
-      case 'crop': return { title: 'Social Media Cropper', desc: 'Crop your images for Instagram, YouTube, and more.' };
-      case 'watermark': return { title: 'Watermark Studio', desc: 'Add text overlays to protect your content.' };
-      case 'pdf': return { title: 'Images to PDF', desc: 'Convert multiple images into a single PDF document.' };
-      case 'remove-bg': return { title: 'AI Background Remover', desc: 'Instantly remove backgrounds from your photos.' };
-      case 'upscale': return { title: 'AI Image Upscaler', desc: 'Enhance and upscale images up to 4x with AI.' };
-      case 'grid-splitter': return { title: 'Instagram Grid Maker', desc: 'Split your photos into grids (3x1, 3x3) for Instagram.' };
-      case 'redact': return { title: 'Privacy Redactor', desc: 'Blur or pixelate sensitive parts of your image.' };
-      case 'profile-picture': return { title: 'Profile Picture Maker', desc: 'Create perfect profile photos with custom backgrounds.' };
-      case 'screenshot-beautifier': return { title: 'Screenshot Beautifier', desc: 'Add professional window frames and backgrounds to your screenshots.' };
-      case 'exif': return { title: 'EXIF Data Viewer & Remover', desc: 'View and remove hidden metadata (GPS, Camera) from photos.' };
-      case 'image-converter': return { title: 'Image Converter', desc: 'Convert images to JPG, PNG, and WebP formats.' };
-      case 'meme-generator': return { title: 'Meme Generator', desc: 'Create viral memes with custom text instantly.' };
-      case 'palette-generator': return { title: 'Color Palette Generator', desc: 'Extract beautiful color palettes from images.' };
-      case 'magic-eraser': return { title: 'Magic Eraser', desc: 'Remove unwanted objects and blemishes with AI.' };
-      case 'ocr': return { title: 'Image to Text', desc: 'Extract text from images instantly (OCR).' };
-      case 'qr-code-generator': return { title: 'QR Code Generator', desc: 'Create custom QR codes with logos instantly.' };
-      case 'photo-filters': return { title: 'Photo Filters & Adjustments', desc: 'Adjust brightness, contrast, saturation and apply beautiful preset filters.' };
-      case 'image-compare': return { title: 'Image Comparison Tool', desc: 'Compare two images side by side with a slider.' };
-      case 'social-preview': return { title: 'Social Media Preview Generator', desc: 'Create platform-perfect preview images for social media.' };
-      default: return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
+    const key = toolI18nMap[toolId];
+    if (key) {
+      return { title: t(`home.tools.${key}.title`), desc: t(`home.tools.${key}.desc`) };
     }
+    return { title: 'Optimize Images', desc: 'Privacy-first image tools.' };
   };
 
   const info = getToolInfo();

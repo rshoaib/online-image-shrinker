@@ -29,7 +29,7 @@ describe('ToolSelector Component', () => {
         const mockSelect = vi.fn();
         render(<ToolSelector onSelectTool={mockSelect} />);
 
-        // Standard tools
+        // Standard tools (titles from en.json)
         expect(screen.getByText(/Compress Image/i)).toBeInTheDocument();
         expect(screen.getByText(/Resize Image/i)).toBeInTheDocument();
         expect(screen.getByText(/Crop Image/i)).toBeInTheDocument();
@@ -38,18 +38,28 @@ describe('ToolSelector Component', () => {
         expect(screen.getByText(/Remove Background/i)).toBeInTheDocument();
         expect(screen.getByText(/AI Upscale/i)).toBeInTheDocument();
         
-        // New tools
+        // Tools
         expect(screen.getByText(/Grid Splitter/i)).toBeInTheDocument();
         expect(screen.getByText(/Privacy Blur/i)).toBeInTheDocument();
         expect(screen.getByText(/Screenshot Mockups/i)).toBeInTheDocument();
         expect(screen.getByText(/Profile Pic Maker/i)).toBeInTheDocument();
         expect(screen.getByText(/EXIF Viewer/i)).toBeInTheDocument();
-        
-        // Latest additions
         expect(screen.getByText(/Image Converter/i)).toBeInTheDocument();
         expect(screen.getByText(/Meme Generator/i)).toBeInTheDocument();
         expect(screen.getByText(/Palette Generator/i)).toBeInTheDocument();
         expect(screen.getByText(/Magic Eraser/i)).toBeInTheDocument();
+
+        // Newly internationalized tools
+        expect(screen.getByText(/Photo Collage/i)).toBeInTheDocument();
+        expect(screen.getByText(/Scan Text/i)).toBeInTheDocument();
+        expect(screen.getByText(/QR Code Generator/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/Digital Signature/i).length).toBeGreaterThan(0);
+        expect(screen.getByText(/Video to GIF/i)).toBeInTheDocument();
+        expect(screen.getByText(/Video to MP3/i)).toBeInTheDocument();
+        expect(screen.getByText(/Social Preview/i)).toBeInTheDocument();
+        expect(screen.getByText(/Image Compare/i)).toBeInTheDocument();
+        expect(screen.getByText(/Photo Filters/i)).toBeInTheDocument();
+        expect(screen.getByText(/Video Compressor/i)).toBeInTheDocument();
     });
 
     it('calls onSelectTool with correct ID when clicked', () => {
@@ -62,7 +72,7 @@ describe('ToolSelector Component', () => {
             { text: 'Grid Splitter', id: 'grid-splitter' },
             { text: 'Privacy Blur', id: 'redact' },
             { text: 'Image Converter', id: 'image-converter' },
-            { text: 'Magic Eraser', id: 'magic-eraser' } // updated id based on common patterns
+            { text: 'Magic Eraser', id: 'magic-eraser' }
         ];
 
         tools.forEach(({ text, id }) => {

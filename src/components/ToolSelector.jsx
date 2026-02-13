@@ -12,32 +12,32 @@ const ToolSelector = ({ onSelectTool }) => {
   const { t } = useTranslation();
 
   const tools = [
-    { id: 'compress', icon: <Minimize2 size={32} />, title: 'Compress', desc: 'Reduce file size' },
-    { id: 'resize', icon: <Maximize2 size={32} />, title: 'Resize', desc: 'Change dimensions' },
-    { id: 'crop', icon: <Crop size={32} />, title: 'Crop', desc: 'Trim edges' },
-    { id: 'remove-bg', icon: <Eraser size={32} />, title: 'Remove BG', desc: 'Transparent background', badge: 'AI' },
-    { id: 'upscale', icon: <Zap size={32} />, title: 'Upscale', desc: 'Enhance resolution', badge: 'AI' },
-    { id: 'magic-eraser', icon: <Wand2 size={32} />, title: 'Magic Eraser', desc: 'Remove objects', badge: 'AI' },
-    { id: 'image-converter', icon: <Repeat size={32} />, title: 'Convert', desc: 'JPG, PNG, WebP' },
-    { id: 'pdf', icon: <FileText size={32} />, title: 'To PDF', desc: 'Images to PDF' },
-    { id: 'watermark', icon: <Type size={32} />, title: 'Watermark', desc: 'Add text/logo' },
-    { id: 'collage-maker', icon: <LayoutTemplate size={32} />, title: 'Collage', desc: 'Combine photos' },
-    { id: 'ocr', icon: <ScanLine size={32} />, title: 'Scan Text', desc: 'Image to Text' },
-    { id: 'qr-code-generator', icon: <QrCode size={32} />, title: 'QR Code', desc: 'Generate QR' },
-    { id: 'signature-maker', icon: <PenTool size={32} />, title: 'Signature', desc: 'Create signature' },
-    { id: 'profile-picture', icon: <User size={32} />, title: 'Profile Pic', desc: 'Circle crop & bg' },
-    { id: 'grid-splitter', icon: <Grid size={32} />, title: 'Grid Split', desc: 'Instagram grids' },
-    { id: 'redact', icon: <EyeOff size={32} />, title: 'Redact', desc: 'Blur sensitive info' },
-    { id: 'screenshot-beautifier', icon: <Monitor size={32} />, title: 'Screenshot', desc: 'Add aesthetic frame' },
-    { id: 'social-preview', icon: <Share2 size={32} />, title: 'Social Preview', desc: 'Platform-ready images' },
-    { id: 'exif', icon: <Settings size={32} />, title: 'EXIF Data', desc: 'View & Remove metadata' },
-    { id: 'palette-generator', icon: <Palette size={32} />, title: 'Palette', desc: 'Extract colors' },
-    { id: 'meme-generator', icon: <Smile size={32} />, title: 'Meme', desc: 'Make memes' },
-    { id: 'photo-filters', icon: <Sparkles size={32} />, title: 'Filters', desc: 'Brightness & effects' },
-    { id: 'video-compressor', icon: <Video size={32} />, title: 'Compress', desc: 'Reduce MP4 size' },
-    { id: 'video-to-gif', icon: <Film size={32} />, title: 'To GIF', desc: 'Video to GIF' },
-    { id: 'video-to-audio', icon: <Music size={32} />, title: 'To MP3', desc: 'Extract audio' },
-    { id: 'image-compare', icon: <ArrowLeftRight size={32} />, title: 'Compare', desc: 'Side-by-side diff' },
+    { id: 'compress', i18nKey: 'compress', icon: <Minimize2 size={32} /> },
+    { id: 'resize', i18nKey: 'resize', icon: <Maximize2 size={32} /> },
+    { id: 'crop', i18nKey: 'crop', icon: <Crop size={32} /> },
+    { id: 'remove-bg', i18nKey: 'remove_bg', icon: <Eraser size={32} />, badge: 'AI' },
+    { id: 'upscale', i18nKey: 'upscale', icon: <Zap size={32} />, badge: 'AI' },
+    { id: 'magic-eraser', i18nKey: 'magic_eraser', icon: <Wand2 size={32} />, badge: 'AI' },
+    { id: 'image-converter', i18nKey: 'converter', icon: <Repeat size={32} /> },
+    { id: 'pdf', i18nKey: 'pdf', icon: <FileText size={32} /> },
+    { id: 'watermark', i18nKey: 'watermark', icon: <Type size={32} /> },
+    { id: 'collage-maker', i18nKey: 'collage', icon: <LayoutTemplate size={32} /> },
+    { id: 'ocr', i18nKey: 'ocr', icon: <ScanLine size={32} /> },
+    { id: 'qr-code-generator', i18nKey: 'qr_code', icon: <QrCode size={32} /> },
+    { id: 'signature-maker', i18nKey: 'signature', icon: <PenTool size={32} /> },
+    { id: 'profile-picture', i18nKey: 'profile', icon: <User size={32} /> },
+    { id: 'grid-splitter', i18nKey: 'grid', icon: <Grid size={32} /> },
+    { id: 'redact', i18nKey: 'redact', icon: <EyeOff size={32} /> },
+    { id: 'screenshot-beautifier', i18nKey: 'screenshot', icon: <Monitor size={32} /> },
+    { id: 'social-preview', i18nKey: 'social_preview', icon: <Share2 size={32} /> },
+    { id: 'exif', i18nKey: 'exif', icon: <Settings size={32} /> },
+    { id: 'palette-generator', i18nKey: 'palette', icon: <Palette size={32} /> },
+    { id: 'meme-generator', i18nKey: 'meme', icon: <Smile size={32} /> },
+    { id: 'photo-filters', i18nKey: 'photo_filters', icon: <Sparkles size={32} /> },
+    { id: 'video-compressor', i18nKey: 'video_compressor', icon: <Video size={32} /> },
+    { id: 'video-to-gif', i18nKey: 'video_to_gif', icon: <Film size={32} /> },
+    { id: 'video-to-audio', i18nKey: 'video_to_audio', icon: <Music size={32} /> },
+    { id: 'image-compare', i18nKey: 'image_compare', icon: <ArrowLeftRight size={32} /> },
   ];
 
   return (
@@ -62,10 +62,10 @@ const ToolSelector = ({ onSelectTool }) => {
             </div>
             <div className="card-content">
               <h3>
-                {tool.title}
+                {t(`home.tools.${tool.i18nKey}.title`)}
                 {tool.badge && <span className="badge">{tool.badge}</span>}
               </h3>
-              <p>{tool.desc}</p>
+              <p>{t(`home.tools.${tool.i18nKey}.desc`)}</p>
             </div>
           </div>
         ))}

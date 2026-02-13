@@ -143,6 +143,38 @@
       "photo_filters": {
         "title": "Photo Filters",
         "desc": "Adjust brightness, contrast, saturation and apply beautiful preset filters."
+      },
+      "collage": {
+        "title": "Photo Collage",
+        "desc": "Combine multiple photos into beautiful collage layouts."
+      },
+      "ocr": {
+        "title": "Scan Text (OCR)",
+        "desc": "Extract text from images and scanned documents instantly."
+      },
+      "qr_code": {
+        "title": "QR Code Generator",
+        "desc": "Create custom QR codes with colors, logos, and high resolution."
+      },
+      "signature": {
+        "title": "Digital Signature",
+        "desc": "Create professional digital signatures for documents and PDFs."
+      },
+      "video_to_gif": {
+        "title": "Video to GIF",
+        "desc": "Convert video clips to high quality animated GIFs."
+      },
+      "video_to_audio": {
+        "title": "Video to MP3",
+        "desc": "Extract audio tracks from video files instantly."
+      },
+      "social_preview": {
+        "title": "Social Preview",
+        "desc": "Create platform-ready preview images for social media."
+      },
+      "image_compare": {
+        "title": "Image Compare",
+        "desc": "Compare two images side by side with slider or overlay."
       }
     }
   }
