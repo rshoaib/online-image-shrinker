@@ -20,6 +20,7 @@ const BlogPost = () => {
       schemaType="Article"
       date={article.date}
       author={article.author}
+      coverImage={article.coverImage}
     >
       <div className="article-container">
         <Link to="/blog" className="back-link">

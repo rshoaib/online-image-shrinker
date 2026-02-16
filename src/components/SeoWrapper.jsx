@@ -74,12 +74,27 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
     document.documentElement.lang = i18n.language || 'en';
 
     // JSON-LD Structured Data
-    let scriptJsonLd = document.querySelector('script[type="application/ld+json"]');
+    let scriptJsonLd = document.querySelector('script#page-jsonld');
     if (!scriptJsonLd) {
       scriptJsonLd = document.createElement('script');
+      scriptJsonLd.id = 'page-jsonld';
       scriptJsonLd.type = "application/ld+json";
       document.head.appendChild(scriptJsonLd);
     }
+
+    // Remove legacy unkeyed script if present
+    const legacyScript = document.querySelector('script[type="application/ld+json"]:not([id])');
+    if (legacyScript) legacyScript.remove();
+
+    const publisher = {
+      "@type": "Organization",
+      "name": "Online Image Shrinker",
+      "url": "https://onlineimageshrinker.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://onlineimageshrinker.com/og-image.jpg"
+      }
+    };
 
     let schemaData;
     if (props.schemaType === 'Article') {
@@ -87,12 +102,19 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": finalTitle,
-        "image": [currentUrl], // Ideally this would be the specific article image
+        "description": finalDescription,
+        "image": props.coverImage || defaultImage,
         "datePublished": props.date,
+        "dateModified": props.dateModified || props.date,
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": currentUrl
+        },
         "author": [{
             "@type": "Person",
             "name": props.author || "Image Shrinker Team"
-        }]
+        }],
+        "publisher": publisher
       };
     } else {
        schemaData = {
@@ -103,6 +125,7 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
         "description": finalDescription,
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "All",
+        "publisher": publisher,
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -118,7 +141,7 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
        updateMeta('google-site-verification', gscCode);
     }
 
-  }, [title, description, location, t, i18n.language, props.schemaType, props.date, props.author]);
+  }, [title, description, location, t, i18n.language, props.schemaType, props.date, props.dateModified, props.author, props.coverImage]);
 
   return children;
 };

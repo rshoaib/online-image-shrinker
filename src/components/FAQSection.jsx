@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 
 const FAQSection = ({ toolType = 'general' }) => {
@@ -43,6 +43,36 @@ const FAQSection = ({ toolType = 'general' }) => {
   };
 
   const faqs = getFaqs();
+
+  // Inject FAQPage JSON-LD structured data for AEO
+  useEffect(() => {
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    };
+
+    let script = document.getElementById('faq-jsonld');
+    if (!script) {
+      script = document.createElement('script');
+      script.id = 'faq-jsonld';
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(faqSchema);
+
+    return () => {
+      const el = document.getElementById('faq-jsonld');
+      if (el) el.remove();
+    };
+  }, [faqs]);
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);

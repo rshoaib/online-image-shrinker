@@ -1,0 +1,44 @@
+# Online Image Shrinker
+
+> Free, privacy-first image tools that run entirely in your browser. No uploads, no accounts, no tracking.
+
+## About
+
+Online Image Shrinker is a suite of 20+ free image manipulation tools powered by WebAssembly and TensorFlow.js. Every tool processes images locally on the user's device — zero bytes are sent to any server. The site supports 6 languages (English, Spanish, German, French, Portuguese, Italian) and works offline as a PWA.
+
+## Core Tools
+
+- **Image Compressor** — Reduce JPEG, PNG, WebP file sizes by up to 90%
+- **AI Background Remover** — Remove backgrounds using browser-based ML
+- **AI Image Upscaler** — 2x/4x resolution enhancement via neural networks
+- **Image Converter** — Convert between JPG, PNG, WebP, HEIC
+- **Crop & Resize** — Presets for Instagram, YouTube, LinkedIn, Passport
+- **Images to PDF** — Merge multiple images into a single PDF
+- **Privacy Blur / Redactor** — Blur faces, text, and sensitive data
+- **EXIF Metadata Remover** — Strip GPS coordinates and camera data
+- **Screenshot Beautifier** — Add backgrounds, frames, and shadows
+- **Profile Picture Maker** — AI background removal + custom styling
+- **Meme Generator** — Classic top/bottom text meme creator
+- **QR Code Generator** — Create QR codes from any URL or text
+- **Instagram Grid Splitter** — Split images into 3x3 or 3x1 grids
+- **Photo Filters** — Apply Instagram-style filters
+- **Image Compare** — Side-by-side slider comparison tool
+- **Social Media Preview Generator** — Create platform-ready images
+- **Collage Maker** — Combine multiple photos into layouts
+- **Video to GIF / Audio** — Extract GIF or audio from video files
+- **OCR Text Extractor** — Extract text from images using Tesseract.js
+- **Digital Signature** — Draw and export signatures as transparent PNGs
+- **Batch Processor** — Process multiple images at once
+- **Color Palette Extractor** — Extract dominant colors from images
+- **Magic Eraser** — Remove objects from photos using AI
+
+## Privacy Model
+
+All processing uses client-side technologies:
+- WebAssembly (WASM) for compression and format conversion
+- TensorFlow.js and ONNX Runtime for AI features
+- Canvas API for image manipulation
+- No server-side processing, no data collection, no accounts required
+
+## URL: https://onlineimageshrinker.com
+## Sitemap: https://onlineimageshrinker.com/sitemap.xml
