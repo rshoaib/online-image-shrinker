@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Upload, Cpu, Download } from 'lucide-react';
 
 const HowItWorks = ({ toolType = 'general' }) => {
@@ -37,6 +38,52 @@ const HowItWorks = ({ toolType = 'general' }) => {
   };
 
   const steps = getSteps();
+
+  // Inject HowTo JSON-LD structured data
+  useEffect(() => {
+    const toolNames = {
+      'pdf': 'Compress PDF Online',
+      'resize': 'Resize Images Online',
+      'crop': 'Crop Images Online',
+      'passport': 'Create Passport Photo',
+      'compress': 'Compress Images Online',
+      'remove-bg': 'Remove Image Background',
+      'upscale': 'Upscale Image with AI',
+      'general': 'Process Images Online'
+    };
+
+    const howToSchema = {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": `How to ${toolNames[toolType] || toolNames['general']}`,
+      "description": `${steps.length} simple steps to ${(toolNames[toolType] || toolNames['general']).toLowerCase()} using our free browser-based tool.`,
+      "totalTime": "PT1M",
+      "tool": {
+        "@type": "HowToTool",
+        "name": "Online Image Shrinker"
+      },
+      "step": steps.map((step, i) => ({
+        "@type": "HowToStep",
+        "position": i + 1,
+        "name": step.title,
+        "text": step.desc
+      }))
+    };
+
+    let script = document.getElementById('howto-jsonld');
+    if (!script) {
+      script = document.createElement('script');
+      script.id = 'howto-jsonld';
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
+    }
+    script.textContent = JSON.stringify(howToSchema);
+
+    return () => {
+      const el = document.getElementById('howto-jsonld');
+      if (el) el.remove();
+    };
+  }, [toolType, steps]);
 
   return (
     <div className="hiw-container">

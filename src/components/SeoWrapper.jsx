@@ -31,17 +31,20 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
     updateMeta('description', finalDescription);
 
     // Update OpenGraph Tags (Facebook, LinkedIn, Discord)
+    const ogImage = props.coverImage
+      ? `https://onlineimageshrinker.com${props.coverImage}`
+      : defaultImage;
     updateMeta('og:title', finalTitle, 'property');
     updateMeta('og:description', finalDescription, 'property');
     updateMeta('og:url', currentUrl, 'property');
-    updateMeta('og:type', 'website', 'property');
-    updateMeta('og:image', defaultImage, 'property');
+    updateMeta('og:type', props.schemaType === 'Article' ? 'article' : 'website', 'property');
+    updateMeta('og:image', ogImage, 'property');
 
     // Update Twitter Card Tags
     updateMeta('twitter:card', 'summary_large_image');
     updateMeta('twitter:title', finalTitle);
     updateMeta('twitter:description', finalDescription);
-    updateMeta('twitter:image', defaultImage);
+    updateMeta('twitter:image', ogImage);
 
     // Canonical Link
     let linkCanonical = document.querySelector('link[rel="canonical"]');
