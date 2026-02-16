@@ -52,10 +52,21 @@ export default defineConfig({
 
           // Heavy libs - PDF, QR, etc
           'vendor-pdf': ['jspdf'],
+          'vendor-qr': ['qrcode.react'],
+          'vendor-crop': ['react-easy-crop'],
+
+          // AI / ML bundles (loaded only by specific tools)
+          'vendor-ai-tf': ['@tensorflow/tfjs', 'onnxruntime-web', 'upscaler'],
+          'vendor-ai-bg': ['@imgly/background-removal'],
+          'vendor-ocr': ['tesseract.js'],
+
+          // Media processing
+          'vendor-ffmpeg': ['@ffmpeg/ffmpeg', '@ffmpeg/util'],
+          'vendor-heic': ['heic2any'],
         }
       }
     },
-    // Increase warning limit since we expect some large AI chunks
-    chunkSizeWarningLimit: 1000,
+    // TF.js + ONNX runtime are inherently ~2MB; they're already lazy-loaded via manualChunks
+    chunkSizeWarningLimit: 2500,
   },
 })

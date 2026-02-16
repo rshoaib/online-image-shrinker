@@ -4,10 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased]
+## [1.3.0] - 2026-02-16
 
 ### Added
 - **Social Media Preview Generator**: New tool to create platform-ready images for Twitter/X, Facebook, LinkedIn, Instagram (Post & Story), YouTube, and Pinterest. Features gradient/solid/image backgrounds, heading & subheading text overlays, and one-click export (`/social-media-preview-generator`).
+- **Image Compare Tool**: Side-by-side image comparison with slider, overlay, and split view modes (`/compare-images-online`).
+- **Blog Posts**: 3 new SEO articles — Social Media Image Sizes 2026, How to Compare Photos Online, Best Privacy-First Image Tools.
+
+### Improved
+- **Build Optimization**: Split heavy dependencies (TF.js, ONNX, Tesseract, FFmpeg, heic2any) into dedicated chunks for faster loading and better caching.
 
 ## [1.2.1] - 2026-02-04
 ### Fixed

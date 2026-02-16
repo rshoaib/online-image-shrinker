@@ -1572,5 +1572,301 @@ No upload, no server, no quality loss.
 
 [Convert Images Now](/tool/image-converter)
     `
+  },
+  {
+    slug: 'social-media-image-sizes-2026',
+    title: 'Social Media Image Size Guide 2026: Every Platform Covered',
+    excerpt: 'The complete cheat sheet for every platform - Instagram, TikTok, LinkedIn, X, YouTube, Pinterest, and Facebook. Stop guessing dimensions.',
+    iconName: 'Share2',
+    iconColor: '#1DA1F2',
+    date: 'Feb 16, 2026',
+    author: 'Social Media Team',
+    category: 'Guides',
+    content: `
+Social media platforms update their image specs constantly. Uploading the wrong size means your photos get cropped awkwardly, compressed to mush, or hidden by UI overlays. This guide covers every major platform's requirements for 2026.
+
+## Instagram Image Sizes 2026
+
+| Post Type | Dimensions | Aspect Ratio |
+| :--- | :--- | :--- |
+| **Feed Post (Square)** | 1080 x 1080 px | 1:1 |
+| **Feed Post (Portrait)** | 1080 x 1350 px | 4:5 |
+| **Feed Post (Landscape)** | 1080 x 566 px | 1.91:1 |
+| **Story / Reel** | 1080 x 1920 px | 9:16 |
+| **Profile Picture** | 320 x 320 px | 1:1 |
+
+**Pro tip:** Always use the 4:5 portrait format for feed posts. It takes up 23% more screen space than a square, boosting engagement.
+
+---
+
+## TikTok Image and Video Sizes
+
+| Content Type | Dimensions | Aspect Ratio |
+| :--- | :--- | :--- |
+| **Video** | 1080 x 1920 px | 9:16 |
+| **Profile Photo** | 200 x 200 px | 1:1 |
+
+TikTok is video-first, but thumbnail quality matters. Ensure your first frame is clear at 1080x1920.
+
+---
+
+## X (Twitter) Image Sizes
+
+| Content Type | Dimensions | Aspect Ratio |
+| :--- | :--- | :--- |
+| **In-Stream Photo** | 1600 x 900 px | 16:9 |
+| **Header Banner** | 1500 x 500 px | 3:1 |
+| **Profile Picture** | 400 x 400 px | 1:1 |
+
+Images wider than 16:9 get cropped. Test your thumbnail with our [Image Compare Tool](/compare-images-online) to see how it will look before and after cropping.
+
+---
+
+## LinkedIn Image Sizes
+
+| Content Type | Dimensions | Aspect Ratio |
+| :--- | :--- | :--- |
+| **Post Image** | 1200 x 627 px | 1.91:1 |
+| **Banner** | 1584 x 396 px | 4:1 |
+| **Profile Picture** | 400 x 400 px | 1:1 |
+
+LinkedIn compresses heavily. Upload at maximum quality to compensate.
+
+---
+
+## YouTube Image Sizes
+
+| Content Type | Dimensions | Aspect Ratio |
+| :--- | :--- | :--- |
+| **Thumbnail** | 1280 x 720 px | 16:9 |
+| **Channel Banner** | 2560 x 1440 px | 16:9 |
+| **Profile Picture** | 800 x 800 px | 1:1 |
+
+YouTube thumbnails are limited to 2MB. Use our [Compress Tool](/tool/compress) if yours is too large.
+
+---
+
+## Facebook Image Sizes
+
+| Content Type | Dimensions | Aspect Ratio |
+| :--- | :--- | :--- |
+| **Post Image** | 1200 x 630 px | 1.91:1 |
+| **Cover Photo** | 820 x 312 px | 2.63:1 |
+| **Profile Picture** | 170 x 170 px | 1:1 |
+| **Event Cover** | 1920 x 1005 px | 1.91:1 |
+
+---
+
+## Pinterest Image Sizes
+
+| Content Type | Dimensions | Aspect Ratio |
+| :--- | :--- | :--- |
+| **Standard Pin** | 1000 x 1500 px | 2:3 |
+| **Long Pin** | 1000 x 2100 px | 1:2.1 |
+| **Profile Picture** | 165 x 165 px | 1:1 |
+
+Tall pins perform best on Pinterest. The 2:3 ratio is the sweet spot.
+
+---
+
+## Create Perfect Images for Any Platform
+
+Instead of resizing manually, use our [Social Media Preview Generator](/social-media-preview-generator) to create platform-ready images with text overlays, gradients, and correct dimensions - all in your browser.
+
+For quick resizing to specific platforms, try our dedicated tools:
+*   [Resize for Instagram](/resize-for-instagram)
+*   [Resize for YouTube](/resize-for-youtube)
+*   [Resize for LinkedIn](/resize-for-linkedin-banner)
+
+[Create Social Media Images Now](/social-media-preview-generator)
+    `
+  },
+  {
+    slug: 'how-to-compare-photos-online',
+    title: 'How to Compare Photos Online - Before and After Slider Tool',
+    excerpt: 'Upload two images and compare them side by side. Perfect for photo editing, compression quality checks, and design reviews.',
+    iconName: 'ArrowLeftRight',
+    iconColor: '#8B5CF6',
+    date: 'Feb 16, 2026',
+    author: 'Image Shrinker Team',
+    category: 'Tutorials',
+    content: `
+Whether you are checking compression quality, comparing photo edits, or reviewing design iterations, seeing two images side by side is essential. Our free Image Compare tool makes this effortless.
+
+## Why Compare Images?
+
+Image comparison is useful for:
+*   **Compression Quality Checks:** Did your JPEG compression lose too much detail? Slide between the original and compressed version to find out.
+*   **Photo Editing Reviews:** Compare before/after versions of your retouching work.
+*   **Design Feedback:** Show clients two versions of a logo or layout.
+*   **AI Upscaling Verification:** See if the AI actually improved your image or just made it blurry.
+*   **Format Comparison:** Does WebP look as good as the original PNG? Compare them pixel-by-pixel.
+
+---
+
+## 3 Comparison Modes
+
+Our tool offers three distinct viewing modes:
+
+### 1. Slider Mode (Default)
+A vertical line divides the two images. Drag it left or right to reveal each version. This is the most intuitive mode and works great for:
+*   Before/after photography edits
+*   Compression quality comparisons
+*   Color correction checks
+
+### 2. Side-by-Side Mode
+Both images displayed next to each other at equal size. Best for:
+*   Comparing two completely different images
+*   Design A/B testing
+*   Quick visual scanning
+
+### 3. Overlay Mode
+One image overlays the other with adjustable opacity. Perfect for:
+*   Pixel-level alignment checks
+*   Spotting subtle differences
+*   Verifying image dimensions match
+
+---
+
+## How to Use the Image Compare Tool
+
+1.  Go to the [Image Compare Tool](/tool/image-compare).
+2.  **Upload your first image** (the "Before" or "Original").
+3.  **Upload the second image** (the "After" or "Modified").
+4.  **Choose your mode:** Slider, Side-by-Side, or Overlay.
+5.  **Drag the slider** or adjust the opacity to compare.
+6.  **Swap images** with one click if they are in the wrong order.
+
+## Real-World Workflow Example
+
+Here is a common workflow for web developers optimizing site images:
+
+1.  Take your original PNG hero image.
+2.  Compress it with our [WebP Converter](/tool/compress).
+3.  Open both images in the [Image Compare Tool](/compare-images-online).
+4.  Use Slider Mode to verify the compressed version looks identical.
+5.  Only then replace the original on your site.
+
+This ensures you never ship a degraded image to production.
+
+---
+
+## Privacy First
+
+Like all our tools, the Image Compare tool runs **100% in your browser**. Your images are never uploaded to any server. Compare confidential designs, private photos, or client work with complete peace of mind.
+
+[Compare Images Now](/compare-images-online)
+    `
+  },
+  {
+    slug: 'best-privacy-first-image-tools',
+    title: 'The 10 Best Privacy-First Image Tools That Never Upload Your Files',
+    excerpt: 'Tired of uploading personal photos to random servers? Here are 10 free tools that process everything locally in your browser.',
+    iconName: 'Shield',
+    iconColor: '#10B981',
+    date: 'Feb 16, 2026',
+    author: 'Riz',
+    category: 'Privacy',
+    content: `
+Every time you use a cloud-based image editor, your photos travel across the internet to a stranger's server. Most services log, store, or even analyze your uploads. If you care about privacy, there is a better way.
+
+**Client-side processing** means the tool runs entirely in your browser. Your files never leave your device. Here are our top 10 tools that work this way.
+
+---
+
+## 1. Image Compressor
+
+Reduce JPEG, PNG, and WebP file sizes by up to 90% without visible quality loss. The compression algorithm runs on your CPU using WebAssembly.
+
+*   **Use case:** Shrinking email attachments under 1MB.
+*   [Try Image Compressor](/tool/compress)
+
+## 2. AI Background Remover
+
+Remove backgrounds from photos using a machine learning model that runs directly in your browser via TensorFlow.js. No server processing needed.
+
+*   **Use case:** Creating product photos with white backgrounds.
+*   [Try Background Remover](/tool/remove-bg)
+
+## 3. EXIF Data Remover
+
+Strip hidden metadata (GPS coordinates, camera model, timestamps) from photos before sharing them online. Prevent location tracking.
+
+*   **Use case:** Removing location data before posting on social media.
+*   [Try EXIF Remover](/tool/exif)
+
+## 4. Privacy Blur / Redactor
+
+Blur or pixelate faces, license plates, addresses, and sensitive text in screenshots. The blur is irreversible, unlike black markers which can sometimes be reversed.
+
+*   **Use case:** Sharing support tickets without exposing customer data.
+*   [Try Privacy Blur](/tool/redact)
+
+## 5. AI Image Upscaler
+
+Double or quadruple image resolution using a neural network that runs in your browser. Processing stays on your GPU/CPU.
+
+*   **Use case:** Enhancing old family photos without cloud uploads.
+*   [Try AI Upscaler](/tool/upscale)
+
+## 6. Image Converter
+
+Convert between JPG, PNG, WebP, and HEIC formats. The conversion uses Canvas API, entirely browser-based.
+
+*   **Use case:** Converting iPhone HEIC photos to universally compatible JPG.
+*   [Try Image Converter](/tool/image-converter)
+
+## 7. PDF Maker
+
+Combine multiple images into a single PDF document. The PDF is generated client-side using JavaScript.
+
+*   **Use case:** Creating document scans from phone photos.
+*   [Try PDF Maker](/tool/pdf)
+
+## 8. Digital Signature Creator
+
+Draw your signature on a canvas and export it as a transparent PNG. Nothing is stored or transmitted.
+
+*   **Use case:** Signing PDF contracts without printing them.
+*   [Try Signature Maker](/tool/signature-maker)
+
+## 9. Image Compare Tool
+
+Upload two images and compare them with slider, side-by-side, or overlay modes. Both images stay in browser memory only.
+
+*   **Use case:** Checking compression quality before shipping to production.
+*   [Try Image Compare](/compare-images-online)
+
+## 10. Social Media Preview Generator
+
+Create platform-ready images for Twitter, Facebook, LinkedIn, and more. Add text, gradients, and export. All locally.
+
+*   **Use case:** Making Open Graph images for blog posts.
+*   [Try Social Preview](/social-media-preview-generator)
+
+---
+
+## How to Verify a Tool is Truly Private
+
+Do not just take our word for it. Here is how you can verify any tool processes locally:
+
+1.  **Open DevTools** (F12, Network tab).
+2.  **Upload an image** to the tool.
+3.  **Check the Network tab.** If no outbound requests contain image data, it is genuinely client-side.
+4.  **Disconnect WiFi** and try again. If the tool still works, it is processing locally.
+
+Our entire site works offline after the first load. Try it yourself.
+
+---
+
+## Why This Matters
+
+*   **GDPR Compliance:** No data leaves the EU if no data leaves the browser.
+*   **Zero Breach Risk:** You cannot hack what does not exist on a server.
+*   **Speed:** Local processing is often faster than uploading/downloading.
+*   **No Accounts:** We do not need your email because we do not store anything.
+
+[Browse All Privacy-First Tools](/)
+    `
   }
 ];
