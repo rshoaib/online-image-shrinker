@@ -23,39 +23,19 @@
     <meta name="twitter:image" content="https://onlineimageshrinker.com/og-image.jpg">
 
     <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- DNS Prefetch for external services -->
-    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-
-    <!-- Preload hero font to avoid FOUT -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" /></noscript>
+    <!-- Non-blocking font load: media=print swapped to all on load -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" /></noscript>
 
     <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
   </head>
   <body>
-    <div id="root">
-      <!-- Inline skeleton for instant FCP — replaced when React mounts -->
-      <div style="max-width:1200px;margin:0 auto;padding:40px 20px;font-family:Inter,system-ui,sans-serif">
-        <div style="text-align:center;margin-bottom:32px">
-          <h2 style="font-size:1.8rem;color:#1e293b;margin:0 0 8px">Select a Tool</h2>
-          <p style="color:#64748b;margin:0">Choose how you want to optimize your images today.</p>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">
-          <div style="height:88px;border-radius:12px;background:#f1f5f9;animation:skpulse 1.5s ease-in-out infinite"></div>
-          <div style="height:88px;border-radius:12px;background:#f1f5f9;animation:skpulse 1.5s ease-in-out infinite .15s"></div>
-          <div style="height:88px;border-radius:12px;background:#f1f5f9;animation:skpulse 1.5s ease-in-out infinite .3s"></div>
-          <div style="height:88px;border-radius:12px;background:#f1f5f9;animation:skpulse 1.5s ease-in-out infinite .45s"></div>
-          <div style="height:88px;border-radius:12px;background:#f1f5f9;animation:skpulse 1.5s ease-in-out infinite .6s"></div>
-          <div style="height:88px;border-radius:12px;background:#f1f5f9;animation:skpulse 1.5s ease-in-out infinite .75s"></div>
-        </div>
-      </div>
-      <style>@keyframes skpulse{0%,100%{opacity:1}50%{opacity:.4}}</style>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
