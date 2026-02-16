@@ -3,16 +3,16 @@ import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-rout
 import { useTranslation } from 'react-i18next';
 import Layout from './components/Layout';
 import ToolSelector from './components/ToolSelector';
-import FeaturesSection from './components/FeaturesSection';
 import FAQSection from './components/FAQSection';
 import HowItWorks from './components/HowItWorks';
 import SeoWrapper from './components/SeoWrapper';
-import AnalyticsWrapper from './components/AnalyticsWrapper';
 
 // Lazy-load everything not needed on the homepage
 const DropZone = lazy(() => import('./components/DropZone'));
 const ToolLayout = lazy(() => import('./components/ToolLayout'));
 const CookieConsent = lazy(() => import('./components/CookieConsent'));
+const FeaturesSection = lazy(() => import('./components/FeaturesSection'));
+const AnalyticsWrapper = lazy(() => import('./components/AnalyticsWrapper'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const BlogList = lazy(() => import('./components/BlogList'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
