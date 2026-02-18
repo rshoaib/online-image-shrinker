@@ -74,7 +74,7 @@ const BackgroundRemovalEditor = ({ file, onBack }) => {
           <div className="comparison-view">
              <div className="image-card original">
                <span className="label">Original</span>
-               <img src={originalUrl} alt="Original" />
+               <img src={originalUrl} alt="Original" loading="lazy" />
              </div>
              
              <div className="image-card processed">
@@ -86,7 +86,7 @@ const BackgroundRemovalEditor = ({ file, onBack }) => {
                  </div>
                ) : (
                  <div className="result-wrapper">
-                    <img src={processedUrl} alt="Processed" className="checkerboard-bg" />
+                    <img src={processedUrl} alt="Processed" className="checkerboard-bg" loading="lazy" />
                  </div>
                )}
              </div>

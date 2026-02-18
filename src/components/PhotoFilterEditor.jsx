@@ -189,7 +189,7 @@ const PhotoFilterEditor = ({ file, onBack }) => {
                 >
                   <div className="pfe-preset-thumb">
                     {thumbnails[preset.name] ? (
-                      <img src={thumbnails[preset.name]} alt={preset.name} />
+                      <img src={thumbnails[preset.name]} alt={preset.name} loading="lazy" />
                     ) : (
                       <span className="pfe-preset-icon">{preset.icon}</span>
                     )}

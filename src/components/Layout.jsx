@@ -1,5 +1,6 @@
 import { Github, Coffee, Globe, Moon, Sun } from 'lucide-react';
 import InstallPrompt from './InstallPrompt';
+import AdSlot from './AdSlot';
 import logoUrl from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/useTheme';
@@ -55,6 +56,9 @@ const Layout = ({ children, onNavigate }) => {
       </main>
 
       <InstallPrompt />
+
+      {/* AdSense: responsive banner above footer — safe distance from interactive elements */}
+      <AdSlot format="responsive" slot={import.meta.env.VITE_AD_SLOT_FOOTER || ''} className="footer-ad" />
 
       <footer className="footer">
         <p className="footer-text">

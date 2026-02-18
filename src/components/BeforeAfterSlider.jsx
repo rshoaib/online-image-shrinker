@@ -39,14 +39,14 @@ const handleMouseDown = () => { isDragging.current = true; };
         onTouchMove={handleTouchMove}
     >
       {/* After Image (Background/Base) */}
-      <img src={afterImage} alt="After" className="slider-image base" />
+      <img src={afterImage} alt="After" className="slider-image base" loading="lazy" />
 
       {/* Before Image (Clipped overlay) */}
       <div 
         className="slider-overlay" 
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        <img src={beforeImage} alt="Before" className="slider-image overlay" />
+        <img src={beforeImage} alt="Before" className="slider-image overlay" loading="lazy" />
         <span className="label before-label">Original</span>
       </div>
       

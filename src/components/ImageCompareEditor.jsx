@@ -140,7 +140,7 @@ const ImageCompareEditor = ({ file, onBack }) => {
         <div className="compare-upload-layout">
           <div className="preview-card loaded">
             <span className="card-label">Image A</span>
-            {imageA && <img src={imageA} alt="Image A" />}
+            {imageA && <img src={imageA} alt="Image A" loading="lazy" />}
           </div>
 
           <div className="arrow-divider">
@@ -248,12 +248,12 @@ const ImageCompareEditor = ({ file, onBack }) => {
           onTouchStart={startDrag}
           style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'center center' }}
         >
-          <img src={imageB} alt="Image B" className="compare-img base" />
+          <img src={imageB} alt="Image B" className="compare-img base" loading="lazy" />
           <div
             className="compare-overlay"
             style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
           >
-            <img src={imageA} alt="Image A" className="compare-img" />
+            <img src={imageA} alt="Image A" className="compare-img" loading="lazy" />
           </div>
 
           <span className="img-label left">A</span>
@@ -273,11 +273,11 @@ const ImageCompareEditor = ({ file, onBack }) => {
         <div className="side-view" style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'center center' }}>
           <div className="side-panel">
             <span className="img-label-static">A</span>
-            <img src={imageA} alt="Image A" />
+            <img src={imageA} alt="Image A" loading="lazy" />
           </div>
           <div className="side-panel">
             <span className="img-label-static">B</span>
-            <img src={imageB} alt="Image B" />
+            <img src={imageB} alt="Image B" loading="lazy" />
           </div>
         </div>
       )}
@@ -285,7 +285,7 @@ const ImageCompareEditor = ({ file, onBack }) => {
       {/* === OVERLAY VIEW === */}
       {viewMode === 'overlay' && (
         <div className="overlay-view" style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'center center' }}>
-          <img src={imageA} alt="Image A" className="compare-img" />
+          <img src={imageA} alt="Image A" className="compare-img" loading="lazy" />
           <img
             src={imageB}
             alt="Image B"

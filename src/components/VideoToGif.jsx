@@ -74,7 +74,7 @@ const VideoToGif = ({ file, onBack }) => {
         <div className="preview-section">
            {outputUrl ? (
              <div className="result-wrapper">
-               <img src={outputUrl} alt="Generated GIF" className="preview-media" />
+               <img src={outputUrl} alt="Generated GIF" className="preview-media" loading="lazy" />
                <div className="file-info text-center">
                  <span className="success-text">Generated GIF ({formatSize(outputSize)})</span>
                </div>

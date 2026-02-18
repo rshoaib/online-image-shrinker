@@ -180,7 +180,7 @@ const CollageEditor = ({ files, onBack }) => {
             <div className="image-list">
                 {images.map(img => (
                     <div key={img.id} className="img-item">
-                        <img src={img.url} alt="thumb" />
+                        <img src={img.url} alt="thumb" loading="lazy" />
                         <button className="remove-btn" onClick={() => handleRemove(img.id)}>
                             <X size={14} />
                         </button>
@@ -198,7 +198,7 @@ const CollageEditor = ({ files, onBack }) => {
 
          <div className="preview-area">
              {loading ? <p>Generating...</p> : (
-                 canvasUrl && <img src={canvasUrl} className="collage-preview" alt="Collage" />
+                 canvasUrl && <img src={canvasUrl} className="collage-preview" alt="Collage" loading="lazy" />
              )}
          </div>
       </div>

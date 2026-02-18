@@ -187,7 +187,7 @@ const GridSplitterEditor = ({ file, onBack }) => {
                  }}>
                     {splitPreviews.map((src, i) => (
                         <div key={i} className="grid-cell">
-                            <img src={src} alt="grid part" style={{ width: '100%', display: 'block' }} />
+                            <img src={src} alt="grid part" style={{ width: '100%', display: 'block' }} loading="lazy" />
                             <span className="cell-number">{(splitPreviews.length - i)}</span>
                         </div>
                     ))}

@@ -115,7 +115,7 @@ const ImageConverterEditor = ({ file, onBack }) => {
         <div className="preview-area">
            {imgSrc && (
              <div className="image-card">
-               <img src={imgSrc} alt="Preview" />
+               <img src={imgSrc} alt="Preview" loading="lazy" />
                <div className="file-info">
                  <p className="filename">{file.name}</p>
                  <p className="filesize">{formatSize(originalSize)}</p>

@@ -1,0 +1,193 @@
+# Online Image Shrinker — Full Site Documentation
+
+> Free, privacy-first image tools that run entirely in your browser. No uploads, no accounts, no tracking.
+
+## About
+
+Online Image Shrinker is a suite of 20+ free image manipulation tools powered by WebAssembly and TensorFlow.js. Every tool processes images locally on the user's device — zero bytes are sent to any server. The site supports 6 languages (English, Spanish, German, French, Portuguese, Italian) and works offline as a PWA.
+
+## URL: https://onlineimageshrinker.com
+## Sitemap: https://onlineimageshrinker.com/sitemap.xml
+
+---
+
+## Core Tools
+
+### Image Compressor
+- **URL:** /tool/compress
+- **Purpose:** Reduce JPEG, PNG, WebP file sizes by up to 90%
+- **Technology:** WebAssembly (browser-wasm)
+- **Landing Pages:** /compress-jpeg, /compress-png, /compress-webp
+
+### AI Background Remover
+- **URL:** /tool/remove-bg
+- **Purpose:** Remove backgrounds using browser-based ML
+- **Technology:** @imgly/background-removal (ONNX model)
+- **Landing Page:** /remove-background
+
+### AI Image Upscaler
+- **URL:** /tool/upscale
+- **Purpose:** 2x/4x resolution enhancement via neural networks
+- **Technology:** TensorFlow.js, ESRGAN model
+- **Landing Page:** /ai-image-upscaler
+
+### Image Converter
+- **URL:** /tool/image-converter (internal)
+- **Purpose:** Convert between JPG, PNG, WebP, HEIC formats
+- **Technology:** Canvas API, heic2any
+- **Landing Pages:** /image-converter-online, /convert-heic-to-jpg, /convert-png-to-jpg, /convert-jpg-to-png, /convert-webp-to-png, /convert-webp-to-jpg, /convert-heic-to-png
+
+### Crop & Resize
+- **URL:** /tool/crop, /tool/resize
+- **Purpose:** Presets for Instagram, YouTube, LinkedIn, Passport, print sizes
+- **Landing Pages:** /resize-for-instagram, /resize-for-youtube, /resize-passport-photo, plus 20+ preset-specific pages
+
+### Images to PDF
+- **URL:** /tool/pdf
+- **Purpose:** Merge multiple images into a single PDF
+- **Technology:** jsPDF
+- **Landing Pages:** /jpg-to-pdf, /compress-pdf-to-100kb through /compress-pdf-to-10mb
+
+### Privacy Blur / Redactor
+- **URL:** /tool/redact
+- **Purpose:** Blur faces, text, and sensitive data
+- **Landing Page:** /blur-image-online
+
+### EXIF Metadata Remover
+- **URL:** /tool/exif (internal)
+- **Purpose:** Strip GPS coordinates and camera data
+- **Technology:** exif-js library
+- **Landing Page:** /exif-remover
+
+### Screenshot Beautifier
+- **URL:** /tool/screenshot-beautifier (internal)
+- **Purpose:** Add backgrounds, frames, and shadows to screenshots
+- **Landing Page:** /screenshot-beautifier
+
+### Profile Picture Maker
+- **URL:** /tool/profile-picture (internal)
+- **Purpose:** AI background removal + custom styling for profile photos
+- **Landing Page:** /profile-picture-maker
+
+### Meme Generator
+- **URL:** /tool/meme-generator (internal)
+- **Purpose:** Classic top/bottom text meme creator with Impact font
+- **Landing Page:** /meme-generator-online
+
+### QR Code Generator
+- **URL:** /qr-code-generator
+- **Purpose:** Create QR codes from any URL or text with custom colors
+- **Technology:** qrcode.react
+
+### Instagram Grid Splitter
+- **URL:** /tool/grid-splitter (internal)
+- **Purpose:** Split images into 3x3 or 3x1 grids for Instagram profiles
+- **Landing Page:** /instagram-grid-maker
+
+### Photo Filters
+- **URL:** /tool/photo-filters
+- **Purpose:** Apply Instagram-style preset filters and adjust brightness, contrast, saturation
+- **Landing Page:** /photo-filters-online
+
+### Image Compare
+- **URL:** /compare-images-online
+- **Purpose:** Side-by-side slider, overlay, or split comparison of two images
+
+### Social Media Preview Generator
+- **URL:** /social-media-preview-generator
+- **Purpose:** Create platform-ready OG images for Twitter, Facebook, LinkedIn
+
+### Collage Maker
+- **URL:** /collage-maker
+- **Purpose:** Combine multiple photos into grid layouts
+
+### Video to GIF / Audio
+- **URL:** /tool/video-to-gif, /tool/video-to-audio
+- **Purpose:** Extract GIF or MP3 audio from MP4/MOV/WebM video files
+- **Technology:** FFmpeg.wasm
+- **Landing Pages:** /convert-mp4-to-gif, /convert-mov-to-gif, /convert-webm-to-gif, /convert-mp4-to-mp3, etc.
+
+### Video Compressor
+- **URL:** /tool/video-compressor
+- **Purpose:** Compress video files locally in the browser
+- **Technology:** FFmpeg.wasm
+
+### OCR Text Extractor
+- **URL:** /image-to-text
+- **Purpose:** Extract text from images using Tesseract.js OCR engine
+
+### Digital Signature Maker
+- **URL:** /signature-maker
+- **Purpose:** Draw and export signatures as transparent PNGs
+
+### Batch Processor
+- **Purpose:** Process multiple images at once for compression, resize, or conversion
+
+### Color Palette Extractor
+- **URL:** /color-palette-generator
+- **Purpose:** Extract dominant colors and palettes from images with Hex/RGB codes
+- **Technology:** ColorThief library
+
+### Magic Eraser
+- **URL:** /magic-eraser
+- **Purpose:** Remove objects from photos using AI inpainting
+- **Technology:** ONNX Runtime Web
+
+### Watermark Tool
+- **URL:** /watermark-photos-online
+- **Purpose:** Add text and logo watermarks with customizable fonts, colors, and opacity
+
+---
+
+## Solutions & Industry Hubs
+
+### For Real Estate Agents
+- **URL:** /solutions/for-realtors
+- **Purpose:** Optimize property photos for MLS & Zillow listings
+
+### For E-commerce Sellers
+- **URL:** /solutions/for-ecommerce
+- **Purpose:** Prepare product photos for Shopify, Etsy & Amazon
+
+---
+
+## Blog Content
+
+The blog covers 35+ articles on image editing, formatting, and privacy topics:
+- Image compression guides (JPEG, PNG, WebP comparison)
+- Social media size guides (Instagram, YouTube, LinkedIn, Discord)
+- Passport photo tutorials (US, UK, EU)
+- E-commerce image requirements (Amazon, Shopify, Etsy)
+- Privacy and security articles
+- Tool-specific how-to guides
+
+**Blog URL:** /blog
+
+---
+
+## Privacy Model
+
+All processing uses client-side technologies:
+- WebAssembly (WASM) for compression and format conversion
+- TensorFlow.js and ONNX Runtime for AI features
+- Canvas API for image manipulation
+- FFmpeg.wasm for video processing
+- No server-side processing, no data collection, no accounts required
+- Cookie consent banner for optional analytics
+- Full privacy policy at /privacy
+
+## Technical Stack
+- **Frontend:** React 19 + Vite
+- **Routing:** react-router-dom v7 (SPA)
+- **i18n:** i18next (en, es, de, fr, pt, it)
+- **PWA:** vite-plugin-pwa with offline support
+- **Hosting:** Vercel (static)
+- **Analytics:** Google Analytics 4 (opt-in via cookie consent)
+
+## Structured Data
+- WebApplication schema on all tool pages
+- BlogPosting schema on all blog articles
+- FAQPage schema on pages with FAQ sections
+- HowTo schema on tutorial/landing pages
+- BreadcrumbList schema on all pages
+- Organization schema with publisher info

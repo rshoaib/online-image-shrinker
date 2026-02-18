@@ -102,7 +102,7 @@ const UpscaleEditor = ({ file, onBack }) => {
              {/* ... */}
              <div className="image-card original">
                <span className="label">Original</span>
-               <img src={originalUrl} alt="Original" />
+               <img src={originalUrl} alt="Original" loading="lazy" />
              </div>
              
              <div className="image-card processed">

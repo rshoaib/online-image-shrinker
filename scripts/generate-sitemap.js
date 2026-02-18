@@ -53,6 +53,7 @@ const STATIC_URLS = [
   '/photo-filters-online',
   '/magic-eraser',
   '/social-media-preview-generator',
+  '/compare-images-online',
 
   // Solutions / Growth Hubs
   '/solutions/for-realtors',
@@ -87,9 +88,11 @@ function getProgrammaticPages() {
   }
 
   // Image resize pages: resize-image-to-{slug}
-  const resizeMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label/g);
+  // Match all entries in imageResizePages array (some have width/height, some only label)
+  const resizeSection = content.match(/export const imageResizePages = \[([\s\S]*?)\];/)?.[1] || '';
+  const resizeSlugs = resizeSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
   const resizePages = [];
-  for (const match of resizeMatches) {
+  for (const match of resizeSlugs) {
     resizePages.push(`resize-image-to-${match[1]}`);
   }
   
@@ -108,16 +111,18 @@ function getProgrammaticPages() {
   }
 
   // Print-ready pages: print-{slug}
-  const printMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label:\s*['"][^'"]+['"],\s*toolId:\s*['"]resize['"]/g);
+  const printSection = content.match(/export const printReadyPages = \[([\s\S]*?)\];/)?.[1] || '';
+  const printSlugs = printSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
   const printPages = [];
-  for (const match of printMatches) {
+  for (const match of printSlugs) {
     printPages.push(`print-${match[1]}`);
   }
 
   // Passport pages: passport-photo-{slug}
-  const passportMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label:\s*['"][^'"]+['"],\s*toolId:\s*['"]passport['"]/g);
+  const passportSection = content.match(/export const passportPages = \[([\s\S]*?)\];/)?.[1] || '';
+  const passportSlugs = passportSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
   const passportPages = [];
-  for (const match of passportMatches) {
+  for (const match of passportSlugs) {
     passportPages.push(`passport-photo-${match[1]}`);
   }
 

@@ -39,7 +39,7 @@ const CompareSlider = ({ originalUrl, processedUrl }) => {
       onTouchStart={startResizing}
     >
       <div className="img-layer original">
-        <img src={originalUrl} alt="Original" />
+        <img src={originalUrl} alt="Original" loading="lazy" />
         <span className="label">Original</span>
       </div>
       
@@ -47,7 +47,7 @@ const CompareSlider = ({ originalUrl, processedUrl }) => {
         className="img-layer processed" 
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
-        <img src={processedUrl} alt="Processed" />
+        <img src={processedUrl} alt="Processed" loading="lazy" />
         <span className="label">Compressed</span>
       </div>
 

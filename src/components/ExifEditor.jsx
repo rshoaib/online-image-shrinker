@@ -108,6 +108,7 @@ const ExifEditor = ({ files, onBack }) => {
                alt="Preview" 
                className="main-preview"
                style={{ maxHeight: '50vh', objectFit: 'contain' }}
+               loading="lazy"
              />
              {cleanedUrl && (
                  <div className="success-overlay">

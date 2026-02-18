@@ -39,7 +39,7 @@ const BlogPost = () => {
 
           {article.coverImage && (
             <div className="post-cover-image">
-              <img src={article.coverImage} alt={article.title} />
+              <img src={article.coverImage} alt={article.title} loading="lazy" />
             </div>
           )}
 

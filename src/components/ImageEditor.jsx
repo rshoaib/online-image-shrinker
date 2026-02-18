@@ -124,7 +124,7 @@ const ImageEditor = ({ file, onBack, mode }) => {
               />
             ) : processedImage ? (
               <div className="image-wrapper">
-                <img src={processedImage.url} alt="Preview" className="preview-img" />
+                <img src={processedImage.url} alt="Preview" className="preview-img" loading="lazy" />
                 <div className="stats-overlay">
                   <div className="stat-item">
                     <FileOutput size={14} />

@@ -95,7 +95,7 @@ const OcrEditor = ({ file, onBack }) => {
       <div className="workspace">
         <div className="preview-area">
            <div className="image-container">
-             {previewUrl && <img src={previewUrl} alt="Original" />}
+             {previewUrl && <img src={previewUrl} alt="Original" loading="lazy" />}
            </div>
         </div>
 

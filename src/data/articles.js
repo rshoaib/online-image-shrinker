@@ -182,58 +182,102 @@ You don't need to install suspect software to convert your files.
   },
   {
     slug: 'passport-photo-guide',
-    title: 'How to Resize Photo for Passport (3.5x4.5cm)',
-    excerpt: 'Stop paying for visa photos. Crop them to the exact 35mm x 45mm standard instantly.',
+    title: 'Passport Photo Size Guide 2026 (All Countries) | Free Resize Tool',
+    excerpt: 'Exact passport photo dimensions for every country — USA, UK, EU, India, Canada, China & more. Resize to the correct size instantly with our free tool.',
     iconName: 'FileImage',
     iconColor: '#007AFF',
-    date: 'Jan 16, 2026',
+    date: 'Feb 19, 2026',
     author: 'Travel Hacks',
     category: 'Workflow',
     content: `
-Applying for a visa or renewing a passport is stressful enough without getting your photo rejected. Use this guide to create a compliant passport photo at home for free.
+Getting your passport photo rejected wastes time and money. This guide covers **every major country's passport photo size** so you can resize your photo to the exact dimensions at home — for free. No need to visit a studio.
 
-## Global Standard Dimensions
-
-Different countries have different size rules. Our tool handles them all, but here are the most common:
-
-| Region | Dimensions | Aspect Ratio |
-| :--- | :--- | :--- |
-| **USA & India** | 2 x 2 inches (51x51mm) | 1:1 |
-| **UK, Europe, Australia** | 35mm x 45mm | 3.5:4.5 |
-| **China** | 33mm x 48mm | - |
-| **Canada** | 50mm x 70mm | 5:7 |
+**[→ Resize My Passport Photo Now (Free)](/resize-passport-photo)**
 
 ---
 
-## 5 Rules for a Perfect Passport Photo
+## Passport Photo Size by Country (2026)
 
-1.  **Lighting is Key**: Face a window for natural, even light. No shadows on your face or the background.
-2.  **Neutral Expression**: Mouth closed, eyes open, looking directly at the camera. No smiling (for most biometric passports).
-3.  **Plain Background**: Use a white or off-white wall. If you don't have one, use our **Background Remover** first.
-4.  **No Glasses**: Most countries (including the US) now ban glasses in passport photos to avoid glare.
-5.  **Recent**: The photo must be taken within the last 6 months.
+Different countries require different passport photo sizes. Here are all major standards with exact pixel dimensions at 300 DPI (photo-quality printing):
+
+| Country / Region | Size (mm) | Size (inches) | Pixels (300 DPI) | Aspect Ratio |
+| :--- | :--- | :--- | :--- | :--- |
+| **USA** | 51 × 51 mm | 2 × 2 in | 600 × 600 px | 1:1 |
+| **India** | 51 × 51 mm | 2 × 2 in | 600 × 600 px | 1:1 |
+| **UK** | 35 × 45 mm | 1.38 × 1.77 in | 413 × 531 px | 7:9 |
+| **EU / Schengen** | 35 × 45 mm | 1.38 × 1.77 in | 413 × 531 px | 7:9 |
+| **Australia** | 35 × 45 mm | 1.38 × 1.77 in | 413 × 531 px | 7:9 |
+| **Canada** | 50 × 70 mm | 2 × 2.75 in | 591 × 827 px | 5:7 |
+| **China** | 33 × 48 mm | 1.3 × 1.89 in | 390 × 567 px | 11:16 |
+| **Japan** | 35 × 45 mm | 1.38 × 1.77 in | 413 × 531 px | 7:9 |
+| **South Korea** | 35 × 45 mm | 1.38 × 1.77 in | 413 × 531 px | 7:9 |
+| **Brazil** | 50 × 70 mm | 2 × 2.75 in | 591 × 827 px | 5:7 |
+
+> **Quick summary:** Most countries use either **2×2 inches** (USA, India) or **35×45mm** (UK, EU, Japan, Korea, Australia). When in doubt, use 35×45mm — it is the ISO/ICAO standard.
+
+---
+
+## How to Resize Your Photo (3 Steps)
+
+You don't need Photoshop or a studio. Our free tool does it in seconds:
+
+1.  Open our [Passport Photo Resizer](/resize-passport-photo).
+2.  Upload your headshot photo.
+3.  Select your country preset — the tool automatically crops and resizes to the exact dimensions.
+4.  Download the result and print it at any pharmacy.
+
+**[→ Open the Free Passport Photo Tool](/resize-passport-photo)**
+
+---
+
+## 6 Rules for a Perfect Passport Photo
+
+Follow these rules to avoid rejection at the embassy or passport office:
+
+1.  **Lighting**: Face a window for natural, even light. No harsh shadows on your face or background.
+2.  **Neutral Expression**: Mouth closed, eyes open, looking straight at the camera. No smiling for biometric passports.
+3.  **Plain White Background**: Use a white or light grey wall. No patterns, no shadows. If your wall isn't perfect, use our [AI Background Remover](/tool/remove-bg) first.
+4.  **No Glasses**: The USA, UK, EU, and most countries now ban glasses in passport photos due to glare issues.
+5.  **Head Position**: Your head (from chin to crown) must fill **70–80%** of the frame height. Don't crop too close.
+6.  **Recency**: The photo must be taken within the **last 6 months**.
 
 ---
 
 ## Step-by-Step Workflow
 
-**Step 1: Take the photo**
-Stand 1 meter away from a white wall. Have someone else take the photo (selfies often distort features). Leave plenty of space above your head.
+### Step 1: Take the Photo
+Stand about 1 meter (3 feet) from a white wall. Have someone else take the photo — selfies distort facial proportions. Leave plenty of space above your head and around the sides.
 
-**Step 2: Remove Background (Optional)**
-If your wall isn't perfectly white, use our [AI Background Remover](/tool/remove-bg) to clean it up.
+### Step 2: Clean Up the Background (Optional)
+If your wall isn't perfectly white, use our [AI Background Remover](/tool/remove-bg) to replace it with solid white.
 
-**Step 3: Crop & Resize**
-1.  Go to our [Passport Crop Tool](/tool/crop).
+### Step 3: Crop & Resize to Your Country's Size
+1.  Go to our [Passport Photo Resizer](/resize-passport-photo).
 2.  Upload your photo.
-3.  Select the preset for your country (e.g., "Passport 3.5x4.5cm").
-4.  **Crucial:** Align your eyes with the grid guide. Your head should fill 70-80% of the frame.
-5.  Download the result.
+3.  Select the preset for your country (e.g., "US Passport 2×2", "UK Passport 35×45mm").
+4.  **Crucial:** Align your eyes with the guide lines. Your head should fill 70–80% of the frame.
+5.  Download the ready-to-print file.
 
-**Step 4: Print**
-Print the downloaded image on 4x6 inch (10x15cm) photo paper at any pharmacy (CVS, Boots, etc.). You'll typically fit 4-6 passport photos on one standard print.
+### Step 4: Print at Home or Pharmacy
+Print the file on **4×6 inch (10×15cm) glossy photo paper**. You can fit 4–6 passport photos on a single print. Use CVS, Walgreens, Boots, or any photo kiosk.
 
-[Start Cropping Now](/tool/crop)
+**[→ Resize My Passport Photo Free](/resize-passport-photo)**
+
+---
+
+## Frequently Asked Questions
+
+**What size is a US passport photo?**
+US passport photos must be exactly **2 × 2 inches (51 × 51mm)**, which is **600 × 600 pixels** at 300 DPI.
+
+**What size is a UK passport photo?**
+UK passport photos must be **35 × 45mm** (approximately 1.38 × 1.77 inches), or **413 × 531 pixels** at 300 DPI.
+
+**Can I take a passport photo with my phone?**
+Yes! Modern smartphones have more than enough resolution. Just follow the 6 rules above and use our free tool to crop to the exact size.
+
+**What background color do I need?**
+Almost all countries require a **plain white** or off-white background. Use our [Background Remover](/tool/remove-bg) to fix a non-white background instantly.
     `
   },
   {

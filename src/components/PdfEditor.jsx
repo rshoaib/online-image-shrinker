@@ -101,7 +101,7 @@ const PdfEditor = ({ files: initialFiles, onBack, onRemove }) => {
             <div key={index} className="pdf-list-item">
                <div className="drag-handle"><GripVertical size={16} /></div>
                <div className="file-preview">
-                 <img src={URL.createObjectURL(file)} alt={`Preview of ${file.name}`} />
+                 <img src={URL.createObjectURL(file)} alt={`Preview of ${file.name}`} loading="lazy" />
                </div>
                <div className="file-meta">
                   <span className="file-name">{file.name}</span>

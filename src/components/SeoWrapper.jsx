@@ -138,6 +138,44 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
     }
     scriptJsonLd.textContent = JSON.stringify(schemaData);
 
+    // BreadcrumbList JSON-LD
+    let scriptBreadcrumb = document.querySelector('script#breadcrumb-jsonld');
+    if (!scriptBreadcrumb) {
+      scriptBreadcrumb = document.createElement('script');
+      scriptBreadcrumb.id = 'breadcrumb-jsonld';
+      scriptBreadcrumb.type = "application/ld+json";
+      document.head.appendChild(scriptBreadcrumb);
+    }
+
+    const pathSegments = location.pathname.split('/').filter(Boolean);
+    const breadcrumbItems = [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://onlineimageshrinker.com/" }
+    ];
+
+    let cumulativePath = '';
+    pathSegments.forEach((seg, idx) => {
+      cumulativePath += `/${seg}`;
+      const name = seg
+        .replace(/-/g, ' ')
+        .replace(/\b\w/g, c => c.toUpperCase());
+      breadcrumbItems.push({
+        "@type": "ListItem",
+        "position": idx + 2,
+        "name": name,
+        "item": `https://onlineimageshrinker.com${cumulativePath}`
+      });
+    });
+
+    if (pathSegments.length > 0) {
+      scriptBreadcrumb.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": breadcrumbItems
+      });
+    } else {
+      scriptBreadcrumb.textContent = '';
+    }
+
     // Google Search Console Verification
     const gscCode = import.meta.env.VITE_GSC_CODE;
     if (gscCode) {
