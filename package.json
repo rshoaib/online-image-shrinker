@@ -16,6 +16,7 @@
     "@ffmpeg/ffmpeg": "^0.12.15",
     "@ffmpeg/util": "^0.12.2",
     "@imgly/background-removal": "^1.7.0",
+    "@supabase/supabase-js": "^2.97.0",
     "@tensorflow/tfjs": "4.11.0",
     "canvas-confetti": "^1.9.4",
     "colorthief": "^2.6.0",
