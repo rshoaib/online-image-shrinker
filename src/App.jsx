@@ -29,7 +29,7 @@ const About = lazy(() => import('./components/About'));
 const NotFound = lazy(() => import('./components/NotFound'));
 import { 
   pdfSizePages, imageResizePages, conversionPages, videoToAudioPages, videoToGifPages,
-  socialMediaPages, printReadyPages, passportPages 
+  socialMediaPages, printReadyPages, passportPages, imageCompressSizePages 
 } from './data/seoTemplates';
 
 const PageLoader = () => (
@@ -462,6 +462,22 @@ const AppContent = () => {
                   toolId="video-to-audio" 
                   title={`Convert ${page.from} to ${page.to} Online (Free)`}
                   description={`Extract high quality MP3 audio from ${page.from} video files. Fast, free, and private.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+
+          {/* Image Compress by File Size */}
+          {imageCompressSizePages.map(page => (
+            <Route 
+              key={`compress-img-${page.slug}`}
+              path={`/compress-image-to-${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId="compress" 
+                  title={`Compress Image to ${page.size} Online (Free)`}
+                  description={`Reduce image file size to under ${page.size}. Works with JPG, PNG, and WebP. 100% private — no uploads.`}
                   files={files} setFiles={setFiles} onBack={handleBack}
                 />
               } 
