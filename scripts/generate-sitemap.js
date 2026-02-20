@@ -80,53 +80,43 @@ function getArticles() {
 function getProgrammaticPages() {
   const content = fs.readFileSync(seoTemplatesPath, 'utf8');
   
+  // Helper: extract slugs from a specific exported array section
+  const extractSlugs = (arrayName) => {
+    const section = content.match(new RegExp(`export const ${arrayName} = \\[([\\s\\S]*?)\\];`))?.[1] || '';
+    const matches = section.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
+    const slugs = [];
+    for (const match of matches) slugs.push(match[1]);
+    return slugs;
+  };
+
   // PDF size pages: compress-pdf-to-{slug}
-  const pdfMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*size/g);
-  const pdfPages = [];
-  for (const match of pdfMatches) {
-    pdfPages.push(`compress-pdf-to-${match[1]}`);
-  }
+  const pdfPages = extractSlugs('pdfSizePages').map(s => `compress-pdf-to-${s}`);
 
   // Image resize pages: resize-image-to-{slug}
-  // Match all entries in imageResizePages array (some have width/height, some only label)
-  const resizeSection = content.match(/export const imageResizePages = \[([\s\S]*?)\];/)?.[1] || '';
-  const resizeSlugs = resizeSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
-  const resizePages = [];
-  for (const match of resizeSlugs) {
-    resizePages.push(`resize-image-to-${match[1]}`);
-  }
+  const resizePages = extractSlugs('imageResizePages').map(s => `resize-image-to-${s}`);
   
   // Conversion pages: convert-{slug}
-  const convMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*from/g);
-  const convPages = [];
-  for (const match of convMatches) {
-    convPages.push(`convert-${match[1]}`);
-  }
+  const convPages = extractSlugs('conversionPages').map(s => `convert-${s}`);
+
+  // Video to GIF pages: convert-{slug}
+  const videoGifPages = extractSlugs('videoToGifPages').map(s => `convert-${s}`);
+
+  // Video to Audio pages: convert-{slug}
+  const videoAudioPages = extractSlugs('videoToAudioPages').map(s => `convert-${s}`);
 
   // Social media pages: resize-for-{slug}
-  const socialMatches = content.matchAll(/slug:\s*['"]([^'"]+)['"],\s*width:\s*\d+,\s*height:\s*\d+,\s*label:\s*['"][^'"]+['"],\s*toolId:\s*['"]crop['"]/g);
-  const socialPages = [];
-  for (const match of socialMatches) {
-    socialPages.push(`resize-for-${match[1]}`);
-  }
+  const socialPages = extractSlugs('socialMediaPages').map(s => `resize-for-${s}`);
 
   // Print-ready pages: print-{slug}
-  const printSection = content.match(/export const printReadyPages = \[([\s\S]*?)\];/)?.[1] || '';
-  const printSlugs = printSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
-  const printPages = [];
-  for (const match of printSlugs) {
-    printPages.push(`print-${match[1]}`);
-  }
+  const printPages = extractSlugs('printReadyPages').map(s => `print-${s}`);
 
   // Passport pages: passport-photo-{slug}
-  const passportSection = content.match(/export const passportPages = \[([\s\S]*?)\];/)?.[1] || '';
-  const passportSlugs = passportSection.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
-  const passportPages = [];
-  for (const match of passportSlugs) {
-    passportPages.push(`passport-photo-${match[1]}`);
-  }
+  const passportPages = extractSlugs('passportPages').map(s => `passport-photo-${s}`);
 
-  return [...pdfPages, ...resizePages, ...convPages, ...socialPages, ...printPages, ...passportPages];
+  // Image compress by file size pages: compress-image-to-{slug}
+  const imgCompressPages = extractSlugs('imageCompressSizePages').map(s => `compress-image-to-${s}`);
+
+  return [...pdfPages, ...resizePages, ...convPages, ...videoGifPages, ...videoAudioPages, ...socialPages, ...printPages, ...passportPages, ...imgCompressPages];
 }
 
 function generateSitemap() {
