@@ -107,7 +107,6 @@ const Layout = ({ children, onNavigate }) => {
         <a href="https://mycalcfinance.com" target="_blank" rel="noopener noreferrer">Finance Calculators</a>
         <a href="https://legalpolicygen.com" target="_blank" rel="noopener noreferrer">Legal Policy Generator</a>
         <a href="https://imrizwan.com" target="_blank" rel="noopener noreferrer">Developer Blog</a>
-        <a href="https://orderviachat.com" target="_blank" rel="noopener noreferrer">OrderViaChat</a>
       </div>
 
       <style>{`

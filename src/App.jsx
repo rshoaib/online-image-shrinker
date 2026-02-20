@@ -64,7 +64,7 @@ const AppContent = () => {
       navigate('/privacy');
     } else if (dest === 'blog') {
       navigate('/blog');
-    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text', 'signature-maker', 'qr-code-generator', 'photo-filters-online'].includes(dest)) {
+    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text', 'signature-maker', 'qr-code-generator', 'photo-filters-online', 'favicon-generator', 'svg-to-png'].includes(dest)) {
       navigate(`/${dest}`);
     } else if (dest === 'terms') {
       navigate('/terms');
@@ -523,6 +523,18 @@ const AppContent = () => {
                </SeoWrapper>
           } />
 
+          <Route path="/favicon-generator" element={
+               <SeoWrapper title="Free Favicon Generator - Create Multi-Size Favicons" description="Generate favicons in multiple sizes (16x16 to 512x512) from any image. Free, private, no upload to server.">
+                 <ToolLayout toolId="favicon-generator" files={files} setFiles={setFiles} onBack={handleBack} />
+               </SeoWrapper>
+          } />
+
+          <Route path="/svg-to-png" element={
+               <SeoWrapper title="Free SVG to PNG Converter - Any Resolution" description="Convert SVG files to PNG images at any resolution. Choose custom dimensions, transparent backgrounds, and download instantly.">
+                 <ToolLayout toolId="svg-to-png" files={files} setFiles={setFiles} onBack={handleBack} />
+               </SeoWrapper>
+          } />
+
           
            <Route path="/photo-filters-online" element={
               <SeoLandingPage 
@@ -582,6 +594,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
     'video-compressor': 'video_compressor', 'video-to-gif': 'video_to_gif',
     'video-to-audio': 'video_to_audio', 'collage-maker': 'collage',
     'signature-maker': 'signature',
+    'favicon-generator': 'favicon', 'svg-to-png': 'svg_to_png',
   };
 
   // Map toolId to display text

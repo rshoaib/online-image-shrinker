@@ -54,6 +54,8 @@ const STATIC_URLS = [
   '/magic-eraser',
   '/social-media-preview-generator',
   '/compare-images-online',
+  '/favicon-generator',
+  '/svg-to-png',
 
   // Solutions / Growth Hubs
   '/solutions/for-realtors',
