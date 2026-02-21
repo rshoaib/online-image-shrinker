@@ -85,6 +85,15 @@ const Layout = ({ children, onNavigate }) => {
             <a href="/blog" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate('blog'); }} className="footer-link">{t('common.blog')}</a>
            <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="View source code on GitHub"><Github size={16} aria-hidden="true" /></a>
         </div>
+        <div className="footer-crosslinks" style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <p style={{ fontSize: '0.7rem', opacity: 0.5, marginBottom: '0.5rem' }}>Our Other Free Tools</p>
+          <div className="footer-links" style={{ fontSize: '0.75rem' }}>
+            <a href="https://dailysmartcalc.com" target="_blank" rel="noopener noreferrer" className="footer-link">Smart Calculators</a>
+            <a href="https://mycalcfinance.com" target="_blank" rel="noopener noreferrer" className="footer-link">Finance Calculators</a>
+            <a href="https://legalpolicygen.com" target="_blank" rel="noopener noreferrer" className="footer-link">Legal Policy Generator</a>
+            <a href="https://imrizwan.com" target="_blank" rel="noopener noreferrer" className="footer-link">Developer Blog</a>
+          </div>
+        </div>
       </footer>
 
       <div className="quick-links">
