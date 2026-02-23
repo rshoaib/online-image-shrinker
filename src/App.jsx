@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Layout from './components/Layout';
 import ToolSelector from './components/ToolSelector';
 import FAQSection from './components/FAQSection';
+import RelatedTools from './components/RelatedTools';
 import HowItWorks from './components/HowItWorks';
 import SeoWrapper from './components/SeoWrapper';
 
@@ -700,7 +701,8 @@ const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack })
           {/* Add Content Sections Below Tool */}
           <div style={{ marginTop: '60px' }}>
              <HowItWorks toolType={toolId} />
-             <FAQSection toolType={toolId} />
+             
+              <RelatedTools currentTool={toolId} />
           </div>
 
           {/* Reuse styles */}
