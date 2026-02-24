@@ -100,7 +100,7 @@ const BlogPost = () => {
           font-size: 2.5rem;
           line-height: 1.2;
           margin-bottom: 16px;
-          background: linear-gradient(to right, #111, #555);
+          background: linear-gradient(to right, var(--text-main), var(--text-muted));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }

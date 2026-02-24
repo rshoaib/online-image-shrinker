@@ -658,7 +658,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
         .hero-text h2 {
            font-size: 2.5rem;
            margin-bottom: 16px;
-           background: linear-gradient(to right, #111, #666);
+           background: linear-gradient(to right, var(--text-main), var(--text-muted));
            -webkit-background-clip: text;
            -webkit-text-fill-color: transparent;
         }
@@ -735,7 +735,7 @@ const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack })
             .hero-text h1 {
               font-size: 2.5rem;
               margin-bottom: 16px;
-              background: linear-gradient(to right, #111, #666);
+              background: linear-gradient(to right, var(--text-main), var(--text-muted));
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
             }

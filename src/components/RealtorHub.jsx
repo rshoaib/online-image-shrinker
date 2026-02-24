@@ -88,7 +88,7 @@ const RealtorHub = () => {
         h1 {
           font-size: 3rem;
           margin-bottom: 20px;
-          background: linear-gradient(90deg, #0F172A, #334155);
+          background: linear-gradient(90deg, var(--text-main), var(--text-muted));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           letter-spacing: -1px;
@@ -96,7 +96,7 @@ const RealtorHub = () => {
 
         .hero-content p {
           font-size: 1.25rem;
-          color: #64748B;
+          color: var(--text-muted);
           max-width: 600px;
           margin: 0 auto 32px auto;
           line-height: 1.6;
@@ -106,7 +106,7 @@ const RealtorHub = () => {
           display: flex;
           justify-content: center;
           gap: 24px;
-          color: #475569;
+          color: var(--text-muted);
           font-weight: 500;
         }
 
@@ -123,8 +123,8 @@ const RealtorHub = () => {
         }
 
         .hub-card {
-          background: white;
-          border: 1px solid #E2E8F0;
+          background: var(--bg-panel);
+          border: 1px solid var(--border-light);
           border-radius: 16px;
           padding: 32px;
           cursor: pointer;
@@ -154,11 +154,11 @@ const RealtorHub = () => {
         .hub-card h3 {
           font-size: 1.5rem;
           margin-bottom: 12px;
-          color: #0F172A;
+          color: var(--text-main);
         }
 
         .hub-card p {
-          color: #64748B;
+          color: var(--text-muted);
           margin-bottom: 24px;
           line-height: 1.5;
         }

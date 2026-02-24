@@ -99,8 +99,8 @@ const CookieConsent = () => {
 
         .btn-decline {
           background: transparent;
-          border: 1px solid var(--border-light);
-          color: var(--text-muted);
+          border: 1px solid var(--border-active);
+          color: var(--text-main);
         }
 
         .btn-decline:hover {

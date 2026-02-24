@@ -122,7 +122,7 @@ const ToolSelector = ({ onSelectTool }) => {
         .selector-header h2 {
           font-size: 3rem;
           margin-bottom: 16px;
-          background: linear-gradient(300deg, #000000, #555555, #0066ff);
+          background: linear-gradient(300deg, var(--text-main), var(--text-muted), var(--primary));
           background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -147,9 +147,9 @@ const ToolSelector = ({ onSelectTool }) => {
         }
 
         .tool-card {
-          background: rgba(255, 255, 255, 0.7);
+          background: var(--bg-panel);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.5);
+          border: 1px solid var(--border-light);
           box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
           border-radius: var(--radius-lg);
           padding: 32px;
@@ -177,7 +177,7 @@ const ToolSelector = ({ onSelectTool }) => {
         .tool-card:hover {
           transform: translateY(-8px) scale(1.02);
           border-color: var(--primary);
-          background: rgba(255, 255, 255, 0.95);
+          background: var(--bg-surface);
           box-shadow: 0 20px 40px -5px rgba(0, 102, 255, 0.15);
         }
 
