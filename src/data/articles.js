@@ -2235,5 +2235,364 @@ All our tools run **100% in your browser**. Your images never leave your device.
 
 [Start Compressing Now](/tool/compress)
     `
+  },
+  {
+    slug: 'extract-text-from-image-ocr',
+    title: 'How to Extract Text from Images Online (Free OCR Tool)',
+    excerpt: 'Copy text from photos, screenshots, and scanned documents instantly. No sign-up, no upload — runs 100% in your browser.',
+    iconName: 'ScanLine',
+    iconColor: '#06B6D4',
+    date: 'Feb 28, 2026',
+    author: 'Image Shrinker Team',
+    category: 'Tutorials',
+    content: `
+Have you ever received a photo of a document — a receipt, a whiteboard, a business card, or a scanned contract — and needed to copy the text? Typing it out manually is tedious and error-prone. That is where **OCR (Optical Character Recognition)** comes in.
+
+Our free [OCR Tool](/tool/ocr) uses AI to read text from any image and give you a clean, copy-paste-ready result — all without uploading your file to a server.
+
+---
+
+## What is OCR?
+
+**OCR** stands for Optical Character Recognition. It is a technology that analyzes the pixels in an image, identifies letters, numbers, and symbols, and converts them into editable, searchable text.
+
+Modern OCR engines use deep learning neural networks that can handle:
+*   **Handwritten text** (with reasonable legibility).
+*   **Curved or rotated text** on product packaging.
+*   **Multi-language documents** including Arabic, Chinese, Japanese, and Cyrillic.
+*   **Low-quality scans** with noise, blur, or uneven lighting.
+
+---
+
+## When Do You Need OCR?
+
+| Scenario | Example |
+| :--- | :--- |
+| **Scanned documents** | Extracting text from a PDF scan of a contract |
+| **Screenshots** | Copying error messages from a screenshot |
+| **Receipts** | Digitizing expense receipts for accounting |
+| **Business cards** | Saving contact info from a photo of a card |
+| **Whiteboards** | Capturing meeting notes from a whiteboard photo |
+| **Books / magazines** | Quoting a passage from a physical book |
+| **Memes / social posts** | Copying text embedded in an image |
+
+---
+
+## How to Extract Text (3 Steps)
+
+1.  Go to our [OCR Tool](/tool/ocr).
+2.  **Upload or drag & drop** your image (JPG, PNG, WebP, or screenshot).
+3.  The AI scans the image and displays the extracted text instantly.
+4.  **Copy** the text with one click and paste it anywhere.
+
+That is it. No sign-up, no email, no file limits.
+
+---
+
+## Tips for Best Results
+
+Getting accurate OCR results depends on image quality. Follow these tips:
+
+### 1. Use High Resolution
+The higher the resolution, the more detail the AI can read. If your photo is blurry, use our [AI Upscaler](/tool/upscale) to enhance it first.
+
+### 2. Good Lighting & Contrast
+Dark photos with shadows produce poor results. Make sure the text is well-lit and contrasts with the background (e.g., black text on white paper).
+
+### 3. Straighten the Image
+Skewed or rotated documents confuse OCR engines. Use our [Crop Tool](/tool/crop) to straighten the image before scanning.
+
+### 4. One Language at a Time
+If your document mixes languages, the AI will still try to read them — but accuracy is best when you process one language per image.
+
+---
+
+## OCR vs. Manual Typing
+
+| Factor | Manual Typing | OCR |
+| :--- | :--- | :--- |
+| **Speed** | 40-60 WPM | Instant (seconds) |
+| **Accuracy** | Human error | 95-99% (high-quality images) |
+| **Effort** | Exhausting | Zero |
+| **Cost** | Your time | Free |
+
+For a 500-word document, manual typing takes ~10 minutes. OCR takes **3 seconds**.
+
+---
+
+## Common Use Cases
+
+### Students
+Photograph textbook pages and extract the text for notes. Paste directly into Google Docs or Notion.
+
+### Accountants & Freelancers
+Snap photos of paper receipts, extract the amounts and vendor names, and paste them into your spreadsheet.
+
+### Developers
+Extract error messages or log outputs from screenshots shared in Slack or bug reports, instead of retyping them.
+
+### Travelers
+Photograph menus, signs, and documents in foreign languages. Extract the text and paste it into Google Translate.
+
+---
+
+## Privacy First
+
+Unlike Google Drive OCR or Adobe Acrobat Cloud, our tool processes **everything locally in your browser**. Your documents — contracts, IDs, medical records — never leave your device. You could disconnect your WiFi after loading the page, and the OCR would still work.
+
+---
+
+## FAQ
+
+**What formats are supported?**
+JPG, PNG, WebP, BMP, and any image format your browser can display.
+
+**Can it read handwriting?**
+Yes, but accuracy depends on legibility. Neat handwriting works well; messy cursive may have errors.
+
+**Is there a file size limit?**
+No hard limit. Larger images take a few extra seconds to process since everything runs on your CPU.
+
+**Can it read PDFs?**
+Not directly — but you can screenshot a PDF page and run OCR on the screenshot.
+
+[Extract Text Now](/tool/ocr)
+    `
+  },
+  {
+    slug: 'remove-objects-from-photos-ai',
+    title: 'How to Remove Unwanted Objects from Photos with AI (Free)',
+    excerpt: 'Erase people, text, logos, and blemishes from any photo. AI-powered Magic Eraser runs in your browser — no Photoshop needed.',
+    iconName: 'Wand2',
+    iconColor: '#A855F7',
+    date: 'Feb 28, 2026',
+    author: 'Image Shrinker Team',
+    category: 'Tutorials',
+    content: `
+You took the perfect photo — but there is a stranger in the background, a trash can ruining the scene, or an ex you would rather forget. In the past, removing these required Photoshop skills and hours of manual cloning. Now, AI can do it in **seconds**.
+
+Our free [Magic Eraser](/tool/magic-eraser) uses a neural network called **inpainting** to intelligently fill in the area you erase, reconstructing the background as if the object was never there.
+
+---
+
+## What Can You Erase?
+
+The Magic Eraser works on almost anything:
+
+*   **People & tourists** photobombing your vacation shots.
+*   **Power lines & poles** ruining a landscape photo.
+*   **Text & watermarks** on stock photos (use responsibly!).
+*   **Logos & branding** on products for clean mockups.
+*   **Skin blemishes** for quick portrait touch-ups.
+*   **Trash, signs, and clutter** in real estate photos.
+*   **Timestamps** burned into old digital camera photos.
+
+---
+
+## How It Works (The Science)
+
+Traditional photo editing tools like the Clone Stamp or Healing Brush copy nearby pixels to cover up an area. This works for simple backgrounds (grass, sky) but fails badly on complex textures or edges.
+
+**AI Inpainting** is fundamentally different:
+
+1.  You paint over the object you want to remove (creating a "mask").
+2.  The AI model analyzes the **surrounding context** — textures, patterns, perspective, and lighting.
+3.  It **generates entirely new pixels** that blend seamlessly with the environment.
+4.  The result looks like the object was never there.
+
+This is the same technology used in Google's Magic Eraser (Pixel phones) and Samsung's Object Eraser — except ours is **free and runs in your browser**.
+
+---
+
+## How to Use the Magic Eraser
+
+1.  Go to the [Magic Eraser Tool](/tool/magic-eraser).
+2.  **Upload** your photo.
+3.  **Adjust the brush size** using the slider. A larger brush is better for big objects; use a smaller brush for precision.
+4.  **Paint over** the object you want to remove. Cover it completely — don't leave edges.
+5.  Click **"Erase"**. The AI processes the image in your browser.
+6.  **Review the result**. If it's not perfect, undo and try again with a slightly different mask.
+7.  **Download** the clean image.
+
+---
+
+## Tips for Perfect Results
+
+### 1. Cover the Entire Object
+The most common mistake is leaving edges of the object unmasked. The AI cannot remove what it does not know about. When in doubt, **mask slightly larger** than the object.
+
+### 2. Work in Stages
+For complex scenes with multiple objects, remove them **one at a time**. Erase the largest object first, download the result, then re-upload and erase the next one.
+
+### 3. Simple Backgrounds Work Best
+The AI excels when the background behind the removed object is relatively uniform — grass, sky, water, walls, or pavement. Removing an object that is in front of a complex, detailed background (like a bookshelf with 100 books) may require manual touch-ups.
+
+### 4. Use a Smaller Brush for Edges
+When erasing objects near important elements (like a person standing next to another person), switch to a smaller brush and carefully trace around the object. This prevents the AI from accidentally modifying the elements you want to keep.
+
+---
+
+## Real-World Use Cases
+
+### Real Estate Photography
+Remove trash cans, parked cars, or construction equipment from property photos. Clean listings sell faster.
+
+### E-Commerce
+Remove distracting background elements from product shots. Combine with our [Background Remover](/tool/remove-bg) for a pure white background.
+
+### Social Media
+Remove photobombers from group shots. Fix that perfect sunset photo ruined by a power line.
+
+### Professional Headshots
+Quick blemish removal — acne, stray hairs, or background clutter. Faster than Photoshop's healing brush.
+
+---
+
+## Magic Eraser vs. Background Remover
+
+These are two different tools for different jobs:
+
+| Feature | Magic Eraser | Background Remover |
+| :--- | :--- | :--- |
+| **Purpose** | Remove specific objects | Remove the entire background |
+| **How** | Paint over the object | AI auto-detects the subject |
+| **Result** | Object gone, background intact | Subject isolated on transparent/white bg |
+| **Best for** | Photobombers, power lines, text | Product photos, profile pictures |
+
+**When to use which:**
+*   Want to delete a person from a group photo? → **Magic Eraser**
+*   Want to isolate a product on white? → **[Background Remover](/tool/remove-bg)**
+
+---
+
+## Privacy & Security
+
+Your photos are processed **100% locally** using WebAssembly and browser-based AI. No image data is ever sent to a server. This is critical when editing:
+*   Private family photos
+*   Client work under NDA
+*   Real estate listings with address details visible
+
+[Try Magic Eraser Now](/tool/magic-eraser)
+    `
+  },
+  {
+    slug: 'convert-video-to-gif-online',
+    title: 'How to Convert Video to GIF Online (Free, No Upload)',
+    excerpt: 'Turn any MP4, MOV, or WebM clip into an animated GIF. Trim, resize, and set frame rate — all in your browser.',
+    iconName: 'Film',
+    iconColor: '#F43F5E',
+    date: 'Feb 28, 2026',
+    author: 'Image Shrinker Team',
+    category: 'Tutorials',
+    content: `
+GIFs are everywhere — Slack reactions, Reddit threads, Twitter/X replies, product demos, and tutorial snippets. But finding the perfect GIF is hard. Making your **own** from a video clip? That is where the magic happens.
+
+Our free [Video to GIF Tool](/tool/video-to-gif) lets you convert any video to an animated GIF directly in your browser. No software to install, no files uploaded to a server, and no watermarks.
+
+---
+
+## Why Make a GIF from Video?
+
+| Use Case | Why GIF? |
+| :--- | :--- |
+| **Slack / Discord reactions** | Express your exact mood with a custom reaction |
+| **Product demos** | Show a feature in action without embedding a video player |
+| **Tutorial snippets** | Loop a specific step so readers can follow along |
+| **Social media** | GIFs auto-play on Twitter/X and get more engagement than static images |
+| **Email marketing** | Videos don't play in most email clients, but GIFs do |
+| **Bug reports** | Show developers exactly what's happening with a screen recording GIF |
+| **Memes** | Create original memes from your favorite movie scenes |
+
+---
+
+## How to Convert Video to GIF
+
+1.  Go to the [Video to GIF Tool](/tool/video-to-gif).
+2.  **Upload or drag & drop** your video file (MP4, MOV, WebM, or AVI).
+3.  **Trim the clip**: Set the start and end time. Keep it short — GIFs under 5 seconds work best.
+4.  **Adjust settings**:
+    *   **Width**: Smaller width = smaller file size. 480px is the sweet spot for web use.
+    *   **Frame Rate**: 10-15 FPS is usually sufficient. Higher FPS means smoother animation but much larger files.
+5.  Click **"Convert to GIF"**.
+6.  **Preview** the result and **download**.
+
+The entire conversion happens in your browser using FFmpeg compiled to WebAssembly. Your video never leaves your device.
+
+---
+
+## GIF File Size Tips
+
+GIFs can get **very** large very quickly. A 10-second clip at full resolution can be 20MB+. Here's how to keep them under control:
+
+### The Size Formula
+\`File Size = Width × Height × Frames × Color Depth\`
+
+To reduce file size, reduce any of those factors:
+
+| Setting | Effect on File Size |
+| :--- | :--- |
+| **Reduce width** (e.g., 480px → 320px) | ~50% smaller |
+| **Lower frame rate** (30 FPS → 10 FPS) | ~66% smaller |
+| **Shorter duration** (10s → 3s) | ~70% smaller |
+| **Fewer colors** (256 → 128) | ~20% smaller |
+
+### Recommended Settings by Platform
+
+| Platform | Max Size | Recommended Width | Max Duration |
+| :--- | :--- | :--- | :--- |
+| **Slack** | 50 MB (free) | 480px | 5-10 sec |
+| **Discord** | 25 MB (free), 50 MB (Nitro) | 480px | 5-15 sec |
+| **Twitter/X** | 15 MB | 480px | 3-6 sec |
+| **Reddit** | 20 MB | 640px | 5-15 sec |
+| **Email** | 1-5 MB | 320px | 2-4 sec |
+
+---
+
+## GIF vs. Video: When to Use Which
+
+GIFs are not always the right choice. Here is the decision matrix:
+
+| Factor | GIF | Video (MP4/WebM) |
+| :--- | :--- | :--- |
+| **Auto-play** | ✅ Yes (everywhere) | ❌ Often requires click |
+| **Sound** | ❌ No audio | ✅ Full audio |
+| **File size** | ⚠️ Large (10-50 MB) | ✅ Tiny (1-5 MB for same clip) |
+| **Quality** | ⚠️ 256 colors max | ✅ Millions of colors |
+| **Email support** | ✅ Plays in all clients | ❌ Most clients block video |
+| **Best for** | Short loops, reactions | Long content, tutorials |
+
+**Rule of thumb:** If it needs sound or is longer than 10 seconds, use video. If it needs to auto-play everywhere and loop endlessly, use GIF.
+
+---
+
+## Creative Ideas for Custom GIFs
+
+### 1. Screen Recording GIFs
+Record a quick workflow on your screen (using Windows Game Bar or macOS Screenshot), then convert to GIF. Perfect for:
+*   **Bug reports** — show the exact steps that trigger a bug.
+*   **Feature demos** — show clients a new feature without a video call.
+*   **Tutorials** — loop a specific step in a how-to guide.
+
+### 2. Movie & TV Reaction GIFs
+Clip your favorite reaction from a movie scene. Trim to the perfect 2-3 second moment. Use it as a custom Slack emoji or Discord reaction.
+
+### 3. Product Photography
+If you have a turntable shot of a product (rotating 360°), convert it to a looping GIF for your e-commerce listing. Products that "move" get more clicks.
+
+### 4. Before & After Loops
+Create a GIF that alternates between two states — before and after editing, before and after cleanup, old design vs. new design. The looping nature of GIFs makes this comparison effortless.
+
+---
+
+## Other Video Tools
+
+We also offer:
+*   **[Video Compressor](/tool/video-compressor)** — Reduce MP4 file size without visible quality loss.
+*   **[Video to Audio](/tool/video-to-audio)** — Extract the audio track from any video as MP3.
+
+All tools run **100% in your browser**. No uploads, no accounts, no watermarks.
+
+[Convert Video to GIF Now](/tool/video-to-gif)
+    `
   }
 ];
