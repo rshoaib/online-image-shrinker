@@ -91,6 +91,7 @@ const Layout = ({ children, onNavigate }) => {
             <a href="https://dailysmartcalc.com" target="_blank" rel="noopener noreferrer" className="footer-link">Smart Calculators</a>
             <a href="https://mycalcfinance.com" target="_blank" rel="noopener noreferrer" className="footer-link">Finance Calculators</a>
             <a href="https://legalpolicygen.com" target="_blank" rel="noopener noreferrer" className="footer-link">Legal Policy Generator</a>
+            <a href="https://tinypdftools.com" target="_blank" rel="noopener noreferrer" className="footer-link">Tiny PDF Tools</a>
             <a href="https://imrizwan.com" target="_blank" rel="noopener noreferrer" className="footer-link">Developer Blog</a>
           </div>
         </div>
