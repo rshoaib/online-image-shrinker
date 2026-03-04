@@ -2594,5 +2594,446 @@ All tools run **100% in your browser**. No uploads, no accounts, no watermarks.
 
 [Convert Video to GIF Now](/tool/video-to-gif)
     `
+  },
+  {
+    slug: 'add-photo-filters-online-free',
+    title: 'How to Add Aesthetic Photo Filters Online (Free, No Sign-up)',
+    excerpt: 'Apply Vintage, Black and White, Sepia, and Instagram-style aesthetic filters to your photos instantly in your browser.',
+    iconName: 'Sparkles',
+    iconColor: '#F59E0B',
+    date: 'Feb 28, 2026',
+    author: 'Design Team',
+    category: 'Design',
+    content: `
+A raw photo straight from your camera or phone often looks flat. It captures the reality, but rarely the *mood*. That is why photo filters exist — they add emotion, style, and a unified aesthetic to your images.
+
+Instead of downloading heavy apps or paying for premium subscriptions, you can apply professional-grade filters directly in your browser using our free [Photo Filters Tool](/tool/photo-filters).
+
+---
+
+## Why Use Photo Filters?
+
+| Goal | The Solution |
+| :--- | :--- |
+| **Instagram Grid Cohesion** | Using the same filter on all photos creates a visually stunning, unified profile grid. |
+| **Hiding Flaws** | Black and White or Vintage filters can mask bad lighting, heavy film grain, or slight blurriness. |
+| **Setting a Mood** | Warm filters feel nostalgic and summery. Cool filters feel modern, sleek, or melancholic. |
+| **Brand Identity** | Consistent colors make your brand identifiable at a glance (e.g., a bakery using warm, bright filters). |
+
+---
+
+## The Most Popular Filter Styles (And How to Use Them)
+
+### 1. The Vintage / Film Look
+*   **Vibe:** Nostalgic, timeless, analog.
+*   **Best for:** Portraits, street photography, travel memories.
+*   **How it works:** It slightly washes out the blacks (making them dark grey) and warms up the highlights, mimicking old Kodak or Fuji film stocks.
+
+### 2. Black and White (B&W)
+*   **Vibe:** Classic, dramatic, artistic.
+*   **Best for:** Architecture, emotional portraits, photos with bad mixed lighting.
+*   **Pro Tip:** Convert photos to B&W when the colors are distracting. It forces the viewer to focus on the *composition and texture*.
+
+### 3. High Contrast / Pop
+*   **Vibe:** Bold, modern, punchy.
+*   **Best for:** Product photography, vibrant landscapes, food.
+*   **How it works:** It deepens shadows and brightens highlights, making colors feel more saturated without looking unnatural.
+
+### 4. Sepia
+*   **Vibe:** Historical, antiqued, warm.
+*   **Best for:** Historical reenactments, stylized portraits, artistic projects.
+
+---
+
+## How to Apply Filters Online in Seconds
+
+1.  Open the [Photo Filters Tool](/tool/photo-filters).
+2.  **Upload** your photo (works on mobile and desktop).
+3.  Scroll through the carousel of **Preset Filters** at the bottom of the screen.
+4.  Click any filter to instantly preview it on your full-size image.
+5.  Click **Download**. The filtered image saves directly to your device.
+
+*No watermarks. No required accounts. Unlimited uses.*
+
+---
+
+## Advanced Editing: Go Beyond Presets
+
+Sometimes a preset is 90% perfect, but you need to tweak it. Our tool also includes a full suite of manual adjustments so you can build your own aesthetic:
+
+*   **Brightness:** Rescue under-exposed photos.
+*   **Contrast:** Make the image "pop" or flatten it for a faded look.
+*   **Saturation:** Boost colors for landscapes, or lower it for a muted, moody vibe.
+*   **Blur / Sharpness:** Soften skin textures or sharpen architectural details.
+*   **Hue Rotation:** Radically change the color palette of the image (great for abstract art).
+
+---
+
+## The 80/20 Rule of Photo Editing
+
+When applying filters or manual adjustments, remember the 80/20 rule: **Less is more.**
+
+A common mistake beginners make is cranking the saturation or the filter intensity to 100%. This looks amateurish and artificial. The best filters are the ones where the viewer cannot tell a filter was used — they just think it's a naturally beautiful photo.
+
+*   If you boost contrast, do it gently.
+*   If you warm up the photo, keep skin tones looking human.
+*   When in doubt, dial the effect back by 20%.
+
+---
+
+## Privacy is Built-In
+
+Like all our tools, the Photo Filters run securely **in your browser using WebGL**. Your personal photos, selfies, and memories are never sent to a cloud server to be processed. The math happens on your device's graphics card, ensuring instant speed and 100% privacy.
+
+[Start Filtering Now](/tool/photo-filters)
+    `
+  },
+  {
+    slug: 'compress-video-for-discord-email',
+    title: 'How to Compress Video for Discord, Email, and Web (Free)',
+    excerpt: 'Reduce MP4, MOV, and WebM video size without losing quality. Bypass Discord\'s 25MB limit and Gmail\'s 25MB limit easily.',
+    iconName: 'Video',
+    iconColor: '#3B82F6',
+    date: 'Feb 28, 2026',
+    author: 'Video Tech Team',
+    category: 'Tutorials',
+    content: `
+You captured a great moment on your phone. You try to send it in the group chat, upload it to Discord, or email it to a client — and you hit a wall: **"File is too large."**
+
+Modern smartphones record 4K video by default, meaning a 30-second clip can easily top 200MB. To share it anywhere, you need a [Video Compressor](/tool/video-compressor).
+
+---
+
+## The Annoying File Size Limits
+
+Here are the hard limits you are probably fighting against:
+
+| Platform | Free Limit | Paid Limit | Default Behavior |
+| :--- | :--- | :--- | :--- |
+| **Discord** | 25 MB | 50 MB / 500 MB (Nitro) | Blocks upload |
+| **Gmail / Outlook** | 25 MB | N/A | Forces Google Drive link |
+| **WhatsApp** | 16 MB | 2GB (Files only) | Auto-compresses heavily |
+| **Twitter / X** | 512 MB | N/A | Auto-compresses heavily |
+| **Most Forums** | 5 MB - 10 MB | N/A | Blocks upload |
+
+---
+
+## How to Compress a Video Online
+
+You don't need a degree in video editing or software like Adobe Premiere. Our browser-based tool uses WebAssembly to run **FFmpeg** (the industry standard video engine) directly on your device.
+
+1.  Go to the [Video Compressor](/tool/video-compressor).
+2.  **Upload** your video file (MP4, MOV, WEBM, MKV).
+3.  Choose your **Compression Level**:
+    *   **Light (Best Quality):** Reduces size by ~30%, visually identical to the original.
+    *   **Medium (Balanced):** The sweet spot. Reduces size by ~50-60%.
+    *   **Heavy (Smallest File):** Reduces size by up to 80%. Perfect for bypassing the Discord 25MB limit.
+4.  *(Optional)* If the file is still too big, use the **Resize** option to drop a 4K video down to 1080p or 720p.
+5.  Click **Compress Video**.
+6.  Wait for the processing (speed depends on your computer's CPU), then **Download**.
+
+---
+
+## How Video Compression Works (The Magic)
+
+Video is just a sequence of images (frames) playing fast. Uncompressed, a 1-minute 1080p video would be over 10 Gigabytes. "Codecs" compress this data.
+
+When you use our tool, it does three things to shrink the file:
+
+1.  **Bitrate Reduction:** It lowers the amount of data allowed per second. A lower bitrate means a smaller file, but if pushed too far, the video looks blocky.
+2.  **Spatial Compression:** It looks at a single frame and compresses blocks of similar color (like a blue sky) into a single mathematical instruction instead of saving every individual blue pixel.
+3.  **Temporal Compression:** This is the real magic. Instead of saving frame 2, the codec says: "Frame 2 is exactly like Frame 1, except the person's arm moved 2 pixels to the right." It only saves the *differences* between frames.
+
+---
+
+## Pro Tip: Resize Your Dimensions
+
+If you are trying to send a video over Discord or email, **nobody needs 4K resolution**. Most people will watch it on a 6-inch phone screen or in a small chat window.
+
+*   **4K (2160p):** Huge overkill for sharing.
+*   **1080p (HD):** Great for YouTube and full-screen monitors.
+*   **720p (Standard HD):** The absolute sweet spot for Discord, Reddit, and email. It looks crisp on phones and creates files that are 3x-4x smaller than 1080p.
+*   **480p:** If you desperately need to squeeze a long video under 25MB, downgrade to 480p.
+
+Always try **Resizing to 720p FIRST**, before applying heavy compression. A clean 720p video looks much better than a heavily corrupted, blocky 1080p video.
+
+---
+
+## Why Browser-Based Workflow Matters
+
+Most "free online video compressors" are terrible for your privacy. They force you to upload your 200MB video to their servers. This means:
+*   You wait 5 minutes for the upload.
+*   You wait in a queue for their server to process it.
+*   You wait 5 minutes to download it.
+*   **A stranger now has a copy of your personal video.**
+
+Our [Video Compressor](/tool/video-compressor) runs **locally**. The "upload" is instant because the file never leaves your hard drive. The processing happens on your CPU. It is completely private and usually much faster.
+
+[Compress Video Now](/tool/video-compressor)
+    `
+  },
+  {
+    slug: 'extract-audio-from-video-mp4-to-mp3',
+    title: 'How to Extract Audio from Video (MP4 to MP3 Converter)',
+    excerpt: 'Convert video files into audio tracks instantly. Strip the MP3 from a podcast video, lecture, or music video without uploading servers.',
+    iconName: 'Music',
+    iconColor: '#10B981',
+    date: 'Feb 28, 2026',
+    author: 'Video Tech Team',
+    category: 'Utilities',
+    content: `
+You downloaded a 2-hour video podcast, a university lecture, or a music video, but you only want to *listen* to it while you commute or work out. Video files are massive and drain your phone's battery when the screen is on.
+
+The solution is simple: **Extract the audio track.**
+
+Our [Video to Audio Tool](/tool/video-to-audio) allows you to strip the sound from any video file (MP4, MOV, WebM, MKV) and save it as a lightweight MP3 file — directly in your browser.
+
+---
+
+## 3 Reasons to Extract Audio
+
+### 1. Save Massive Amounts of Space
+An hour-long 1080p video file can easily take up **1,500 MB (1.5 GB)** of storage.
+The extracted MP3 audio for that exact same hour takes up just **60 MB**. That is a 96% reduction in file size, saving your phone's storage.
+
+### 2. Battery Life
+Playing video forces your phone to keep the screen on and the GPU running. Playing an MP3 allows you to lock your screen, slip the phone in your pocket, and use a fraction of the battery.
+
+### 3. Repurposing Content for Creators
+If you record video podcasts or YouTube videos, you can extract the audio track to upload directly to Spotify, Apple Podcasts, or use it as background music for a different video.
+
+---
+
+## How to Convert MP4 to MP3 Online
+
+Most desktop software is bloated, and most online tools require you to upload huge files to shady servers. We solved this using browser-based WebAssembly.
+
+1.  Open the [Video to Audio Tool](/tool/video-to-audio).
+2.  **Upload** your video file. (Because it runs locally, the "upload" is instantaneous, even for a 3GB file).
+3.  Choose your **Audio Quality** (Bitrate):
+    *   **128 kbps:** Good for lectures, talking-head podcasts, and voice memos. Creates the smallest files.
+    *   **192 kbps:** The standard. Good balance for music and voice.
+    *   **256 kbps:** High quality. Recommended if the video contains high-fidelity music or sound design.
+    *   **320 kbps:** Maximum MP3 quality. Use this if you plan to edit the audio further.
+4.  Click **"Extract Audio"**.
+5.  Wait a few moments while your CPU processes the file, then click **Download MP3**.
+
+---
+
+## Understanding Audio Quality (Bitrate)
+
+When extracting audio, you will see a setting measured in "kbps" (kilobits per second). This is the **bitrate**. It dictates how much data is used to represent one second of audio.
+
+Higher bitrate = better sound quality, but larger file size.
+
+**The Golden Rule:** You cannot *improve* audio quality by choosing a higher bitrate than the original video had.
+If the original video was recorded with a cheap microphone at 128 kbps, extracting it at 320 kbps will not make it sound better — it will just waste disk space. When in doubt, **192 kbps** is the safest, most universal setting.
+
+---
+
+## Supported Formats
+
+Our tool can extract audio from almost any modern video container:
+*   **MP4** (Standard web & phone video)
+*   **MOV** (Apple / iPhone video)
+*   **WEBM** (Modern web video)
+*   **MKV** (High-quality rips)
+*   **AVI** (Older PC video format)
+
+It outputs an **MP3** file, which is the most universally compatible audio format in the world. It will play on any phone, computer, car stereo, or smart speaker made in the last 20 years.
+
+---
+
+## Security: Why "Local" is Better
+
+If you are extracting audio from a proprietary company meeting, a private Zoom lecture, or family home videos, you should never use a cloud-based converter. Cloud sites force you to upload your sensitive video to their servers, where it could be logged or hacked.
+
+Our [Video to Audio Tool](/tool/video-to-audio) runs entirely on your local machine. The conversion happens *inside* your web browser. No data is ever sent over the internet, guaranteeing total privacy and much faster conversion speeds.
+
+[Extract Audio Now](/tool/video-to-audio)
+    `
+  },
+  {
+    slug: 'whatsapp-image-size-guide-2026',
+    title: 'WhatsApp Image Size Guide 2026 (DP, Status & Group Icon)',
+    excerpt: 'The exact dimensions for WhatsApp profile picture, Status, Group Icon, and Channel Cover. Resize perfectly with our free tool.',
+    iconName: 'MessageCircle',
+    iconColor: '#25D366',
+    date: 'Mar 4, 2026',
+    author: 'Social Media Team',
+    category: 'Social Media',
+    content: `
+WhatsApp is the world's most-used messaging app with over 2.7 billion users. Yet most people upload photos that get cropped awkwardly, compressed to mush, or display with a blurry circle around their face. The fix is simple: **resize your images to the exact dimensions WhatsApp expects before uploading.**
+
+This guide covers every WhatsApp image type in 2026 — profile pictures, Status, Group Icons, and Channel Covers — with the precise pixel dimensions and step-by-step instructions to resize them using our free tools.
+
+---
+
+## Quick Reference: All WhatsApp Image Sizes
+
+| Image Type | Dimensions | Aspect Ratio | Max File Size | Display Shape |
+| :--- | :--- | :--- | :--- | :--- |
+| **Profile Picture (DP)** | 500 x 500 px | 1:1 | ~2 MB | Circle |
+| **Status Image** | 1080 x 1920 px | 9:16 | 16 MB | Full-screen |
+| **Group Icon** | 640 x 640 px | 1:1 | ~2 MB | Circle |
+| **Channel Cover** | 1280 x 720 px | 16:9 | ~5 MB | Rectangle |
+| **Chat Attachment** | Max 1600 px wide | Varies | 16 MB | Rectangle |
+
+> **Key rule:** WhatsApp compresses every image you send or upload. Uploading at the exact recommended size minimizes quality loss because WhatsApp won't need to resize it further.
+
+---
+
+## 1. WhatsApp Profile Picture (DP) Size
+
+Your WhatsApp Display Picture is the first thing people see. It appears as a **circle** in chats, groups, and contact lists.
+
+### The Specs
+*   **Recommended Size:** 500 x 500 pixels
+*   **High-Quality Option:** 640 x 640 px (or even 1080 x 1080 px for maximum sharpness)
+*   **Minimum Size:** 192 x 192 pixels
+*   **Aspect Ratio:** 1:1 (Square)
+*   **Format:** JPG or PNG (WhatsApp converts to JPG internally)
+
+### The Circle Crop Trap
+WhatsApp displays your DP as a circle, but you upload a square. This means the **corners are hidden**. If your face, logo, or key element is near a corner, it will be cropped off.
+
+**Solution:** Center the important subject in the middle 70% of the frame.
+
+### How to Resize for WhatsApp DP
+1.  Open our [Crop & Resize Tool](/tool/crop).
+2.  Upload your photo.
+3.  Select the **Square (1:1)** aspect ratio.
+4.  Center your face or logo, leaving space at the edges.
+5.  Download the image.
+6.  If the file feels too large, run it through our [Compress Tool](/tool/compress) at 85% quality.
+
+**Pro Tip for Logos:** If your logo has a busy background, use our [Background Remover](/tool/remove-bg) first. Place the logo on a solid brand color for a clean, professional look.
+
+---
+
+## 2. WhatsApp Status Size
+
+WhatsApp Status is the equivalent of Instagram Stories — a full-screen, vertical format that disappears after 24 hours.
+
+### The Specs
+*   **Recommended Size:** 1080 x 1920 pixels
+*   **Aspect Ratio:** 9:16 (Vertical)
+*   **Max File Size:** 16 MB (images)
+*   **Video Duration:** Up to 30 seconds
+
+### The Safe Zone Problem
+Just like Instagram Stories, WhatsApp overlays UI elements on top of your Status:
+*   **Top ~250 pixels:** Your profile name and timestamp.
+*   **Bottom ~400 pixels:** Reply bar and navigation controls.
+
+**Keep important text and visuals in the center** — roughly the middle 1080 x 1350 px rectangle.
+
+### How to Create Perfect Status Images
+1.  Start with a high-quality vertical photo.
+2.  Open the [Crop Tool](/tool/crop).
+3.  Select **9:16** or **Story** aspect ratio.
+4.  Make sure the subject is centered vertically (avoid placing key content at the very top or bottom).
+5.  Download and upload directly to WhatsApp Status.
+
+**For Businesses:** Use our [Social Media Preview Generator](/social-media-preview-generator) to create branded Status images with text overlays and gradients — no design skills needed.
+
+---
+
+## 3. WhatsApp Group Icon Size
+
+Group Icons follow similar rules to profile pictures but are displayed even smaller in chat lists, so clarity is crucial.
+
+### The Specs
+*   **Recommended Size:** 640 x 640 pixels
+*   **Minimum Size:** 192 x 192 pixels
+*   **Aspect Ratio:** 1:1 (Square)
+*   **Display:** Circle (same as DP)
+
+### Tips for Group Icons
+*   **Use a simple image:** At small sizes, detailed photos become muddy. Logos, icons, or bold text work best.
+*   **High contrast:** Use bright colors on a dark background (or vice versa) so the icon is recognizable at thumbnail size.
+*   **No thin text:** Text smaller than 20pt will be unreadable when the icon is displayed at 48x48 pixels in the chat list.
+
+### How to Create a Group Icon
+1.  Go to the [Crop Tool](/tool/crop).
+2.  Upload your group image.
+3.  Select **Square (1:1)** crop.
+4.  Center the most important element.
+5.  Download — it's ready to upload as a group icon.
+
+For a polished look, use our [Profile Picture Maker](/tool/profile-picture-maker) to add a colored border ring or gradient background.
+
+---
+
+## 4. WhatsApp Channel Cover Size
+
+WhatsApp Channels (launched globally in 2024) let you broadcast updates to followers. The **Channel Cover** is the banner displayed at the top of your Channel page.
+
+### The Specs
+*   **Recommended Size:** 1280 x 720 pixels
+*   **Aspect Ratio:** 16:9 (Landscape)
+*   **Format:** JPG or PNG
+
+### How to Create a Channel Cover
+1.  Use our [Crop Tool](/tool/crop).
+2.  Upload a wide image (landscape photo, banner, or promo graphic).
+3.  Set the aspect ratio to **16:9**.
+4.  Frame your subject — keep key details centered.
+5.  Download and upload to your WhatsApp Channel settings.
+
+---
+
+## Why WhatsApp Compresses Your Images
+
+WhatsApp aggressively compresses every image to save data and speed up delivery. Here's what happens when you send a photo:
+
+*   **Resolution:** Images are typically downscaled to ~1600 px on the longest side.
+*   **Quality:** JPEG compression is applied at around 60-70% quality.
+*   **Result:** A 5 MB photo from your iPhone becomes ~100-200 KB after WhatsApp processing.
+
+### How to Minimize Compression Damage
+
+1.  **Resize to the target dimensions first.** If you upload a 4000px image, WhatsApp resizes it, compresses it, and the double processing looks terrible. Upload at the exact size, and WhatsApp only compresses — preserving more detail.
+2.  **Compress it yourself before sending.** Use our [Compress Tool](/tool/compress) at 80-85% quality. This way, you control the compression quality instead of letting WhatsApp's aggressive algorithm do it.
+3.  **Send as a Document for full quality.** If you need to send a photo without any compression, tap the **📎 Attachment** icon, select **Document**, and choose the image file. It sends at full resolution.
+
+---
+
+## WhatsApp Image Size by Use Case
+
+Here is a quick-reference table for common scenarios:
+
+| Use Case | Tool | Size to Aim For |
+| :--- | :--- | :--- |
+| **Profile picture** | [Crop Tool](/tool/crop) | 500 x 500 px (Square) |
+| **Status image** | [Crop Tool](/tool/crop) | 1080 x 1920 px (9:16) |
+| **Group icon** | [Crop Tool](/tool/crop) | 640 x 640 px (Square) |
+| **Channel cover** | [Crop Tool](/tool/crop) | 1280 x 720 px (16:9) |
+| **Send photos without blur** | [Compress Tool](/tool/compress) | 1600 px wide, 80% quality |
+| **Product photos for catalog** | [Background Remover](/tool/remove-bg) | 1000 x 1000 px (Square, white bg) |
+| **WhatsApp Business logo** | [Profile Picture Maker](/tool/profile-picture-maker) | 640 x 640 px with brand ring |
+
+---
+
+## Frequently Asked Questions
+
+**What is the best WhatsApp DP size?**
+The ideal size is **500 x 500 pixels** (square). For maximum sharpness on all devices, you can go up to 1080 x 1080 px. Remember that WhatsApp displays it as a circle, so center your subject.
+
+**Why does my WhatsApp DP look blurry?**
+Three common causes: (1) Your original image is too small (below 192 px). (2) You uploaded a large image and WhatsApp's compression destroyed the quality. (3) The important content is near the edges and gets cropped by the circle frame. Fix all three by resizing to exactly 500x500 px with the subject centered.
+
+**How do I send photos on WhatsApp without losing quality?**
+Send the image as a **Document** instead of a Photo. Tap the attachment (📎) icon, select "Document," and choose your image file. WhatsApp will send it at full resolution without any compression.
+
+**What is the WhatsApp Status safe zone?**
+Avoid placing text or logos in the top 250 pixels and bottom 400 pixels of your 1080x1920 image. These areas are covered by WhatsApp's UI elements (name, timestamp, reply bar).
+
+**Can I upload a GIF as my WhatsApp DP?**
+No. WhatsApp does not support animated profile pictures. You need a static JPG or PNG image in a 1:1 square format.
+
+[Resize for WhatsApp Now](/tool/crop)
+    `
   }
 ];
+

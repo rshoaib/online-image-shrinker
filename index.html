@@ -28,6 +28,20 @@
     <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
+    <!-- Google AdSense script (conditional load) -->
+    <script>
+      (function() {
+        var adClient = "%VITE_ADSENSE_CLIENT%";
+        if (adClient && adClient !== "%" + "VITE_ADSENSE_CLIENT" + "%" && !adClient.includes("0000000000000000")) {
+          var script = document.createElement("script");
+          script.async = true;
+          script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + adClient;
+          script.crossOrigin = "anonymous";
+          document.head.appendChild(script);
+        }
+      })();
+    </script>
+
     <!-- Non-blocking font load: media=print swapped to all on load -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" /></noscript>

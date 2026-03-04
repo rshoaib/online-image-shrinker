@@ -17,6 +17,7 @@ const AnalyticsWrapper = lazy(() => import('./components/AnalyticsWrapper'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const BlogList = lazy(() => import('./components/BlogList'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
+const AdSlot = lazy(() => import('./components/AdSlot'));
 const ExifEditor = lazy(() => import('./components/ExifEditor'));
 const MagicEraserEditor = lazy(() => import('./components/MagicEraserEditor'));
 const VideoEditor = lazy(() => import('./components/VideoEditor'));
@@ -629,6 +630,9 @@ const ToolPage = ({ files, setFiles, onBack }) => {
           onBack={onBack} 
         />
       )}
+      <div style={{ marginTop: '20px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <AdSlot format="banner" className="tool-banner-ad" />
+      </div>
       <style>{`
         .back-link {
           background: none;
@@ -698,8 +702,13 @@ const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack })
               onBack={onBack} 
             />
           )}
+
+          <div style={{ marginTop: '20px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+            <AdSlot format="banner" className="seo-banner-ad" />
+          </div>
+
           {/* Add Content Sections Below Tool */}
-          <div style={{ marginTop: '60px' }}>
+          <div style={{ marginTop: '40px' }}>
              <HowItWorks toolType={toolId} />
              
               <RelatedTools currentTool={toolId} />
