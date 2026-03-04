@@ -132,6 +132,10 @@ const FAQSection = ({ toolType = 'general' }) => {
       'signature-maker': [
         { question: "Can I draw my signature or type it?", answer: "Both! Draw freehand with a mouse or stylus, or type your name and choose from elegant signature fonts." },
         { question: "Is the signature background transparent?", answer: "Yes, signatures are exported as transparent PNGs so you can place them on documents, emails, or any background." }
+      ],
+      'base64-converter': [
+        { question: "What is Base64 encoding?", answer: "Base64 converts binary image data into a text string that can be embedded directly in HTML, CSS, or JSON without needing a separate file. It's commonly used for small icons and inline images." },
+        { question: "Does Base64 increase file size?", answer: "Yes, Base64 encoding increases the data size by about 33%. It's best for small images (under 10KB). For larger images, linking to a file is more efficient." }
       ]
     };
 

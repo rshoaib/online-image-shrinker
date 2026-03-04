@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import {
   Maximize2, Zap, Type, FileText, Eraser, Crop, Grid, EyeOff,
   User, Monitor, Settings, Repeat, Palette, PenTool, ScanLine,
-  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles, ArrowLeftRight, Share2
+  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles, ArrowLeftRight, Share2, Code
 } from 'lucide-react';
 
 const toolMeta = {
@@ -36,6 +36,7 @@ const toolMeta = {
   'passport':              { icon: User, i18n: 'profile', path: '/resize-passport-photo' },
   'favicon-generator':     { icon: Monitor, i18n: 'favicon', path: '/favicon-generator' },
   'svg-to-png':            { icon: Repeat, i18n: 'svg_to_png', path: '/svg-to-png' },
+  'base64-converter':      { icon: Code, i18n: 'base64', path: '/base64-converter' },
 };
 
 // Related tools grouped by semantic similarity
@@ -69,6 +70,7 @@ const relatedMap = {
   'passport':              ['crop', 'remove-bg', 'resize', 'profile-picture'],
   'favicon-generator':     ['svg-to-png', 'resize', 'image-converter', 'crop'],
   'svg-to-png':            ['favicon-generator', 'image-converter', 'resize', 'compress'],
+  'base64-converter':      ['image-converter', 'svg-to-png', 'favicon-generator', 'exif'],
 };
 
 const RelatedTools = ({ currentTool }) => {

@@ -34,11 +34,12 @@ const ImageCompareEditor = lazy(() => import('./ImageCompareEditor'));
 const SocialPreviewEditor = lazy(() => import('./SocialPreviewEditor'));
 const FaviconEditor = lazy(() => import('./FaviconEditor'));
 const SvgToPngEditor = lazy(() => import('./SvgToPngEditor'));
+const Base64Editor = lazy(() => import('./Base64Editor'));
 
 
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
-  if (files.length === 0 && toolId !== 'signature-maker' && toolId !== 'qr-code-generator' && toolId !== 'favicon-generator' && toolId !== 'svg-to-png') {
+  if (files.length === 0 && toolId !== 'signature-maker' && toolId !== 'qr-code-generator' && toolId !== 'favicon-generator' && toolId !== 'svg-to-png' && toolId !== 'base64-converter') {
     return null; // The parent handles the "Hero" or "Empty" state usually, or we can handle it here if we pass more props.
     // In App.jsx, the "Empty" state (Hero section) is handled inside the ToolPage/SeoLandingPage 
     // BEFORE calling the editor logic.
@@ -108,6 +109,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <FaviconEditor onBack={onBack} />;
     case 'svg-to-png':
       return <SvgToPngEditor onBack={onBack} />;
+    case 'base64-converter':
+      return <Base64Editor onBack={onBack} />;
 
     default:
       if (files.length === 1) {

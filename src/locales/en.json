@@ -175,6 +175,10 @@
       "image_compare": {
         "title": "Image Compare",
         "desc": "Compare two images side by side with slider or overlay."
+      },
+      "base64": {
+        "title": "Base64 Converter",
+        "desc": "Convert images to Base64 strings for embedding in HTML, CSS, and JSON."
       }
     }
   }

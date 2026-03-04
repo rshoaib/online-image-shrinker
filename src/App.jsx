@@ -66,7 +66,7 @@ const AppContent = () => {
       navigate('/privacy');
     } else if (dest === 'blog') {
       navigate('/blog');
-    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text', 'signature-maker', 'qr-code-generator', 'photo-filters-online', 'favicon-generator', 'svg-to-png'].includes(dest)) {
+    } else if (['resize-passport-photo', 'resize-for-youtube', 'jpg-to-pdf', 'compress-png', 'resize-for-instagram', 'compress-webp', 'watermark-photos-online', 'image-to-text', 'signature-maker', 'qr-code-generator', 'photo-filters-online', 'favicon-generator', 'svg-to-png', 'base64-converter'].includes(dest)) {
       navigate(`/${dest}`);
     } else if (dest === 'terms') {
       navigate('/terms');
@@ -537,6 +537,12 @@ const AppContent = () => {
                </SeoWrapper>
           } />
 
+          <Route path="/base64-converter" element={
+               <SeoWrapper title="Free Image to Base64 Converter - Encode & Decode" description="Convert images to Base64 strings for HTML, CSS, and JSON embedding. Decode Base64 back to images. 100% private, works in your browser.">
+                 <ToolLayout toolId="base64-converter" files={files} setFiles={setFiles} onBack={handleBack} />
+               </SeoWrapper>
+          } />
+
           
            <Route path="/photo-filters-online" element={
               <SeoLandingPage 
@@ -597,6 +603,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
     'video-to-audio': 'video_to_audio', 'collage-maker': 'collage',
     'signature-maker': 'signature',
     'favicon-generator': 'favicon', 'svg-to-png': 'svg_to_png',
+    'base64-converter': 'base64',
   };
 
   // Map toolId to display text
