@@ -62,6 +62,7 @@ description: Internal links map for cross-linking in blog articles and tool page
 | How to Make Image Transparent | `/blog/how-to-make-image-transparent-2026` |
 | How to Rotate & Flip Images | `/blog/how-to-rotate-flip-image-online-2026` |
 | Image to Base64 Dev Guide | `/blog/image-to-base64-guide-2026` |
+| EXIF Data Privacy Guide | `/blog/how-to-remove-exif-data-privacy-guide-2026` |
 
 ## Cross-Linking Rules
 1. **Every article must link to at least 3 tools** using natural anchor text.
