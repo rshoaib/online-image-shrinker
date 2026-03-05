@@ -34,6 +34,7 @@ description: Internal links map for cross-linking in blog articles and tool page
 | Image Compare | `/compare-images-online` | compare, before/after, side by side |
 | Blur / Redact | `/blur-image-online` | blur, redact, privacy, hide |
 | Passport Photo | `/resize-passport-photo` | passport, biometric, visa photo |
+| Rotate & Flip | `/rotate-image-online` | rotate, flip, mirror, sideways, orientation |
 
 ## Video Tools
 | Tool | URL | Keywords |
@@ -59,6 +60,7 @@ description: Internal links map for cross-linking in blog articles and tool page
 | WhatsApp Image Size Guide | `/blog/whatsapp-image-size-guide-2026` |
 | Favicon Creation Guide | `/blog/how-to-create-favicon-2026` |
 | How to Make Image Transparent | `/blog/how-to-make-image-transparent-2026` |
+| How to Rotate & Flip Images | `/blog/how-to-rotate-flip-image-online-2026` |
 
 ## Cross-Linking Rules
 1. **Every article must link to at least 3 tools** using natural anchor text.
