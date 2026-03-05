@@ -130,6 +130,10 @@
       "image_compare": {
         "title": "Comparar Imagens",
         "desc": "Compare duas imagens lado a lado com controle deslizante ou sobreposição."
+      },
+      "rotate_flip": {
+        "title": "Girar & Espelhar",
+        "desc": "Gire imagens 90°/180° ou ângulo personalizado, espelhe horizontal ou verticalmente."
       }
     }
   }

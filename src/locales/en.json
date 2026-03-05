@@ -179,6 +179,10 @@
       "base64": {
         "title": "Base64 Converter",
         "desc": "Convert images to Base64 strings for embedding in HTML, CSS, and JSON."
+      },
+      "rotate_flip": {
+        "title": "Rotate & Flip",
+        "desc": "Rotate images 90°/180° or custom angle, flip horizontally or vertically."
       }
     }
   }

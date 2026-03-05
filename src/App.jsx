@@ -571,6 +571,15 @@ const AppContent = () => {
              />
            } />
 
+           <Route path="/rotate-image-online" element={
+              <SeoLandingPage 
+                toolId="rotate-flip" 
+                title="Rotate & Flip Image Online - Free Tool"
+                description="Rotate images 90°, 180°, custom angles or flip horizontally and vertically. 100% free, private, and works locally in your browser."
+                files={files} setFiles={setFiles} onBack={handleBack}
+             />
+           } />
+
            {/* BLOG ROUTES */}
           <Route path="/blog" element={<BlogList />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
@@ -604,6 +613,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
     'signature-maker': 'signature',
     'favicon-generator': 'favicon', 'svg-to-png': 'svg_to_png',
     'base64-converter': 'base64',
+    'rotate-flip': 'rotate_flip',
   };
 
   // Map toolId to display text

@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { 
   Maximize2, Zap, Type, FileText, Eraser, Crop, Grid, EyeOff, 
   User, Monitor, Settings, Repeat, Palette, PenTool, ScanLine, 
-  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles, ArrowLeftRight, Share2, Code 
+  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles, ArrowLeftRight, Share2, Code, RotateCw 
 } from 'lucide-react';
 
 const ToolSelector = ({ onSelectTool }) => {
@@ -39,6 +39,7 @@ const ToolSelector = ({ onSelectTool }) => {
     { id: 'video-to-audio', i18nKey: 'video_to_audio', icon: <Music size={32} /> },
     { id: 'image-compare', i18nKey: 'image_compare', icon: <ArrowLeftRight size={32} /> },
     { id: 'base64-converter', i18nKey: 'base64', icon: <Code size={32} /> },
+    { id: 'rotate-flip', i18nKey: 'rotate_flip', icon: <RotateCw size={32} /> },
   ];
 
   return (

@@ -140,6 +140,10 @@
       "image_compare": {
         "title": "Comparar Imágenes",
         "desc": "Compara dos imágenes lado a lado con control deslizante o superposición."
+      },
+      "rotate_flip": {
+        "title": "Rotar y Voltear",
+        "desc": "Rota imágenes 90°/180° o ángulo personalizado, voltea horizontal o verticalmente."
       }
     }
   }

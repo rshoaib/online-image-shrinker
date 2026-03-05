@@ -160,6 +160,10 @@
       "image_compare": {
         "title": "Comparer Images",
         "desc": "Comparez deux images côte à côte avec curseur ou superposition."
+      },
+      "rotate_flip": {
+        "title": "Rotation & Miroir",
+        "desc": "Faites pivoter les images de 90°/180° ou angle personnalisé, retournez horizontalement ou verticalement."
       }
     }
   }

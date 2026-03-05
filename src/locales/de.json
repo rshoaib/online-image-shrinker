@@ -130,6 +130,10 @@
       "image_compare": {
         "title": "Bilder Vergleichen",
         "desc": "Vergleiche zwei Bilder nebeneinander mit Schieberegler oder Überlagerung."
+      },
+      "rotate_flip": {
+        "title": "Drehen & Spiegeln",
+        "desc": "Bilder um 90°/180° oder benutzerdefinierten Winkel drehen, horizontal oder vertikal spiegeln."
       }
     }
   }

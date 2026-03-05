@@ -130,6 +130,10 @@
       "image_compare": {
         "title": "Confronta Immagini",
         "desc": "Confronta due immagini fianco a fianco con cursore o sovrapposizione."
+      },
+      "rotate_flip": {
+        "title": "Ruota & Rifletti",
+        "desc": "Ruota immagini di 90°/180° o angolo personalizzato, rifletti orizzontalmente o verticalmente."
       }
     }
   }
