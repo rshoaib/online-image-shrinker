@@ -265,13 +265,37 @@ Print the file on **4×6 inch (10×15cm) glossy photo paper**. You can fit 4–6
 
 ---
 
+## Passport Photo Size in CM (Quick Reference)
+
+Looking for passport photo dimensions in centimeters? Here's a quick reference:
+
+| Country | Width (cm) | Height (cm) | Pixels (300 DPI) |
+| :--- | :--- | :--- | :--- |
+| **USA** | 5.1 cm | 5.1 cm | 600 × 600 px |
+| **UK** | 3.5 cm | 4.5 cm | 413 × 531 px |
+| **India** | 5.1 cm | 5.1 cm | 600 × 600 px |
+| **EU / Schengen** | 3.5 cm | 4.5 cm | 413 × 531 px |
+| **Canada** | 5.0 cm | 7.0 cm | 591 × 827 px |
+| **China** | 3.3 cm | 4.8 cm | 390 × 567 px |
+| **Australia** | 3.5 cm | 4.5 cm | 413 × 531 px |
+| **Japan** | 3.5 cm | 4.5 cm | 413 × 531 px |
+
+> **Standard passport photo size**: Most countries use either **5.1 × 5.1 cm** (USA, India) or **3.5 × 4.5 cm** (UK, EU, Japan). The international ICAO standard is 3.5 × 4.5 cm.
+
+**[→ Resize to Any Country's Size (Free)](/resize-passport-photo)**
+
+---
+
 ## Frequently Asked Questions
 
 **What size is a US passport photo?**
-US passport photos must be exactly **2 × 2 inches (51 × 51mm)**, which is **600 × 600 pixels** at 300 DPI.
+US passport photos must be exactly **2 × 2 inches (51 × 51mm / 5.1 × 5.1 cm)**, which is **600 × 600 pixels** at 300 DPI.
 
 **What size is a UK passport photo?**
-UK passport photos must be **35 × 45mm** (approximately 1.38 × 1.77 inches), or **413 × 531 pixels** at 300 DPI.
+UK passport photos must be **35 × 45mm (3.5 × 4.5 cm)**, approximately 1.38 × 1.77 inches, or **413 × 531 pixels** at 300 DPI.
+
+**What is the standard passport photo size in cm?**
+The most common passport photo size is **3.5 × 4.5 cm** (used by the UK, EU, Australia, Japan, South Korea). The USA and India use **5.1 × 5.1 cm**.
 
 **Can I take a passport photo with my phone?**
 Yes! Modern smartphones have more than enough resolution. Just follow the 6 rules above and use our free tool to crop to the exact size.
@@ -428,12 +452,12 @@ If your file is over 256KB, Discord won't accept it.
     `
   },
   {
-    slug: 'amazon-image-requirements-2025',
-    title: 'Amazon Product Image Requirements: The 2025 Seller Guide',
-    excerpt: 'Avoid listing suppression. A checklist of strict image rules for Amazon FBA sellers.',
+    slug: 'amazon-image-requirements-2026',
+    title: 'Amazon Product Image Requirements 2026: Complete Seller Checklist',
+    excerpt: 'Avoid listing suppression. The complete checklist of Amazon\'s strict image rules every FBA seller must follow in 2026.',
     iconName: 'ShoppingBag',
     iconColor: '#FF9900',
-    date: 'Jan 21, 2026',
+    date: 'Mar 7, 2026',
     author: 'Image Shrinker Team',
     category: 'E-commerce',
     content: `
@@ -462,8 +486,8 @@ The first image customers see has the strictest rules. If you break these, your 
   },
   {
     slug: 'image-compression-faq',
-    title: 'Image Compression FAQ: How to Reduce Size Without Losing Quality',
-    excerpt: 'Lossy vs Lossless? WebP or JPEG? We answer the most common questions about image optimization.',
+    title: 'How to Compress Images Without Losing Quality (2026 Guide)',
+    excerpt: 'Lossy vs Lossless, WebP vs JPEG explained. Shrink images by 70-90% while keeping them sharp — free, no upload required.',
     iconName: 'HelpCircle',
     iconColor: '#10B981',
     date: 'Jan 21, 2026',

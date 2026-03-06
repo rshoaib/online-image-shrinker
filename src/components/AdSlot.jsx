@@ -57,7 +57,7 @@ const AdSlot = ({ format = 'banner', slot = '', className = '' }) => {
   }
 
   return (
-    <div className={`ad-slot ${className}`} style={{ margin: '20px auto', textAlign: 'center' }}>
+    <div className={`ad-slot ${className}`} style={{ margin: '20px auto', textAlign: 'center' }} aria-label="Advertisement">
       <ins
         className="adsbygoogle"
         style={{

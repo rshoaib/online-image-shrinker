@@ -77,6 +77,17 @@ const PrivacyPolicy = ({ onBack }) => {
                 How Google uses information from sites that use its services
               </a>.
             </p>
+            <p>
+              Google also uses the DoubleClick DART cookie to serve ads based on your visits to this and other sites. 
+              You can opt out of the DART cookie by visiting the{' '}
+              <a href="https://www.google.com/settings/ads" target="_blank" rel="noreferrer">
+                Google Ad Settings page
+              </a>{' '}
+              or by visiting the{' '}
+              <a href="https://optout.networkadvertising.org/" target="_blank" rel="noreferrer">
+                Network Advertising Initiative opt-out page
+              </a>.
+            </p>
           </section>
 
           <section>

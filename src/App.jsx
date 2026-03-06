@@ -279,8 +279,8 @@ const AppContent = () => {
           <Route path="/screenshot-beautifier" element={
              <SeoLandingPage 
                toolId="screenshot-beautifier" 
-               title="Screenshot Beautifier - Add Backgrounds & Window Frames"
-               description="Turn boring screenshots into beautiful mockups. Add window frames, shadows, and gradients instantly."
+               title="Free Screenshot Mockup Maker — Add Backgrounds & Frames Instantly"
+               description="Create stunning screenshot mockups in seconds. Add window frames, gradient backgrounds, rounded corners & shadows. No sign-up, 100% free."
                files={files} setFiles={setFiles} onBack={handleBack}
             />
           } />
