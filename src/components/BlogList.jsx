@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Instagram, FileImage, Zap, Eraser, Mail, QrCode, Search, ScanLine, Wand2, Film, Sparkles, Video, Music, MessageCircle, RotateCw } from 'lucide-react';
+import { ArrowRight, Instagram, FileImage, Zap, Eraser, Mail, QrCode, Search, ScanLine, Wand2, Film, Sparkles, Video, Music, MessageCircle, RotateCw, Grid } from 'lucide-react';
 import SeoWrapper from './SeoWrapper';
 
 import { articles } from '../data/articles';
 
 const iconMap = {
-  Zap, Eraser, Instagram, FileImage, Mail, QrCode, Search, ScanLine, Wand2, Film, Sparkles, Video, Music, MessageCircle, RotateCw
+  Zap, Eraser, Instagram, FileImage, Mail, QrCode, Search, ScanLine, Wand2, Film, Sparkles, Video, Music, MessageCircle, RotateCw, Grid
 };
 
 const BlogList = () => {

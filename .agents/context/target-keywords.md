@@ -38,14 +38,14 @@ description: Target keyword clusters and topic priorities for content strategy
 | resize image to 1080x1080 | ✅ Landing page | Monitor rankings |
 | heic to jpg converter | ✅ Landing page | Monitor rankings |
 | image to base64 converter online | 🆕 Need blog post | Write article |
-| instagram grid splitter 3x3 | 🆕 Need blog post | Write article |
+| instagram grid splitter 3x3 | ✅ Blog published | Monitor rankings |
 | remove exif data from photo | 🆕 Need blog post | Write article |
 | bulk image compressor online | 🆕 Need blog post | Write article |
 | ai image upscaler free | 🆕 Need blog post | Write article |
 
 ## Content Calendar Queue (Next Articles)
-1. **Image to Base64: A Developer's Guide** — ties to new Base64 tool
-2. **How to Remove EXIF Data from Photos (Privacy Guide)** — ties to EXIF tool
-3. **Instagram Grid Maker: Split Photos for a Stunning Profile** — ties to Grid Splitter
+1. ~~**Image to Base64: A Developer's Guide**~~ — ✅ published
+2. ~~**How to Remove EXIF Data from Photos (Privacy Guide)**~~ — ✅ published
+3. ~~**Instagram Grid Maker: Split Photos for a Stunning Profile**~~ — ✅ published
 4. **Bulk Image Compression: Reduce 100 Photos at Once** — ties to batch compress
 5. **AI Image Upscaler: Enhance Low-Res Photos Without Photoshop** — ties to Upscale tool
