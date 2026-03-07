@@ -49,3 +49,5 @@ description: Target keyword clusters and topic priorities for content strategy
 3. ~~**Instagram Grid Maker: Split Photos for a Stunning Profile**~~ — ✅ published
 4. ~~**Bulk Image Compression: Reduce 100 Photos at Once**~~ — ✅ published
 5. ~~**AI Image Upscaler: Enhance Low-Res Photos Without Photoshop**~~ — ✅ published
+6. ~~**How to Crop Images to Any Size or Aspect Ratio Online (2026)**~~ — ✅ published
+7. ~~**How to Convert SVG to PNG Online — Free & Private (2026 Guide)**~~ — ✅ published

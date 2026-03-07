@@ -66,6 +66,7 @@ description: Internal links map for cross-linking in blog articles and tool page
 | Instagram Grid Maker Guide | `/blog/instagram-grid-maker-guide-2026` |
 | Bulk Image Compression Guide | `/blog/bulk-image-compression-guide-2026` |
 | AI Image Upscaler Guide | `/blog/ai-image-upscaler-guide-2026` |
+| SVG to PNG Converter Guide | `/blog/svg-to-png-converter-guide-2026` |
 
 ## Cross-Linking Rules
 1. **Every article must link to at least 3 tools** using natural anchor text.
