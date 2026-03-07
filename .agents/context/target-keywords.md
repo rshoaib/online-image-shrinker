@@ -51,3 +51,4 @@ description: Target keyword clusters and topic priorities for content strategy
 5. ~~**AI Image Upscaler: Enhance Low-Res Photos Without Photoshop**~~ — ✅ published
 6. ~~**How to Crop Images to Any Size or Aspect Ratio Online (2026)**~~ — ✅ published
 7. ~~**How to Convert SVG to PNG Online — Free & Private (2026 Guide)**~~ — ✅ published
+8. ~~**How to Create QR Codes Online — Free, Custom & Private (2026)**~~ — ✅ published
