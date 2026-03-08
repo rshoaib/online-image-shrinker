@@ -1,4 +1,11 @@
 {
+  "dropzone": {
+    "title": "Glissez-déposez votre image ici",
+    "title_dragging": "Lâchez-la maintenant !",
+    "subtitle": "ou cliquez pour parcourir ou coller (Ctrl+V)",
+    "invalid_file": "Veuillez télécharger des fichiers image (JPG, PNG, WebP, HEIC).",
+    "file_too_large": "Fichier de plus de {{size}}Mo détecté. Le traitement peut être lent."
+  },
   "seo": {
     "home": {
       "title": "Réducteur d'Image en Ligne - Outil Gratuit et Privé",
@@ -56,6 +63,7 @@
   "home": {
     "title": "Sélectionnez un outil",
     "subtitle": "Choisissez comment vous souhaitez optimiser vos images aujourd'hui.",
+    "search_placeholder": "Rechercher des outils...",
     "tools": {
       "compress": {
         "title": "Compresser Image",

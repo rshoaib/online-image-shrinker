@@ -46,32 +46,15 @@ const SeoWrapper = ({ title, description, children, ...props }) => {
     updateMeta('twitter:description', finalDescription);
     updateMeta('twitter:image', ogImage);
 
-    // Canonical Link
+    // Canonical Link — use origin + pathname only (no query/hash)
+    const canonicalUrl = window.location.origin + window.location.pathname;
     let linkCanonical = document.querySelector('link[rel="canonical"]');
     if (!linkCanonical) {
       linkCanonical = document.createElement('link');
       linkCanonical.rel = "canonical";
       document.head.appendChild(linkCanonical);
     }
-    linkCanonical.href = currentUrl;
-
-    // Hreflang tags for multilingual SEO
-    const supportedLangs = ['en', 'es', 'de', 'fr', 'pt', 'it'];
-    // Remove any old hreflang link tags
-    document.querySelectorAll('link[hreflang]').forEach(el => el.remove());
-    supportedLangs.forEach(lang => {
-      const link = document.createElement('link');
-      link.rel = 'alternate';
-      link.hreflang = lang;
-      link.href = currentUrl; // Same URL, language handled client-side
-      document.head.appendChild(link);
-    });
-    // x-default hreflang
-    const xDefault = document.createElement('link');
-    xDefault.rel = 'alternate';
-    xDefault.hreflang = 'x-default';
-    xDefault.href = currentUrl;
-    document.head.appendChild(xDefault);
+    linkCanonical.href = canonicalUrl;
 
     // Dynamic html lang attribute
     document.documentElement.lang = i18n.language || 'en';

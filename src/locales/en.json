@@ -1,4 +1,11 @@
 {
+  "dropzone": {
+    "title": "Drag & Drop your image here",
+    "title_dragging": "Drop it like it's hot!",
+    "subtitle": "or click to browse or paste (Ctrl+V)",
+    "invalid_file": "Please upload image files (JPG, PNG, WebP, HEIC).",
+    "file_too_large": "File over {{size}}MB detected. Processing may be slow."
+  },
   "seo": {
     "home": {
       "title": "Online Image Shrinker - Free Privacy-First Tool",
@@ -71,6 +78,7 @@
   "home": {
     "title": "Select a Tool",
     "subtitle": "Choose how you want to optimize your images today.",
+    "search_placeholder": "Search tools...",
     "tools": {
       "video_compressor": {
         "title": "Video Compressor",

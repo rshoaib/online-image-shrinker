@@ -1,4 +1,11 @@
 {
+  "dropzone": {
+    "title": "Ziehe dein Bild hierher",
+    "title_dragging": "Lass es fallen!",
+    "subtitle": "oder klicke zum Durchsuchen oder Einfügen (Strg+V)",
+    "invalid_file": "Bitte lade Bilddateien hoch (JPG, PNG, WebP, HEIC).",
+    "file_too_large": "Datei über {{size}}MB erkannt. Die Verarbeitung kann langsam sein."
+  },
   "seo": {
     "home": {
       "title": "Online Bildverkleinerer - Kostenloses Datenschutz-First Tool",
@@ -26,6 +33,7 @@
   "home": {
     "title": "Wähle ein Werkzeug",
     "subtitle": "Wähle, wie du deine Bilder heute optimieren möchtest.",
+    "search_placeholder": "Werkzeuge suchen...",
     "tools": {
       "compress": {
         "title": "Bild Komprimieren",

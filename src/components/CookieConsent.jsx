@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import ReactGA from 'react-ga4';
 
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);

@@ -288,7 +288,7 @@ const Controls = ({
         .download-btn {
           margin-top: auto;
           background: var(--primary);
-          color: #000;
+          color: #fff;
           padding: 12px;
           border-radius: var(--radius-md);
           font-weight: 600;
@@ -297,12 +297,12 @@ const Controls = ({
           justify-content: center;
           gap: 8px;
           transition: var(--transition-fast);
-          box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+          box-shadow: 0 0 20px var(--primary-glow);
         }
 
         .download-btn:hover {
           transform: translateY(-2px);
-          box-shadow: 0 0 30px rgba(0, 240, 255, 0.4);
+          box-shadow: 0 0 30px rgba(0, 102, 255, 0.4);
         }
 
         .download-btn:disabled {

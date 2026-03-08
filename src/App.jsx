@@ -1,4 +1,4 @@
-import { useState, Suspense, lazy } from 'react';
+import { useState, Suspense, lazy, Component } from 'react';
 import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Layout from './components/Layout';
@@ -35,21 +35,69 @@ import {
 } from './data/seoTemplates';
 
 const PageLoader = () => (
-  <div style={{ padding: '50px', display: 'flex', justifyContent: 'center' }}>
-     <div className="loader"></div>
-     <style>{`
-       .loader {
-         border: 4px solid var(--bg-surface);
-         border-top: 4px solid var(--primary);
-         border-radius: 50%;
-         width: 40px;
-         height: 40px;
-         animation: spin 1s linear infinite;
-       }
-       @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-     `}</style>
+  <div style={{ padding: '40px 20px', maxWidth: '900px', margin: '0 auto', width: '100%' }}>
+    <div className="skeleton-bar" style={{ width: '60%', height: '32px', marginBottom: '16px' }}></div>
+    <div className="skeleton-bar" style={{ width: '40%', height: '16px', marginBottom: '40px' }}></div>
+    <div className="skeleton-bar" style={{ width: '100%', height: '400px', borderRadius: 'var(--radius-lg)' }}></div>
+    <style>{`
+      .skeleton-bar {
+        background: linear-gradient(90deg, var(--bg-surface) 25%, var(--border-light) 50%, var(--bg-surface) 75%);
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite;
+        border-radius: var(--radius-sm);
+      }
+      @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+      }
+    `}</style>
   </div>
 );
+
+// Error Boundary to prevent white screen crashes
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  handleReset = () => {
+    this.setState({ hasError: false, error: null });
+    window.location.href = '/';
+  };
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{
+          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+          minHeight: '50vh', padding: '40px 20px', textAlign: 'center'
+        }}>
+          <div style={{ fontSize: '4rem', marginBottom: '16px' }}>⚠️</div>
+          <h2 style={{ marginBottom: '8px', color: 'var(--text-main)' }}>Something went wrong</h2>
+          <p style={{ color: 'var(--text-muted)', marginBottom: '24px', maxWidth: '400px' }}>
+            This tool encountered an error. Your files are safe — nothing was uploaded.
+          </p>
+          <button
+            onClick={this.handleReset}
+            style={{
+              padding: '12px 24px', background: 'var(--primary)', color: '#fff',
+              border: 'none', borderRadius: 'var(--radius-md)', fontWeight: 600,
+              cursor: 'pointer', fontSize: '0.95rem'
+            }}
+          >
+            Go to Homepage
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 // Inner component to use router hooks
 const AppContent = () => {
@@ -86,6 +134,7 @@ const AppContent = () => {
 
   return (
     <Layout onNavigate={handleNavigate}>
+      <ErrorBoundary>
       <Suspense fallback={<PageLoader />}>
         <Routes>
           {/* HOME ROUTE */}
@@ -589,6 +638,7 @@ const AppContent = () => {
 
         </Routes>
       </Suspense>
+      </ErrorBoundary>
     </Layout>
   );
 };

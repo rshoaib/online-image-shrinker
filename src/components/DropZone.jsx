@@ -1,22 +1,58 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
-import { UploadCloud } from 'lucide-react';
+import { UploadCloud, AlertTriangle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+
+const MAX_FILE_SIZE_MB = 25;
+const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
 
 const DropZone = ({ onFileSelect }) => {
+  const { t } = useTranslation();
   const [isDragging, setIsDragging] = useState(false);
+  const [error, setError] = useState(null);
+  const [sizeWarning, setSizeWarning] = useState(null);
   const inputRef = useRef(null);
 
+  // Auto-dismiss messages
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => setError(null), 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
+
+  useEffect(() => {
+    if (sizeWarning) {
+      const timer = setTimeout(() => setSizeWarning(null), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [sizeWarning]);
+
   const handleFiles = useCallback((files) => {
+    setError(null);
+    setSizeWarning(null);
+
     const validFiles = files.filter(file => 
       file.type.startsWith('image/') || 
       file.name.toLowerCase().endsWith('.heic') || 
       file.name.toLowerCase().endsWith('.heif')
     );
-    if (validFiles.length > 0) {
-      onFileSelect(validFiles);
-    } else {
-      alert('Please upload image files (JPG, PNG, WebP, HEIC).');
+
+    if (validFiles.length === 0) {
+      setError(t('dropzone.invalid_file') || 'Please upload image files (JPG, PNG, WebP, HEIC).');
+      return;
     }
-  }, [onFileSelect]);
+
+    // Check for large files
+    const largeFiles = validFiles.filter(f => f.size > MAX_FILE_SIZE_BYTES);
+    if (largeFiles.length > 0) {
+      setSizeWarning(
+        t('dropzone.file_too_large', { size: MAX_FILE_SIZE_MB }) || 
+        `File over ${MAX_FILE_SIZE_MB}MB detected. Processing may be slow.`
+      );
+    }
+
+    onFileSelect(validFiles);
+  }, [onFileSelect, t]);
 
   // Global Paste Listener
   useEffect(() => {
@@ -68,8 +104,6 @@ const DropZone = ({ onFileSelect }) => {
     }
   };
 
-
-
   return (
     <div 
       className={`dropzone ${isDragging ? 'dragging' : ''}`}
@@ -87,15 +121,20 @@ const DropZone = ({ onFileSelect }) => {
         onChange={handleInputChange}
       />
       
-      <div className="icon-wrapper">
+      <div className="dz-icon-wrapper">
         <UploadCloud size={48} color={isDragging ? 'var(--primary)' : 'var(--text-muted)'} />
       </div>
       
       <div className="text-content">
         <h3 className="drop-title">
-          {isDragging ? 'Drop it like it\'s hot!' : 'Drag & Drop your image here'}
+          {isDragging 
+            ? (t('dropzone.title_dragging') || "Drop it like it's hot!")
+            : (t('dropzone.title') || 'Drag & Drop your image here')
+          }
         </h3>
-        <p className="drop-subtitle">or click to browse or paste (Ctrl+V)</p>
+        <p className="drop-subtitle">
+          {t('dropzone.subtitle') || 'or click to browse or paste (Ctrl+V)'}
+        </p>
       </div>
 
       <div className="supported-formats">
@@ -104,6 +143,20 @@ const DropZone = ({ onFileSelect }) => {
         <span className="pill">WEBP</span>
         <span className="pill">HEIC</span>
       </div>
+
+      {/* Inline Toast Messages */}
+      {error && (
+        <div className="dz-toast dz-toast-error" role="alert">
+          <AlertTriangle size={16} />
+          <span>{error}</span>
+        </div>
+      )}
+      {sizeWarning && (
+        <div className="dz-toast dz-toast-warning" role="status">
+          <AlertTriangle size={16} />
+          <span>{sizeWarning}</span>
+        </div>
+      )}
 
       <style>{`
         .dropzone {
@@ -131,16 +184,16 @@ const DropZone = ({ onFileSelect }) => {
 
         .dropzone.dragging {
           border-color: var(--primary);
-          background-color: rgba(0, 240, 255, 0.05);
+          background-color: rgba(0, 102, 255, 0.05);
           transform: scale(1.02);
-          box-shadow: 0 0 30px rgba(0, 240, 255, 0.15);
+          box-shadow: 0 0 30px var(--primary-glow);
         }
 
         .hidden-input {
           display: none;
         }
 
-        .icon-wrapper {
+        .dz-icon-wrapper {
           margin-bottom: var(--spacing-lg);
           padding: var(--spacing-lg);
           border-radius: 50%;
@@ -149,7 +202,7 @@ const DropZone = ({ onFileSelect }) => {
           transition: var(--transition-fast);
         }
 
-        .dropzone:hover .icon-wrapper {
+        .dropzone:hover .dz-icon-wrapper {
           border-color: var(--primary);
           transform: translateY(-5px);
         }
@@ -184,6 +237,41 @@ const DropZone = ({ onFileSelect }) => {
           font-size: 0.75rem;
           color: var(--text-dim);
           font-weight: 600;
+        }
+
+        /* Inline toast notifications */
+        .dz-toast {
+          position: absolute;
+          bottom: 16px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 20px;
+          border-radius: var(--radius-md);
+          font-size: 0.85rem;
+          font-weight: 500;
+          animation: toastSlideUp 0.3s ease-out;
+          white-space: nowrap;
+          z-index: 10;
+        }
+
+        .dz-toast-error {
+          background: rgba(239, 68, 68, 0.1);
+          border: 1px solid rgba(239, 68, 68, 0.3);
+          color: var(--error);
+        }
+
+        .dz-toast-warning {
+          background: rgba(245, 158, 11, 0.1);
+          border: 1px solid rgba(245, 158, 11, 0.3);
+          color: #f59e0b;
+        }
+
+        @keyframes toastSlideUp {
+          from { opacity: 0; transform: translate(-50%, 10px); }
+          to { opacity: 1; transform: translate(-50%, 0); }
         }
       `}</style>
     </div>

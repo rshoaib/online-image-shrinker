@@ -1,4 +1,11 @@
 {
+  "dropzone": {
+    "title": "Trascina e rilascia la tua immagine qui",
+    "title_dragging": "Rilasciala adesso!",
+    "subtitle": "o clicca per sfogliare o incollare (Ctrl+V)",
+    "invalid_file": "Carica file immagine (JPG, PNG, WebP, HEIC).",
+    "file_too_large": "File oltre {{size}}MB rilevato. L'elaborazione potrebbe essere lenta."
+  },
   "seo": {
     "home": {
       "title": "Riduttore Immagini Online - Strumento Gratuito e Privato",
@@ -26,6 +33,7 @@
   "home": {
     "title": "Seleziona uno Strumento",
     "subtitle": "Scegli come ottimizzare le tue immagini oggi.",
+    "search_placeholder": "Cerca strumenti...",
     "tools": {
       "compress": {
         "title": "Comprimi Immagine",

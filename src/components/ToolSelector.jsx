@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import HowItWorks from './HowItWorks';
 import FAQSection from './FAQSection';
 
@@ -5,11 +6,13 @@ import { useTranslation } from 'react-i18next';
 import { 
   Maximize2, Zap, Type, FileText, Eraser, Crop, Grid, EyeOff, 
   User, Monitor, Settings, Repeat, Palette, PenTool, ScanLine, 
-  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles, ArrowLeftRight, Share2, Code, RotateCw 
+  Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles, ArrowLeftRight, Share2, Code, RotateCw,
+  Search
 } from 'lucide-react';
 
 const ToolSelector = ({ onSelectTool }) => {
   const { t } = useTranslation();
+  const [searchQuery, setSearchQuery] = useState('');
 
   const tools = [
     { id: 'compress', i18nKey: 'compress', icon: <Minimize2 size={32} /> },
@@ -42,6 +45,16 @@ const ToolSelector = ({ onSelectTool }) => {
     { id: 'rotate-flip', i18nKey: 'rotate_flip', icon: <RotateCw size={32} /> },
   ];
 
+  // Filter tools by search query
+  const filteredTools = searchQuery.trim()
+    ? tools.filter(tool => {
+        const title = t(`home.tools.${tool.i18nKey}.title`).toLowerCase();
+        const desc = t(`home.tools.${tool.i18nKey}.desc`).toLowerCase();
+        const q = searchQuery.toLowerCase();
+        return title.includes(q) || desc.includes(q) || tool.id.includes(q);
+      })
+    : tools;
+
   return (
     <div className="selector-container">
       {/* ... existing header ... */}
@@ -50,14 +63,49 @@ const ToolSelector = ({ onSelectTool }) => {
         <p>{t('home.subtitle')}</p>
       </div>
 
+      {/* Search/Filter Bar */}
+      <div className="search-bar-wrapper">
+        <Search size={18} className="search-icon" />
+        <input
+          type="text"
+          className="search-input"
+          placeholder={t('home.search_placeholder') || 'Search tools...'}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          aria-label="Search tools"
+          id="tool-search"
+        />
+        {searchQuery && (
+          <button
+            className="search-clear"
+            onClick={() => setSearchQuery('')}
+            aria-label="Clear search"
+          >
+            ×
+          </button>
+        )}
+      </div>
+
       <div className="cards-grid">
-        {tools.map((tool) => (
+        {filteredTools.length === 0 && (
+          <div className="no-results">
+            <p>No tools found for "{searchQuery}"</p>
+          </div>
+        )}
+        {filteredTools.map((tool, index) => (
           <div 
             key={tool.id} 
             className="tool-card" 
             onClick={() => onSelectTool(tool.id)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onSelectTool(tool.id);
+              }
+            }}
             role="button"
             tabIndex={0}
+            style={{ animationDelay: `${index * 0.04}s` }}
           >
             <div className="icon-wrapper">
               {tool.icon}
@@ -117,7 +165,7 @@ const ToolSelector = ({ onSelectTool }) => {
 
         .selector-header {
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 40px;
           position: relative;
         }
 
@@ -137,6 +185,74 @@ const ToolSelector = ({ onSelectTool }) => {
           font-size: 1.2rem;
           max-width: 500px;
           margin: 0 auto;
+        }
+
+        /* Search Bar */
+        .search-bar-wrapper {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          max-width: 500px;
+          margin-bottom: 40px;
+          background: var(--bg-panel);
+          border: 1px solid var(--border-light);
+          border-radius: var(--radius-full);
+          padding: 10px 20px;
+          gap: 10px;
+          transition: all var(--transition-smooth);
+        }
+
+        .search-bar-wrapper:focus-within {
+          border-color: var(--primary);
+          box-shadow: 0 0 0 3px var(--primary-glow);
+        }
+
+        .search-icon {
+          color: var(--text-dim);
+          flex-shrink: 0;
+        }
+
+        .search-input {
+          flex: 1;
+          border: none;
+          background: transparent;
+          color: var(--text-main);
+          font-size: 1rem;
+          outline: none;
+          font-family: inherit;
+        }
+
+        .search-input::placeholder {
+          color: var(--text-dim);
+        }
+
+        .search-clear {
+          background: var(--bg-surface);
+          border: none;
+          color: var(--text-muted);
+          font-size: 1.2rem;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: var(--transition-fast);
+          line-height: 1;
+        }
+
+        .search-clear:hover {
+          background: var(--border-active);
+          color: var(--text-main);
+        }
+
+        .no-results {
+          grid-column: 1 / -1;
+          text-align: center;
+          padding: 40px 20px;
+          color: var(--text-muted);
+          font-size: 1.1rem;
         }
 
         .cards-grid {
@@ -166,15 +282,6 @@ const ToolSelector = ({ onSelectTool }) => {
           opacity: 0;
           animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
-
-        /* Staggered Animation delays */
-        .tool-card:nth-child(1) { animation-delay: 0.1s; }
-        .tool-card:nth-child(2) { animation-delay: 0.2s; }
-        .tool-card:nth-child(3) { animation-delay: 0.3s; }
-        .tool-card:nth-child(4) { animation-delay: 0.4s; }
-        .tool-card:nth-child(5) { animation-delay: 0.5s; }
-        .tool-card:nth-child(6) { animation-delay: 0.6s; }
-        .tool-card:nth-child(7) { animation-delay: 0.7s; }
 
         .tool-card:hover {
           transform: translateY(-8px) scale(1.02);
@@ -265,6 +372,18 @@ const ToolSelector = ({ onSelectTool }) => {
            0% { background-position: 0% 50%; }
            50% { background-position: 100% 50%; }
            100% { background-position: 0% 50%; }
+        }
+
+        @media (max-width: 600px) {
+          .selector-header h2 {
+            font-size: 2rem;
+          }
+          .selector-header {
+            margin-bottom: 24px;
+          }
+          .search-bar-wrapper {
+            margin-bottom: 24px;
+          }
         }
       `}</style>
     </div>

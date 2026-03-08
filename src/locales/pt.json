@@ -1,4 +1,11 @@
 {
+  "dropzone": {
+    "title": "Arraste e solte sua imagem aqui",
+    "title_dragging": "Solte agora!",
+    "subtitle": "ou clique para procurar ou colar (Ctrl+V)",
+    "invalid_file": "Por favor envie arquivos de imagem (JPG, PNG, WebP, HEIC).",
+    "file_too_large": "Arquivo com mais de {{size}}MB detectado. O processamento pode ser lento."
+  },
   "seo": {
     "home": {
       "title": "Redutor de Imagem Online - Ferramenta Gratuita e Privada",
@@ -26,6 +33,7 @@
   "home": {
     "title": "Selecione uma Ferramenta",
     "subtitle": "Escolha como você deseja otimizar suas imagens hoje.",
+    "search_placeholder": "Buscar ferramentas...",
     "tools": {
       "compress": {
         "title": "Comprimir Imagem",
