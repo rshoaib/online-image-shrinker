@@ -182,8 +182,8 @@ You don't need to install suspect software to convert your files.
   },
   {
     slug: 'passport-photo-guide',
-    title: 'Passport Photo Size Guide 2026 (All Countries) | Free Resize Tool',
-    excerpt: 'Exact passport photo dimensions for every country — USA, UK, EU, India, Canada, China & more. Resize to the correct size instantly with our free tool.',
+    title: 'Passport Photo Size Guide 2026: Exact Dimensions for 10+ Countries (Free Resize)',
+    excerpt: 'Passport photo size in cm, inches & pixels for USA, UK, EU, India, Canada & more. Resize and crop to the correct passport photo dimensions instantly — 100% free.',
     iconName: 'FileImage',
     iconColor: '#007AFF',
     date: 'Feb 19, 2026',
@@ -302,6 +302,21 @@ Yes! Modern smartphones have more than enough resolution. Just follow the 6 rule
 
 **What background color do I need?**
 Almost all countries require a **plain white** or off-white background. Use our [Background Remover](/tool/remove-bg) to fix a non-white background instantly.
+
+**What are the exact passport photo dimensions?**
+Passport photo dimensions vary by country. The two most common standards are: **51 × 51 mm (2 × 2 inches)** used by the USA and India, and **35 × 45 mm (1.38 × 1.77 inches)** used by the UK, EU, Japan, Australia, and South Korea. Canada uses a larger **50 × 70 mm** format.
+
+**What is the passport photo size in mm?**
+The standard passport photo size in mm is **35 × 45 mm** (ICAO international standard). The USA and India use **51 × 51 mm**. China uses **33 × 48 mm**, and Canada uses **50 × 70 mm**.
+
+**What is a pass size photo / passport size picture?**
+A "pass size photo" or "passport size picture" refers to a biometric photo that meets your country's passport requirements. In most countries, this means a head-and-shoulders photo with a **plain white background**, shot from the front with a neutral expression. The exact dimensions depend on your country — see the table above.
+
+**How do I crop a photo to passport size?**
+Use our free [Passport Photo Resizer](/resize-passport-photo). Upload any photo, select your country, and the tool automatically crops and resizes to the exact passport photo dimensions. No Photoshop needed.
+
+**What is the passport photo size for India?**
+Indian passport photos must be **51 × 51 mm (2 × 2 inches)**, which is **600 × 600 pixels** at 300 DPI — the same size as US passport photos. Background must be plain white.
     `
   },
   {
@@ -453,67 +468,149 @@ If your file is over 256KB, Discord won't accept it.
   },
   {
     slug: 'amazon-image-requirements-2026',
-    title: 'Amazon Product Image Requirements 2026: Complete Seller Checklist',
-    excerpt: 'Avoid listing suppression. The complete checklist of Amazon\'s strict image rules every FBA seller must follow in 2026.',
+    title: 'Amazon Product Image Requirements 2026: The Complete Seller Checklist (Avoid Suppression)',
+    excerpt: 'Avoid listing suppression. Every Amazon image rule in one place — main image specs, listing photo requirements, lifestyle images, and a free compliance tool.',
     iconName: 'ShoppingBag',
     iconColor: '#FF9900',
     date: 'Mar 7, 2026',
     author: 'Image Shrinker Team',
     category: 'E-commerce',
     content: `
-Amazon adds millions of products every year. To keep quality high, they have automated bots that suppress listings with bad images. Don't let that happen to you.
+Amazon adds millions of products every year. To keep quality high, they have automated bots that suppress listings with bad images. One wrong move and your listing disappears from search results. Here's everything you need to know.
 
-## The "Main Image" Rules
+## Amazon Main Image Requirements (MAIN Image)
 
 The first image customers see has the strictest rules. If you break these, your listing **will** be hidden.
-*   **Pure White Background:** RGB (255, 255, 255). No exceptions.
+*   **Pure White Background:** RGB (255, 255, 255). No exceptions. Not off-white, not light grey — *pure* white.
 *   **85% Coverage:** The product must take up at least 85% of the image frame.
-*   **No Text/Logos:** You cannot add "Best Seller" badges or your own watermark.
-*   **No Props:** Do not show accessories that aren't included.
+*   **No Text/Logos:** You cannot add "Best Seller" badges, promotional text, or your own watermark.
+*   **No Props or Accessories:** Do not show items that aren't included in the sale.
+*   **No Borders or Padding:** The image must not have colored borders or excessive white space.
 
-## Technical Specs
-*   **Minimum Size:** 500px on the longest side.
-*   **Zoom Capability:** 1000px+ (Recommended 1600px+).
-*   **Format:** JPEG is preferred. PNG and GIF are technically allowed but not recommended for the main image.
-*   **Color Mode:** sRGB.
+## Amazon Listing Image Requirements (All Product Photos)
 
-## How to Check Your Images
-1.  **Zoom Check:** Is your image at least 1000px wide? If not, use our [AI Upscaler](/tool/upscale) to double the resolution without blur.
-2.  **Background Check:** Is it pure white? Use our [Background Remover](/tool/remove-bg) to instantly isolate your product on white.
+Beyond the main image, Amazon allows up to **8 additional listing images**. These have more flexibility but still follow rules:
 
-[Optimize Amazon Images](/tool/remove-bg)
+*   **Minimum Resolution:** 500px on the longest side. For zoom eligibility, use **1000px+** (recommended **1600px+**).
+*   **Preferred Format:** JPEG (.jpg). PNG and GIF are allowed but JPEG is preferred.
+*   **Color Mode:** sRGB color profile.
+*   **Aspect Ratio:** Square (1:1) is recommended for consistency across all devices.
+*   **File Size Limit:** No larger than 10,000 × 10,000 pixels.
+
+### Types of Listing Images
+
+| Image Slot | Purpose | Tips |
+| :--- | :--- | :--- |
+| **Main Image** | Product on pure white | Must follow strict rules above |
+| **Image 2-3** | Different angles | Show front, back, and side views |
+| **Image 4** | Size reference | Show the product next to a common object |
+| **Image 5** | Infographic | Highlight key features with callout text |
+| **Image 6-7** | Lifestyle shots | Show the product being used in real life |
+| **Image 8** | Packaging | Show the box and what's included |
+
+## Complete Amazon Image Compliance Checklist
+
+Use this checklist before uploading any product image:
+
+- [ ] Background is pure white (RGB 255, 255, 255) for the main image
+- [ ] Product fills at least 85% of the frame
+- [ ] Resolution is 1600px+ on the longest side (zoom-ready)
+- [ ] No watermarks, logos, or promotional text on the main image
+- [ ] File is saved as JPEG in sRGB color mode
+- [ ] No props or accessories not included in the sale
+- [ ] Image is sharp and well-lit — no blur or noise
+
+## How to Make Your Images Compliant (Free)
+
+You don't need expensive software. Use our free, privacy-first tools:
+
+1.  **Background Check:** Use our [Background Remover](/tool/remove-bg) to instantly isolate your product on pure white.
+2.  **Resolution Check:** Is your image at least 1000px wide? If not, use our [AI Upscaler](/tool/upscale) to double the resolution without blur.
+3.  **Resize to Square:** Use our [Resize Tool](/tool/resize) to create consistent 2000×2000 square images.
+4.  **Compress for Upload:** Use our [Image Compressor](/tool/compress) to keep files under 10MB while maintaining quality.
+
+## Lifestyle & Infographic Best Practices
+
+For images 2-8, you have creative freedom. Here's what top sellers do:
+
+*   **Show scale:** Place the product next to a common reference object (hand, ruler, phone).
+*   **Use infographics:** Add feature callout text to highlight dimensions, materials, or key benefits.
+*   **Lifestyle context:** Show the product in use — a kitchen gadget in an actual kitchen, a bag on someone's shoulder.
+*   **A+ Content:** If you're brand-registered, use A+ Enhanced Content with comparison charts and brand stories.
+
+[Optimize Your Amazon Images (Free)](/tool/remove-bg)
     `
   },
   {
     slug: 'image-compression-faq',
-    title: 'How to Compress Images Without Losing Quality (2026 Guide)',
-    excerpt: 'Lossy vs Lossless, WebP vs JPEG explained. Shrink images by 70-90% while keeping them sharp — free, no upload required.',
+    title: 'Image Compression: Shrink Files by 90% Without Losing Quality (Free Tool)',
+    excerpt: 'Lossy vs lossless, WebP vs JPEG vs PNG — all explained in plain English. Reduce image size by up to 90% for free, with zero uploads to any server.',
     iconName: 'HelpCircle',
     iconColor: '#10B981',
     date: 'Jan 21, 2026',
     author: 'Image Shrinker Team',
     category: 'Explained',
     content: `
-We process thousands of images every day. Here are the most common questions we get about shrinking images.
+We process thousands of images every day. Here are the most common questions we get about shrinking images — and the answers that actually help.
 
-## 1. lossy vs. Lossless: What's the difference?
-*   **Lossless Compression:** Reduces file size by cleaning up metadata and inefficient coding. The image pixels remain *identical*. Good for a 10-20% reduction.
-*   **Lossy Compression:** intelligently merges similar colors that the human eye can't distinguish. This can reduce file size by **70-90%**. This is what most people need for the web.
+## 1. Lossy vs. Lossless: What's the Difference?
 
-## 2. Will compression make my photo blurry?
-Not necessarily. Modern AI compression (like we use) is "visually lossless." It changes the data, but your eye usually can't tell the difference unless you zoom in 500%.
+These are the two fundamental approaches to making images smaller:
 
-## 3. Why should I use WebP?
-WebP is a modern format from Google.
-*   It supports transparency (like PNG).
-*   It compresses better than JPEG.
-*   It loads 30% faster on websites.
-*   **Recommendation:** Use our [WebP Converter](/tool/compress) for all website images.
+*   **Lossless Compression:** Cleans up metadata and inefficient coding without touching pixels. The image looks *identical* — bit for bit. Typical savings: **10–20%**.
+*   **Lossy Compression:** Intelligently merges similar colors that your eye can't distinguish. Savings of **70–90%** are common. This is what most people need for websites, email, and social media.
 
-## 4. Why is my file size still big after resizing?
-If you resize an image from 4000px to 2000px, it's 4x smaller. But if the DPI is high or the quality setting is 100%, it might still be heavy. Use the **Compress** tool after resizing to get the best of both worlds.
+> **Rule of thumb:** Use lossy for web photos and social media. Use lossless for archival, medical imaging, or screenshots with fine text.
 
-[Compress Your Images Now](/tool/compress)
+## 2. Will Compression Make My Photo Blurry?
+
+Not if you use a modern tool. Today's algorithms are **"visually lossless"** — they change the data, but your eye can't tell the difference unless you zoom in past 500%.
+
+The old "quality slider" approach (setting JPEG quality to 20%) *will* cause visible blur. Smart compression tools like ours analyze each image individually and pick the optimal balance automatically.
+
+## 3. WebP vs JPEG vs PNG: Which Format Should I Use?
+
+WebP is a modern image format from Google that combines the best of both worlds:
+
+| Feature | PNG | JPEG | WebP |
+| :--- | :--- | :--- | :--- |
+| **Transparency** | ✅ Yes | ❌ No | ✅ Yes |
+| **Animation** | ❌ No | ❌ No | ✅ Yes |
+| **Typical File Size** | Large | Medium | **Smallest** |
+| **Quality** | Lossless only | Lossy only | Both |
+| **Browser Support (2026)** | 100% | 100% | **97%+** |
+
+**Bottom line:** Use WebP for websites whenever possible. Use JPEG for email attachments. Use PNG only when you need pixel-perfect transparency (logos, icons).
+
+*   **Recommendation:** Convert all your website images with our [WebP Converter](/tool/compress).
+
+## 4. Why Is My File Still Big After Resizing?
+
+Resizing and compressing are **two different operations**:
+
+1.  **Resizing** changes the pixel dimensions (e.g., 4000px → 2000px). This makes the image 4x smaller in area.
+2.  **Compression** reduces the data at each pixel. This makes the file 5–10x smaller in bytes.
+
+If you only resize but keep quality at 100%, the file can still be 2–3 MB. **Always compress after resizing** to get the best of both worlds.
+
+## 5. How to Compress Images in Bulk (Batch Processing)
+
+Need to compress 50+ images at once? Here's the fastest workflow:
+
+1.  Open our [Compress Tool](/tool/compress).
+2.  Drag and drop your entire folder of images.
+3.  The tool processes them all in parallel — right in your browser.
+4.  Download the compressed batch as a ZIP.
+
+No upload to any server. No file size limit. No account required.
+
+## 6. Common Compression Mistakes to Avoid
+
+*   **Compressing an already-compressed JPEG** — each re-compression degrades quality further. Always start from the original.
+*   **Using PNG for photographs** — PNGs are designed for flat graphics (logos, icons). A photo saved as PNG can be 5–10x larger than JPEG.
+*   **Ignoring dimensions** — A 6000×4000 photo displayed at 600×400 on your website wastes 99% of the data. [Resize first](/tool/resize), then compress.
+
+[Compress Your Images Now — Free & Private](/tool/compress)
     `
   },
   {
