@@ -191,6 +191,10 @@
       "rotate_flip": {
         "title": "Rotate & Flip",
         "desc": "Rotate images 90°/180° or custom angle, flip horizontally or vertically."
+      },
+      "favicon": {
+        "title": "Favicon Generator",
+        "desc": "Create standard browser favicon files and high-res Apple Touch icons."
       }
     }
   }

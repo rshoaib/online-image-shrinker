@@ -7,7 +7,7 @@ import {
   Maximize2, Zap, Type, FileText, Eraser, Crop, Grid, EyeOff, 
   User, Monitor, Settings, Repeat, Palette, PenTool, ScanLine, 
   Minimize2, Wand2, QrCode, Video, Film, Music, LayoutTemplate, Smile, Sparkles, ArrowLeftRight, Share2, Code, RotateCw,
-  Search
+  Search, Globe
 } from 'lucide-react';
 
 const ToolSelector = ({ onSelectTool }) => {
@@ -43,6 +43,7 @@ const ToolSelector = ({ onSelectTool }) => {
     { id: 'image-compare', i18nKey: 'image_compare', icon: <ArrowLeftRight size={32} /> },
     { id: 'base64-converter', i18nKey: 'base64', icon: <Code size={32} /> },
     { id: 'rotate-flip', i18nKey: 'rotate_flip', icon: <RotateCw size={32} /> },
+    { id: 'favicon-generator', i18nKey: 'favicon', icon: <Globe size={32} /> },
   ];
 
   // Filter tools by search query
