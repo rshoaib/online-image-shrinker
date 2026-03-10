@@ -68,6 +68,7 @@ description: Internal links map for cross-linking in blog articles and tool page
 | AI Image Upscaler Guide | `/blog/ai-image-upscaler-guide-2026` |
 | SVG to PNG Converter Guide | `/blog/svg-to-png-converter-guide-2026` |
 | QR Code Generator Guide | `/blog/qr-code-generator-guide-2026` |
+| How to Blur Faces in Photos | `/blog/how-to-blur-face-in-photo-online-2026` |
 
 ## Cross-Linking Rules
 1. **Every article must link to at least 3 tools** using natural anchor text.

@@ -39,7 +39,9 @@ description: Target keyword clusters and topic priorities for content strategy
 | heic to jpg converter | ✅ Landing page | Monitor rankings |
 | image to base64 converter online | 🆕 Need blog post | Write article |
 | instagram grid splitter 3x3 | ✅ Blog published | Monitor rankings |
-| remove exif data from photo | 🆕 Need blog post | Write article |
+| remove exif data from photo | ✅ Blog published | Monitor rankings |
+| blur face in photo online | ✅ Blog published | Monitor rankings |
+| how to make photo collage online | 🆕 Need blog post | Write article |
 | bulk image compressor online | ✅ Blog published | Monitor rankings |
 | ai image upscaler free | ✅ Blog published | Monitor rankings |
 
@@ -52,3 +54,5 @@ description: Target keyword clusters and topic priorities for content strategy
 6. ~~**How to Crop Images to Any Size or Aspect Ratio Online (2026)**~~ — ✅ published
 7. ~~**How to Convert SVG to PNG Online — Free & Private (2026 Guide)**~~ — ✅ published
 8. ~~**How to Create QR Codes Online — Free, Custom & Private (2026)**~~ — ✅ published
+9. ~~**How to Blur Faces in Photos Online — Free & Private (2026)**~~ — ✅ published
+10. **How to Make a Photo Collage Online — Free & Private (2026)** — 🆕 next
