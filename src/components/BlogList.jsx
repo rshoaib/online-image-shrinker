@@ -1,10 +1,21 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpCircle, Instagram, FileImage, Zap, Eraser, Mail, QrCode, Search, ScanLine, Wand2, Film, Sparkles, Video, Music, MessageCircle, RotateCw, Grid, Layers, Crop } from 'lucide-react';
+import { ArrowRight, FileImage, BookOpen, Shield, Palette, ShoppingBag, Sparkles, Tag } from 'lucide-react';
 import SeoWrapper from './SeoWrapper';
-
 import { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';const iconMap = {
-  Zap, Eraser, Instagram, FileImage, Mail, QrCode, Search, ScanLine, Wand2, Film, Sparkles, Video, Music, MessageCircle, RotateCw, Grid, Layers, ArrowUpCircle, Crop
+import { supabase } from '../lib/supabase';
+
+const categoryIconMap = {
+  'Tutorials': BookOpen,
+  'Guides': FileImage,
+  'Explained': BookOpen,
+  'Privacy': Shield,
+  'Design': Palette,
+  'E-commerce': ShoppingBag,
+  'Social Media': FileImage,
+  'Optimization': Sparkles,
+  'Workflow': Tag,
+  'Updates': Sparkles,
+  'Fun': Sparkles,
 };
 
 const BlogList = () => {
@@ -62,12 +73,12 @@ const BlogList = () => {
               <Link to={`/blog/${article.slug}`} key={article.slug} className="article-card">
                 <div className="article-icon">
                   {(() => {
-                    const IconComponent = iconMap[article.iconName] || FileImage;
-                    return <IconComponent size={32} color={article.iconColor} />;
+                    const IconComponent = categoryIconMap[article.category] || FileImage;
+                    return <IconComponent size={32} color="var(--primary)" />;
                   })()}
                 </div>
                 <div className="article-content">
-                  <span className="article-date">{article.date}</span>
+                  <span className="article-date">{article.display_date || article.date}{article.read_time ? ` · ${article.read_time}` : ''}</span>
                   <h3>{article.title}</h3>
                   <p>{article.excerpt}</p>
                   <div className="read-more">

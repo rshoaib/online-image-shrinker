@@ -1,7 +1,7 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import SeoWrapper from './SeoWrapper';
 import { supabase } from '../lib/supabase';
@@ -53,8 +53,8 @@ const BlogPost = () => {
       description={article.excerpt}
       schemaType="Article"
       date={article.date}
-      author={article.author}
-      coverImage={article.coverImage}
+      author={'Image Shrinker Team'}
+      coverImage={article.image}
     >
       <div className="article-container">
         <Link to="/blog" className="back-link">
@@ -66,14 +66,14 @@ const BlogPost = () => {
             <span className="category-badge">{article.category}</span>
             <h1>{article.title}</h1>
             <div className="post-meta">
-              <span className="meta-item"><Calendar size={14} /> {article.date}</span>
-              <span className="meta-item"><User size={14} /> {article.author}</span>
+              <span className="meta-item"><Calendar size={14} /> {article.display_date || article.date}</span>
+              {article.read_time && <span className="meta-item"><Clock size={14} /> {article.read_time}</span>}
             </div>
           </header>
 
-          {article.coverImage && (
+          {article.image && (
             <div className="post-cover-image">
-              <img src={article.coverImage} alt={article.title} loading="lazy" />
+              <img src={article.image} alt={article.title} loading="lazy" />
             </div>
           )}
 
