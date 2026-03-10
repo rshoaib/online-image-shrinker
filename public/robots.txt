@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 Disallow: /*?q=
 Sitemap: https://onlineimageshrinker.com/sitemap.xml
-Llms-txt: https://onlineimageshrinker.com/llms.txt
