@@ -50,7 +50,14 @@ const BlogList = () => {
             <div className="empty-state">No guides found.</div>
           ) : (
             [...articles]
-              .sort((a, b) => new Date(b.date) - new Date(a.date))
+              .sort((a, b) => {
+                const getTime = (d) => {
+                  if (!d) return 0;
+                  const time = new Date(d).getTime();
+                  return isNaN(time) ? 0 : time;
+                };
+                return getTime(b.date) - getTime(a.date);
+              })
               .map((article) => (
               <Link to={`/blog/${article.slug}`} key={article.slug} className="article-card">
                 <div className="article-icon">
