@@ -1,11 +1,18 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createClient } from '@supabase/supabase-js';
+import { loadEnv } from 'vite';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const articlesPath = path.join(__dirname, '../src/data/articles.js');
+const env = loadEnv('production', process.cwd());
+
+const supabaseUrl = env.VITE_SUPABASE_URL;
+const supabaseKey = env.VITE_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl || '', supabaseKey || '');
+
 const seoTemplatesPath = path.join(__dirname, '../src/data/seoTemplates.js');
 const sitemapPath = path.join(__dirname, '../public/sitemap.xml');
 const BASE_URL = 'https://onlineimageshrinker.com';
@@ -69,14 +76,13 @@ const STATIC_URLS = [
   '/terms',
 ];
 
-function getArticles() {
-  const content = fs.readFileSync(articlesPath, 'utf8');
-  const matches = content.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
-  const slugs = [];
-  for (const match of matches) {
-    slugs.push(match[1]);
+async function getArticles() {
+  const { data, error } = await supabase.from('blog_posts').select('slug');
+  if (error) {
+    console.error('Error fetching articles from Supabase for sitemap:', error);
+    return [];
   }
-  return slugs;
+  return data.map(a => a.slug);
 }
 
 function getProgrammaticPages() {
@@ -121,8 +127,8 @@ function getProgrammaticPages() {
   return [...pdfPages, ...resizePages, ...convPages, ...videoGifPages, ...videoAudioPages, ...socialPages, ...printPages, ...passportPages, ...imgCompressPages];
 }
 
-function generateSitemap() {
-  const slugs = getArticles();
+async function generateSitemap() {
+  const slugs = await getArticles();
   const date = new Date().toISOString().split('T')[0];
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -169,4 +175,4 @@ function generateSitemap() {
   console.log(`✅ Sitemap generated with ${STATIC_URLS.length + slugs.length + programmaticPages.length} URLs`);
 }
 
-generateSitemap();
+generateSitemap().catch(console.error);

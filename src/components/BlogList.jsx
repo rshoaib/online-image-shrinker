@@ -2,16 +2,38 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpCircle, Instagram, FileImage, Zap, Eraser, Mail, QrCode, Search, ScanLine, Wand2, Film, Sparkles, Video, Music, MessageCircle, RotateCw, Grid, Layers, Crop } from 'lucide-react';
 import SeoWrapper from './SeoWrapper';
 
-import { articles } from '../data/articles';
-
-const iconMap = {
+import { useState, useEffect } from 'react';
+import { supabase } from '../lib/supabase';const iconMap = {
   Zap, Eraser, Instagram, FileImage, Mail, QrCode, Search, ScanLine, Wand2, Film, Sparkles, Video, Music, MessageCircle, RotateCw, Grid, Layers, ArrowUpCircle, Crop
 };
 
 const BlogList = () => {
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      setLoading(true);
+      try {
+        const { data, error } = await supabase
+          .from('blog_posts')
+          .select('*')
+          .order('date', { ascending: false });
+        
+        if (error) throw error;
+        setArticles(data || []);
+      } catch (err) {
+        console.error('Error fetching articles:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, []);
 
   return (
-    <SeoWrapper 
+    <SeoWrapper  
       title="Image Optimization Guides - Online Image Shrinker"
       description="Tips, tutorials, and guides on how to optimize, resize, and compress your images for the web and social media."
     >
@@ -22,24 +44,32 @@ const BlogList = () => {
         </div>
 
         <div className="articles-grid">
-          {articles.map((article) => (
-            <Link to={`/blog/${article.slug}`} key={article.slug} className="article-card">
-              <div className="article-icon">
-                {(() => {
-                  const IconComponent = iconMap[article.iconName] || FileImage;
-                  return <IconComponent size={32} color={article.iconColor} />;
-                })()}
-              </div>
-              <div className="article-content">
-                <span className="article-date">{article.date}</span>
-                <h3>{article.title}</h3>
-                <p>{article.excerpt}</p>
-                <div className="read-more">
-                  Read Guide <ArrowRight size={16} />
+          {loading ? (
+            <div className="loading-state">Loading guides...</div>
+          ) : articles.length === 0 ? (
+            <div className="empty-state">No guides found.</div>
+          ) : (
+            [...articles]
+              .sort((a, b) => new Date(b.date) - new Date(a.date))
+              .map((article) => (
+              <Link to={`/blog/${article.slug}`} key={article.slug} className="article-card">
+                <div className="article-icon">
+                  {(() => {
+                    const IconComponent = iconMap[article.iconName] || FileImage;
+                    return <IconComponent size={32} color={article.iconColor} />;
+                  })()}
                 </div>
-              </div>
-            </Link>
-          ))}
+                <div className="article-content">
+                  <span className="article-date">{article.date}</span>
+                  <h3>{article.title}</h3>
+                  <p>{article.excerpt}</p>
+                  <div className="read-more">
+                    Read Guide <ArrowRight size={16} />
+                  </div>
+                </div>
+              </Link>
+            ))
+          )}
         </div>
 
         <style>{`
@@ -70,6 +100,14 @@ const BlogList = () => {
           .articles-grid {
             display: grid;
             gap: 24px;
+          }
+
+          .loading-state, .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            grid-column: 1 / -1;
           }
 
           .article-card {

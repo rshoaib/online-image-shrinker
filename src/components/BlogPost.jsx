@@ -2,12 +2,46 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import SeoWrapper from './SeoWrapper';
-import { articles } from '../data/articles';
-
+import { supabase } from '../lib/supabase';
 const BlogPost = () => {
   const { slug } = useParams();
-  const article = articles.find(a => a.slug === slug);
+  const [article, setArticle] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchArticle = async () => {
+      setLoading(true);
+      try {
+        const { data, error } = await supabase
+          .from('blog_posts')
+          .select('*')
+          .eq('slug', slug)
+          .single();
+        
+        if (error) throw error;
+        setArticle(data);
+      } catch (err) {
+        console.error('Error fetching article:', err);
+        setArticle(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (slug) fetchArticle();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <SeoWrapper title="Loading... - Online Image Shrinker">
+        <div className="article-container" style={{ textAlign: 'center', padding: '100px 20px', color: 'var(--text-muted)' }}>
+          Loading guide...
+        </div>
+      </SeoWrapper>
+    );
+  }
 
   if (!article) {
     return <Navigate to="/blog" replace />;
