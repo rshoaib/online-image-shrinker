@@ -32,7 +32,7 @@ const About = lazy(() => import('./components/About'));
 const NotFound = lazy(() => import('./components/NotFound'));
 import { 
   pdfSizePages, imageResizePages, conversionPages, videoToAudioPages, videoToGifPages,
-  socialMediaPages, printReadyPages, passportPages, imageCompressSizePages 
+  socialMediaPages, printReadyPages, passportPages, imageCompressSizePages, ecommercePages 
 } from './data/seoTemplates';
 
 const PageLoader = () => (
@@ -498,6 +498,22 @@ const AppContent = () => {
                   toolId={page.toolId} 
                   title={`Free ${page.label} Maker - Biometric Standard`}
                   description={`Create valid ${page.label}s online. AI background removal and correct sizing. 100% Client-side privacy.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+
+          {/* eCommerce Pages */}
+          {ecommercePages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/${page.slug}-image-requirements-checker`} 
+              element={
+                <SeoLandingPage 
+                  toolId={page.toolId} 
+                  title={`${page.label} Requirements Checker & Creator (Free)`}
+                  description={`Crop and resize your product photos to meet exact ${page.label} requirements (${page.width}x${page.height}). Ready for upload instantly.`}
                   files={files} setFiles={setFiles} onBack={handleBack}
                 />
               } 

@@ -124,7 +124,10 @@ function getProgrammaticPages() {
   // Image compress by file size pages: compress-image-to-{slug}
   const imgCompressPages = extractSlugs('imageCompressSizePages').map(s => `compress-image-to-${s}`);
 
-  return [...pdfPages, ...resizePages, ...convPages, ...videoGifPages, ...videoAudioPages, ...socialPages, ...printPages, ...passportPages, ...imgCompressPages];
+  // eCommerce Pages: {slug}-image-requirements-checker
+  const ecomPages = extractSlugs('ecommercePages').map(s => `${s}-image-requirements-checker`);
+
+  return [...pdfPages, ...resizePages, ...convPages, ...videoGifPages, ...videoAudioPages, ...socialPages, ...printPages, ...passportPages, ...imgCompressPages, ...ecomPages];
 }
 
 async function generateSitemap() {

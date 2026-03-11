@@ -91,21 +91,29 @@ export const printReadyPages = [
 ];
 
 export const passportPages = [
-  { slug: 'us-passport', width: 600, height: 600, label: 'US Passport Photo (2x2")', toolId: 'passport' },
-  { slug: 'uk-passport', width: 826, height: 1062, label: 'UK Passport Photo (35x45mm)', toolId: 'passport' },
-  { slug: 'eu-passport', width: 826, height: 1062, label: 'EU Passport Photo (35x45mm)', toolId: 'passport' },
-  { slug: 'india-passport', width: 600, height: 600, label: 'Indian Passport Photo (2x2")', toolId: 'passport' },
-  { slug: 'canada-passport', width: 600, height: 780, label: 'Canadian Passport Photo (50x70mm)', toolId: 'passport' },
-  { slug: 'australia-passport', width: 826, height: 1062, label: 'Australian Passport Photo (35x45mm)', toolId: 'passport' },
-  { slug: 'china-passport', width: 780, height: 1024, label: 'Chinese Passport Photo (33x48mm)', toolId: 'passport' },
-  { slug: 'japan-passport', width: 826, height: 1062, label: 'Japanese Passport Photo (35x45mm)', toolId: 'passport' },
+  { slug: 'us', width: 600, height: 600, label: 'US Passport Photo (2x2")', toolId: 'passport' },
+  { slug: 'uk', width: 826, height: 1062, label: 'UK Passport Photo (35x45mm)', toolId: 'passport' },
+  { slug: 'eu', width: 826, height: 1062, label: 'EU Passport Photo (35x45mm)', toolId: 'passport' },
+  { slug: 'india', width: 600, height: 600, label: 'Indian Passport Photo (2x2")', toolId: 'passport' },
+  { slug: 'canada', width: 600, height: 780, label: 'Canadian Passport Photo (50x70mm)', toolId: 'passport' },
+  { slug: 'australia', width: 826, height: 1062, label: 'Australian Passport Photo (35x45mm)', toolId: 'passport' },
+  { slug: 'china', width: 780, height: 1024, label: 'Chinese Passport Photo (33x48mm)', toolId: 'passport' },
+  { slug: 'japan', width: 826, height: 1062, label: 'Japanese Passport Photo (35x45mm)', toolId: 'passport' },
   { slug: 'schengen-visa', width: 826, height: 1062, label: 'Schengen Visa Photo (35x45mm)', toolId: 'passport' },
-  { slug: 'saudi-arabia-passport', width: 600, height: 600, label: 'Saudi Arabia Passport Photo (2x2")', toolId: 'passport' },
-  { slug: 'brazil-passport', width: 600, height: 780, label: 'Brazil Passport Photo (5x7cm)', toolId: 'passport' },
-  { slug: 'mexico-passport', width: 826, height: 1062, label: 'Mexico Passport Photo (35x45mm)', toolId: 'passport' },
-  { slug: 'nigeria-passport', width: 826, height: 1062, label: 'Nigeria Passport Photo (35x45mm)', toolId: 'passport' },
-  { slug: 'south-africa-passport', width: 826, height: 1062, label: 'South Africa Passport (35x45mm)', toolId: 'passport' },
-  { slug: 'uae-passport', width: 472, height: 708, label: 'UAE Passport Photo (4x6cm)', toolId: 'passport' },
+  { slug: 'saudi-arabia', width: 600, height: 600, label: 'Saudi Arabia Passport Photo (2x2")', toolId: 'passport' },
+  { slug: 'brazil', width: 600, height: 780, label: 'Brazil Passport Photo (5x7cm)', toolId: 'passport' },
+  { slug: 'mexico', width: 826, height: 1062, label: 'Mexico Passport Photo (35x45mm)', toolId: 'passport' },
+  { slug: 'nigeria', width: 826, height: 1062, label: 'Nigeria Passport Photo (35x45mm)', toolId: 'passport' },
+  { slug: 'south-africa', width: 826, height: 1062, label: 'South Africa Passport (35x45mm)', toolId: 'passport' },
+  { slug: 'uae', width: 472, height: 708, label: 'UAE Passport Photo (4x6cm)', toolId: 'passport' },
+];
+
+export const ecommercePages = [
+  { slug: 'amazon', width: 2000, height: 2000, label: 'Amazon Product Image', toolId: 'crop' },
+  { slug: 'shopify', width: 2048, height: 2048, label: 'Shopify Product Image', toolId: 'crop' },
+  { slug: 'etsy', width: 2000, height: 2000, label: 'Etsy Listing Photo', toolId: 'crop' },
+  { slug: 'ebay', width: 1600, height: 1600, label: 'eBay Listing Photo', toolId: 'crop' },
+  { slug: 'woocommerce', width: 800, height: 800, label: 'WooCommerce Product', toolId: 'crop' }
 ];
 
 // ─── Image Compress by File Size pages ────────────────────────────────
