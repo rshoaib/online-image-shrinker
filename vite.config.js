@@ -10,8 +10,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
 
       workbox: {
-        maximumFileSizeToCacheInBytes: 30000000,
-        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+        maximumFileSizeToCacheInBytes: 5000000,
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
+        globIgnores: ['**/vendor-ai-*.js'] /* Exclude massive ML models from precaching */
       },
       manifest: {
         name: 'Online Image Shrinker',

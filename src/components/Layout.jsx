@@ -6,7 +6,7 @@ import logoUrl from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/useTheme';
 import { usePWA } from '../hooks/usePWA';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const Layout = ({ children, onNavigate }) => {
   const { t, i18n } = useTranslation();
@@ -55,10 +55,10 @@ const Layout = ({ children, onNavigate }) => {
                <option value="it">Italiano</option>
              </select>
           </div>
-          {!isHome && <a href="/" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} className="nav-link">{t('common.back')}</a>}
-          <a href="/blog" onClick={(e) => { e.preventDefault(); handleNavClick('blog'); }} className="nav-link">{t('common.blog')}</a>
-          <a href="/about" onClick={(e) => { e.preventDefault(); handleNavClick('about'); }} className="nav-link">About</a>
-          <a href="/contact" onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }} className="nav-link">Contact</a>
+          {!isHome && <Link to="/" onClick={() => handleNavClick('home')} className="nav-link">{t('common.back')}</Link>}
+          <Link to="/blog" onClick={() => handleNavClick('blog')} className="nav-link">{t('common.blog')}</Link>
+          <Link to="/about" onClick={() => handleNavClick('about')} className="nav-link">About</Link>
+          <Link to="/contact" onClick={() => handleNavClick('contact')} className="nav-link">Contact</Link>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -99,10 +99,10 @@ const Layout = ({ children, onNavigate }) => {
                  <option value="it">Italiano</option>
                </select>
             </div>
-            {!isHome && <a href="/" onClick={(e) => { e.preventDefault(); handleNavClick('home'); }} className="mobile-nav-link">{t('common.back')}</a>}
-            <a href="/blog" onClick={(e) => { e.preventDefault(); handleNavClick('blog'); }} className="mobile-nav-link">{t('common.blog')}</a>
-            <a href="/about" onClick={(e) => { e.preventDefault(); handleNavClick('about'); }} className="mobile-nav-link">About</a>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }} className="mobile-nav-link">Contact</a>
+            {!isHome && <Link to="/" onClick={() => handleNavClick('home')} className="mobile-nav-link">{t('common.back')}</Link>}
+            <Link to="/blog" onClick={() => handleNavClick('blog')} className="mobile-nav-link">{t('common.blog')}</Link>
+            <Link to="/about" onClick={() => handleNavClick('about')} className="mobile-nav-link">About</Link>
+            <Link to="/contact" onClick={() => handleNavClick('contact')} className="mobile-nav-link">Contact</Link>
           </div>
         </nav>
       )}
@@ -129,16 +129,16 @@ const Layout = ({ children, onNavigate }) => {
            >
              <Coffee size={16} /> <span>Donate</span>
            </a>
-            <a href="/privacy" onClick={(e) => { e.preventDefault(); handleNavClick('privacy'); }} className="footer-link">{t('common.privacy_policy')}</a>
-            <a href="/terms" onClick={(e) => { e.preventDefault(); handleNavClick('terms'); }} className="footer-link">Terms</a>
-            <a href="/contact" onClick={(e) => { e.preventDefault(); handleNavClick('contact'); }} className="footer-link">Contact</a>
-            <a href="/about" onClick={(e) => { e.preventDefault(); handleNavClick('about'); }} className="footer-link">About Us</a>
+            <Link to="/privacy" onClick={() => handleNavClick('privacy')} className="footer-link">{t('common.privacy_policy')}</Link>
+            <Link to="/terms" onClick={() => handleNavClick('terms')} className="footer-link">Terms</Link>
+            <Link to="/contact" onClick={() => handleNavClick('contact')} className="footer-link">Contact</Link>
+            <Link to="/about" onClick={() => handleNavClick('about')} className="footer-link">About Us</Link>
             {isInstallable && (
               <button onClick={install} className="footer-link install-btn-footer">
                 Install App
               </button>
             )}
-            <a href="/blog" onClick={(e) => { e.preventDefault(); handleNavClick('blog'); }} className="footer-link">{t('common.blog')}</a>
+            <Link to="/blog" onClick={() => handleNavClick('blog')} className="footer-link">{t('common.blog')}</Link>
            <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="View source code on GitHub"><Github size={16} aria-hidden="true" /></a>
         </div>
         <div className="footer-crosslinks">
@@ -155,16 +155,16 @@ const Layout = ({ children, onNavigate }) => {
 
       <div className="quick-links">
         <span>Popular Tools:</span>
-        <a href="/resize-passport-photo" onClick={(e) => { e.preventDefault(); handleNavClick('resize-passport-photo'); }}>Passport Photo</a>
-        <a href="/resize-for-youtube" onClick={(e) => { e.preventDefault(); handleNavClick('resize-for-youtube'); }}>YouTube Thumbnail</a>
-        <a href="/jpg-to-pdf" onClick={(e) => { e.preventDefault(); handleNavClick('jpg-to-pdf'); }}>Image to PDF</a>
-        <a href="/compress-png" onClick={(e) => { e.preventDefault(); handleNavClick('compress-png'); }}>Compress PNG</a>
-        <a href="/resize-for-instagram" onClick={(e) => { e.preventDefault(); handleNavClick('resize-for-instagram'); }}>Instagram Resizer</a>
-        <a href="/photo-filters-online" onClick={(e) => { e.preventDefault(); handleNavClick('photo-filters-online'); }}>Photo Filters</a>
-        <a href="/qr-code-generator" onClick={(e) => { e.preventDefault(); handleNavClick('qr-code-generator'); }}>QR Code Generator</a>
-        <a href="/remove-background" onClick={(e) => { e.preventDefault(); handleNavClick('remove-background'); }}>Remove Background</a>
-        <a href="/collage-maker" onClick={(e) => { e.preventDefault(); handleNavClick('collage-maker'); }}>Collage Maker</a>
-        <a href="/meme-generator-online" onClick={(e) => { e.preventDefault(); handleNavClick('meme-generator-online'); }}>Meme Generator</a>
+        <Link to="/resize-passport-photo" onClick={() => handleNavClick('resize-passport-photo')}>Passport Photo</Link>
+        <Link to="/resize-for-youtube" onClick={() => handleNavClick('resize-for-youtube')}>YouTube Thumbnail</Link>
+        <Link to="/jpg-to-pdf" onClick={() => handleNavClick('jpg-to-pdf')}>Image to PDF</Link>
+        <Link to="/compress-png" onClick={() => handleNavClick('compress-png')}>Compress PNG</Link>
+        <Link to="/resize-for-instagram" onClick={() => handleNavClick('resize-for-instagram')}>Instagram Resizer</Link>
+        <Link to="/photo-filters-online" onClick={() => handleNavClick('photo-filters-online')}>Photo Filters</Link>
+        <Link to="/qr-code-generator" onClick={() => handleNavClick('qr-code-generator')}>QR Code Generator</Link>
+        <Link to="/remove-background" onClick={() => handleNavClick('remove-background')}>Remove Background</Link>
+        <Link to="/collage-maker" onClick={() => handleNavClick('collage-maker')}>Collage Maker</Link>
+        <Link to="/meme-generator-online" onClick={() => handleNavClick('meme-generator-online')}>Meme Generator</Link>
       </div>
 
       <div className="quick-links" style={{ borderTop: 'none', paddingTop: '0' }}>
