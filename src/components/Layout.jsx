@@ -55,7 +55,7 @@ const Layout = ({ children, onNavigate }) => {
                <option value="it">Italiano</option>
              </select>
           </div>
-          {!isHome && <Link to="/" onClick={() => handleNavClick('home')} className="nav-link">{t('common.back')}</Link>}
+          {!isHome && <Link to="/" onClick={() => handleNavClick('home')} className="nav-link">Home</Link>}
           <Link to="/blog" onClick={() => handleNavClick('blog')} className="nav-link">{t('common.blog')}</Link>
           <Link to="/about" onClick={() => handleNavClick('about')} className="nav-link">About</Link>
           <Link to="/contact" onClick={() => handleNavClick('contact')} className="nav-link">Contact</Link>

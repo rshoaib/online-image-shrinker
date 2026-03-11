@@ -3,6 +3,8 @@ import HowItWorks from './HowItWorks';
 import FAQSection from './FAQSection';
 
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { passportPages, ecommercePages } from '../data/seoTemplates';
 import { 
   Maximize2, Zap, Type, FileText, Eraser, Crop, Grid, EyeOff, 
   User, Monitor, Settings, Repeat, Palette, PenTool, ScanLine, 
@@ -13,6 +15,26 @@ import {
 const ToolSelector = ({ onSelectTool }) => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
+
+  const programmaticTools = [
+    ...passportPages.map(p => ({
+      id: `prog-pass-${p.slug}`,
+      title: p.label,
+      desc: `Make a ${p.label}`,
+      icon: <User size={32} />,
+      isProgrammatic: true,
+      route: `/passport-photo-${p.slug}`
+    })),
+    ...ecommercePages.map(p => ({
+      id: `prog-eco-${p.slug}`,
+      title: p.label,
+      desc: `Format image for ${p.label}`,
+      icon: <Crop size={32} />,
+      isProgrammatic: true,
+      route: `/${p.slug}-image-requirements-checker`
+    }))
+  ];
 
   const tools = [
     { id: 'compress', i18nKey: 'compress', icon: <Minimize2 size={32} /> },
@@ -48,9 +70,9 @@ const ToolSelector = ({ onSelectTool }) => {
 
   // Filter tools by search query
   const filteredTools = searchQuery.trim()
-    ? tools.filter(tool => {
-        const title = t(`home.tools.${tool.i18nKey}.title`).toLowerCase();
-        const desc = t(`home.tools.${tool.i18nKey}.desc`).toLowerCase();
+    ? [...tools, ...programmaticTools].filter(tool => {
+        const title = tool.isProgrammatic ? tool.title.toLowerCase() : t(`home.tools.${tool.i18nKey}.title`).toLowerCase();
+        const desc = tool.isProgrammatic ? tool.desc.toLowerCase() : t(`home.tools.${tool.i18nKey}.desc`).toLowerCase();
         const q = searchQuery.toLowerCase();
         return title.includes(q) || desc.includes(q) || tool.id.includes(q);
       })
@@ -97,11 +119,11 @@ const ToolSelector = ({ onSelectTool }) => {
           <div 
             key={tool.id} 
             className="tool-card" 
-            onClick={() => onSelectTool(tool.id)}
+            onClick={() => tool.route ? navigate(tool.route) : onSelectTool(tool.id)}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                onSelectTool(tool.id);
+                tool.route ? navigate(tool.route) : onSelectTool(tool.id);
               }
             }}
             role="button"
@@ -113,10 +135,10 @@ const ToolSelector = ({ onSelectTool }) => {
             </div>
             <div className="card-content">
               <h3>
-                {t(`home.tools.${tool.i18nKey}.title`)}
+                {tool.isProgrammatic ? tool.title : t(`home.tools.${tool.i18nKey}.title`)}
                 {tool.badge && <span className="badge">{tool.badge}</span>}
               </h3>
-              <p>{t(`home.tools.${tool.i18nKey}.desc`)}</p>
+              <p>{tool.isProgrammatic ? tool.desc : t(`home.tools.${tool.i18nKey}.desc`)}</p>
             </div>
           </div>
         ))}

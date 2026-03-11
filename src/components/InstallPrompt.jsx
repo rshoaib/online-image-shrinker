@@ -7,10 +7,15 @@ const InstallPrompt = () => {
   const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
-    if (isInstallable) {
+    if (isInstallable && !localStorage.getItem('pwa_prompt_dismissed')) {
       setTimeout(() => setShowToast(true), 0);
     }
   }, [isInstallable]);
+
+  const handleDismiss = () => {
+    localStorage.setItem('pwa_prompt_dismissed', 'true');
+    setShowToast(false);
+  };
 
   if (!showToast || !isInstallable) return null;
 
@@ -27,14 +32,15 @@ const InstallPrompt = () => {
       </div>
       <div className="install-actions">
         <button onClick={install} className="install-btn">Install</button>
-        <button onClick={() => setShowToast(false)} className="close-btn"><X size={16} /></button>
+        <button onClick={handleDismiss} className="close-btn"><X size={16} /></button>
       </div>
       <style>{`
         .install-prompt-toast {
           position: fixed;
-          bottom: 20px;
-          left: 50%;
-          transform: translateX(-50%);
+          bottom: 24px;
+          right: 24px;
+          left: auto;
+          transform: none;
           background: var(--bg-panel);
           border: 1px solid var(--border-light);
           padding: 12px 20px;
@@ -109,14 +115,17 @@ const InstallPrompt = () => {
         }
 
         @keyframes slideUp {
-          from { transform: translate(-50%, 100%); opacity: 0; }
-          to { transform: translate(-50%, 0); opacity: 1; }
+          from { transform: translateY(100%); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
         }
 
         @media (max-width: 600px) {
           .install-prompt-toast {
-             width: 90%;
+             width: calc(100% - 32px);
              bottom: 16px;
+             right: 16px;
+             left: 16px;
+             min-width: 0;
           }
         }
       `}</style>
