@@ -1,9 +1,10 @@
 import React, { lazy } from 'react';
-import CropEditor from './CropEditor';
-import WatermarkEditor from './WatermarkEditor';
-import PdfEditor from './PdfEditor';
-import BackgroundRemovalEditor from './BackgroundRemovalEditor';
-import UpscaleEditor from './UpscaleEditor';
+
+const CropEditor = lazy(() => import('./CropEditor'));
+const WatermarkEditor = lazy(() => import('./WatermarkEditor'));
+const PdfEditor = lazy(() => import('./PdfEditor'));
+const BackgroundRemovalEditor = lazy(() => import('./BackgroundRemovalEditor'));
+const UpscaleEditor = lazy(() => import('./UpscaleEditor'));
 // ImageEditor and BatchEditor are lazy loaded in App.jsx, but we might want to move that here 
 // or keep them passed as props if we want to maintain the suspense boundary at the top level.
 // However, to make this truly self-contained, let's import them here. 

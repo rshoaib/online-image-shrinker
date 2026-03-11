@@ -60,7 +60,7 @@ const ToolSelector = ({ onSelectTool }) => {
     <div className="selector-container">
       {/* ... existing header ... */}
       <div className="selector-header">
-        <h2>{t('home.title')}</h2>
+        <h1>{t('home.title')}</h1>
         <p>{t('home.subtitle')}</p>
       </div>
 
@@ -170,7 +170,7 @@ const ToolSelector = ({ onSelectTool }) => {
           position: relative;
         }
 
-        .selector-header h2 {
+        .selector-header h1 {
           font-size: 3rem;
           margin-bottom: 16px;
           background: linear-gradient(300deg, var(--text-main), var(--text-muted), var(--primary));
@@ -376,7 +376,7 @@ const ToolSelector = ({ onSelectTool }) => {
         }
 
         @media (max-width: 600px) {
-          .selector-header h2 {
+          .selector-header h1 {
             font-size: 2rem;
           }
           .selector-header {

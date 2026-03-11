@@ -7,6 +7,7 @@ import FAQSection from './components/FAQSection';
 import RelatedTools from './components/RelatedTools';
 import HowItWorks from './components/HowItWorks';
 import SeoWrapper from './components/SeoWrapper';
+import './styles/hero.css';
 
 // Lazy-load everything not needed on the homepage
 const DropZone = lazy(() => import('./components/DropZone'));
@@ -697,53 +698,10 @@ const ToolPage = ({ files, setFiles, onBack }) => {
           onBack={onBack} 
         />
       )}
-      <div style={{ marginTop: '20px', width: '100%', display: 'flex', justifyContent: 'center' }}>
-        <AdSlot format="banner" className="tool-banner-ad" />
-      </div>
-      <style>{`
-        .back-link {
-          background: none;
-          border: none;
-          color: var(--primary);
-          cursor: pointer;
-          font-size: 0.9rem;
-          margin-bottom: 20px;
-          opacity: 0.8;
-          transition: 0.2s;
-        }
-        .back-link:hover {
-          opacity: 1;
-          text-decoration: underline;
-        }
-        .hero-section {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          flex: 1;
-          gap: 40px;
-          padding: 40px 0;
-          animation: fadeIn 0.5s ease-out;
-        }
-        .hero-text { text-align: center; }
-        .hero-text h2 {
-           font-size: 2.5rem;
-           margin-bottom: 16px;
-           background: linear-gradient(to right, var(--text-main), var(--text-muted));
-           -webkit-background-clip: text;
-           -webkit-text-fill-color: transparent;
-        }
-        .hero-text p { color: var(--text-muted); font-size: 1.1rem; }
-        @keyframes fadeIn {
-           from { opacity: 0; transform: translateY(20px); }
-           to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </SeoWrapper>
   );
 };
 
-// Reusable SEO Landing Page Component
 // Reusable SEO Landing Page Component
 const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack }) => {
   // If no specific title/desc passed, SeoWrapper will fallback to home page defaults.
@@ -781,46 +739,6 @@ const SeoLandingPage = ({ toolId, title, description, files, setFiles, onBack })
               <RelatedTools currentTool={toolId} />
           </div>
 
-          {/* Reuse styles */}
-          <style>{`
-            .back-link {
-              background: none;
-              border: none;
-              color: var(--primary);
-              cursor: pointer;
-              font-size: 0.9rem;
-              margin-bottom: 20px;
-              opacity: 0.8;
-              transition: 0.2s;
-            }
-            .back-link:hover {
-              opacity: 1;
-              text-decoration: underline;
-            }
-            .hero-section {
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              flex: 1;
-              gap: 40px;
-              padding: 40px 0;
-              animation: fadeIn 0.5s ease-out;
-            }
-            .hero-text { text-align: center; }
-            .hero-text h1 {
-              font-size: 2.5rem;
-              margin-bottom: 16px;
-              background: linear-gradient(to right, var(--text-main), var(--text-muted));
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-            }
-            .hero-text p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.6; }
-            @keyframes fadeIn {
-               from { opacity: 0; transform: translateY(20px); }
-               to { opacity: 1; transform: translateY(0); }
-            }
-          `}</style>
        </div>
     </SeoWrapper>
   );
