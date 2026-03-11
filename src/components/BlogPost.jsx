@@ -49,8 +49,8 @@ const BlogPost = () => {
 
   return (
     <SeoWrapper 
-      title={`${article.title} - Online Image Shrinker`}
-      description={article.excerpt}
+      title={article.meta_title || `${article.title} - Online Image Shrinker`}
+      description={article.meta_description || article.excerpt}
       schemaType="Article"
       date={article.date}
       author={'Image Shrinker Team'}
