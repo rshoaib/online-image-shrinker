@@ -80,6 +80,9 @@ export const socialMediaPages = [
   { slug: 'twitter-post', width: 1200, height: 675, label: 'Twitter/X Post', toolId: 'crop' },
   { slug: 'discord-server-icon', width: 512, height: 512, label: 'Discord Server Icon', toolId: 'crop' },
   { slug: 'whatsapp-dp', width: 500, height: 500, label: 'WhatsApp Profile Picture', toolId: 'crop' },
+  { slug: 'threads-post', width: 1080, height: 1350, label: 'Threads Post Image', toolId: 'crop' },
+  { slug: 'threads-profile', width: 320, height: 320, label: 'Threads Profile Picture', toolId: 'crop' },
+  { slug: 'youtube-shorts-cover', width: 1080, height: 1920, label: 'YouTube Shorts Cover', toolId: 'crop' },
 ];
 
 export const printReadyPages = [
@@ -113,7 +116,17 @@ export const ecommercePages = [
   { slug: 'shopify', width: 2048, height: 2048, label: 'Shopify Product Image', toolId: 'crop' },
   { slug: 'etsy', width: 2000, height: 2000, label: 'Etsy Listing Photo', toolId: 'crop' },
   { slug: 'ebay', width: 1600, height: 1600, label: 'eBay Listing Photo', toolId: 'crop' },
-  { slug: 'woocommerce', width: 800, height: 800, label: 'WooCommerce Product', toolId: 'crop' }
+  { slug: 'woocommerce', width: 800, height: 800, label: 'WooCommerce Product', toolId: 'crop' },
+  { slug: 'vinted', width: 1080, height: 1080, label: 'Vinted Listing Photo', toolId: 'crop' },
+  { slug: 'depop', width: 1080, height: 1080, label: 'Depop Item Photo', toolId: 'crop' },
+  { slug: 'poshmark', width: 1080, height: 1080, label: 'Poshmark Listing Image', toolId: 'crop' }
+];
+
+export const imageOrientationPages = [
+  { slug: 'rotate-image-90-degrees', label: 'Rotate Image 90 Degrees', desc: 'Quickly rotate any photo 90 degrees left or right.', toolId: 'rotate-flip' },
+  { slug: 'rotate-image-180-degrees', label: 'Rotate Image 180 Degrees', desc: 'Turn upside down photos right-side up instantly.', toolId: 'rotate-flip' },
+  { slug: 'flip-photo-horizontally', label: 'Flip Photo Horizontally', desc: 'Create a mirror image of your photo instantly.', toolId: 'rotate-flip' },
+  { slug: 'flip-image-vertically', label: 'Flip Image Vertically', desc: 'Flip your image along the vertical axis directly in browser.', toolId: 'rotate-flip' }
 ];
 
 // ─── Image Compress by File Size pages ────────────────────────────────

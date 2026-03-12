@@ -32,7 +32,7 @@ const About = lazy(() => import('./components/About'));
 const NotFound = lazy(() => import('./components/NotFound'));
 import { 
   pdfSizePages, imageResizePages, conversionPages, videoToAudioPages, videoToGifPages,
-  socialMediaPages, printReadyPages, passportPages, imageCompressSizePages, ecommercePages 
+  socialMediaPages, printReadyPages, passportPages, imageCompressSizePages, ecommercePages, imageOrientationPages 
 } from './data/seoTemplates';
 
 const PageLoader = () => (
@@ -514,6 +514,22 @@ const AppContent = () => {
                   toolId={page.toolId} 
                   title={`${page.label} Requirements Checker & Creator (Free)`}
                   description={`Crop and resize your product photos to meet exact ${page.label} requirements (${page.width}x${page.height}). Ready for upload instantly.`}
+                  files={files} setFiles={setFiles} onBack={handleBack}
+                />
+              } 
+            />
+          ))}
+
+          {/* Image Orientation Pages */}
+          {imageOrientationPages.map(page => (
+            <Route 
+              key={page.slug}
+              path={`/${page.slug}`} 
+              element={
+                <SeoLandingPage 
+                  toolId={page.toolId} 
+                  title={`${page.label} - Free Online Tool`}
+                  description={`${page.desc} 100% free, private, and works locally in your browser.`}
                   files={files} setFiles={setFiles} onBack={handleBack}
                 />
               } 

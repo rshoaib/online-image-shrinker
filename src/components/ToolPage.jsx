@@ -48,7 +48,7 @@ const ToolPage = ({ files, setFiles, onBack }) => {
         <div className="hero-section">
             <div className="hero-text">
               <button onClick={onBack} className="back-link">← Back to Tools</button>
-              <h2>{info.title}</h2>
+              <h1>{info.title}</h1>
               <p>{info.desc}</p>
             </div>
             <DropZone onFileSelect={setFiles} />
