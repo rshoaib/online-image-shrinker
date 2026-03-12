@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import SeoWrapper from './SeoWrapper';
 import DropZone from './DropZone';
 import ToolLayout from './ToolLayout';
+import PrivacyIndicator from './PrivacyIndicator';
 import '../styles/hero.css';
 
 // Component to handle Tool Logic (replaces old activeTool switch)
@@ -53,12 +54,17 @@ const ToolPage = ({ files, setFiles, onBack }) => {
             <DropZone onFileSelect={setFiles} />
         </div>
       ) : (
-        <ToolLayout 
-          toolId={toolId} 
-          files={files} 
-          setFiles={setFiles} 
-          onBack={onBack} 
-        />
+        <div className="tool-workspace">
+          <div className="workspace-header">
+             <PrivacyIndicator />
+          </div>
+          <ToolLayout 
+            toolId={toolId} 
+            files={files} 
+            setFiles={setFiles} 
+            onBack={onBack} 
+          />
+        </div>
       )}
     </SeoWrapper>
   );

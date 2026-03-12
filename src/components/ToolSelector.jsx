@@ -37,13 +37,13 @@ const ToolSelector = ({ onSelectTool }) => {
   ];
 
   const tools = [
-    { id: 'compress', i18nKey: 'compress', icon: <Minimize2 size={32} /> },
-    { id: 'resize', i18nKey: 'resize', icon: <Maximize2 size={32} /> },
+    { id: 'compress', i18nKey: 'compress', icon: <Minimize2 size={32} />, featured: true },
+    { id: 'resize', i18nKey: 'resize', icon: <Maximize2 size={32} />, featured: true },
     { id: 'crop', i18nKey: 'crop', icon: <Crop size={32} /> },
-    { id: 'remove-bg', i18nKey: 'remove_bg', icon: <Eraser size={32} />, badge: 'AI' },
+    { id: 'remove-bg', i18nKey: 'remove_bg', icon: <Eraser size={32} />, badge: 'AI', featured: true },
     { id: 'upscale', i18nKey: 'upscale', icon: <Zap size={32} />, badge: 'AI' },
     { id: 'magic-eraser', i18nKey: 'magic_eraser', icon: <Wand2 size={32} />, badge: 'AI' },
-    { id: 'image-converter', i18nKey: 'converter', icon: <Repeat size={32} /> },
+    { id: 'image-converter', i18nKey: 'converter', icon: <Repeat size={32} />, featured: true },
     { id: 'pdf', i18nKey: 'pdf', icon: <FileText size={32} /> },
     { id: 'watermark', i18nKey: 'watermark', icon: <Type size={32} /> },
     { id: 'collage-maker', i18nKey: 'collage', icon: <LayoutTemplate size={32} /> },
@@ -82,6 +82,7 @@ const ToolSelector = ({ onSelectTool }) => {
     <div className="selector-container">
       {/* ... existing header ... */}
       <div className="selector-header">
+        <div className="hero-badge">✨ 100% Private & Free</div>
         <h1>{t('home.title')}</h1>
         <p>{t('home.subtitle')}</p>
       </div>
@@ -118,7 +119,7 @@ const ToolSelector = ({ onSelectTool }) => {
         {filteredTools.map((tool, index) => (
           <div 
             key={tool.id} 
-            className="tool-card" 
+            className={`tool-card ${tool.featured ? 'featured-card' : ''}`}
             onClick={() => tool.route ? navigate(tool.route) : onSelectTool(tool.id)}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -140,6 +141,11 @@ const ToolSelector = ({ onSelectTool }) => {
               </h3>
               <p>{tool.isProgrammatic ? tool.desc : t(`home.tools.${tool.i18nKey}.desc`)}</p>
             </div>
+            {tool.featured && (
+              <div className="card-action">
+                 Try it out <span>→</span>
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -190,6 +196,19 @@ const ToolSelector = ({ onSelectTool }) => {
           text-align: center;
           margin-bottom: 40px;
           position: relative;
+        }
+
+        .hero-badge {
+          display: inline-block;
+          background: rgba(0, 102, 255, 0.1);
+          color: var(--primary);
+          padding: 6px 16px;
+          border-radius: var(--radius-full);
+          font-size: 0.9rem;
+          font-weight: 600;
+          margin-bottom: 24px;
+          border: 1px solid var(--primary-glow);
+          backdrop-filter: blur(4px);
         }
 
         .selector-header h1 {
@@ -283,15 +302,17 @@ const ToolSelector = ({ onSelectTool }) => {
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           gap: 24px;
           width: 100%;
-          max-width: 900px;
+          max-width: 1000px; /* Wider for Bento */
           perspective: 1000px;
+          grid-auto-flow: dense;
         }
 
         .tool-card {
           background: var(--bg-panel);
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
           border: 1px solid var(--border-light);
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+          box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
           border-radius: var(--radius-lg);
           padding: 32px;
           display: flex;
@@ -303,20 +324,21 @@ const ToolSelector = ({ onSelectTool }) => {
           overflow: hidden;
           cursor: pointer;
           opacity: 0;
-          animation: fadeInUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+          animation: fadeInUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
         .tool-card:hover {
           transform: translateY(-8px) scale(1.02);
           border-color: var(--primary);
           background: var(--bg-surface);
-          box-shadow: 0 20px 40px -5px rgba(0, 102, 255, 0.15);
+          box-shadow: 0 20px 40px -5px var(--primary-glow);
         }
 
         .tool-card:hover .icon-wrapper {
           background: var(--primary);
           color: white;
-          transform: scale(1.1) rotate(-5deg);
+          transform: scale(1.1) rotate(-8deg);
+          box-shadow: 0 10px 20px -5px var(--primary-glow);
         }
 
         .icon-wrapper {
@@ -387,7 +409,7 @@ const ToolSelector = ({ onSelectTool }) => {
         }
 
         @keyframes fadeInUp {
-           from { opacity: 0; transform: translateY(30px); }
+           from { opacity: 0; transform: translateY(40px); }
            to { opacity: 1; transform: translateY(0); }
         }
 
@@ -395,6 +417,15 @@ const ToolSelector = ({ onSelectTool }) => {
            0% { background-position: 0% 50%; }
            50% { background-position: 100% 50%; }
            100% { background-position: 0% 50%; }
+        }
+
+        @media (min-width: 768px) {
+          .featured-card {
+             grid-column: span 2;
+          }
+          .featured-card .card-content p {
+             max-width: 80%;
+          }
         }
 
         @media (max-width: 600px) {

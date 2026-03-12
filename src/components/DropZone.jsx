@@ -121,8 +121,8 @@ const DropZone = ({ onFileSelect }) => {
         onChange={handleInputChange}
       />
       
-      <div className="dz-icon-wrapper">
-        <UploadCloud size={48} color={isDragging ? 'var(--primary)' : 'var(--text-muted)'} />
+      <div className={`dz-icon-wrapper ${!isDragging && !error ? 'idle-pulse' : ''}`}>
+        <UploadCloud size={56} color={isDragging ? 'var(--primary)' : 'var(--text-muted)'} />
       </div>
       
       <div className="text-content">
@@ -143,6 +143,10 @@ const DropZone = ({ onFileSelect }) => {
         <span className="pill">WEBP</span>
         <span className="pill">HEIC</span>
       </div>
+
+      {isDragging && (
+        <div className="dz-backdrop-blur"></div>
+      )}
 
       {/* Inline Toast Messages */}
       {error && (
@@ -178,7 +182,7 @@ const DropZone = ({ onFileSelect }) => {
         }
 
         .dropzone:hover {
-          border-color: var(--text-muted);
+          border-color: var(--primary);
           background-color: var(--bg-surface);
         }
 
@@ -186,7 +190,38 @@ const DropZone = ({ onFileSelect }) => {
           border-color: var(--primary);
           background-color: rgba(0, 102, 255, 0.05);
           transform: scale(1.02);
-          box-shadow: 0 0 30px var(--primary-glow);
+          box-shadow: 0 0 40px var(--primary-glow);
+          background-image: repeating-linear-gradient(
+            45deg,
+            var(--primary-glow) 25%,
+            transparent 25%,
+            transparent 50%,
+            var(--primary-glow) 50%,
+            var(--primary-glow) 75%,
+            transparent 75%,
+            transparent
+          );
+          background-size: 40px 40px;
+          animation: barberpole 2s linear infinite;
+        }
+
+        @keyframes barberpole {
+          100% {
+            background-position: 40px 0;
+          }
+        }
+
+        .dz-backdrop-blur {
+          position: absolute;
+          inset: 0;
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          z-index: 0;
+          pointer-events: none;
+        }
+        
+        .dz-icon-wrapper, .text-content, .supported-formats, .hidden-input {
+          z-index: 1;
         }
 
         .hidden-input {
@@ -197,14 +232,26 @@ const DropZone = ({ onFileSelect }) => {
           margin-bottom: var(--spacing-lg);
           padding: var(--spacing-lg);
           border-radius: 50%;
-          background: var(--bg-app);
+          background: var(--bg-panel);
           border: 1px solid var(--border-light);
-          transition: var(--transition-fast);
+          transition: all var(--transition-smooth);
+          box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+        }
+
+        .idle-pulse {
+          animation: gentlePulse 3s infinite ease-in-out;
+        }
+
+        @keyframes gentlePulse {
+          0% { box-shadow: 0 0 0 0 var(--primary-glow); border-color: var(--border-light); }
+          50% { box-shadow: 0 0 20px 5px var(--primary-glow); border-color: var(--primary-glow); }
+          100% { box-shadow: 0 0 0 0 var(--primary-glow); border-color: var(--border-light); }
         }
 
         .dropzone:hover .dz-icon-wrapper {
           border-color: var(--primary);
-          transform: translateY(-5px);
+          transform: translateY(-8px) scale(1.1);
+          color: var(--primary);
         }
 
         .text-content {

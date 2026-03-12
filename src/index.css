@@ -1,20 +1,18 @@
 :root {
-  /* Color Palette - Clean Light Theme */
-  --bg-app: #f4f6f8;
-  --bg-panel: #ffffff;
-  --bg-surface: #f0f2f5;
+  /* Color Palette - Premium Clean Light Theme */
+  --bg-app: #fafafa;
+  --bg-panel: rgba(255, 255, 255, 0.75);
+  --bg-surface: #f1f5f9;
 
   --primary: #0066ff;
-  /* Vivid Blue (Better contrast on white than Neon Cyan) */
   --primary-glow: rgba(0, 102, 255, 0.2);
   --secondary: #7000ff;
-  /* Neon Purple */
 
-  --text-main: #1a1a1a;
+  --text-main: #0f172a;
   --text-muted: #475569;
   --text-dim: #94a3b8;
 
-  --border-light: #e2e8f0;
+  --border-light: rgba(226, 232, 240, 0.8);
   --border-active: #cbd5e1;
 
   --success: #10b981;
@@ -29,7 +27,8 @@
   --spacing-xxl: 48px;
 
   /* Typography */
-  --font-sans: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   /* Radius */
   --radius-sm: 6px;
@@ -43,15 +42,15 @@
 }
 
 [data-theme='dark'] {
-  --bg-app: #0f172a;
-  --bg-panel: #1e293b;
-  --bg-surface: #334155;
-  --text-main: #f1f5f9;
+  --bg-app: #030712; /* Deeper, richer background */
+  --bg-panel: rgba(15, 23, 42, 0.75); /* Darker panel with opacity for glass */
+  --bg-surface: rgba(30, 41, 59, 0.8);
+  --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
-  --border-light: #334155;
+  --border-light: rgba(51, 65, 85, 0.5);
   --border-active: #475569;
-  --primary-glow: rgba(0, 102, 255, 0.4);
+  --primary-glow: rgba(0, 102, 255, 0.3);
 }
 
 * {
@@ -63,11 +62,16 @@
 body {
   background-color: var(--bg-app);
   color: var(--text-main);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   overflow-x: hidden;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
 }
 
 #root {
@@ -77,10 +81,116 @@ body {
 }
 
 button {
-  font-family: inherit;
   cursor: pointer;
   border: none;
   background: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* --- Phase 2 Unified Button System --- */
+
+.btn-primary, .primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all var(--transition-smooth);
+  box-shadow: 0 4px 12px var(--primary-glow);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.btn-primary:not(:disabled):hover, .primary-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--primary-glow);
+  background: #1a75ff; /* Slightly lighter primary */
+}
+
+.btn-primary:not(:disabled):active, .primary-btn:not(:disabled):active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled, .primary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-secondary, .secondary-btn, .action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--bg-surface);
+  color: var(--text-main);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover, .secondary-btn:hover, .action-btn:hover {
+  border-color: var(--border-active);
+  background: var(--bg-panel);
+  transform: translateY(-1px);
+}
+
+.btn-danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.btn-danger:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* --- Modern Range Sliders --- */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  padding: 8px 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  margin-top: -8px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 0 0 10px var(--primary-glow);
+  transition: transform 0.2s;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: var(--border-light);
+  border-radius: var(--radius-full);
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: var(--border-active);
 }
 
 /* Scrollbar */

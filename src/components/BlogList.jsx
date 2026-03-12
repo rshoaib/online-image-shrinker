@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, FileImage, BookOpen, Shield, Palette, ShoppingBag, Sparkles, Tag } from 'lucide-react';
+import { FileImage, BookOpen, Shield, Palette, ShoppingBag, Sparkles, Tag, ArrowRight } from 'lucide-react';
 import SeoWrapper from './SeoWrapper';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 
 const categoryIconMap = {
+  // ... (keep existing map)
   'Tutorials': BookOpen,
   'Guides': FileImage,
   'Explained': BookOpen,
@@ -17,6 +18,20 @@ const categoryIconMap = {
   'Updates': Sparkles,
   'Fun': Sparkles,
 };
+
+const BlogSkeleton = () => (
+  <div className="article-card skeleton-card">
+    <div className="article-icon skeleton-icon"></div>
+    <div className="article-content">
+      <div className="skeleton-text skeleton-date"></div>
+      <div className="skeleton-text skeleton-title"></div>
+      <div className="skeleton-text skeleton-desc line-1"></div>
+      <div className="skeleton-text skeleton-desc line-2"></div>
+      <div className="skeleton-text skeleton-desc line-3"></div>
+      <div className="skeleton-text skeleton-button"></div>
+    </div>
+  </div>
+);
 
 const BlogList = () => {
   const [articles, setArticles] = useState([]);
@@ -56,7 +71,12 @@ const BlogList = () => {
 
         <div className="articles-grid">
           {loading ? (
-            <div className="loading-state">Loading guides...</div>
+             <React.Fragment>
+               <BlogSkeleton />
+               <BlogSkeleton />
+               <BlogSkeleton />
+               <BlogSkeleton />
+             </React.Fragment>
           ) : articles.length === 0 ? (
             <div className="empty-state">No guides found.</div>
           ) : (
@@ -144,6 +164,50 @@ const BlogList = () => {
             border-color: var(--primary);
             transform: translateY(-2px);
           }
+          
+          /* Skeleton Loader Styles */
+          .skeleton-card {
+            pointer-events: none;
+          }
+          .skeleton-icon {
+            background: var(--bg-surface);
+            animation: shimmer 1.5s infinite linear;
+          }
+          .skeleton-text {
+            background: var(--bg-surface);
+            border-radius: var(--radius-sm);
+            margin-bottom: 8px;
+            animation: shimmer 1.5s infinite linear;
+          }
+          .skeleton-date { width: 30%; height: 14px; margin-bottom: 12px; }
+          .skeleton-title { width: 80%; height: 24px; margin-bottom: 16px; }
+          .skeleton-desc { height: 14px; margin-bottom: 6px; }
+          .skeleton-desc.line-1 { width: 100%; }
+          .skeleton-desc.line-2 { width: 90%; }
+          .skeleton-desc.line-3 { width: 60%; margin-bottom: 24px; }
+          .skeleton-button { width: 100px; height: 18px; margin-bottom: 0px; }
+
+          @keyframes shimmer {
+            0% {
+              background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.05) 20%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0));
+              background-position: -150px 0;
+            }
+            100% {
+              background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.05) 20%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0));
+              background-position: 150px 0;
+            }
+          }
+
+          [data-theme='light'] .skeleton-icon,
+          [data-theme='light'] .skeleton-text {
+            background-color: var(--border-light);
+          }
+          
+          [data-theme='light'] @keyframes shimmer {
+             0% { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.02) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0)); background-position: -150px 0; }
+             100% { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.02) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0)); background-position: 150px 0; }
+          }
+
 
           .article-icon {
             flex-shrink: 0;

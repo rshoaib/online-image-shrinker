@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Github, Coffee, Globe, Moon, Sun, Menu, X } from 'lucide-react';
 import InstallPrompt from './InstallPrompt';
 import AdSlot from './AdSlot';
+import FloatingDock from './FloatingDock';
 import logoUrl from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/useTheme';
@@ -174,6 +175,8 @@ const Layout = ({ children, onNavigate }) => {
         <a href="https://legalpolicygen.com" target="_blank" rel="noopener noreferrer">Legal Policy Generator</a>
         <a href="https://imrizwan.com" target="_blank" rel="noopener noreferrer">Developer Blog</a>
       </div>
+
+      {!isHome && <FloatingDock />}
 
       <style>{`
         .layout {
