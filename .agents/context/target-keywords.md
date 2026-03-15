@@ -56,3 +56,7 @@ description: Target keyword clusters and topic priorities for content strategy
 8. ~~**How to Create QR Codes Online — Free, Custom & Private (2026)**~~ — ✅ published
 9. ~~**How to Blur Faces in Photos Online — Free & Private (2026)**~~ — ✅ published
 10. ~~**How to Make a Photo Collage Online — Free & Private (2026)**~~ — ✅ published
+11. ~~**How to Remove Image Backgrounds for Free (2026 Guide)**~~ — ✅ published
+12. ~~**How to Extract Text from Images for Free (OCR Guide 2026)**~~ — ✅ published
+13. ~~**How to Convert Images to PDF Online (Free & Private)**~~ — ✅ published
+14. ~~**How to Make an Image Transparent Online (Free & Private)**~~ — ✅ published
