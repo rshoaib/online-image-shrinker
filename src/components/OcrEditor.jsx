@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, FileText, Copy, Download, RefreshCw, AlertCircle } from 'lucide-react';
 import Tesseract from 'tesseract.js';

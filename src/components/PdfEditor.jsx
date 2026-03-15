@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { jsPDF } from 'jspdf';
 import { ArrowLeft, FileText, Download, Trash2, GripVertical } from 'lucide-react';

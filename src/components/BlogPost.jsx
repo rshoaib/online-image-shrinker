@@ -1,12 +1,14 @@
-import { useParams, Navigate, Link } from 'react-router-dom';
+'use client';
+import Link from 'next/link';
+import { useParams, useRouter } from 'next/navigation';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import SeoWrapper from './SeoWrapper';
 import { supabase } from '../lib/supabase';
 const BlogPost = () => {
   const { slug } = useParams();
+  const router = useRouter();
   const [article, setArticle] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -14,6 +16,11 @@ const BlogPost = () => {
     const fetchArticle = async () => {
       setLoading(true);
       try {
+        if (!supabase) {
+          console.warn('Supabase local environment variables missing. Skipping fetch.');
+          setArticle(null);
+          return;
+        }
         const { data, error } = await supabase
           .from('blog_posts')
           .select('*')
@@ -35,29 +42,26 @@ const BlogPost = () => {
 
   if (loading) {
     return (
-      <SeoWrapper title="Loading... - Online Image Shrinker">
-        <div className="article-container" style={{ textAlign: 'center', padding: '100px 20px', color: 'var(--text-muted)' }}>
-          Loading guide...
-        </div>
-      </SeoWrapper>
+      <div className="article-container" style={{ textAlign: 'center', padding: '100px 20px', color: 'var(--text-muted)' }}>
+        Loading guide...
+      </div>
     );
   }
 
+  useEffect(() => {
+    if (!loading && !article) {
+      router.replace('/blog');
+    }
+  }, [loading, article, router]);
+
   if (!article) {
-    return <Navigate to="/blog" replace />;
+    return null;
   }
 
   return (
-    <SeoWrapper 
-      title={article.meta_title || `${article.title} - Online Image Shrinker`}
-      description={article.meta_description || article.excerpt}
-      schemaType="Article"
-      date={article.date}
-      author={'Image Shrinker Team'}
-      coverImage={article.image}
-    >
+    <>
       <div className="article-container">
-        <Link to="/blog" className="back-link">
+        <Link href="/blog" className="back-link">
           <ArrowLeft size={16} /> Back to Guides
         </Link>
         
@@ -87,7 +91,7 @@ const BlogPost = () => {
              <div className="share-cta">
                <h3>Find this helpful?</h3>
                <p>Check out our free tools to speed up your workflow.</p>
-               <Link to="/" className="cta-button">Explore Tools</Link>
+               <Link href="/" className="cta-button">Explore Tools</Link>
              </div>
           </div>
         </article>
@@ -263,7 +267,7 @@ const BlogPost = () => {
            to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
-    </SeoWrapper>
+    </>
   );
 };
 

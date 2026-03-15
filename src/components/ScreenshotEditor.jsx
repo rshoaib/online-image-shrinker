@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef } from 'react';
 import { Download, ArrowLeft, Image as ImageIcon, Monitor, Layers, Maximize, Copy, Check } from 'lucide-react';
 import { copyCanvasToClipboard } from '../utils/clipboard';

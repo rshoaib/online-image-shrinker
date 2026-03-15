@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, Copy, Check, Palette, RefreshCw } from 'lucide-react';
 import ColorThief from 'colorthief';

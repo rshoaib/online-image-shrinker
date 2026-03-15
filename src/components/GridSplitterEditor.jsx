@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 import { Download, Grid, ArrowLeft, Image as ImageIcon } from 'lucide-react';
 import JSZip from 'jszip';

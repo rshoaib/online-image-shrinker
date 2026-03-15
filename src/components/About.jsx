@@ -1,9 +1,10 @@
+'use client';
 import { ArrowLeft, Users, Shield, Cpu, Globe, Code, Heart, ExternalLink } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 const About = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Inject Organization + Person schema for E-E-A-T
   useEffect(() => {
@@ -52,7 +53,7 @@ const About = () => {
   return (
     <div className="about-page">
       <div className="about-container">
-        <button onClick={() => navigate('/')} className="back-btn">
+        <button onClick={() => router.push('/')} className="back-btn">
           <ArrowLeft size={20} /> Back to Home
         </button>
 
@@ -191,7 +192,7 @@ const About = () => {
             <Heart size={24} color="var(--primary)" />
             <h2>Try It Now — No Sign-Up Needed</h2>
             <p>Just open a tool, drop your image, and download the result. It's that simple.</p>
-            <button onClick={() => navigate('/')} className="cta-button">
+            <button onClick={() => router.push('/')} className="cta-button">
               Explore All Tools
             </button>
           </section>

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+'use client';
+import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import {
   Maximize2, Zap, Type, FileText, Eraser, Crop, Grid, EyeOff,
@@ -93,7 +94,7 @@ const RelatedTools = ({ currentTool }) => {
         {related.map(tool => {
           const Icon = tool.icon;
           return (
-            <Link key={tool.id} to={tool.path} className="related-card">
+            <Link key={tool.id} href={tool.path} className="related-card">
               <div className="related-icon"><Icon size={24} /></div>
               <div className="related-info">
                 <h3>{t(`home.tools.${tool.i18n}.title`)}</h3>

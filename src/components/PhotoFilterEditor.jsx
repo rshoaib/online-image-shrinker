@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { ArrowLeft, Download, RotateCcw, Sparkles, SlidersHorizontal } from 'lucide-react';
 

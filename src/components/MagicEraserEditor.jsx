@@ -1,3 +1,4 @@
+'use client';
 import { useState, useRef, useEffect } from 'react';
 import { Download, ArrowLeft, Undo, Eraser, Info, Sparkles } from 'lucide-react';
 import { triggerConfetti } from '../utils/confetti';

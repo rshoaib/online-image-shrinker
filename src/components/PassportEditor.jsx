@@ -1,3 +1,4 @@
+'use client';
 import { useState, useCallback } from 'react';
 import { ArrowLeft, Download, User, Check, Globe } from 'lucide-react';
 import Cropper from 'react-easy-crop';

@@ -1,3 +1,4 @@
+'use client';
 import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { ArrowLeftRight, Download, Columns, Layers, SlidersHorizontal, ZoomIn, Upload, RotateCcw } from 'lucide-react';
 

@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { Github, Coffee, Globe, Moon, Sun, Menu, X } from 'lucide-react';
 import InstallPrompt from './InstallPrompt';
@@ -7,16 +8,17 @@ import logoUrl from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../hooks/useTheme';
 import { usePWA } from '../hooks/usePWA';
-import { useLocation, Link } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Layout = ({ children, onNavigate }) => {
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme } = useTheme();
   const { isInstallable, install } = usePWA();
-  const location = useLocation();
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const isHome = location.pathname === '/';
+  const isHome = pathname === '/';
 
   const handleNavClick = (dest) => {
     setMenuOpen(false);
@@ -56,10 +58,10 @@ const Layout = ({ children, onNavigate }) => {
                <option value="it">Italiano</option>
              </select>
           </div>
-          {!isHome && <Link to="/" onClick={() => handleNavClick('home')} className="nav-link">Home</Link>}
-          <Link to="/blog" onClick={() => handleNavClick('blog')} className="nav-link">{t('common.blog')}</Link>
-          <Link to="/about" onClick={() => handleNavClick('about')} className="nav-link">About</Link>
-          <Link to="/contact" onClick={() => handleNavClick('contact')} className="nav-link">Contact</Link>
+          {!isHome && <Link href="/" onClick={() => handleNavClick('home')} className="nav-link">Home</Link>}
+          <Link href="/blog" onClick={() => handleNavClick('blog')} className="nav-link">{t('common.blog')}</Link>
+          <Link href="/about" onClick={() => handleNavClick('about')} className="nav-link">About</Link>
+          <Link href="/contact" onClick={() => handleNavClick('contact')} className="nav-link">Contact</Link>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -100,10 +102,10 @@ const Layout = ({ children, onNavigate }) => {
                  <option value="it">Italiano</option>
                </select>
             </div>
-            {!isHome && <Link to="/" onClick={() => handleNavClick('home')} className="mobile-nav-link">{t('common.back')}</Link>}
-            <Link to="/blog" onClick={() => handleNavClick('blog')} className="mobile-nav-link">{t('common.blog')}</Link>
-            <Link to="/about" onClick={() => handleNavClick('about')} className="mobile-nav-link">About</Link>
-            <Link to="/contact" onClick={() => handleNavClick('contact')} className="mobile-nav-link">Contact</Link>
+            {!isHome && <Link href="/" onClick={() => handleNavClick('home')} className="mobile-nav-link">{t('common.back')}</Link>}
+            <Link href="/blog" onClick={() => handleNavClick('blog')} className="mobile-nav-link">{t('common.blog')}</Link>
+            <Link href="/about" onClick={() => handleNavClick('about')} className="mobile-nav-link">About</Link>
+            <Link href="/contact" onClick={() => handleNavClick('contact')} className="mobile-nav-link">Contact</Link>
           </div>
         </nav>
       )}
@@ -115,7 +117,7 @@ const Layout = ({ children, onNavigate }) => {
       <InstallPrompt />
 
       {/* AdSense: responsive banner above footer — safe distance from interactive elements */}
-      <AdSlot format="responsive" slot={import.meta.env.VITE_AD_SLOT_FOOTER || ''} className="footer-ad" />
+      <AdSlot format="responsive" slot={process.env.NEXT_PUBLIC_AD_SLOT_FOOTER || ''} className="footer-ad" />
 
       <footer className="footer">
         <p className="footer-text">
@@ -130,16 +132,16 @@ const Layout = ({ children, onNavigate }) => {
            >
              <Coffee size={16} /> <span>Donate</span>
            </a>
-            <Link to="/privacy" onClick={() => handleNavClick('privacy')} className="footer-link">{t('common.privacy_policy')}</Link>
-            <Link to="/terms" onClick={() => handleNavClick('terms')} className="footer-link">Terms</Link>
-            <Link to="/contact" onClick={() => handleNavClick('contact')} className="footer-link">Contact</Link>
-            <Link to="/about" onClick={() => handleNavClick('about')} className="footer-link">About Us</Link>
+            <Link href="/privacy" onClick={() => handleNavClick('privacy')} className="footer-link">{t('common.privacy_policy')}</Link>
+            <Link href="/terms" onClick={() => handleNavClick('terms')} className="footer-link">Terms</Link>
+            <Link href="/contact" onClick={() => handleNavClick('contact')} className="footer-link">Contact</Link>
+            <Link href="/about" onClick={() => handleNavClick('about')} className="footer-link">About Us</Link>
             {isInstallable && (
               <button onClick={install} className="footer-link install-btn-footer">
                 Install App
               </button>
             )}
-            <Link to="/blog" onClick={() => handleNavClick('blog')} className="footer-link">{t('common.blog')}</Link>
+            <Link href="/blog" onClick={() => handleNavClick('blog')} className="footer-link">{t('common.blog')}</Link>
            <a href="https://github.com/rshoaib/online-image-shrinker" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="View source code on GitHub"><Github size={16} aria-hidden="true" /></a>
         </div>
         <div className="footer-crosslinks">
@@ -156,16 +158,16 @@ const Layout = ({ children, onNavigate }) => {
 
       <div className="quick-links">
         <span>Popular Tools:</span>
-        <Link to="/resize-passport-photo" onClick={() => handleNavClick('resize-passport-photo')}>Passport Photo</Link>
-        <Link to="/resize-for-youtube" onClick={() => handleNavClick('resize-for-youtube')}>YouTube Thumbnail</Link>
-        <Link to="/jpg-to-pdf" onClick={() => handleNavClick('jpg-to-pdf')}>Image to PDF</Link>
-        <Link to="/compress-png" onClick={() => handleNavClick('compress-png')}>Compress PNG</Link>
-        <Link to="/resize-for-instagram" onClick={() => handleNavClick('resize-for-instagram')}>Instagram Resizer</Link>
-        <Link to="/photo-filters-online" onClick={() => handleNavClick('photo-filters-online')}>Photo Filters</Link>
-        <Link to="/qr-code-generator" onClick={() => handleNavClick('qr-code-generator')}>QR Code Generator</Link>
-        <Link to="/remove-background" onClick={() => handleNavClick('remove-background')}>Remove Background</Link>
-        <Link to="/collage-maker" onClick={() => handleNavClick('collage-maker')}>Collage Maker</Link>
-        <Link to="/meme-generator-online" onClick={() => handleNavClick('meme-generator-online')}>Meme Generator</Link>
+        <Link href="/resize-passport-photo" onClick={() => handleNavClick('resize-passport-photo')}>Passport Photo</Link>
+        <Link href="/resize-for-youtube" onClick={() => handleNavClick('resize-for-youtube')}>YouTube Thumbnail</Link>
+        <Link href="/jpg-to-pdf" onClick={() => handleNavClick('jpg-to-pdf')}>Image to PDF</Link>
+        <Link href="/compress-png" onClick={() => handleNavClick('compress-png')}>Compress PNG</Link>
+        <Link href="/resize-for-instagram" onClick={() => handleNavClick('resize-for-instagram')}>Instagram Resizer</Link>
+        <Link href="/photo-filters-online" onClick={() => handleNavClick('photo-filters-online')}>Photo Filters</Link>
+        <Link href="/qr-code-generator" onClick={() => handleNavClick('qr-code-generator')}>QR Code Generator</Link>
+        <Link href="/remove-background" onClick={() => handleNavClick('remove-background')}>Remove Background</Link>
+        <Link href="/collage-maker" onClick={() => handleNavClick('collage-maker')}>Collage Maker</Link>
+        <Link href="/meme-generator-online" onClick={() => handleNavClick('meme-generator-online')}>Meme Generator</Link>
       </div>
 
       <div className="quick-links" style={{ borderTop: 'none', paddingTop: '0' }}>

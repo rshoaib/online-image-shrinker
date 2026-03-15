@@ -1,13 +1,10 @@
-import { Link } from 'react-router-dom';
+'use client';
+import Link from 'next/link';
 import { Home, Search } from 'lucide-react';
-import SeoWrapper from './SeoWrapper';
 
 const NotFound = () => {
   return (
-    <SeoWrapper 
-      title="Page Not Found - Online Image Shrinker"
-      description="The page you're looking for doesn't exist. Browse our free image tools instead."
-    >
+    <>
       <div className="not-found-container">
         <div className="not-found-content">
           <div className="not-found-code">404</div>
@@ -16,10 +13,10 @@ const NotFound = () => {
             The page you're looking for doesn't exist or has been moved.
           </p>
           <div className="not-found-actions">
-            <Link to="/" className="nf-btn nf-btn-primary">
+            <Link href="/" className="nf-btn nf-btn-primary">
               <Home size={18} /> Go to Homepage
             </Link>
-            <Link to="/blog" className="nf-btn nf-btn-secondary">
+            <Link href="/blog" className="nf-btn nf-btn-secondary">
               <Search size={18} /> Browse Guides
             </Link>
           </div>
@@ -106,7 +103,7 @@ const NotFound = () => {
           }
         `}</style>
       </div>
-    </SeoWrapper>
+    </>
   );
 };
 

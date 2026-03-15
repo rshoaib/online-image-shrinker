@@ -1,3 +1,4 @@
+'use client';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { UploadCloud, AlertTriangle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';

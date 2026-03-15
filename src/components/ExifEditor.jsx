@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 import { Upload, X, MapPin, Calendar, Camera, Download, ShieldCheck, Eye, RefreshCw } from 'lucide-react';
 import EXIF from 'exif-js';

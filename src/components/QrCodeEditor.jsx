@@ -1,3 +1,4 @@
+'use client';
 import { useState, useRef } from 'react';
 import { ArrowLeft, Download, RotateCcw, Image as ImageIcon } from 'lucide-react';
 import { QRCodeCanvas } from 'qrcode.react';

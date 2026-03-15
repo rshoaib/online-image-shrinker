@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { FileOutput, Download, Trash2, ArrowLeft } from 'lucide-react';
 import useImageProcessor from '../hooks/useImageProcessor';

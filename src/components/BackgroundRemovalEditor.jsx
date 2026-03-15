@@ -1,5 +1,6 @@
+'use client';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { removeBackground } from '@imgly/background-removal';
 import { Download, ArrowLeft, RefreshCw, AlertCircle } from 'lucide-react';
 
@@ -60,7 +61,7 @@ const BackgroundRemovalEditor = ({ file, onBack }) => {
           <ArrowLeft size={20} /> Back
         </button>
         <h2>Background Remover</h2>
-        <Link to="/blog/how-to-remove-background" className="help-link">How to use?</Link>
+        <Link href="/blog/how-to-remove-background" className="help-link">How to use?</Link>
       </div>
 
       <div className="editor-workspace">

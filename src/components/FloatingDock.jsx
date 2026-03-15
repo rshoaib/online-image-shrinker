@@ -1,11 +1,13 @@
+'use client';
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Minimize2, Maximize2, Eraser, FileText, Repeat, Star } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const FloatingDock = () => {
   const { t } = useTranslation();
-  const location = useLocation();
+  const pathname = usePathname();
 
   // Highlighted/Featured tools for quick access
   const dockTools = [
@@ -20,11 +22,11 @@ const FloatingDock = () => {
     <div className="dock-container">
       <div className="dock">
         {dockTools.map((tool) => {
-          const isActive = location.pathname.includes(tool.route);
+          const isActive = pathname.includes(tool.route);
           return (
             <Link 
               key={tool.id} 
-              to={tool.route} 
+              href={tool.route} 
               className={`dock-item ${isActive ? 'active' : ''}`}
               title={tool.label}
             >
@@ -40,7 +42,7 @@ const FloatingDock = () => {
         <div className="dock-divider"></div>
         
         {/* All Tools Link */}
-        <Link to="/" className="dock-item" title="All Tools">
+        <Link href="/" className="dock-item" title="All Tools">
           <div className="dock-icon-wrapper">
              <Star size={22} />
           </div>

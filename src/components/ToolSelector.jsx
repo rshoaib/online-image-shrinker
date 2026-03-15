@@ -1,9 +1,10 @@
+'use client';
 import { useState } from 'react';
 import HowItWorks from './HowItWorks';
 import FAQSection from './FAQSection';
 
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { passportPages, ecommercePages } from '../data/seoTemplates';
 import { 
   Maximize2, Zap, Type, FileText, Eraser, Crop, Grid, EyeOff, 
@@ -15,7 +16,7 @@ import {
 const ToolSelector = ({ onSelectTool }) => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const programmaticTools = [
     ...passportPages.map(p => ({
@@ -120,11 +121,11 @@ const ToolSelector = ({ onSelectTool }) => {
           <div 
             key={tool.id} 
             className={`tool-card ${tool.featured ? 'featured-card' : ''}`}
-            onClick={() => tool.route ? navigate(tool.route) : onSelectTool(tool.id)}
+            onClick={() => tool.route ? router.push(tool.route) : onSelectTool(tool.id)}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
-                tool.route ? navigate(tool.route) : onSelectTool(tool.id);
+                tool.route ? router.push(tool.route) : onSelectTool(tool.id);
               }
             }}
             role="button"

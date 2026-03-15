@@ -1,9 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+'use client';
+import { useRouter } from 'next/navigation';
 import { Home, Zap, Maximize2, Type, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const RealtorHub = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { t } = useTranslation();
 
   const tools = [
@@ -12,21 +13,21 @@ const RealtorHub = () => {
       icon: <Maximize2 size={24} />,
       title: 'Resize for MLS',
       desc: 'Resize photos to fit MLS & Zillow requirements instantly.',
-      action: () => navigate('/tool/resize')
+      action: () => router.push('/tool/resize')
     },
     {
       id: 'upscale',
       icon: <Zap size={24} />,
       title: 'Brighten & Upscale',
       desc: 'Fix dark property photos and increase resolution with AI.',
-      action: () => navigate('/tool/upscale')
+      action: () => router.push('/tool/upscale')
     },
     {
       id: 'watermark',
       icon: <Type size={24} />,
       title: 'Brand Your Photos',
       desc: 'Add your agency logo or watermark to protect your listings.',
-      action: () => navigate('/watermark-photos-online')
+      action: () => router.push('/watermark-photos-online')
     }
   ];
 

@@ -1,3 +1,4 @@
+'use client';
 import React, { lazy } from 'react';
 
 const CropEditor = lazy(() => import('./CropEditor'));

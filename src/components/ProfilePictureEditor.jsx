@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef } from 'react';
 import { removeBackground } from '@imgly/background-removal';
 import { Download, ArrowLeft, RefreshCw, AlertCircle, Palette, Monitor, Copy, Check } from 'lucide-react';

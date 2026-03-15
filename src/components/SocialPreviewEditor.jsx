@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Download, ArrowLeft, Copy, Check, Type, AlignLeft, AlignCenter, AlignRight } from 'lucide-react';
 import { copyCanvasToClipboard } from '../utils/clipboard';

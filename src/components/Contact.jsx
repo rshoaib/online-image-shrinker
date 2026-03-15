@@ -1,9 +1,10 @@
+'use client';
 import { ArrowLeft, Mail, MessageSquare, Clock, HelpCircle, Send } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const Contact = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
@@ -30,7 +31,7 @@ const Contact = () => {
   return (
     <div className="contact-page">
       <div className="contact-container">
-        <button onClick={() => navigate('/')} className="back-btn">
+        <button onClick={() => router.push('/')} className="back-btn">
           <ArrowLeft size={20} /> Back to Home
         </button>
 

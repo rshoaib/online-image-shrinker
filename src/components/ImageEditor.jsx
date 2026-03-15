@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect, useRef } from 'react';
 import { ArrowLeft, Image as ImageIcon, FileOutput, ScanEye, Eye } from 'lucide-react';
 import Controls from './Controls';

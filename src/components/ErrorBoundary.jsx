@@ -1,3 +1,4 @@
+'use client';
 import React, { Component } from 'react';
 
 // Error Boundary to prevent white screen crashes

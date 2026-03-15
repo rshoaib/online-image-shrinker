@@ -1,3 +1,4 @@
+'use client';
 import { ArrowLeft, ShieldCheck, Lock, EyeOff } from 'lucide-react';
 
 const PrivacyPolicy = ({ onBack }) => {

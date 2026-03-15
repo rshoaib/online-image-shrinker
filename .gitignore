@@ -32,3 +32,6 @@ dist-ssr
 *.sw?
 
 .vercel
+.next
+build_output_clean.txt
+capture-build.js

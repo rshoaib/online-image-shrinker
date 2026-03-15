@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+'use client';
+import Link from 'next/link';
 import { FileImage, BookOpen, Shield, Palette, ShoppingBag, Sparkles, Tag, ArrowRight } from 'lucide-react';
-import SeoWrapper from './SeoWrapper';
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 
@@ -41,6 +41,11 @@ const BlogList = () => {
     const fetchArticles = async () => {
       setLoading(true);
       try {
+        if (!supabase) {
+          console.warn('Supabase local environment variables missing. Skipping fetch.');
+          setArticles([]);
+          return;
+        }
         const { data, error } = await supabase
           .from('blog_posts')
           .select('*')
@@ -59,10 +64,7 @@ const BlogList = () => {
   }, []);
 
   return (
-    <SeoWrapper  
-      title="Image Optimization Guides - Online Image Shrinker"
-      description="Tips, tutorials, and guides on how to optimize, resize, and compress your images for the web and social media."
-    >
+    <>
       <div className="blog-container">
         <div className="blog-header">
           <h1>Guides & Tutorials</h1>
@@ -90,7 +92,7 @@ const BlogList = () => {
                 return getTime(b.date) - getTime(a.date);
               })
               .map((article) => (
-              <Link to={`/blog/${article.slug}`} key={article.slug} className="article-card">
+              <Link href={`/blog/${article.slug}`} key={article.slug} className="article-card">
                 <div className="article-icon">
                   {(() => {
                     const IconComponent = categoryIconMap[article.category] || FileImage;
@@ -261,7 +263,7 @@ const BlogList = () => {
           }
         `}</style>
       </div>
-    </SeoWrapper>
+    </>
   );
 };
 

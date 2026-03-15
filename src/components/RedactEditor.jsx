@@ -1,3 +1,4 @@
+'use client';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { Download, ArrowLeft, Eraser, Undo, Eye } from 'lucide-react';
 

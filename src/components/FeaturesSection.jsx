@@ -1,3 +1,4 @@
+'use client';
 import { Shield, Zap, Search, Globe } from 'lucide-react';
 
 const FeaturesSection = () => {

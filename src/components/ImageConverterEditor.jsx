@@ -1,3 +1,4 @@
+'use client';
 import { useState, useEffect } from 'react';
 import { ArrowLeft, Download, RefreshCw, AlertCircle } from 'lucide-react';
 import heic2any from 'heic2any';

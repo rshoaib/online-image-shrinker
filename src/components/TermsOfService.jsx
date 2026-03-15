@@ -1,13 +1,14 @@
+'use client';
 import { ArrowLeft, FileText, AlertTriangle } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 
 const TermsOfService = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <div className="policy-page">
       <div className="policy-container">
-        <button onClick={() => navigate('/')} className="back-btn">
+        <button onClick={() => router.push('/')} className="back-btn">
           <ArrowLeft size={20} /> Back to Home
         </button>
 

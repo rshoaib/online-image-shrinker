@@ -1,9 +1,10 @@
-import { useNavigate } from 'react-router-dom';
+'use client';
+import { useRouter } from 'next/navigation';
 import { ShoppingBag, Eraser, Minimize2, Crop, ArrowRight, TrendingUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 const EcommerceHub = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { t } = useTranslation();
 
   const tools = [
@@ -12,21 +13,21 @@ const EcommerceHub = () => {
       icon: <Eraser size={24} />,
       title: 'Remove Background',
       desc: 'Create professional white-background product shots instantly.',
-      action: () => navigate('/tool/remove-bg')
+      action: () => router.push('/tool/remove-bg')
     },
     {
       id: 'compress',
       icon: <Minimize2 size={24} />,
       title: 'Compress for Web',
       desc: 'Reduce file size by 80% for faster page loads (SEO friendly).',
-      action: () => navigate('/tool/compress')
+      action: () => router.push('/tool/compress')
     },
     {
       id: 'crop',
       icon: <Crop size={24} />,
       title: 'Square Crop',
       desc: 'Perfect 1:1 ratio crops for Instagram, Amazon, and Shopify.',
-      action: () => navigate('/tool/crop')
+      action: () => router.push('/tool/crop')
     }
   ];
 

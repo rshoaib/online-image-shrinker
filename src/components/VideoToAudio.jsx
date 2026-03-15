@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { ArrowLeft, Music, Download, Settings, Loader2 } from 'lucide-react';
 import { fetchFile } from '@ffmpeg/util';
