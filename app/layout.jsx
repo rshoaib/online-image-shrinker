@@ -36,6 +36,19 @@ export default function RootLayout({ children }) {
         <meta name="google-site-verification" content="pXaoDecTkY4aJ20mOVSVOMg7ao-Sz67d1_yUTcf_eqg" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Online Image Shrinker',
+              url: 'https://onlineimageshrinker.com',
+              description: 'Compress, resize, convert, and edit images 100% locally in your browser.'
+            })
+          }}
+        />
         
         {/* Blocking theme script to prevent flash */}
         <Script id="theme-script" strategy="beforeInteractive">

@@ -45,13 +45,26 @@ const SeoLandingPageClient = ({ slug, isToolRoute = false }) => {
 
     const info = getToolInfo();
 
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: info.title,
+      description: info.desc,
+      applicationCategory: 'MultimediaApplication',
+      operatingSystem: 'All'
+    };
+
     return (
       <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {files.length === 0 ? (
           <div className="hero-section">
               <div className="hero-text">
                 <button onClick={handleBack} className="back-link">← Back to Tools</button>
-                <h2>{info.title}</h2>
+                <h1>{info.title}</h1>
                 <p>{info.desc}</p>
               </div>
               <DropZone onFileSelect={setFiles} />
@@ -77,8 +90,21 @@ const SeoLandingPageClient = ({ slug, isToolRoute = false }) => {
 
   const { title, desc, toolId } = data;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: title,
+    description: desc,
+    applicationCategory: 'MultimediaApplication',
+    operatingSystem: 'All'
+  };
+
   return (
     <>
+       <script
+         type="application/ld+json"
+         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+       />
        <div className="seo-landing">
           {files.length === 0 ? (
             <div className="hero-section">
