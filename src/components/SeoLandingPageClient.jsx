@@ -33,6 +33,7 @@ const SeoLandingPageClient = ({ slug, isToolRoute = false }) => {
       'favicon-generator': 'favicon', 'svg-to-png': 'svg_to_png',
       'base64-converter': 'base64',
       'rotate-flip': 'rotate_flip',
+      'blur-face': 'blur_face',
     };
 
     const getToolInfo = () => {

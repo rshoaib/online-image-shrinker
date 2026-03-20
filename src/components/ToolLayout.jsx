@@ -43,7 +43,7 @@ const BlurFaceEditor = lazy(() => import('./BlurFaceEditor'));
 
 
 const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
-  if (files.length === 0 && toolId !== 'signature-maker' && toolId !== 'qr-code-generator' && toolId !== 'favicon-generator' && toolId !== 'svg-to-png' && toolId !== 'base64-converter') {
+  if (files.length === 0 && toolId !== 'signature-maker' && toolId !== 'qr-code-generator' && toolId !== 'favicon-generator' && toolId !== 'svg-to-png' && toolId !== 'base64-converter' && toolId !== 'blur-face') {
     return null; // The parent handles the "Hero" or "Empty" state usually, or we can handle it here if we pass more props.
     // In App.jsx, the "Empty" state (Hero section) is handled inside the ToolPage/SeoLandingPage 
     // BEFORE calling the editor logic.
