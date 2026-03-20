@@ -1,5 +1,7 @@
 'use client';
 import { useState } from 'react';
+import StatsCounter from './StatsCounter';
+import RecentTools from './RecentTools';
 import HowItWorks from './HowItWorks';
 import FAQSection from './FAQSection';
 
@@ -84,6 +86,7 @@ const ToolSelector = ({ onSelectTool }) => {
     <div className="selector-container">
       {/* ... existing header ... */}
       <div className="selector-header">
+        <StatsCounter />
         <div className="hero-badge">✨ 100% Private & Free</div>
         <h1>{t('home.title')}</h1>
         <p>{t('home.subtitle')}</p>
@@ -112,6 +115,7 @@ const ToolSelector = ({ onSelectTool }) => {
         )}
       </div>
 
+      <RecentTools onSelectTool={onSelectTool} />
       <div className="cards-grid">
         {filteredTools.length === 0 && (
           <div className="no-results">

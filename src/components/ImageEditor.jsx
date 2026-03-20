@@ -6,7 +6,7 @@ import CompareSlider from './CompareSlider';
 import useImageProcessor from '../hooks/useImageProcessor';
 import ShareCard from './ShareCard';
 
-const ImageEditor = ({ file, onBack, mode }) => {
+const ImageEditor = ({ file, onBack, mode, toolId, onSelectTool }) => {
   const [settings, setSettings] = useState({
     width: 0,
     height: 0,

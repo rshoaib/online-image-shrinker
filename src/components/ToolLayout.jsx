@@ -39,6 +39,7 @@ const SvgToPngEditor = lazy(() => import('./SvgToPngEditor'));
 const Base64Editor = lazy(() => import('./Base64Editor'));
 const RotateFlipEditor = lazy(() => import('./RotateFlipEditor'));
 const BlurFaceEditor = lazy(() => import('./BlurFaceEditor'));
+import { recordToolUsage } from './RecentTools';
 
 
 

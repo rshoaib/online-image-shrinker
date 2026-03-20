@@ -1,8 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { Twitter, Linkedin, Link, Share2, Check } from 'lucide-react';
+import NextToolSuggestions from './NextToolSuggestions';
 
-const ShareCard = ({ savedBytes, percentage }) => {
+const ShareCard = ({ savedBytes, percentage, toolId, onSelectTool }) => {
   const [copied, setCopied] = useState(false);
 
   // Format bytes to legible string (e.g. 2.4 MB)

@@ -287,6 +287,30 @@ const DropZone = ({ onFileSelect }) => {
           font-weight: 600;
         }
 
+        
+        .sample-row {
+          margin-top: var(--spacing-md);
+          cursor: pointer;
+          z-index: 1;
+        }
+        .sample-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 0.82rem;
+          color: var(--primary);
+          padding: 5px 14px;
+          border: 1px solid var(--primary-glow);
+          border-radius: var(--radius-full);
+          background: rgba(0, 102, 255, 0.06);
+          transition: all 0.2s;
+          font-weight: 500;
+        }
+        .sample-btn:hover {
+          background: rgba(0, 102, 255, 0.12);
+          transform: translateY(-1px);
+        }
+
         /* Inline toast notifications */
         .dz-toast {
           position: absolute;
