@@ -34,6 +34,7 @@ const SUGGESTIONS = {
   ],
   'blur-face': [
     { id: 'exif', label: 'Strip EXIF Data', emoji: '🛡️' },
+    { id: 'redact', label: 'Redact Text', emoji: '🖊️' },
     { id: 'compress', label: 'Compress It', emoji: '⚡' },
   ],
   'exif': [
@@ -43,14 +44,90 @@ const SUGGESTIONS = {
   'rotate-flip': [
     { id: 'compress', label: 'Compress It', emoji: '⚡' },
     { id: 'crop', label: 'Crop Image', emoji: '✂️' },
+    { id: 'photo-filters', label: 'Add Filters', emoji: '🎨' },
   ],
   'image-converter': [
     { id: 'compress', label: 'Compress It', emoji: '⚡' },
     { id: 'resize', label: 'Resize It', emoji: '📐' },
+    { id: 'svg-to-png', label: 'SVG → PNG', emoji: '🖼️' },
   ],
   'favicon-generator': [
     { id: 'svg-to-png', label: 'SVG to PNG', emoji: '🖼️' },
     { id: 'compress', label: 'Compress PNGs', emoji: '⚡' },
+  ],
+  'batch': [
+    { id: 'compress', label: 'Compress Images', emoji: '⚡' },
+    { id: 'resize', label: 'Resize Images', emoji: '📐' },
+    { id: 'image-converter', label: 'Convert Format', emoji: '🔄' },
+  ],
+  'magic-eraser': [
+    { id: 'remove-bg', label: 'Remove Background', emoji: '✂️' },
+    { id: 'compress', label: 'Compress It', emoji: '⚡' },
+    { id: 'upscale', label: 'Upscale Image', emoji: '🔍' },
+  ],
+  'upscale': [
+    { id: 'compress', label: 'Compress It', emoji: '⚡' },
+    { id: 'watermark', label: 'Add Watermark', emoji: '🔒' },
+    { id: 'photo-filters', label: 'Add Filters', emoji: '🎨' },
+  ],
+  'meme': [
+    { id: 'compress', label: 'Compress It', emoji: '⚡' },
+    { id: 'crop', label: 'Crop Image', emoji: '✂️' },
+    { id: 'watermark', label: 'Add Watermark', emoji: '🔒' },
+  ],
+  'qr-code': [
+    { id: 'compress', label: 'Compress Output', emoji: '⚡' },
+    { id: 'favicon-generator', label: 'Make a Favicon', emoji: '⭐' },
+  ],
+  'svg-to-png': [
+    { id: 'compress', label: 'Compress PNG', emoji: '⚡' },
+    { id: 'favicon-generator', label: 'Make a Favicon', emoji: '⭐' },
+    { id: 'resize', label: 'Resize It', emoji: '📐' },
+  ],
+  'collage': [
+    { id: 'compress', label: 'Compress Result', emoji: '⚡' },
+    { id: 'watermark', label: 'Add Watermark', emoji: '🔒' },
+    { id: 'photo-filters', label: 'Add Filters', emoji: '🎨' },
+  ],
+  'screenshot': [
+    { id: 'compress', label: 'Compress It', emoji: '⚡' },
+    { id: 'crop', label: 'Crop Screenshot', emoji: '✂️' },
+    { id: 'redact', label: 'Redact Sensitive Data', emoji: '🖊️' },
+  ],
+  'signature': [
+    { id: 'compress', label: 'Compress It', emoji: '⚡' },
+    { id: 'watermark', label: 'Add Watermark', emoji: '🔒' },
+  ],
+  'ocr': [
+    { id: 'compress', label: 'Compress Image First', emoji: '⚡' },
+    { id: 'redact', label: 'Redact Private Data', emoji: '🖊️' },
+  ],
+  'redact': [
+    { id: 'blur-face', label: 'Blur Faces Too', emoji: '🫥' },
+    { id: 'exif', label: 'Strip EXIF Data', emoji: '🛡️' },
+    { id: 'compress', label: 'Compress It', emoji: '⚡' },
+  ],
+  'social-preview': [
+    { id: 'compress', label: 'Compress Image', emoji: '⚡' },
+    { id: 'resize', label: 'Resize It', emoji: '📐' },
+    { id: 'watermark', label: 'Add Watermark', emoji: '🔒' },
+  ],
+  'video-to-gif': [
+    { id: 'compress', label: 'Compress GIF', emoji: '⚡' },
+    { id: 'video-to-audio', label: 'Extract Audio', emoji: '🎵' },
+  ],
+  'video-to-audio': [
+    { id: 'video-to-gif', label: 'Convert to GIF', emoji: '🎬' },
+    { id: 'compress', label: 'Compress Video', emoji: '⚡' },
+  ],
+  'profile-picture': [
+    { id: 'remove-bg', label: 'Remove Background', emoji: '✂️' },
+    { id: 'compress', label: 'Compress It', emoji: '⚡' },
+    { id: 'watermark', label: 'Add Watermark', emoji: '🔒' },
+  ],
+  'grid-splitter': [
+    { id: 'compress', label: 'Compress Pieces', emoji: '⚡' },
+    { id: 'collage', label: 'Make a Collage', emoji: '🖼️' },
   ],
   'default': [
     { id: 'compress', label: 'Compress Image', emoji: '⚡' },
@@ -58,6 +135,7 @@ const SUGGESTIONS = {
     { id: 'remove-bg', label: 'Remove Background', emoji: '✂️' },
   ],
 };
+
 
 const NextToolSuggestions = ({ currentToolId, onSelectTool }) => {
   const suggestions = SUGGESTIONS[currentToolId] || SUGGESTIONS['default'];
