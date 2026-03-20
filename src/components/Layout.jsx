@@ -335,6 +335,26 @@ const Layout = ({ children, onNavigate }) => {
            color: var(--text-main);
         }
 
+        .lang-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          color: var(--text-main);
+          background: var(--bg-surface);
+          border: 1px solid var(--border-light);
+          transition: var(--transition-fast);
+          cursor: pointer;
+        }
+
+        .lang-btn:hover {
+          background: var(--primary);
+          color: white;
+          border-color: var(--primary);
+        }
+
         .nav-link {
           color: var(--text-muted);
           text-decoration: none;

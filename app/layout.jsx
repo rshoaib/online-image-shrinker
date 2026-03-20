@@ -55,10 +55,16 @@ export default function RootLayout({ children }) {
           {`
             (function() {
               try {
-                var t = localStorage.getItem('theme');
-                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                var migrated = localStorage.getItem('theme_v2');
+                if (!migrated) {
+                  localStorage.setItem('theme', 'light');
+                  localStorage.setItem('theme_v2', '1');
+                }
+                var t = localStorage.getItem('theme') || 'light';
                 document.documentElement.setAttribute('data-theme', t);
-              } catch (e) {}
+              } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+              }
             })();
           `}
         </Script>
