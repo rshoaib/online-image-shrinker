@@ -7,8 +7,15 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const saved = localStorage.getItem('theme');
-    // Always default to light — dark only if user explicitly toggled
-    setTheme(saved || 'light');
+    // v2: one-time migration to force light theme default
+    const migrated = localStorage.getItem('theme_v2');
+    if (!migrated) {
+      localStorage.setItem('theme', 'light');
+      localStorage.setItem('theme_v2', '1');
+      setTheme('light');
+    } else {
+      setTheme(saved || 'light');
+    }
     setMounted(true);
   }, []);
 

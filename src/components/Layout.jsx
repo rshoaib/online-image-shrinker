@@ -29,7 +29,7 @@ const Layout = ({ children, onNavigate }) => {
     <div className="layout">
       <header className="header">
         <div className="logo-container" onClick={() => handleNavClick('home')} style={{cursor: 'pointer'}}>
-          <img src={logoUrl} alt="Online Image Shrinker" className="logo-img" />
+          <img src={typeof logoUrl === 'string' ? logoUrl : logoUrl?.src || logoUrl} alt="Online Image Shrinker" className="logo-img" />
           <div className="logo-text">
             Online<span className="text-highlight">ImageShrinker</span>
           </div>
