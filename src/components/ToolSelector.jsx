@@ -73,9 +73,6 @@ const ToolSelector = ({ onSelectTool }) => {
     { id: 'blur-face', i18nKey: 'blur_face', icon: <ShieldCheck size={32} />, category: 'privacy' },
   ];
 
-  const featuredTools = tools.filter(t => t.featured);
-  const moreTools = tools.filter(t => !t.featured);
-
   // Filter tools by search query
   const isSearching = searchQuery.trim().length > 0;
   const filteredTools = isSearching
@@ -87,10 +84,10 @@ const ToolSelector = ({ onSelectTool }) => {
       })
     : tools;
 
-  const renderCard = (tool, index) => (
+  const renderTile = (tool, index) => (
     <div 
       key={tool.id} 
-      className={`tool-card ${tool.featured ? 'featured-card' : ''}`}
+      className="tool-tile"
       onClick={() => tool.route ? router.push(tool.route) : onSelectTool(tool.id)}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -100,38 +97,49 @@ const ToolSelector = ({ onSelectTool }) => {
       }}
       role="button"
       tabIndex={0}
-      style={{ animationDelay: `${index * 0.04}s` }}
+      style={{ animationDelay: `${index * 0.025}s` }}
     >
-      <div className="icon-wrapper">
+      <div className="tile-icon">
         {tool.icon}
       </div>
-      <div className="card-content">
-        <h3>
-          {tool.isProgrammatic ? tool.title : t(`home.tools.${tool.i18nKey}.title`)}
-          {tool.badge && <span className="badge">{tool.badge}</span>}
-        </h3>
-        <p>{tool.isProgrammatic ? tool.desc : t(`home.tools.${tool.i18nKey}.desc`)}</p>
-      </div>
-      {tool.featured && (
-        <div className="card-action">
-           Try it out <span>→</span>
-        </div>
-      )}
+      <span className="tile-label">
+        {tool.isProgrammatic ? tool.title : t(`home.tools.${tool.i18nKey}.title`)}
+      </span>
+      {tool.badge && <span className="tile-badge">{tool.badge}</span>}
     </div>
   );
 
+  /* Group tools by category for organized display */
+  const categories = [
+    { key: 'essential', label: '🔧 Essential', ids: ['compress','resize','convert','batch'] },
+    { key: 'creative', label: '🎨 Creative', ids: ['crop','rotate','filters','watermark','collage','meme','screenshot','color-picker','favicon','image-to-ascii'] },
+    { key: 'ai', label: '🤖 AI-Powered', ids: ['remove-bg','upscale','ai-enhance'] },
+    { key: 'privacy', label: '🔒 Privacy', ids: ['blur','redact','strip-exif'] },
+    { key: 'convert', label: '📄 Convert & Export', ids: ['jpg-to-pdf','svg-to-png','ico-convert','base64','image-compare'] },
+    { key: 'social', label: '📱 Social & QR', ids: ['social-resize','profile-pic','qr-code'] },
+    { key: 'video', label: '🎬 Video & GIF', ids: ['gif-maker','video-compress','video-to-gif'] },
+  ];
+
+  const categorizedTools = categories.map(cat => ({
+    ...cat,
+    tools: cat.ids.map(id => tools.find(t => t.id === id)).filter(Boolean)
+  })).filter(cat => cat.tools.length > 0);
+
+  /* Uncategorized tools fallback */
+  const categorizedIds = new Set(categories.flatMap(c => c.ids));
+  const uncategorized = tools.filter(t => !categorizedIds.has(t.id));
+
   return (
     <div className="selector-container">
-      {/* ... existing header ... */}
       <div className="selector-header">
-        <div className="hero-badge">✨ 100% Private & Free</div>
+        <div className="hero-badge">✨ 100% Private & Free — No Uploads</div>
         <h1>{t('home.title')}</h1>
         <p>{t('home.subtitle')}</p>
       </div>
 
       <StatsCounter />
 
-      {/* Search/Filter Bar */}
+      {/* Search */}
       <div className="search-bar-wrapper">
         <Search size={18} className="search-icon" />
         <input
@@ -144,52 +152,38 @@ const ToolSelector = ({ onSelectTool }) => {
           id="tool-search"
         />
         {searchQuery && (
-          <button
-            className="search-clear"
-            onClick={() => setSearchQuery('')}
-            aria-label="Clear search"
-          >
-            ×
-          </button>
+          <button className="search-clear" onClick={() => setSearchQuery('')} aria-label="Clear search">×</button>
         )}
       </div>
 
       <RecentTools onSelectTool={onSelectTool} />
 
       {isSearching ? (
-        /* Search results: flat grid */
-        <div className="cards-grid">
+        <div className="tile-grid">
           {filteredTools.length === 0 && (
-            <div className="no-results">
-              <p>No tools found for "{searchQuery}"</p>
-            </div>
+            <div className="no-results"><p>No tools found for &quot;{searchQuery}&quot;</p></div>
           )}
-          {filteredTools.map((tool, i) => renderCard(tool, i))}
+          {filteredTools.map((tool, i) => renderTile(tool, i))}
         </div>
       ) : (
-        /* Default: Featured + collapsible More Tools */
-        <>
-          <div className="cards-grid featured-grid">
-            {featuredTools.map((tool, i) => renderCard(tool, i))}
-          </div>
-
-          {!showAll ? (
-            <button className="show-all-btn" onClick={() => setShowAll(true)}>
-              Show all {moreTools.length} tools ↓
-            </button>
-          ) : (
-            <>
-              <div className="more-tools-section">
-                <div className="cards-grid compact-grid">
-                  {moreTools.map((tool, i) => renderCard(tool, i))}
-                </div>
+        <div className="tools-dashboard">
+          {categorizedTools.map((cat) => (
+            <div key={cat.key} className="tool-category">
+              <h2 className="category-label">{cat.label}</h2>
+              <div className="tile-grid">
+                {cat.tools.map((tool, i) => renderTile(tool, i))}
               </div>
-              <button className="show-all-btn" onClick={() => setShowAll(false)}>
-                Show less ↑
-              </button>
-            </>
+            </div>
+          ))}
+          {uncategorized.length > 0 && (
+            <div className="tool-category">
+              <h2 className="category-label">🧰 More Tools</h2>
+              <div className="tile-grid">
+                {uncategorized.map((tool, i) => renderTile(tool, i))}
+              </div>
+            </div>
           )}
-        </>
+        </div>
       )}
       
       <div className="trust-sections">
@@ -198,29 +192,16 @@ const ToolSelector = ({ onSelectTool }) => {
       </div>
 
       <style>{`
-        /* ... existing styles ... */
-        .trust-sections {
-           width: 100%;
-           margin-top: 40px;
-        }
-
         .selector-container {
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
           flex: 1;
-          padding: 60px 20px;
+          padding: 32px 20px;
           position: relative;
           overflow: hidden;
         }
 
-        .trust-sections {
-           width: 100%;
-           margin-top: 40px;
-        }
-
-        /* Ambient Background Effect */
         .selector-container::before {
           content: '';
           position: absolute;
@@ -228,61 +209,58 @@ const ToolSelector = ({ onSelectTool }) => {
           left: 50%;
           transform: translateX(-50%);
           width: 100vw;
-          height: 600px;
-          background: radial-gradient(circle at center, rgba(0, 102, 255, 0.08) 0%, transparent 70%);
+          height: 400px;
+          background: radial-gradient(circle at center, rgba(0, 102, 255, 0.06) 0%, transparent 70%);
           z-index: -1;
           pointer-events: none;
         }
 
         .selector-header {
           text-align: center;
-          margin-bottom: 40px;
-          position: relative;
+          margin-bottom: 20px;
         }
 
         .hero-badge {
           display: inline-block;
           background: rgba(0, 102, 255, 0.1);
           color: var(--primary);
-          padding: 6px 16px;
+          padding: 5px 14px;
           border-radius: var(--radius-full);
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           font-weight: 600;
-          margin-bottom: 24px;
+          margin-bottom: 12px;
           border: 1px solid var(--primary-glow);
-          backdrop-filter: blur(4px);
         }
 
         .selector-header h1 {
-          font-size: 3rem;
-          margin-bottom: 16px;
+          font-size: 2.2rem;
+          margin-bottom: 8px;
           background: linear-gradient(300deg, var(--text-main), var(--text-muted), var(--primary));
           background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           animation: gradientFlow 6s ease infinite;
-          letter-spacing: -1px;
+          letter-spacing: -0.5px;
         }
 
         .selector-header p {
           color: var(--text-muted);
-          font-size: 1.2rem;
-          max-width: 500px;
+          font-size: 1rem;
+          max-width: 460px;
           margin: 0 auto;
         }
 
-        /* Search Bar */
         .search-bar-wrapper {
           display: flex;
           align-items: center;
           width: 100%;
-          max-width: 500px;
-          margin-bottom: 40px;
+          max-width: 420px;
+          margin-bottom: 16px;
           background: var(--bg-panel);
           border: 1px solid var(--border-light);
           border-radius: var(--radius-full);
-          padding: 10px 20px;
-          gap: 10px;
+          padding: 8px 16px;
+          gap: 8px;
           transition: all var(--transition-smooth);
         }
 
@@ -291,32 +269,27 @@ const ToolSelector = ({ onSelectTool }) => {
           box-shadow: 0 0 0 3px var(--primary-glow);
         }
 
-        .search-icon {
-          color: var(--text-dim);
-          flex-shrink: 0;
-        }
+        .search-icon { color: var(--text-dim); flex-shrink: 0; }
 
         .search-input {
           flex: 1;
           border: none;
           background: transparent;
           color: var(--text-main);
-          font-size: 1rem;
+          font-size: 0.9rem;
           outline: none;
           font-family: inherit;
         }
 
-        .search-input::placeholder {
-          color: var(--text-dim);
-        }
+        .search-input::placeholder { color: var(--text-dim); }
 
         .search-clear {
           background: var(--bg-surface);
           border: none;
           color: var(--text-muted);
-          font-size: 1.2rem;
-          width: 24px;
-          height: 24px;
+          font-size: 1.1rem;
+          width: 22px;
+          height: 22px;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -334,227 +307,164 @@ const ToolSelector = ({ onSelectTool }) => {
         .no-results {
           grid-column: 1 / -1;
           text-align: center;
-          padding: 40px 20px;
+          padding: 24px;
           color: var(--text-muted);
-          font-size: 1.1rem;
         }
 
-        .cards-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 24px;
+        .trust-sections {
           width: 100%;
-          max-width: 1000px;
-          perspective: 1000px;
-          grid-auto-flow: dense;
+          margin-top: 32px;
         }
 
-        .featured-grid {
-          grid-template-columns: repeat(2, 1fr);
-          max-width: 800px;
+        /* ===== Tools Dashboard ===== */
+        .tools-dashboard {
+          width: 100%;
+          max-width: 900px;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
         }
 
-        .compact-grid {
-          grid-template-columns: repeat(3, 1fr);
-          gap: 16px;
+        .tool-category {
+          width: 100%;
         }
 
-        .compact-grid .tool-card {
-          padding: 20px;
+        .category-label {
+          font-size: 0.85rem;
+          font-weight: 700;
+          color: var(--text-muted);
+          margin-bottom: 10px;
+          padding-left: 4px;
+          letter-spacing: 0.02em;
+          text-transform: uppercase;
         }
 
-        .compact-grid .icon-wrapper {
+        /* ===== Icon Tile Grid ===== */
+        .tile-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+          gap: 10px;
+          width: 100%;
+          max-width: 900px;
+        }
+
+        .tool-tile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 14px 8px;
+          border-radius: var(--radius-md);
+          background: var(--bg-panel);
+          border: 1px solid var(--border-light);
+          cursor: pointer;
+          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          position: relative;
+          opacity: 0;
+          animation: tileIn 0.35s ease forwards;
+        }
+
+        .tool-tile:hover {
+          transform: translateY(-4px);
+          border-color: var(--primary);
+          box-shadow: 0 8px 24px -4px var(--primary-glow);
+          background: var(--bg-surface);
+        }
+
+        .tool-tile:active {
+          transform: translateY(-1px) scale(0.98);
+        }
+
+        .tile-icon {
           width: 40px;
           height: 40px;
+          border-radius: 12px;
+          background: var(--bg-surface);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--primary);
           margin-bottom: 8px;
+          transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .compact-grid .icon-wrapper svg {
+        .tile-icon svg {
           width: 20px;
           height: 20px;
         }
 
-        .compact-grid .card-content h3 {
-          font-size: 0.9rem;
-        }
-
-        .compact-grid .card-content p {
-          font-size: 0.75rem;
-          -webkit-line-clamp: 2;
-        }
-
-        .show-all-btn {
-          margin: 24px 0;
-          padding: 10px 28px;
-          background: var(--bg-panel);
-          border: 1px solid var(--border-light);
-          border-radius: var(--radius-full);
-          color: var(--primary);
-          font-size: 0.88rem;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.2s;
-          font-family: inherit;
-        }
-
-        .show-all-btn:hover {
+        .tool-tile:hover .tile-icon {
           background: var(--primary);
           color: white;
-          border-color: var(--primary);
-          transform: translateY(-1px);
+          transform: scale(1.1) rotate(-5deg);
+          box-shadow: 0 6px 16px -4px var(--primary-glow);
         }
 
-        .more-tools-section {
-          width: 100%;
-          max-width: 1000px;
-          animation: fadeInUp 0.4s ease-out;
+        .tile-label {
+          font-size: 0.78rem;
+          font-weight: 600;
+          color: var(--text-main);
+          line-height: 1.2;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .tile-badge {
+          position: absolute;
+          top: 4px;
+          right: 4px;
+          background: linear-gradient(135deg, #FF0080, #7928CA);
+          color: white;
+          font-size: 0.55rem;
+          padding: 1px 5px;
+          border-radius: 8px;
+          font-weight: 700;
+          letter-spacing: 0.3px;
+        }
+
+        @keyframes tileIn {
+          from { opacity: 0; transform: translateY(16px) scale(0.95); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        @keyframes gradientFlow {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         @media (max-width: 768px) {
-          .featured-grid {
-            grid-template-columns: 1fr;
+          .selector-header h1 {
+            font-size: 1.6rem;
           }
-          .compact-grid {
-            grid-template-columns: repeat(2, 1fr);
+          .selector-header {
+            margin-bottom: 14px;
+          }
+          .tile-grid {
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 8px;
+          }
+          .tool-tile {
+            padding: 10px 6px;
+          }
+          .tile-icon {
+            width: 34px;
+            height: 34px;
+          }
+          .tile-icon svg {
+            width: 17px;
+            height: 17px;
+          }
+          .tile-label {
+            font-size: 0.7rem;
           }
         }
 
         @media (max-width: 480px) {
-          .compact-grid {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        .tool-card {
-          background: var(--bg-panel);
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
-          border: 1px solid var(--border-light);
-          box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-          border-radius: var(--radius-lg);
-          padding: 32px;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          text-align: left;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          position: relative;
-          overflow: hidden;
-          cursor: pointer;
-          opacity: 0;
-          animation: fadeInUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        }
-
-        .tool-card:hover {
-          transform: translateY(-8px) scale(1.02);
-          border-color: var(--primary);
-          background: var(--bg-surface);
-          box-shadow: 0 20px 40px -5px var(--primary-glow);
-        }
-
-        .tool-card:hover .icon-wrapper {
-          background: var(--primary);
-          color: white;
-          transform: scale(1.1) rotate(-8deg);
-          box-shadow: 0 10px 20px -5px var(--primary-glow);
-        }
-
-        .icon-wrapper {
-          width: 64px;
-          height: 64px;
-          background: var(--bg-surface);
-          border-radius: 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 24px;
-          color: var(--primary);
-          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .card-content {
-          margin-bottom: 24px;
-          z-index: 1;
-        }
-
-        .card-content h3 {
-           font-size: 1.25rem;
-           margin-bottom: 8px;
-           color: var(--text-main);
-           font-weight: 700;
-        }
-
-        .card-content p {
-           color: var(--text-muted);
-           font-size: 0.95rem;
-           line-height: 1.6;
-        }
-
-        .card-action {
-          margin-top: auto;
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          font-weight: 600;
-          color: var(--primary);
-          opacity: 0;
-          transform: translateX(-10px);
-          transition: all 0.3s ease;
-        }
-
-        .tool-card:hover .card-action {
-          opacity: 1;
-          transform: translateX(0);
-        }
-
-        .badge {
-          display: inline-block;
-          background: linear-gradient(135deg, #FF0080, #7928CA);
-          color: white;
-          font-size: 0.7rem;
-          padding: 2px 8px;
-          border-radius: 12px;
-          margin-left: 8px;
-          vertical-align: middle;
-          font-weight: 700;
-          letter-spacing: 0.5px;
-          box-shadow: 0 2px 10px rgba(121, 40, 202, 0.3);
-        }
-
-        @keyframes fadeIn {
-           from { opacity: 0; }
-           to { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-           from { opacity: 0; transform: translateY(40px); }
-           to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes gradientFlow {
-           0% { background-position: 0% 50%; }
-           50% { background-position: 100% 50%; }
-           100% { background-position: 0% 50%; }
-        }
-
-        @media (min-width: 768px) {
-          .featured-card {
-             grid-column: span 2;
-          }
-          .featured-card .card-content p {
-             max-width: 80%;
-          }
-        }
-
-        @media (max-width: 600px) {
-          .selector-header h1 {
-            font-size: 2rem;
-          }
-          .selector-header {
-            margin-bottom: 24px;
-          }
-          .search-bar-wrapper {
-            margin-bottom: 24px;
+          .tile-grid {
+            grid-template-columns: repeat(3, 1fr);
           }
         }
       `}</style>
