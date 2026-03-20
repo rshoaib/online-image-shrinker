@@ -18,6 +18,7 @@ import {
 const ToolSelector = ({ onSelectTool }) => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
+  const [showAll, setShowAll] = useState(false);
   const router = useRouter();
 
   const programmaticTools = [
@@ -40,40 +41,44 @@ const ToolSelector = ({ onSelectTool }) => {
   ];
 
   const tools = [
-    { id: 'compress', i18nKey: 'compress', icon: <Minimize2 size={32} />, featured: true },
-    { id: 'resize', i18nKey: 'resize', icon: <Maximize2 size={32} />, featured: true },
-    { id: 'crop', i18nKey: 'crop', icon: <Crop size={32} /> },
-    { id: 'remove-bg', i18nKey: 'remove_bg', icon: <Eraser size={32} />, badge: 'AI', featured: true },
-    { id: 'upscale', i18nKey: 'upscale', icon: <Zap size={32} />, badge: 'AI' },
-    { id: 'magic-eraser', i18nKey: 'magic_eraser', icon: <Wand2 size={32} />, badge: 'AI' },
-    { id: 'image-converter', i18nKey: 'converter', icon: <Repeat size={32} />, featured: true },
-    { id: 'pdf', i18nKey: 'pdf', icon: <FileText size={32} /> },
-    { id: 'watermark', i18nKey: 'watermark', icon: <Type size={32} /> },
-    { id: 'collage-maker', i18nKey: 'collage', icon: <LayoutTemplate size={32} /> },
-    { id: 'ocr', i18nKey: 'ocr', icon: <ScanLine size={32} /> },
-    { id: 'qr-code-generator', i18nKey: 'qr_code', icon: <QrCode size={32} /> },
-    { id: 'signature-maker', i18nKey: 'signature', icon: <PenTool size={32} /> },
-    { id: 'profile-picture', i18nKey: 'profile', icon: <User size={32} /> },
-    { id: 'grid-splitter', i18nKey: 'grid', icon: <Grid size={32} /> },
-    { id: 'redact', i18nKey: 'redact', icon: <EyeOff size={32} /> },
-    { id: 'screenshot-beautifier', i18nKey: 'screenshot', icon: <Monitor size={32} /> },
-    { id: 'social-preview', i18nKey: 'social_preview', icon: <Share2 size={32} /> },
-    { id: 'exif', i18nKey: 'exif', icon: <Settings size={32} /> },
-    { id: 'palette-generator', i18nKey: 'palette', icon: <Palette size={32} /> },
-    { id: 'meme-generator', i18nKey: 'meme', icon: <Smile size={32} /> },
-    { id: 'photo-filters', i18nKey: 'photo_filters', icon: <Sparkles size={32} /> },
-    { id: 'video-compressor', i18nKey: 'video_compressor', icon: <Video size={32} /> },
-    { id: 'video-to-gif', i18nKey: 'video_to_gif', icon: <Film size={32} /> },
-    { id: 'video-to-audio', i18nKey: 'video_to_audio', icon: <Music size={32} /> },
-    { id: 'image-compare', i18nKey: 'image_compare', icon: <ArrowLeftRight size={32} /> },
-    { id: 'base64-converter', i18nKey: 'base64', icon: <Code size={32} /> },
-    { id: 'rotate-flip', i18nKey: 'rotate_flip', icon: <RotateCw size={32} /> },
-    { id: 'favicon-generator', i18nKey: 'favicon', icon: <Globe size={32} /> },
-    { id: 'blur-face', i18nKey: 'blur_face', icon: <ShieldCheck size={32} /> },
+    { id: 'compress', i18nKey: 'compress', icon: <Minimize2 size={32} />, featured: true, category: 'essential' },
+    { id: 'resize', i18nKey: 'resize', icon: <Maximize2 size={32} />, featured: true, category: 'essential' },
+    { id: 'crop', i18nKey: 'crop', icon: <Crop size={32} />, category: 'essential' },
+    { id: 'remove-bg', i18nKey: 'remove_bg', icon: <Eraser size={32} />, badge: 'AI', featured: true, category: 'essential' },
+    { id: 'upscale', i18nKey: 'upscale', icon: <Zap size={32} />, badge: 'AI', category: 'essential' },
+    { id: 'magic-eraser', i18nKey: 'magic_eraser', icon: <Wand2 size={32} />, badge: 'AI', category: 'essential' },
+    { id: 'image-converter', i18nKey: 'converter', icon: <Repeat size={32} />, featured: true, category: 'essential' },
+    { id: 'pdf', i18nKey: 'pdf', icon: <FileText size={32} />, category: 'essential' },
+    { id: 'watermark', i18nKey: 'watermark', icon: <Type size={32} />, category: 'creative' },
+    { id: 'collage-maker', i18nKey: 'collage', icon: <LayoutTemplate size={32} />, category: 'creative' },
+    { id: 'ocr', i18nKey: 'ocr', icon: <ScanLine size={32} />, category: 'essential' },
+    { id: 'qr-code-generator', i18nKey: 'qr_code', icon: <QrCode size={32} />, category: 'creative' },
+    { id: 'signature-maker', i18nKey: 'signature', icon: <PenTool size={32} />, category: 'creative' },
+    { id: 'profile-picture', i18nKey: 'profile', icon: <User size={32} />, category: 'creative' },
+    { id: 'grid-splitter', i18nKey: 'grid', icon: <Grid size={32} />, category: 'creative' },
+    { id: 'redact', i18nKey: 'redact', icon: <EyeOff size={32} />, category: 'privacy' },
+    { id: 'screenshot-beautifier', i18nKey: 'screenshot', icon: <Monitor size={32} />, category: 'creative' },
+    { id: 'social-preview', i18nKey: 'social_preview', icon: <Share2 size={32} />, category: 'creative' },
+    { id: 'exif', i18nKey: 'exif', icon: <Settings size={32} />, category: 'privacy' },
+    { id: 'palette-generator', i18nKey: 'palette', icon: <Palette size={32} />, category: 'creative' },
+    { id: 'meme-generator', i18nKey: 'meme', icon: <Smile size={32} />, category: 'creative' },
+    { id: 'photo-filters', i18nKey: 'photo_filters', icon: <Sparkles size={32} />, category: 'creative' },
+    { id: 'video-compressor', i18nKey: 'video_compressor', icon: <Video size={32} />, category: 'video' },
+    { id: 'video-to-gif', i18nKey: 'video_to_gif', icon: <Film size={32} />, category: 'video' },
+    { id: 'video-to-audio', i18nKey: 'video_to_audio', icon: <Music size={32} />, category: 'video' },
+    { id: 'image-compare', i18nKey: 'image_compare', icon: <ArrowLeftRight size={32} />, category: 'essential' },
+    { id: 'base64-converter', i18nKey: 'base64', icon: <Code size={32} />, category: 'developer' },
+    { id: 'rotate-flip', i18nKey: 'rotate_flip', icon: <RotateCw size={32} />, category: 'essential' },
+    { id: 'favicon-generator', i18nKey: 'favicon', icon: <Globe size={32} />, category: 'developer' },
+    { id: 'blur-face', i18nKey: 'blur_face', icon: <ShieldCheck size={32} />, category: 'privacy' },
   ];
 
+  const featuredTools = tools.filter(t => t.featured);
+  const moreTools = tools.filter(t => !t.featured);
+
   // Filter tools by search query
-  const filteredTools = searchQuery.trim()
+  const isSearching = searchQuery.trim().length > 0;
+  const filteredTools = isSearching
     ? [...tools, ...programmaticTools].filter(tool => {
         const title = tool.isProgrammatic ? tool.title.toLowerCase() : t(`home.tools.${tool.i18nKey}.title`).toLowerCase();
         const desc = tool.isProgrammatic ? tool.desc.toLowerCase() : t(`home.tools.${tool.i18nKey}.desc`).toLowerCase();
@@ -81,6 +86,39 @@ const ToolSelector = ({ onSelectTool }) => {
         return title.includes(q) || desc.includes(q) || tool.id.includes(q);
       })
     : tools;
+
+  const renderCard = (tool, index) => (
+    <div 
+      key={tool.id} 
+      className={`tool-card ${tool.featured ? 'featured-card' : ''}`}
+      onClick={() => tool.route ? router.push(tool.route) : onSelectTool(tool.id)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          tool.route ? router.push(tool.route) : onSelectTool(tool.id);
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      style={{ animationDelay: `${index * 0.04}s` }}
+    >
+      <div className="icon-wrapper">
+        {tool.icon}
+      </div>
+      <div className="card-content">
+        <h3>
+          {tool.isProgrammatic ? tool.title : t(`home.tools.${tool.i18nKey}.title`)}
+          {tool.badge && <span className="badge">{tool.badge}</span>}
+        </h3>
+        <p>{tool.isProgrammatic ? tool.desc : t(`home.tools.${tool.i18nKey}.desc`)}</p>
+      </div>
+      {tool.featured && (
+        <div className="card-action">
+           Try it out <span>→</span>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className="selector-container">
@@ -117,45 +155,42 @@ const ToolSelector = ({ onSelectTool }) => {
       </div>
 
       <RecentTools onSelectTool={onSelectTool} />
-      <div className="cards-grid">
-        {filteredTools.length === 0 && (
-          <div className="no-results">
-            <p>No tools found for "{searchQuery}"</p>
+
+      {isSearching ? (
+        /* Search results: flat grid */
+        <div className="cards-grid">
+          {filteredTools.length === 0 && (
+            <div className="no-results">
+              <p>No tools found for "{searchQuery}"</p>
+            </div>
+          )}
+          {filteredTools.map((tool, i) => renderCard(tool, i))}
+        </div>
+      ) : (
+        /* Default: Featured + collapsible More Tools */
+        <>
+          <div className="cards-grid featured-grid">
+            {featuredTools.map((tool, i) => renderCard(tool, i))}
           </div>
-        )}
-        {filteredTools.map((tool, index) => (
-          <div 
-            key={tool.id} 
-            className={`tool-card ${tool.featured ? 'featured-card' : ''}`}
-            onClick={() => tool.route ? router.push(tool.route) : onSelectTool(tool.id)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                tool.route ? router.push(tool.route) : onSelectTool(tool.id);
-              }
-            }}
-            role="button"
-            tabIndex={0}
-            style={{ animationDelay: `${index * 0.04}s` }}
-          >
-            <div className="icon-wrapper">
-              {tool.icon}
-            </div>
-            <div className="card-content">
-              <h3>
-                {tool.isProgrammatic ? tool.title : t(`home.tools.${tool.i18nKey}.title`)}
-                {tool.badge && <span className="badge">{tool.badge}</span>}
-              </h3>
-              <p>{tool.isProgrammatic ? tool.desc : t(`home.tools.${tool.i18nKey}.desc`)}</p>
-            </div>
-            {tool.featured && (
-              <div className="card-action">
-                 Try it out <span>→</span>
+
+          {!showAll ? (
+            <button className="show-all-btn" onClick={() => setShowAll(true)}>
+              Show all {moreTools.length} tools ↓
+            </button>
+          ) : (
+            <>
+              <div className="more-tools-section">
+                <div className="cards-grid compact-grid">
+                  {moreTools.map((tool, i) => renderCard(tool, i))}
+                </div>
               </div>
-            )}
-          </div>
-        ))}
-      </div>
+              <button className="show-all-btn" onClick={() => setShowAll(false)}>
+                Show less ↑
+              </button>
+            </>
+          )}
+        </>
+      )}
       
       <div className="trust-sections">
         <HowItWorks />
@@ -309,9 +344,85 @@ const ToolSelector = ({ onSelectTool }) => {
           grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
           gap: 24px;
           width: 100%;
-          max-width: 1000px; /* Wider for Bento */
+          max-width: 1000px;
           perspective: 1000px;
           grid-auto-flow: dense;
+        }
+
+        .featured-grid {
+          grid-template-columns: repeat(2, 1fr);
+          max-width: 800px;
+        }
+
+        .compact-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 16px;
+        }
+
+        .compact-grid .tool-card {
+          padding: 20px;
+        }
+
+        .compact-grid .icon-wrapper {
+          width: 40px;
+          height: 40px;
+          margin-bottom: 8px;
+        }
+
+        .compact-grid .icon-wrapper svg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .compact-grid .card-content h3 {
+          font-size: 0.9rem;
+        }
+
+        .compact-grid .card-content p {
+          font-size: 0.75rem;
+          -webkit-line-clamp: 2;
+        }
+
+        .show-all-btn {
+          margin: 24px 0;
+          padding: 10px 28px;
+          background: var(--bg-panel);
+          border: 1px solid var(--border-light);
+          border-radius: var(--radius-full);
+          color: var(--primary);
+          font-size: 0.88rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s;
+          font-family: inherit;
+        }
+
+        .show-all-btn:hover {
+          background: var(--primary);
+          color: white;
+          border-color: var(--primary);
+          transform: translateY(-1px);
+        }
+
+        .more-tools-section {
+          width: 100%;
+          max-width: 1000px;
+          animation: fadeInUp 0.4s ease-out;
+        }
+
+        @media (max-width: 768px) {
+          .featured-grid {
+            grid-template-columns: 1fr;
+          }
+          .compact-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .compact-grid {
+            grid-template-columns: 1fr;
+          }
         }
 
         .tool-card {

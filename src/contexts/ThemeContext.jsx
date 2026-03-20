@@ -7,11 +7,8 @@ export const ThemeProvider = ({ children }) => {
 
   useEffect(() => {
     const saved = localStorage.getItem('theme');
-    if (saved) {
-      setTheme(saved);
-    } else {
-      setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    }
+    // Always default to light — dark only if user explicitly toggled
+    setTheme(saved || 'light');
     setMounted(true);
   }, []);
 
