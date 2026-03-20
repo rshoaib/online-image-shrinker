@@ -105,6 +105,32 @@ const DropZone = ({ onFileSelect }) => {
     }
   };
 
+  const handleSample = async (e) => {
+    e.stopPropagation();
+    try {
+      const res = await fetch('/sample-photo.jpg');
+      if (!res.ok) throw new Error('Not found');
+      const blob = await res.blob();
+      const file = new File([blob], 'sample-photo.jpg', { type: 'image/jpeg' });
+      onFileSelect([file]);
+    } catch (_) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1200; canvas.height = 800;
+      const ctx = canvas.getContext('2d');
+      const g = ctx.createLinearGradient(0, 0, 1200, 800);
+      g.addColorStop(0, '#1a1f3c'); g.addColorStop(1, '#0f3460');
+      ctx.fillStyle = g; ctx.fillRect(0, 0, 1200, 800);
+      ctx.fillStyle = 'white'; ctx.font = 'bold 48px sans-serif'; ctx.textAlign = 'center';
+      ctx.fillText('Sample Image', 600, 380);
+      ctx.font = '24px sans-serif'; ctx.fillStyle = 'rgba(255,255,255,0.6)';
+      ctx.fillText('1200 x 800 - Try the tool!', 600, 440);
+      canvas.toBlob(blob => {
+        const file = new File([blob], 'sample-photo.jpg', { type: 'image/jpeg' });
+        onFileSelect([file]);
+      }, 'image/jpeg', 0.9);
+    }
+  };
+
   return (
     <div 
       className={`dropzone ${isDragging ? 'dragging' : ''}`}
@@ -145,9 +171,15 @@ const DropZone = ({ onFileSelect }) => {
         <span className="pill">HEIC</span>
       </div>
 
+      <div className="sample-row" onClick={handleSample}>
+        <span className="sample-btn">⚡ Try with a sample photo</span>
+      </div>
+
       {isDragging && (
         <div className="dz-backdrop-blur"></div>
       )}
+
+      {/* Sample Button Styles */}
 
       {/* Inline Toast Messages */}
       {error && (
