@@ -86,11 +86,12 @@ const ToolSelector = ({ onSelectTool }) => {
     <div className="selector-container">
       {/* ... existing header ... */}
       <div className="selector-header">
-        <StatsCounter />
         <div className="hero-badge">✨ 100% Private & Free</div>
         <h1>{t('home.title')}</h1>
         <p>{t('home.subtitle')}</p>
       </div>
+
+      <StatsCounter />
 
       {/* Search/Filter Bar */}
       <div className="search-bar-wrapper">
