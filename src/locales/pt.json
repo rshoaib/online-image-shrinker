@@ -142,6 +142,10 @@
       "rotate_flip": {
         "title": "Girar & Espelhar",
         "desc": "Gire imagens 90°/180° ou ângulo personalizado, espelhe horizontal ou verticalmente."
+      },
+      "blur_face": {
+        "title": "Blur Face",
+        "desc": "Blur or pixelate faces and sensitive info. 100% private, no uploads."
       }
     }
   }

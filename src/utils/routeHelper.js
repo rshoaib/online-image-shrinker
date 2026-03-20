@@ -36,6 +36,7 @@ export function getToolDataFromSlug(slug) {
     'photo-filters-online': { toolId: 'photo-filters', title: 'Free Photo Filters - Online Editor', desc: 'Adjust brightness, contrast, saturation, temperature, and apply beautiful preset filters. 100% free and private.' },
     'compare-images-online': { toolId: 'image-compare', title: 'Compare Images Online - Free Side-by-Side Tool', desc: 'Upload two images and compare them side by side with slider, overlay, or split view. 100% private, works locally in your browser.' },
     'social-media-preview-generator': { toolId: 'social-preview', title: 'Free Social Media Preview Generator - Create Platform-Ready Images', desc: 'Create stunning social media preview images for Twitter, Facebook, LinkedIn, Instagram, and YouTube. Add text overlays, gradients, and download instantly. Free and private.' },
+    'blur-faces-online': { toolId: 'blur-face', title: 'Blur Face in Photo Online - Free & Private', desc: 'Blur or pixelate faces, license plates, and sensitive info. 100% client-side, no uploads required.' },
     'rotate-image-online': { toolId: 'rotate-flip', title: 'Rotate & Flip Image Online - Free Tool', desc: 'Rotate images 90°, 180°, custom angles or flip horizontally and vertically. 100% free, private, and works locally in your browser.' },
   };
 

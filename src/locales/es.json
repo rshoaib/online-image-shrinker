@@ -152,6 +152,10 @@
       "rotate_flip": {
         "title": "Rotar y Voltear",
         "desc": "Rota imágenes 90°/180° o ángulo personalizado, voltea horizontal o verticalmente."
+      },
+      "blur_face": {
+        "title": "Blur Face",
+        "desc": "Blur or pixelate faces and sensitive info. 100% private, no uploads."
       }
     }
   }

@@ -172,6 +172,10 @@
       "rotate_flip": {
         "title": "Rotation & Miroir",
         "desc": "Faites pivoter les images de 90°/180° ou angle personnalisé, retournez horizontalement ou verticalement."
+      },
+      "blur_face": {
+        "title": "Blur Face",
+        "desc": "Blur or pixelate faces and sensitive info. 100% private, no uploads."
       }
     }
   }

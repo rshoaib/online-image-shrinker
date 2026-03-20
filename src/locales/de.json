@@ -142,6 +142,10 @@
       "rotate_flip": {
         "title": "Drehen & Spiegeln",
         "desc": "Bilder um 90°/180° oder benutzerdefinierten Winkel drehen, horizontal oder vertikal spiegeln."
+      },
+      "blur_face": {
+        "title": "Blur Face",
+        "desc": "Blur or pixelate faces and sensitive info. 100% private, no uploads."
       }
     }
   }

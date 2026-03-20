@@ -38,6 +38,7 @@ const FaviconEditor = lazy(() => import('./FaviconEditor'));
 const SvgToPngEditor = lazy(() => import('./SvgToPngEditor'));
 const Base64Editor = lazy(() => import('./Base64Editor'));
 const RotateFlipEditor = lazy(() => import('./RotateFlipEditor'));
+const BlurFaceEditor = lazy(() => import('./BlurFaceEditor'));
 
 
 
@@ -116,6 +117,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <Base64Editor onBack={onBack} />;
     case 'rotate-flip':
       return <RotateFlipEditor file={files[0]} onBack={onBack} />;
+    case 'blur-face':
+      return <BlurFaceEditor file={files[0]} onBack={onBack} />;
 
     default:
       if (files.length === 1) {

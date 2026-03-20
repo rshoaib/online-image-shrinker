@@ -142,6 +142,10 @@
       "rotate_flip": {
         "title": "Ruota & Rifletti",
         "desc": "Ruota immagini di 90°/180° o angolo personalizzato, rifletti orizzontalmente o verticalmente."
+      },
+      "blur_face": {
+        "title": "Blur Face",
+        "desc": "Blur or pixelate faces and sensitive info. 100% private, no uploads."
       }
     }
   }

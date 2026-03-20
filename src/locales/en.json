@@ -195,6 +195,10 @@
       "favicon": {
         "title": "Favicon Generator",
         "desc": "Create standard browser favicon files and high-res Apple Touch icons."
+      },
+      "blur_face": {
+        "title": "Blur Face",
+        "desc": "Blur or pixelate faces and sensitive info. 100% private, no uploads."
       }
     }
   }
