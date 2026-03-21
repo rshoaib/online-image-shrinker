@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import { useState } from 'react';
 import StatsCounter from './StatsCounter';
 import RecentTools from './RecentTools';
@@ -18,7 +18,6 @@ import {
 const ToolSelector = ({ onSelectTool }) => {
   const { t } = useTranslation();
   const [searchQuery, setSearchQuery] = useState('');
-  const [showAll, setShowAll] = useState(false);
   const router = useRouter();
 
   const programmaticTools = [
@@ -41,41 +40,40 @@ const ToolSelector = ({ onSelectTool }) => {
   ];
 
   const tools = [
-    { id: 'compress', i18nKey: 'compress', icon: <Minimize2 size={32} />, featured: true, category: 'essential' },
-    { id: 'resize', i18nKey: 'resize', icon: <Maximize2 size={32} />, featured: true, category: 'essential' },
-    { id: 'crop', i18nKey: 'crop', icon: <Crop size={32} />, category: 'essential' },
-    { id: 'remove-bg', i18nKey: 'remove_bg', icon: <Eraser size={32} />, badge: 'AI', featured: true, category: 'essential' },
-    { id: 'upscale', i18nKey: 'upscale', icon: <Zap size={32} />, badge: 'AI', category: 'essential' },
-    { id: 'magic-eraser', i18nKey: 'magic_eraser', icon: <Wand2 size={32} />, badge: 'AI', category: 'essential' },
-    { id: 'image-converter', i18nKey: 'converter', icon: <Repeat size={32} />, featured: true, category: 'essential' },
-    { id: 'pdf', i18nKey: 'pdf', icon: <FileText size={32} />, category: 'essential' },
-    { id: 'watermark', i18nKey: 'watermark', icon: <Type size={32} />, category: 'creative' },
-    { id: 'collage-maker', i18nKey: 'collage', icon: <LayoutTemplate size={32} />, category: 'creative' },
-    { id: 'ocr', i18nKey: 'ocr', icon: <ScanLine size={32} />, category: 'essential' },
-    { id: 'qr-code-generator', i18nKey: 'qr_code', icon: <QrCode size={32} />, category: 'creative' },
-    { id: 'signature-maker', i18nKey: 'signature', icon: <PenTool size={32} />, category: 'creative' },
-    { id: 'profile-picture', i18nKey: 'profile', icon: <User size={32} />, category: 'creative' },
-    { id: 'grid-splitter', i18nKey: 'grid', icon: <Grid size={32} />, category: 'creative' },
-    { id: 'redact', i18nKey: 'redact', icon: <EyeOff size={32} />, category: 'privacy' },
-    { id: 'screenshot-beautifier', i18nKey: 'screenshot', icon: <Monitor size={32} />, category: 'creative' },
-    { id: 'social-preview', i18nKey: 'social_preview', icon: <Share2 size={32} />, category: 'creative' },
-    { id: 'exif', i18nKey: 'exif', icon: <Settings size={32} />, category: 'privacy' },
-    { id: 'palette-generator', i18nKey: 'palette', icon: <Palette size={32} />, category: 'creative' },
-    { id: 'meme-generator', i18nKey: 'meme', icon: <Smile size={32} />, category: 'creative' },
-    { id: 'photo-filters', i18nKey: 'photo_filters', icon: <Sparkles size={32} />, category: 'creative' },
-    { id: 'video-compressor', i18nKey: 'video_compressor', icon: <Video size={32} />, category: 'video' },
-    { id: 'video-to-gif', i18nKey: 'video_to_gif', icon: <Film size={32} />, category: 'video' },
-    { id: 'video-to-audio', i18nKey: 'video_to_audio', icon: <Music size={32} />, category: 'video' },
-    { id: 'image-compare', i18nKey: 'image_compare', icon: <ArrowLeftRight size={32} />, category: 'essential' },
-    { id: 'base64-converter', i18nKey: 'base64', icon: <Code size={32} />, category: 'developer' },
-    { id: 'rotate-flip', i18nKey: 'rotate_flip', icon: <RotateCw size={32} />, category: 'essential' },
-    { id: 'favicon-generator', i18nKey: 'favicon', icon: <Globe size={32} />, category: 'developer' },
-    { id: 'blur-face', i18nKey: 'blur_face', icon: <ShieldCheck size={32} />, category: 'privacy' },
+    { id: 'compress', i18nKey: 'compress', icon: <Minimize2 size={32} />, featured: true },
+    { id: 'resize', i18nKey: 'resize', icon: <Maximize2 size={32} />, featured: true },
+    { id: 'crop', i18nKey: 'crop', icon: <Crop size={32} /> },
+    { id: 'remove-bg', i18nKey: 'remove_bg', icon: <Eraser size={32} />, badge: 'AI', featured: true },
+    { id: 'upscale', i18nKey: 'upscale', icon: <Zap size={32} />, badge: 'AI' },
+    { id: 'magic-eraser', i18nKey: 'magic_eraser', icon: <Wand2 size={32} />, badge: 'AI' },
+    { id: 'image-converter', i18nKey: 'converter', icon: <Repeat size={32} />, featured: true },
+    { id: 'pdf', i18nKey: 'pdf', icon: <FileText size={32} /> },
+    { id: 'watermark', i18nKey: 'watermark', icon: <Type size={32} /> },
+    { id: 'collage-maker', i18nKey: 'collage', icon: <LayoutTemplate size={32} /> },
+    { id: 'ocr', i18nKey: 'ocr', icon: <ScanLine size={32} /> },
+    { id: 'qr-code-generator', i18nKey: 'qr_code', icon: <QrCode size={32} /> },
+    { id: 'signature-maker', i18nKey: 'signature', icon: <PenTool size={32} /> },
+    { id: 'profile-picture', i18nKey: 'profile', icon: <User size={32} /> },
+    { id: 'grid-splitter', i18nKey: 'grid', icon: <Grid size={32} /> },
+    { id: 'redact', i18nKey: 'redact', icon: <EyeOff size={32} /> },
+    { id: 'screenshot-beautifier', i18nKey: 'screenshot', icon: <Monitor size={32} /> },
+    { id: 'social-preview', i18nKey: 'social_preview', icon: <Share2 size={32} /> },
+    { id: 'exif', i18nKey: 'exif', icon: <Settings size={32} /> },
+    { id: 'palette-generator', i18nKey: 'palette', icon: <Palette size={32} /> },
+    { id: 'meme-generator', i18nKey: 'meme', icon: <Smile size={32} /> },
+    { id: 'photo-filters', i18nKey: 'photo_filters', icon: <Sparkles size={32} /> },
+    { id: 'video-compressor', i18nKey: 'video_compressor', icon: <Video size={32} /> },
+    { id: 'video-to-gif', i18nKey: 'video_to_gif', icon: <Film size={32} /> },
+    { id: 'video-to-audio', i18nKey: 'video_to_audio', icon: <Music size={32} /> },
+    { id: 'image-compare', i18nKey: 'image_compare', icon: <ArrowLeftRight size={32} /> },
+    { id: 'base64-converter', i18nKey: 'base64', icon: <Code size={32} /> },
+    { id: 'rotate-flip', i18nKey: 'rotate_flip', icon: <RotateCw size={32} /> },
+    { id: 'favicon-generator', i18nKey: 'favicon', icon: <Globe size={32} /> },
+    { id: 'blur-face', i18nKey: 'blur_face', icon: <ShieldCheck size={32} /> },
   ];
 
   // Filter tools by search query
-  const isSearching = searchQuery.trim().length > 0;
-  const filteredTools = isSearching
+  const filteredTools = searchQuery.trim()
     ? [...tools, ...programmaticTools].filter(tool => {
         const title = tool.isProgrammatic ? tool.title.toLowerCase() : t(`home.tools.${tool.i18nKey}.title`).toLowerCase();
         const desc = tool.isProgrammatic ? tool.desc.toLowerCase() : t(`home.tools.${tool.i18nKey}.desc`).toLowerCase();
@@ -84,62 +82,18 @@ const ToolSelector = ({ onSelectTool }) => {
       })
     : tools;
 
-  const renderTile = (tool, index) => (
-    <div 
-      key={tool.id} 
-      className="tool-tile"
-      onClick={() => tool.route ? router.push(tool.route) : onSelectTool(tool.id)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          tool.route ? router.push(tool.route) : onSelectTool(tool.id);
-        }
-      }}
-      role="button"
-      tabIndex={0}
-      style={{ animationDelay: `${index * 0.025}s` }}
-    >
-      <div className="tile-icon">
-        {tool.icon}
-      </div>
-      <span className="tile-label">
-        {tool.isProgrammatic ? tool.title : t(`home.tools.${tool.i18nKey}.title`)}
-      </span>
-      {tool.badge && <span className="tile-badge">{tool.badge}</span>}
-    </div>
-  );
-
-  /* Group tools by category for organized display */
-  const categories = [
-    { key: 'essential', label: '🔧 Essential', ids: ['compress','resize','convert','batch'] },
-    { key: 'creative', label: '🎨 Creative', ids: ['crop','rotate','filters','watermark','collage','meme','screenshot','color-picker','favicon','image-to-ascii'] },
-    { key: 'ai', label: '🤖 AI-Powered', ids: ['remove-bg','upscale','ai-enhance'] },
-    { key: 'privacy', label: '🔒 Privacy', ids: ['blur','redact','strip-exif'] },
-    { key: 'convert', label: '📄 Convert & Export', ids: ['jpg-to-pdf','svg-to-png','ico-convert','base64','image-compare'] },
-    { key: 'social', label: '📱 Social & QR', ids: ['social-resize','profile-pic','qr-code'] },
-    { key: 'video', label: '🎬 Video & GIF', ids: ['gif-maker','video-compress','video-to-gif'] },
-  ];
-
-  const categorizedTools = categories.map(cat => ({
-    ...cat,
-    tools: cat.ids.map(id => tools.find(t => t.id === id)).filter(Boolean)
-  })).filter(cat => cat.tools.length > 0);
-
-  /* Uncategorized tools fallback */
-  const categorizedIds = new Set(categories.flatMap(c => c.ids));
-  const uncategorized = tools.filter(t => !categorizedIds.has(t.id));
-
   return (
     <div className="selector-container">
+      {/* ... existing header ... */}
       <div className="selector-header">
-        <div className="hero-badge">✨ 100% Private & Free — No Uploads</div>
+        <div className="hero-badge">Ô£¿ 100% Private & Free</div>
         <h1>{t('home.title')}</h1>
         <p>{t('home.subtitle')}</p>
       </div>
 
       <StatsCounter />
 
-      {/* Search */}
+      {/* Search/Filter Bar */}
       <div className="search-bar-wrapper">
         <Search size={18} className="search-icon" />
         <input
@@ -152,39 +106,56 @@ const ToolSelector = ({ onSelectTool }) => {
           id="tool-search"
         />
         {searchQuery && (
-          <button className="search-clear" onClick={() => setSearchQuery('')} aria-label="Clear search">×</button>
+          <button
+            className="search-clear"
+            onClick={() => setSearchQuery('')}
+            aria-label="Clear search"
+          >
+            ├ù
+          </button>
         )}
       </div>
 
       <RecentTools onSelectTool={onSelectTool} />
-
-      {isSearching ? (
-        <div className="tile-grid">
-          {filteredTools.length === 0 && (
-            <div className="no-results"><p>No tools found for &quot;{searchQuery}&quot;</p></div>
-          )}
-          {filteredTools.map((tool, i) => renderTile(tool, i))}
-        </div>
-      ) : (
-        <div className="tools-dashboard">
-          {categorizedTools.map((cat) => (
-            <div key={cat.key} className="tool-category">
-              <h2 className="category-label">{cat.label}</h2>
-              <div className="tile-grid">
-                {cat.tools.map((tool, i) => renderTile(tool, i))}
-              </div>
+      <div className="cards-grid">
+        {filteredTools.length === 0 && (
+          <div className="no-results">
+            <p>No tools found for "{searchQuery}"</p>
+          </div>
+        )}
+        {filteredTools.map((tool, index) => (
+          <div 
+            key={tool.id} 
+            className={`tool-card ${tool.featured ? 'featured-card' : ''}`}
+            onClick={() => tool.route ? router.push(tool.route) : onSelectTool(tool.id)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                tool.route ? router.push(tool.route) : onSelectTool(tool.id);
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            style={{ animationDelay: `${index * 0.04}s` }}
+          >
+            <div className="icon-wrapper">
+              {tool.icon}
             </div>
-          ))}
-          {uncategorized.length > 0 && (
-            <div className="tool-category">
-              <h2 className="category-label">🧰 More Tools</h2>
-              <div className="tile-grid">
-                {uncategorized.map((tool, i) => renderTile(tool, i))}
-              </div>
+            <div className="card-content">
+              <h3>
+                {tool.isProgrammatic ? tool.title : t(`home.tools.${tool.i18nKey}.title`)}
+                {tool.badge && <span className="badge">{tool.badge}</span>}
+              </h3>
+              <p>{tool.isProgrammatic ? tool.desc : t(`home.tools.${tool.i18nKey}.desc`)}</p>
             </div>
-          )}
-        </div>
-      )}
+            {tool.featured && (
+              <div className="card-action">
+                 Try it out <span>ÔåÆ</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
       
       <div className="trust-sections">
         <HowItWorks />
@@ -192,16 +163,29 @@ const ToolSelector = ({ onSelectTool }) => {
       </div>
 
       <style>{`
+        /* ... existing styles ... */
+        .trust-sections {
+           width: 100%;
+           margin-top: 40px;
+        }
+
         .selector-container {
           display: flex;
           flex-direction: column;
           align-items: center;
+          justify-content: center;
           flex: 1;
-          padding: 32px 20px;
+          padding: 60px 20px;
           position: relative;
           overflow: hidden;
         }
 
+        .trust-sections {
+           width: 100%;
+           margin-top: 40px;
+        }
+
+        /* Ambient Background Effect */
         .selector-container::before {
           content: '';
           position: absolute;
@@ -209,58 +193,61 @@ const ToolSelector = ({ onSelectTool }) => {
           left: 50%;
           transform: translateX(-50%);
           width: 100vw;
-          height: 400px;
-          background: radial-gradient(circle at center, rgba(0, 102, 255, 0.06) 0%, transparent 70%);
+          height: 600px;
+          background: radial-gradient(circle at center, rgba(0, 102, 255, 0.08) 0%, transparent 70%);
           z-index: -1;
           pointer-events: none;
         }
 
         .selector-header {
           text-align: center;
-          margin-bottom: 20px;
+          margin-bottom: 40px;
+          position: relative;
         }
 
         .hero-badge {
           display: inline-block;
           background: rgba(0, 102, 255, 0.1);
           color: var(--primary);
-          padding: 5px 14px;
+          padding: 6px 16px;
           border-radius: var(--radius-full);
-          font-size: 0.8rem;
+          font-size: 0.9rem;
           font-weight: 600;
-          margin-bottom: 12px;
+          margin-bottom: 24px;
           border: 1px solid var(--primary-glow);
+          backdrop-filter: blur(4px);
         }
 
         .selector-header h1 {
-          font-size: 2.2rem;
-          margin-bottom: 8px;
+          font-size: 3rem;
+          margin-bottom: 16px;
           background: linear-gradient(300deg, var(--text-main), var(--text-muted), var(--primary));
           background-size: 200% 200%;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           animation: gradientFlow 6s ease infinite;
-          letter-spacing: -0.5px;
+          letter-spacing: -1px;
         }
 
         .selector-header p {
           color: var(--text-muted);
-          font-size: 1rem;
-          max-width: 460px;
+          font-size: 1.2rem;
+          max-width: 500px;
           margin: 0 auto;
         }
 
+        /* Search Bar */
         .search-bar-wrapper {
           display: flex;
           align-items: center;
           width: 100%;
-          max-width: 420px;
-          margin-bottom: 16px;
+          max-width: 500px;
+          margin-bottom: 40px;
           background: var(--bg-panel);
           border: 1px solid var(--border-light);
           border-radius: var(--radius-full);
-          padding: 8px 16px;
-          gap: 8px;
+          padding: 10px 20px;
+          gap: 10px;
           transition: all var(--transition-smooth);
         }
 
@@ -269,27 +256,32 @@ const ToolSelector = ({ onSelectTool }) => {
           box-shadow: 0 0 0 3px var(--primary-glow);
         }
 
-        .search-icon { color: var(--text-dim); flex-shrink: 0; }
+        .search-icon {
+          color: var(--text-dim);
+          flex-shrink: 0;
+        }
 
         .search-input {
           flex: 1;
           border: none;
           background: transparent;
           color: var(--text-main);
-          font-size: 0.9rem;
+          font-size: 1rem;
           outline: none;
           font-family: inherit;
         }
 
-        .search-input::placeholder { color: var(--text-dim); }
+        .search-input::placeholder {
+          color: var(--text-dim);
+        }
 
         .search-clear {
           background: var(--bg-surface);
           border: none;
           color: var(--text-muted);
-          font-size: 1.1rem;
-          width: 22px;
-          height: 22px;
+          font-size: 1.2rem;
+          width: 24px;
+          height: 24px;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -307,164 +299,151 @@ const ToolSelector = ({ onSelectTool }) => {
         .no-results {
           grid-column: 1 / -1;
           text-align: center;
-          padding: 24px;
+          padding: 40px 20px;
           color: var(--text-muted);
+          font-size: 1.1rem;
         }
 
-        .trust-sections {
-          width: 100%;
-          margin-top: 32px;
-        }
-
-        /* ===== Tools Dashboard ===== */
-        .tools-dashboard {
-          width: 100%;
-          max-width: 900px;
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .tool-category {
-          width: 100%;
-        }
-
-        .category-label {
-          font-size: 0.85rem;
-          font-weight: 700;
-          color: var(--text-muted);
-          margin-bottom: 10px;
-          padding-left: 4px;
-          letter-spacing: 0.02em;
-          text-transform: uppercase;
-        }
-
-        /* ===== Icon Tile Grid ===== */
-        .tile-grid {
+        .cards-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-          gap: 10px;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 24px;
           width: 100%;
-          max-width: 900px;
+          max-width: 1000px; /* Wider for Bento */
+          perspective: 1000px;
+          grid-auto-flow: dense;
         }
 
-        .tool-tile {
+        .tool-card {
+          background: var(--bg-panel);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid var(--border-light);
+          box-shadow: 0 4px 24px -4px rgba(0, 0, 0, 0.05), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+          border-radius: var(--radius-lg);
+          padding: 32px;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          text-align: center;
-          padding: 14px 8px;
-          border-radius: var(--radius-md);
-          background: var(--bg-panel);
-          border: 1px solid var(--border-light);
-          cursor: pointer;
-          transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+          align-items: flex-start;
+          text-align: left;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           position: relative;
+          overflow: hidden;
+          cursor: pointer;
           opacity: 0;
-          animation: tileIn 0.35s ease forwards;
+          animation: fadeInUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
 
-        .tool-tile:hover {
-          transform: translateY(-4px);
+        .tool-card:hover {
+          transform: translateY(-8px) scale(1.02);
           border-color: var(--primary);
-          box-shadow: 0 8px 24px -4px var(--primary-glow);
           background: var(--bg-surface);
+          box-shadow: 0 20px 40px -5px var(--primary-glow);
         }
 
-        .tool-tile:active {
-          transform: translateY(-1px) scale(0.98);
+        .tool-card:hover .icon-wrapper {
+          background: var(--primary);
+          color: white;
+          transform: scale(1.1) rotate(-8deg);
+          box-shadow: 0 10px 20px -5px var(--primary-glow);
         }
 
-        .tile-icon {
-          width: 40px;
-          height: 40px;
-          border-radius: 12px;
+        .icon-wrapper {
+          width: 64px;
+          height: 64px;
           background: var(--bg-surface);
+          border-radius: 20px;
           display: flex;
           align-items: center;
           justify-content: center;
+          margin-bottom: 24px;
           color: var(--primary);
-          margin-bottom: 8px;
-          transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+          transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .tile-icon svg {
-          width: 20px;
-          height: 20px;
+        .card-content {
+          margin-bottom: 24px;
+          z-index: 1;
         }
 
-        .tool-tile:hover .tile-icon {
-          background: var(--primary);
-          color: white;
-          transform: scale(1.1) rotate(-5deg);
-          box-shadow: 0 6px 16px -4px var(--primary-glow);
+        .card-content h3 {
+           font-size: 1.25rem;
+           margin-bottom: 8px;
+           color: var(--text-main);
+           font-weight: 700;
         }
 
-        .tile-label {
-          font-size: 0.78rem;
+        .card-content p {
+           color: var(--text-muted);
+           font-size: 0.95rem;
+           line-height: 1.6;
+        }
+
+        .card-action {
+          margin-top: auto;
+          display: flex;
+          align-items: center;
+          gap: 8px;
           font-weight: 600;
-          color: var(--text-main);
-          line-height: 1.2;
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
+          color: var(--primary);
+          opacity: 0;
+          transform: translateX(-10px);
+          transition: all 0.3s ease;
         }
 
-        .tile-badge {
-          position: absolute;
-          top: 4px;
-          right: 4px;
+        .tool-card:hover .card-action {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .badge {
+          display: inline-block;
           background: linear-gradient(135deg, #FF0080, #7928CA);
           color: white;
-          font-size: 0.55rem;
-          padding: 1px 5px;
-          border-radius: 8px;
+          font-size: 0.7rem;
+          padding: 2px 8px;
+          border-radius: 12px;
+          margin-left: 8px;
+          vertical-align: middle;
           font-weight: 700;
-          letter-spacing: 0.3px;
+          letter-spacing: 0.5px;
+          box-shadow: 0 2px 10px rgba(121, 40, 202, 0.3);
         }
 
-        @keyframes tileIn {
-          from { opacity: 0; transform: translateY(16px) scale(0.95); }
-          to { opacity: 1; transform: translateY(0) scale(1); }
+        @keyframes fadeIn {
+           from { opacity: 0; }
+           to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+           from { opacity: 0; transform: translateY(40px); }
+           to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes gradientFlow {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
+           0% { background-position: 0% 50%; }
+           50% { background-position: 100% 50%; }
+           100% { background-position: 0% 50%; }
         }
 
-        @media (max-width: 768px) {
+        @media (min-width: 768px) {
+          .featured-card {
+             grid-column: span 2;
+          }
+          .featured-card .card-content p {
+             max-width: 80%;
+          }
+        }
+
+        @media (max-width: 600px) {
           .selector-header h1 {
-            font-size: 1.6rem;
+            font-size: 2rem;
           }
           .selector-header {
-            margin-bottom: 14px;
+            margin-bottom: 24px;
           }
-          .tile-grid {
-            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 8px;
-          }
-          .tool-tile {
-            padding: 10px 6px;
-          }
-          .tile-icon {
-            width: 34px;
-            height: 34px;
-          }
-          .tile-icon svg {
-            width: 17px;
-            height: 17px;
-          }
-          .tile-label {
-            font-size: 0.7rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .tile-grid {
-            grid-template-columns: repeat(3, 1fr);
+          .search-bar-wrapper {
+            margin-bottom: 24px;
           }
         }
       `}</style>
