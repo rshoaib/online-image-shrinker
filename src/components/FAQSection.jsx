@@ -203,29 +203,29 @@ const FAQSection = ({ toolType = 'general' }) => {
       <style>{`
         .faq-container {
           max-width: 800px;
-          margin: 60px auto;
+          margin: 28px auto;
           padding: 0 20px;
         }
 
         .faq-header {
           text-align: center;
-          margin-bottom: 40px;
+          margin-bottom: 20px;
         }
 
         .faq-header h2 {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 10px;
-          font-size: 2rem;
+          gap: 8px;
+          font-size: 1.5rem;
           color: var(--text-main);
-          margin-bottom: 10px;
+          margin-bottom: 6px;
         }
 
         .faq-list {
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 10px;
         }
 
         .faq-item {
@@ -242,12 +242,12 @@ const FAQSection = ({ toolType = 'general' }) => {
         }
 
         .faq-question {
-          padding: 20px;
+          padding: 14px 16px;
           display: flex;
           justify-content: space-between;
           align-items: center;
           font-weight: 600;
-          font-size: 1.1rem;
+          font-size: 0.95rem;
           color: var(--text-main);
         }
 

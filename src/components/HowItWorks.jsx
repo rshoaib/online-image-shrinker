@@ -96,7 +96,7 @@ const HowItWorks = ({ toolType = 'general' }) => {
       <div className="steps-grid">
         <div className="step-card">
           <div className="step-number">1</div>
-          <div className="step-icon"><Upload size={32} /></div>
+          <div className="step-icon"><Upload size={24} /></div>
           <h3>{steps[0].title}</h3>
           <p>{steps[0].desc}</p>
         </div>
@@ -105,7 +105,7 @@ const HowItWorks = ({ toolType = 'general' }) => {
 
         <div className="step-card">
           <div className="step-number">2</div>
-          <div className="step-icon"><Cpu size={32} /></div>
+          <div className="step-icon"><Cpu size={24} /></div>
           <h3>{steps[1].title}</h3>
           <p>{steps[1].desc}</p>
         </div>
@@ -114,7 +114,7 @@ const HowItWorks = ({ toolType = 'general' }) => {
 
         <div className="step-card">
           <div className="step-number">3</div>
-          <div className="step-icon"><Download size={32} /></div>
+          <div className="step-icon"><Download size={24} /></div>
           <h3>{steps[2].title}</h3>
           <p>{steps[2].desc}</p>
         </div>
@@ -123,14 +123,14 @@ const HowItWorks = ({ toolType = 'general' }) => {
       <style>{`
         .hiw-container {
           max-width: 1000px;
-          margin: 60px auto;
-          padding: 40px 20px;
+          margin: 28px auto;
+          padding: 20px 20px;
           text-align: center;
         }
 
-        .hiw-header { margin-bottom: 50px; }
-        .hiw-header h2 { font-size: 2.5rem; margin-bottom: 10px; color: var(--text-main); }
-        .hiw-header p { color: var(--text-muted); font-size: 1.2rem; }
+        .hiw-header { margin-bottom: 28px; }
+        .hiw-header h2 { font-size: 1.75rem; margin-bottom: 6px; color: var(--text-main); }
+        .hiw-header p { color: var(--text-muted); font-size: 1rem; }
 
         .steps-grid {
           display: flex;
@@ -142,17 +142,17 @@ const HowItWorks = ({ toolType = 'general' }) => {
 
         .step-card {
           flex: 1;
-          min-width: 250px;
+          min-width: 200px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 16px;
+          gap: 10px;
           position: relative;
         }
 
         .step-number {
-          width: 32px;
-          height: 32px;
+          width: 28px;
+          height: 28px;
           background: var(--primary);
           color: white;
           border-radius: 50%;
@@ -160,24 +160,25 @@ const HowItWorks = ({ toolType = 'general' }) => {
           align-items: center;
           justify-content: center;
           font-weight: bold;
-          margin-bottom: 10px;
+          font-size: 0.85rem;
+          margin-bottom: 4px;
         }
 
         .step-icon {
-          width: 80px;
-          height: 80px;
+          width: 56px;
+          height: 56px;
           background: var(--bg-surface);
-          border-radius: 20px;
+          border-radius: 16px;
           display: flex;
           align-items: center;
           justify-content: center;
           color: var(--primary);
-          box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-          margin-bottom: 10px;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+          margin-bottom: 4px;
         }
 
-        .step-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
-        .step-card p { color: var(--text-muted); line-height: 1.5; font-size: 0.95rem; }
+        .step-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--text-main); }
+        .step-card p { color: var(--text-muted); line-height: 1.4; font-size: 0.85rem; }
 
         .step-line {
           width: 60px;
@@ -188,7 +189,7 @@ const HowItWorks = ({ toolType = 'general' }) => {
 
         @media (max-width: 768px) {
           .step-line { display: none; }
-          .steps-grid { flex-direction: column; gap: 40px; }
+          .steps-grid { flex-direction: column; gap: 24px; }
         }
       `}</style>
     </div>

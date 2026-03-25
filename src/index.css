@@ -1,8 +1,8 @@
 :root {
   /* Color Palette - Premium Clean Light Theme */
-  --bg-app: #fafafa;
-  --bg-panel: rgba(255, 255, 255, 0.75);
-  --bg-surface: #f1f5f9;
+  --bg-app: #ffffff;
+  --bg-panel: rgba(255, 255, 255, 0.9);
+  --bg-surface: #f4f7fb;
 
   --primary: #0066ff;
   --primary-glow: rgba(0, 102, 255, 0.2);
