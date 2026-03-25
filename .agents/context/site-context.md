@@ -84,6 +84,7 @@
 
 | # | Title | Slug | Published | Primary Keyword |
 |---|---|---|---|---|
+| 5 | The Ultimate Guide to Social Media Image Sizes (2026) | social-media-image-sizes-2026 | Mar 26, 2026 | social media image sizes 2026 |
 | 4 | How to Optimize Images for Website Speed (2026 Guide) | how-to-optimize-images-for-website-speed | Mar 24, 2026 | how to optimize images for website speed |
 | 3 | How to Remove EXIF Data from Photos | `remove-exif-data-privacy-guide` | Mar 2026 | "remove exif data from photos" |
 
@@ -94,7 +95,7 @@
 | Priority | Keyword | Why High Priority |
 |---|---|---|
 | ✅ Published | "how to optimize images for website speed" | Directly drives compress tool usage — high volume |
-| 🔴 2 | "social media image sizes 2026" | Year-specific — targets social preview + resize tools |
+| ✅ Published | "social media image sizes 2026" | Year-specific — targets social preview + resize tools |
 | 🔴 3 | "what is exif data in photos" | Builds privacy pillar depth — supports EXIF tool |
 | 🟠 4 | "youtube thumbnail size and maker" | Drives resize + crop tools |
 | 🟠 5 | "add filters to photos online free" | Drives underused photo filters tool |
