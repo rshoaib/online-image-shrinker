@@ -34,6 +34,7 @@ const SeoLandingPageClient = ({ slug, isToolRoute = false }) => {
       'base64-converter': 'base64',
       'rotate-flip': 'rotate_flip',
       'blur-face': 'blur_face',
+      'change-bg-color': 'change_bg_color',
     };
 
     const getToolInfo = () => {

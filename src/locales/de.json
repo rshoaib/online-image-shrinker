@@ -146,6 +146,10 @@
       "blur_face": {
         "title": "Blur Face",
         "desc": "Blur or pixelate faces and sensitive info. 100% private, no uploads."
+      },
+      "change_bg_color": {
+        "title": "Hintergrund Ändern",
+        "desc": "Bildhintergrund mit Farben, Farbverläufen oder Bildern per KI ersetzen."
       }
     }
   }

@@ -70,6 +70,7 @@ const ToolSelector = ({ onSelectTool }) => {
     { id: 'rotate-flip', i18nKey: 'rotate_flip', icon: <RotateCw size={22} /> },
     { id: 'favicon-generator', i18nKey: 'favicon', icon: <Globe size={22} /> },
     { id: 'blur-face', i18nKey: 'blur_face', icon: <ShieldCheck size={22} /> },
+    { id: 'change-bg-color', i18nKey: 'change_bg_color', icon: <Palette size={22} />, badge: 'AI' },
   ];
 
   // Filter tools by search query

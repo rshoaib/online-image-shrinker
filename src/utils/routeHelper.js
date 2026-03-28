@@ -38,6 +38,9 @@ export function getToolDataFromSlug(slug) {
     'social-media-preview-generator': { toolId: 'social-preview', title: 'Free Social Media Preview Generator - Create Platform-Ready Images', desc: 'Create stunning social media preview images for Twitter, Facebook, LinkedIn, Instagram, and YouTube. Add text overlays, gradients, and download instantly. Free and private.' },
     'blur-faces-online': { toolId: 'blur-face', title: 'Blur Face in Photo Online - Free & Private', desc: 'Blur or pixelate faces, license plates, and sensitive info. 100% client-side, no uploads required.' },
     'rotate-image-online': { toolId: 'rotate-flip', title: 'Rotate & Flip Image Online - Free Tool', desc: 'Rotate images 90°, 180°, custom angles or flip horizontally and vertically. 100% free, private, and works locally in your browser.' },
+    'change-background-color': { toolId: 'change-bg-color', title: 'Change Image Background Color Online - Free AI Tool', desc: 'Replace image backgrounds with solid colors, gradients, or custom images using AI. 100% free, private, and works locally in your browser.' },
+    'white-background-image': { toolId: 'change-bg-color', title: 'Add White Background to Image Online - Free', desc: 'Add a clean white background to any image instantly using AI background removal. Perfect for product photos, passports, and documents.' },
+    'change-photo-background': { toolId: 'change-bg-color', title: 'Change Photo Background Color - Free Online Tool', desc: 'Remove and replace photo backgrounds with any color or gradient. AI-powered, 100% private, no uploads required.' },
   };
 
   if (exactTools[slug]) return exactTools[slug];
@@ -88,7 +91,8 @@ export function getAllSlugs() {
     'watermark-photos-online', 'collage-maker', 'convert-heic-to-jpg', 'magic-eraser',
     'image-to-text', 'signature-maker', 'qr-code-generator', 'favicon-generator', 'svg-to-png',
     'base64-converter', 'photo-filters-online', 'compare-images-online', 'social-media-preview-generator',
-    'rotate-image-online'
+    'rotate-image-online',
+    'change-background-color', 'white-background-image', 'change-photo-background',
   ];
 
   const slugs = [

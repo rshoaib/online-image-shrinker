@@ -39,6 +39,7 @@ const SvgToPngEditor = lazy(() => import('./SvgToPngEditor'));
 const Base64Editor = lazy(() => import('./Base64Editor'));
 const RotateFlipEditor = lazy(() => import('./RotateFlipEditor'));
 const BlurFaceEditor = lazy(() => import('./BlurFaceEditor'));
+const ChangeBgColorEditor = lazy(() => import('./ChangeBgColorEditor'));
 import { recordToolUsage } from './RecentTools';
 
 
@@ -120,6 +121,8 @@ const ToolLayout = ({ toolId, files, setFiles, onBack }) => {
       return <RotateFlipEditor file={files[0]} onBack={onBack} />;
     case 'blur-face':
       return <BlurFaceEditor file={files[0]} onBack={onBack} />;
+    case 'change-bg-color':
+      return <ChangeBgColorEditor file={files[0]} onBack={onBack} />;
 
     default:
       if (files.length === 1) {

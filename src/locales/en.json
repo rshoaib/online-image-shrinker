@@ -199,6 +199,10 @@
       "blur_face": {
         "title": "Blur Face",
         "desc": "Blur or pixelate faces and sensitive info. 100% private, no uploads."
+      },
+      "change_bg_color": {
+        "title": "Change Background",
+        "desc": "Replace image background with solid colors, gradients, or custom images using AI."
       }
     }
   }

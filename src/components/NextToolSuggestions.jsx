@@ -14,9 +14,9 @@ const SUGGESTIONS = {
     { id: 'photo-filters', label: 'Add Filters', emoji: '🎨' },
   ],
   'remove-bg': [
+    { id: 'change-bg-color', label: 'Change Background', emoji: '🎨' },
     { id: 'compress', label: 'Compress It', emoji: '⚡' },
     { id: 'profile-picture', label: 'Profile Pic Maker', emoji: '👤' },
-    { id: 'watermark', label: 'Add Watermark', emoji: '🔒' },
   ],
   'crop': [
     { id: 'compress', label: 'Compress It', emoji: '⚡' },
@@ -121,9 +121,9 @@ const SUGGESTIONS = {
     { id: 'compress', label: 'Compress Video', emoji: '⚡' },
   ],
   'profile-picture': [
+    { id: 'change-bg-color', label: 'Change Background', emoji: '🎨' },
     { id: 'remove-bg', label: 'Remove Background', emoji: '✂️' },
     { id: 'compress', label: 'Compress It', emoji: '⚡' },
-    { id: 'watermark', label: 'Add Watermark', emoji: '🔒' },
   ],
   'grid-splitter': [
     { id: 'compress', label: 'Compress Pieces', emoji: '⚡' },
@@ -133,6 +133,11 @@ const SUGGESTIONS = {
     { id: 'compress', label: 'Compress Image', emoji: '⚡' },
     { id: 'resize', label: 'Resize Image', emoji: '📐' },
     { id: 'remove-bg', label: 'Remove Background', emoji: '✂️' },
+  ],
+  'change-bg-color': [
+    { id: 'compress', label: 'Compress It', emoji: '⚡' },
+    { id: 'remove-bg', label: 'Remove Background', emoji: '✂️' },
+    { id: 'profile-picture', label: 'Profile Pic Maker', emoji: '👤' },
   ],
 };
 

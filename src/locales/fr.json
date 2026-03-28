@@ -176,6 +176,10 @@
       "blur_face": {
         "title": "Blur Face",
         "desc": "Blur or pixelate faces and sensitive info. 100% private, no uploads."
+      },
+      "change_bg_color": {
+        "title": "Changer l'Arrière-plan",
+        "desc": "Remplacez l'arrière-plan par des couleurs, dégradés ou images avec l'IA."
       }
     }
   }

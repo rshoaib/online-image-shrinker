@@ -3,8 +3,8 @@ import { getAllSlugs } from '../src/utils/routeHelper';
 
 const BASE_URL = 'https://onlineimageshrinker.com';
 
-const STATIC_URLS = [
-  '/',
+// Priority tiers for proper crawl budget allocation
+const TOOL_URLS = [
   '/tool/compress',
   '/tool/resize',
   '/tool/crop',
@@ -15,14 +15,32 @@ const STATIC_URLS = [
   '/tool/video-compressor',
   '/tool/video-to-gif',
   '/tool/video-to-audio',
+];
+
+const SOLUTION_URLS = [
   '/solutions/for-realtors',
   '/solutions/for-ecommerce',
+];
+
+const INFO_URLS = [
   '/blog',
   '/about',
   '/contact',
+];
+
+const LEGAL_URLS = [
   '/privacy',
   '/terms',
 ];
+
+function getStaticPriority(url) {
+  if (url === '/') return 1.0;
+  if (TOOL_URLS.includes(url)) return 0.9;
+  if (SOLUTION_URLS.includes(url)) return 0.9;
+  if (url === '/blog') return 0.8;
+  if (['/about', '/contact'].includes(url)) return 0.5;
+  return 0.3; // privacy, terms
+}
 
 export default async function sitemap() {
   // Fetch blog posts
@@ -41,12 +59,13 @@ export default async function sitemap() {
   }
 
   const date = new Date().toISOString().split('T')[0];
+  const ALL_STATIC = ['/', ...TOOL_URLS, ...SOLUTION_URLS, ...INFO_URLS, ...LEGAL_URLS];
 
-  const staticEntries = STATIC_URLS.map(url => ({
+  const staticEntries = ALL_STATIC.map(url => ({
     url: `${BASE_URL}${url}`,
     lastModified: date,
-    changeFrequency: 'weekly',
-    priority: url === '/' ? 1.0 : 0.9,
+    changeFrequency: LEGAL_URLS.includes(url) ? 'yearly' : 'weekly',
+    priority: getStaticPriority(url),
   }));
 
   const blogEntries = blogSlugs.map(slug => ({
