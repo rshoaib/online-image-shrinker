@@ -75,11 +75,13 @@ const BlogPost = () => {
             </div>
           </header>
 
-          {article.image && (
-            <div className="post-cover-image">
-              <img src={article.image} alt={article.title} loading="lazy" />
-            </div>
-          )}
+          <div className="post-cover-image">
+            <img 
+              src={article.image || 'https://images.unsplash.com/photo-1550592704-6c76defa99ce?auto=format&fit=crop&w=1200&q=80'} 
+              alt={article.title} 
+              loading="lazy" 
+            />
+          </div>
 
           <div className="post-content">
             <Markdown remarkPlugins={[remarkGfm]}>
