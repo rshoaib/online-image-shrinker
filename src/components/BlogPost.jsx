@@ -40,6 +40,12 @@ const BlogPost = () => {
     if (slug) fetchArticle();
   }, [slug]);
 
+  useEffect(() => {
+    if (!loading && !article) {
+      router.replace('/blog');
+    }
+  }, [loading, article, router]);
+
   if (loading) {
     return (
       <div className="article-container" style={{ textAlign: 'center', padding: '100px 20px', color: 'var(--text-muted)' }}>
@@ -48,23 +54,45 @@ const BlogPost = () => {
     );
   }
 
-  useEffect(() => {
-    if (!loading && !article) {
-      router.replace('/blog');
-    }
-  }, [loading, article, router]);
-
   if (!article) {
     return null;
   }
 
+  const blogPostingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: article.title,
+    description: article.excerpt,
+    image: article.image || 'https://onlineimageshrinker.com/og-image.jpg',
+    datePublished: article.date || article.display_date,
+    dateModified: article.date || article.display_date,
+    author: {
+      '@type': 'Person',
+      name: 'Riz Shoaib',
+      url: 'https://onlineimageshrinker.com/about',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Online Image Shrinker',
+      url: 'https://onlineimageshrinker.com',
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://onlineimageshrinker.com/blog/${slug}`,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+      />
       <div className="article-container">
         <Link href="/blog" className="back-link">
           <ArrowLeft size={16} /> Back to Guides
         </Link>
-        
+
         <article className="blog-post">
           <header className="post-header">
             <span className="category-badge">{article.category}</span>

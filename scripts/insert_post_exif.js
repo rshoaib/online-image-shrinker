@@ -12,8 +12,8 @@ envFile.split('\n').forEach(line => {
   }
 });
 
-const supabaseUrl = envVars['VITE_SUPABASE_URL'];
-const supabaseKey = envVars['SUPABASE_SERVICE_ROLE_KEY'];
+const supabaseUrl = envVars['VITE_SUPABASE_URL'] || envVars['NEXT_PUBLIC_SUPABASE_URL'];
+const supabaseKey = envVars['SUPABASE_SERVICE_ROLE_KEY'] || envVars['NEXT_PUBLIC_SUPABASE_ANON_KEY'];
 
 if (!supabaseUrl || !supabaseKey) {
   console.error('Missing Supabase credentials in .env.local');

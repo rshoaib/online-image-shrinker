@@ -10,13 +10,15 @@ export async function generateMetadata({ params }) {
 
     const { data: article } = await supabaseServer
         .from('blog_posts')
-        .select('title, excerpt, image, slug')
+        .select('title, excerpt, image, slug, date, display_date')
         .eq('slug', slug)
         .single();
 
     if (!article) {
         return { title: 'Not Found - Online Image Shrinker' };
     }
+
+    const publishDate = article.date || article.display_date;
 
     return {
         title: `${article.title} - Online Image Shrinker`,
@@ -29,7 +31,11 @@ export async function generateMetadata({ params }) {
             description: article.excerpt,
             type: 'article',
             url: `/blog/${article.slug}`,
+            ...(publishDate && { publishedTime: publishDate }),
             ...(article.image && { images: [article.image] }),
+        },
+        other: {
+            'article:published_time': publishDate || '',
         },
     };
 }

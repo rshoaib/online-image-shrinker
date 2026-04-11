@@ -35,3 +35,5 @@ dist-ssr
 .next
 build_output_clean.txt
 capture-build.js
+
+.env*.local

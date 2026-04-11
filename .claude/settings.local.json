@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__1c3eb5be-db84-4db6-94e5-1228261bef87__management-projects",
+      "mcp__1c3eb5be-db84-4db6-94e5-1228261bef87__gsc-performance-history",
+      "mcp__1c3eb5be-db84-4db6-94e5-1228261bef87__gsc-pages",
+      "mcp__1c3eb5be-db84-4db6-94e5-1228261bef87__gsc-keywords",
+      "mcp__1c3eb5be-db84-4db6-94e5-1228261bef87__site-explorer-top-pages",
+      "mcp__1c3eb5be-db84-4db6-94e5-1228261bef87__site-explorer-organic-keywords",
+      "mcp__1c3eb5be-db84-4db6-94e5-1228261bef87__subscription-info-limits-and-usage",
+      "WebSearch",
+      "WebFetch(domain:www.canva.com)",
+      "WebFetch(domain:www.adobe.com)",
+      "WebFetch(domain:www.befunky.com)",
+      "WebFetch(domain:pixlr.com)",
+      "WebFetch(domain:www.photofilters.com)",
+      "mcp__Claude_Preview__preview_start",
+      "WebFetch(domain:photutorial.com)",
+      "WebFetch(domain:finance.yahoo.com)",
+      "WebFetch(domain:melotools.com)",
+      "WebFetch(domain:pixabay.com)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:www.photoroom.com)",
+      "WebFetch(domain:www.imagetoolo.com)",
+      "WebFetch(domain:photoaid.com)",
+      "WebFetch(domain:www.sentinelone.com)",
+      "WebFetch(domain:recurpost.com)",
+      "WebFetch(domain:www.exabeam.com)",
+      "WebFetch(domain:www.digitalcameraworld.com)",
+      "WebFetch(domain:ojs.aaai.org)",
+      "WebFetch(domain:www.pexels.com)",
+      "WebFetch(domain:buffer.com)",
+      "WebFetch(domain:www.privacypixtools.com)",
+      "WebFetch(domain:cybersecuritynews.com)",
+      "mcp__41e5a762-ed3b-4397-a775-d87a597733f9__list_projects",
+      "mcp__41e5a762-ed3b-4397-a775-d87a597733f9__execute_sql"
+    ]
+  }
+}
