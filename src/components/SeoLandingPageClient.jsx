@@ -5,6 +5,7 @@ import DropZone from './DropZone';
 import ToolLayout from './ToolLayout';
 import HowItWorks from './HowItWorks';
 import RelatedTools from './RelatedTools';
+import ToolContent from './ToolContent';
 import AdSlot from './AdSlot';
 import { useFiles } from '../contexts/FilesContext';
 import { getToolDataFromSlug } from '../utils/routeHelper';
@@ -63,20 +64,25 @@ const SeoLandingPageClient = ({ slug, isToolRoute = false }) => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {files.length === 0 ? (
-          <div className="hero-section">
-              <div className="hero-text">
-                <button onClick={handleBack} className="back-link">← Back to Tools</button>
-                <h1>{info.title}</h1>
-                <p>{info.desc}</p>
-              </div>
-              <DropZone onFileSelect={setFiles} />
-          </div>
+          <>
+            <div className="hero-section">
+                <div className="hero-text">
+                  <button onClick={handleBack} className="back-link">← Back to Tools</button>
+                  <h1>{info.title}</h1>
+                  <p>{info.desc}</p>
+                </div>
+                <DropZone onFileSelect={setFiles} />
+            </div>
+            <ToolContent toolKey={toolId} />
+            <HowItWorks toolType={toolId} />
+            <RelatedTools currentTool={toolId} />
+          </>
         ) : (
-          <ToolLayout 
-            toolId={toolId} 
-            files={files} 
-            setFiles={setFiles} 
-            onBack={handleBack} 
+          <ToolLayout
+            toolId={toolId}
+            files={files}
+            setFiles={setFiles}
+            onBack={handleBack}
           />
         )}
       </>
@@ -118,13 +124,15 @@ const SeoLandingPageClient = ({ slug, isToolRoute = false }) => {
                 <DropZone onFileSelect={setFiles} />
             </div>
           ) : (
-            <ToolLayout 
-              toolId={toolId} 
-              files={files} 
-              setFiles={setFiles} 
-              onBack={handleBack} 
+            <ToolLayout
+              toolId={toolId}
+              files={files}
+              setFiles={setFiles}
+              onBack={handleBack}
             />
           )}
+
+          {files.length === 0 && <ToolContent toolKey={slug} />}
 
           <div style={{ marginTop: '20px', width: '100%', display: 'flex', justifyContent: 'center' }}>
             <AdSlot format="banner" className="seo-banner-ad" />

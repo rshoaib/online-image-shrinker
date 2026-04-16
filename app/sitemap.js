@@ -1,10 +1,13 @@
 import { supabase } from '../src/lib/supabase';
 import { getAllSlugs } from '../src/utils/routeHelper';
+import { shouldIncludeToolUrlInSitemap } from '../src/utils/canonicalUrls';
 
 const BASE_URL = 'https://onlineimageshrinker.com';
 
-// Priority tiers for proper crawl budget allocation
-const TOOL_URLS = [
+// Candidate /tool/<toolId> URLs. Any tool that has a canonical flat slug
+// (see src/utils/canonicalUrls.js) is filtered out so we don't list both
+// the /tool/<id> and /<slug> forms for the same content.
+const TOOL_URLS_RAW = [
   '/tool/compress',
   '/tool/resize',
   '/tool/crop',
@@ -16,6 +19,11 @@ const TOOL_URLS = [
   '/tool/video-to-gif',
   '/tool/video-to-audio',
 ];
+
+const TOOL_URLS = TOOL_URLS_RAW.filter(url => {
+  const toolId = url.replace(/^\/tool\//, '');
+  return shouldIncludeToolUrlInSitemap(toolId);
+});
 
 const SOLUTION_URLS = [
   '/solutions/for-realtors',

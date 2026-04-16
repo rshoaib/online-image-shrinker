@@ -1,5 +1,8 @@
+import { notFound } from 'next/navigation';
 import SeoLandingPageClient from '../../../src/components/SeoLandingPageClient';
 import en from '../../../src/locales/en.json';
+import { canonicalPathForToolId } from '../../../src/utils/canonicalUrls';
+import { getToolContent } from '../../../src/content/toolContent';
 
 const toolI18nMap = {
     'compress': 'compress', 'resize': 'resize', 'crop': 'crop',
@@ -20,33 +23,48 @@ const toolI18nMap = {
     'change-bg-color': 'change_bg_color',
 };
 
+export function generateStaticParams() {
+    return Object.keys(toolI18nMap).map(toolId => ({ toolId }));
+}
+
+// Force any toolId not produced by generateStaticParams to 404 instead of rendering the SPA fallback.
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }) {
     const { toolId } = await params;
     const key = toolI18nMap[toolId];
     const tool = key ? en.home.tools[key] : null;
 
     const title = tool ? `${tool.title} - Free Online Tool` : 'Image Tool - Online Image Shrinker';
-    const description = tool
-        ? `${tool.desc} Free, privacy-first — runs entirely in your browser. No uploads required.`
-        : 'Free privacy-first image tools that run entirely in your browser.';
+    const content = getToolContent(toolId);
+    const description = content?.metaDesc
+        || (tool
+            ? `${tool.desc} Free, privacy-first — runs entirely in your browser. No uploads required.`
+            : 'Free privacy-first image tools that run entirely in your browser.');
+
+    const canonical = canonicalPathForToolId(toolId);
 
     return {
         title: `${title} | Online Image Shrinker`,
         description,
         alternates: {
-            canonical: `/tool/${toolId}`,
+            canonical,
         },
         openGraph: {
             title,
             description,
             type: 'website',
-            url: `/tool/${toolId}`,
+            url: canonical,
         },
     };
 }
 
 export default async function Page({ params }) {
     const resolvedParams = await params;
+
+    if (!toolI18nMap[resolvedParams.toolId]) {
+        notFound();
+    }
 
     return <SeoLandingPageClient slug={resolvedParams.toolId} isToolRoute={true} />;
 }
