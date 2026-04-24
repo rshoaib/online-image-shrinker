@@ -28,7 +28,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const adClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+  // Trim to guard against a trailing newline/whitespace in the env var
+  // (Vercel env values have been observed with a stray \n which corrupts the src URL).
+  const adClient = (process.env.NEXT_PUBLIC_ADSENSE_CLIENT || '').trim();
+  const adsenseEnabled = adClient && !adClient.includes('0000000000000000');
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -36,6 +39,24 @@ export default function RootLayout({ children }) {
         <meta name="google-site-verification" content="pXaoDecTkY4aJ20mOVSVOMg7ao-Sz67d1_yUTcf_eqg" />
         <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
         <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
+
+        {/*
+          Google AdSense verification snippet.
+          Rendered as a plain <script> tag (not next/script) so it appears in the
+          initial server-rendered HTML. Googlebot does not execute Next.js's
+          lazyOnload/afterInteractive hydration, so the snippet must be in the
+          raw HTML for the site to be verified.
+        */}
+        {adsenseEnabled && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adClient}`}
+            crossOrigin="anonymous"
+          />
+        )}
+        {adsenseEnabled && (
+          <meta name="google-adsense-account" content={adClient} />
+        )}
 
         <script
           type="application/ld+json"
@@ -49,7 +70,7 @@ export default function RootLayout({ children }) {
             })
           }}
         />
-        
+
         {/* Blocking theme script to prevent flash */}
         <Script id="theme-script" strategy="beforeInteractive">
           {`
@@ -73,15 +94,6 @@ export default function RootLayout({ children }) {
         <ClientLayout>
           {children}
         </ClientLayout>
-
-        {adClient && !adClient.includes("0000000000000000") && (
-          <Script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adClient}`}
-            crossOrigin="anonymous"
-            strategy="lazyOnload"
-          />
-        )}
       </body>
     </html>
   );
