@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import BlogCover from './BlogCover';
 
@@ -60,7 +61,10 @@ const BlogPost = ({ article }) => {
           </div>
 
           <div className="post-content">
-            <Markdown remarkPlugins={[remarkGfm]}>
+            {/* rehype-raw lets us render the raw HTML (tables, blockquotes,
+                inline <svg>, etc.) that some posts have inside their markdown
+                body. Without it, react-markdown escapes those tags as text. */}
+            <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
               {article.content}
             </Markdown>
           </div>
