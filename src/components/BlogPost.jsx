@@ -1,59 +1,10 @@
 'use client';
 import Link from 'next/link';
-import { useParams, useRouter } from 'next/navigation';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { ArrowLeft, Calendar, Clock, Tag } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';
-const BlogPost = () => {
-  const { slug } = useParams();
-  const router = useRouter();
-  const [article, setArticle] = useState(null);
-  const [loading, setLoading] = useState(true);
+import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 
-  useEffect(() => {
-    const fetchArticle = async () => {
-      setLoading(true);
-      try {
-        if (!supabase) {
-          console.warn('Supabase local environment variables missing. Skipping fetch.');
-          setArticle(null);
-          return;
-        }
-        const { data, error } = await supabase
-          .from('blog_posts')
-          .select('*')
-          .eq('slug', slug)
-          .single();
-        
-        if (error) throw error;
-        setArticle(data);
-      } catch (err) {
-        console.error('Error fetching article:', err);
-        setArticle(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (slug) fetchArticle();
-  }, [slug]);
-
-  useEffect(() => {
-    if (!loading && !article) {
-      router.replace('/blog');
-    }
-  }, [loading, article, router]);
-
-  if (loading) {
-    return (
-      <div className="article-container" style={{ textAlign: 'center', padding: '100px 20px', color: 'var(--text-muted)' }}>
-        Loading guide...
-      </div>
-    );
-  }
-
+const BlogPost = ({ article }) => {
   if (!article) {
     return null;
   }
@@ -78,7 +29,7 @@ const BlogPost = () => {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://onlineimageshrinker.com/blog/${slug}`,
+      '@id': `https://onlineimageshrinker.com/blog/${article.slug}`,
     },
   };
 
@@ -104,10 +55,10 @@ const BlogPost = () => {
           </header>
 
           <div className="post-cover-image">
-            <img 
-              src={article.image || 'https://images.unsplash.com/photo-1550592704-6c76defa99ce?auto=format&fit=crop&w=1200&q=80'} 
-              alt={article.title} 
-              loading="lazy" 
+            <img
+              src={article.image || 'https://images.unsplash.com/photo-1550592704-6c76defa99ce?auto=format&fit=crop&w=1200&q=80'}
+              alt={article.title}
+              loading="lazy"
             />
           </div>
 
@@ -116,7 +67,7 @@ const BlogPost = () => {
               {article.content}
             </Markdown>
           </div>
-          
+
           <div className="post-footer">
              <div className="share-cta">
                <h3>Find this helpful?</h3>
@@ -194,7 +145,7 @@ const BlogPost = () => {
           overflow: hidden;
           box-shadow: 0 10px 40px -10px rgba(0,0,0,0.2);
         }
-        
+
         .post-cover-image img {
           width: 100%;
           height: auto;
@@ -234,7 +185,7 @@ const BlogPost = () => {
         .post-content li {
           margin-bottom: 8px;
         }
-        
+
         .post-content strong {
           color: var(--text-main);
         }
@@ -251,13 +202,13 @@ const BlogPost = () => {
           margin: 32px 0;
           font-size: 0.95rem;
         }
-        
+
         .post-content th, .post-content td {
           border: 1px solid var(--border-light);
           padding: 12px;
           text-align: left;
         }
-        
+
         .post-content th {
           background: var(--bg-surface);
           color: var(--text-main);
@@ -276,10 +227,10 @@ const BlogPost = () => {
           text-align: center;
           border: 1px solid var(--border-light);
         }
-        
+
         .share-cta h3 { margin-bottom: 8px; color: var(--text-main); }
         .share-cta p { color: var(--text-muted); margin-bottom: 24px; }
-        
+
         .cta-button {
           display: inline-block;
           background: var(--primary);

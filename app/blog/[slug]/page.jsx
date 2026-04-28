@@ -1,20 +1,16 @@
 import { notFound } from 'next/navigation';
 import BlogPost from '../../../src/components/BlogPost';
-import { supabaseServer } from '../../../src/lib/supabaseServer';
+import { getPostBySlug, getAllSlugs } from '../../../src/lib/blogPosts';
 
-async function fetchArticle(slug) {
-    if (!supabaseServer) return null;
-    const { data } = await supabaseServer
-        .from('blog_posts')
-        .select('title, excerpt, image, slug, date, display_date')
-        .eq('slug', slug)
-        .single();
-    return data || null;
+// Pre-render every blog post at build time. Since all posts are now hardcoded
+// as .md files in src/content/blog, the set is fully known up front.
+export function generateStaticParams() {
+    return getAllSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }) {
     const { slug } = await params;
-    const article = await fetchArticle(slug);
+    const article = getPostBySlug(slug);
 
     if (!article) {
         // Tell crawlers this URL is a 404. Pairs with notFound() in the page
@@ -49,8 +45,8 @@ export async function generateMetadata({ params }) {
 
 export default async function Page({ params }) {
     const { slug } = await params;
-    const article = await fetchArticle(slug);
+    const article = getPostBySlug(slug);
     // Return a real HTTP 404 (not a soft 404) when the slug doesn't match a post.
     if (!article) notFound();
-    return <BlogPost />;
+    return <BlogPost article={article} />;
 }

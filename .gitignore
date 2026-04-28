@@ -37,3 +37,17 @@ build_output_clean.txt
 capture-build.js
 
 .env*.local
+
+# Secrets & credentials — never commit
+.gsc-service-account.json
+*-service-account.json
+
+# Stray test artifacts
+src/lib/_test_node_modules/
+
+# Secrets & credentials — never commit
+.gsc-service-account.json
+*-service-account.json
+
+# Stray test artifacts
+src/lib/_test_node_modules/

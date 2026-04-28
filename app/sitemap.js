@@ -1,4 +1,4 @@
-import { supabase } from '../src/lib/supabase';
+import { getAllSlugs as getAllBlogSlugs } from '../src/lib/blogPosts';
 import { getAllSlugs } from '../src/utils/routeHelper';
 import { shouldIncludeToolUrlInSitemap } from '../src/utils/canonicalUrls';
 
@@ -51,20 +51,8 @@ function getStaticPriority(url) {
 }
 
 export default async function sitemap() {
-  // Fetch blog posts
-  let blogSlugs = [];
-  if (supabase) {
-    try {
-      const { data, error } = await supabase.from('blog_posts').select('slug');
-      if (!error && data) {
-        blogSlugs = data.map(a => a.slug);
-      } else if (error) {
-        console.error('Error fetching articles from Supabase for sitemap:', error);
-      }
-    } catch (error) {
-      console.error('Exception fetching articles for sitemap:', error);
-    }
-  }
+  // Blog post slugs come from the hardcoded .md files in src/content/blog.
+  const blogSlugs = getAllBlogSlugs();
 
   const date = new Date().toISOString().split('T')[0];
   const ALL_STATIC = ['/', ...TOOL_URLS, ...SOLUTION_URLS, ...INFO_URLS, ...LEGAL_URLS];

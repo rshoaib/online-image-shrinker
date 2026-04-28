@@ -1,11 +1,9 @@
 'use client';
 import Link from 'next/link';
 import { FileImage, BookOpen, Shield, Palette, ShoppingBag, Sparkles, Tag, ArrowRight } from 'lucide-react';
-import React, { useState, useEffect } from 'react';
-import { supabase } from '../lib/supabase';
+import React from 'react';
 
 const categoryIconMap = {
-  // ... (keep existing map)
   'Tutorials': BookOpen,
   'Guides': FileImage,
   'Explained': BookOpen,
@@ -19,49 +17,15 @@ const categoryIconMap = {
   'Fun': Sparkles,
 };
 
-const BlogSkeleton = () => (
-  <div className="article-card skeleton-card">
-    <div className="article-icon skeleton-icon"></div>
-    <div className="article-content">
-      <div className="skeleton-text skeleton-date"></div>
-      <div className="skeleton-text skeleton-title"></div>
-      <div className="skeleton-text skeleton-desc line-1"></div>
-      <div className="skeleton-text skeleton-desc line-2"></div>
-      <div className="skeleton-text skeleton-desc line-3"></div>
-      <div className="skeleton-text skeleton-button"></div>
-    </div>
-  </div>
-);
-
-const BlogList = () => {
-  const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      setLoading(true);
-      try {
-        if (!supabase) {
-          console.warn('Supabase local environment variables missing. Skipping fetch.');
-          setArticles([]);
-          return;
-        }
-        const { data, error } = await supabase
-          .from('blog_posts')
-          .select('*')
-          .order('date', { ascending: false });
-        
-        if (error) throw error;
-        setArticles(data || []);
-      } catch (err) {
-        console.error('Error fetching articles:', err);
-      } finally {
-        setLoading(false);
-      }
+const BlogList = ({ articles = [] }) => {
+  const sortedArticles = [...articles].sort((a, b) => {
+    const getTime = (d) => {
+      if (!d) return 0;
+      const time = new Date(d).getTime();
+      return isNaN(time) ? 0 : time;
     };
-
-    fetchArticles();
-  }, []);
+    return getTime(b.date) - getTime(a.date);
+  });
 
   return (
     <>
@@ -72,26 +36,10 @@ const BlogList = () => {
         </div>
 
         <div className="articles-grid">
-          {loading ? (
-             <React.Fragment>
-               <BlogSkeleton />
-               <BlogSkeleton />
-               <BlogSkeleton />
-               <BlogSkeleton />
-             </React.Fragment>
-          ) : articles.length === 0 ? (
+          {sortedArticles.length === 0 ? (
             <div className="empty-state">No guides found.</div>
           ) : (
-            [...articles]
-              .sort((a, b) => {
-                const getTime = (d) => {
-                  if (!d) return 0;
-                  const time = new Date(d).getTime();
-                  return isNaN(time) ? 0 : time;
-                };
-                return getTime(b.date) - getTime(a.date);
-              })
-              .map((article) => (
+            sortedArticles.map((article) => (
               <Link href={`/blog/${article.slug}`} key={article.slug} className="article-card">
                 <div className="article-icon">
                   {(() => {
@@ -166,50 +114,6 @@ const BlogList = () => {
             border-color: var(--primary);
             transform: translateY(-2px);
           }
-          
-          /* Skeleton Loader Styles */
-          .skeleton-card {
-            pointer-events: none;
-          }
-          .skeleton-icon {
-            background: var(--bg-surface);
-            animation: shimmer 1.5s infinite linear;
-          }
-          .skeleton-text {
-            background: var(--bg-surface);
-            border-radius: var(--radius-sm);
-            margin-bottom: 8px;
-            animation: shimmer 1.5s infinite linear;
-          }
-          .skeleton-date { width: 30%; height: 14px; margin-bottom: 12px; }
-          .skeleton-title { width: 80%; height: 24px; margin-bottom: 16px; }
-          .skeleton-desc { height: 14px; margin-bottom: 6px; }
-          .skeleton-desc.line-1 { width: 100%; }
-          .skeleton-desc.line-2 { width: 90%; }
-          .skeleton-desc.line-3 { width: 60%; margin-bottom: 24px; }
-          .skeleton-button { width: 100px; height: 18px; margin-bottom: 0px; }
-
-          @keyframes shimmer {
-            0% {
-              background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.05) 20%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0));
-              background-position: -150px 0;
-            }
-            100% {
-              background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.05) 20%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0));
-              background-position: 150px 0;
-            }
-          }
-
-          [data-theme='light'] .skeleton-icon,
-          [data-theme='light'] .skeleton-text {
-            background-color: var(--border-light);
-          }
-          
-          [data-theme='light'] @keyframes shimmer {
-             0% { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.02) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0)); background-position: -150px 0; }
-             100% { background-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.02) 20%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0)); background-position: 150px 0; }
-          }
-
 
           .article-icon {
             flex-shrink: 0;
