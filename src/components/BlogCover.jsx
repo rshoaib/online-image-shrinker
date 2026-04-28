@@ -108,4 +108,224 @@ const TOPIC_PROFILES = [
     { keywords: ['signature'],                     theme: { from: '#1e293b', to: '#475569', accent: '#cbd5e1', Icon: PenLine } },
     { keywords: ['screenshot'],                    theme: { from: '#0f172a', to: '#1e40af', accent: '#bfdbfe', Icon: Monitor } },
     { keywords: ['meme'],                          theme: { from: '#d946ef', to: '#f43f5e', accent: '#fbcfe8', Icon: Smile } },
-    { keywords: ['compare
+    { keywords: ['compare', 'before and after', 'before/after'], theme: { from: '#1e293b', to: '#64748b', accent: '#cbd5e1', Icon: GitCompare } },
+    { keywords: ['profile picture', 'pfp'],        theme: { from: '#7c3aed', to: '#ec4899', accent: '#f0abfc', Icon: Camera } },
+    { keywords: ['banner'],                        theme: { from: '#1e40af', to: '#06b6d4', accent: '#bae6fd', Icon: Layers } },
+    { keywords: ['emoji', 'sticker'],              theme: { from: '#f59e0b', to: '#ec4899', accent: '#fbcfe8', Icon: Smile } },
+    { keywords: ['compress', 'shrink', 'reduce size', 'file size'], theme: { from: '#ca8a04', to: '#f59e0b', accent: '#fde68a', Icon: Minimize2 } },
+    { keywords: ['optimi', 'speed', 'performance'], theme: { from: '#16a34a', to: '#84cc16', accent: '#d9f99d', Icon: Zap } },
+    { keywords: ['seo', 'google search'],          theme: { from: '#1e40af', to: '#16a34a', accent: '#bbf7d0', Icon: Search } },
+    { keywords: ['remove object'],                 theme: { from: '#7c3aed', to: '#ec4899', accent: '#f0abfc', Icon: Eraser } },
+    { keywords: ['thumbnail'],                     theme: { from: '#dc2626', to: '#7c3aed', accent: '#fbcfe8', Icon: FileImage } },
+    { keywords: ['social media'],                  theme: { from: '#0891b2', to: '#3b82f6', accent: '#93c5fd', Icon: Sparkles } },
+    { keywords: ['bulk', 'batch'],                 theme: { from: '#475569', to: '#0f172a', accent: '#94a3b8', Icon: LayoutGrid } },
+    { keywords: ['format'],                        theme: { from: '#0e7490', to: '#06b6d4', accent: '#a5f3fc', Icon: FileImage } },
+];
+
+function pickTopicTheme(post) {
+    const haystack = [
+        post?.slug || '',
+        post?.title || '',
+        ...(Array.isArray(post?.tags) ? post.tags : []),
+    ]
+        .join(' ')
+        .toLowerCase();
+    if (!haystack.trim()) return null;
+    for (const profile of TOPIC_PROFILES) {
+        if (profile.keywords.some((k) => haystack.includes(k))) {
+            return profile.theme;
+        }
+    }
+    return null;
+}
+
+// Hash a string deterministically into a 32-bit integer.
+function hashString(s = '') {
+    let h = 2166136261;
+    for (let i = 0; i < s.length; i++) {
+        h ^= s.charCodeAt(i);
+        h = (h * 16777619) >>> 0;
+    }
+    return h >>> 0;
+}
+
+// Tiny seeded PRNG (mulberry32). Returns a function that yields numbers in [0,1).
+function mulberry32(seed) {
+    let t = seed >>> 0;
+    return function next() {
+        t = (t + 0x6D2B79F5) >>> 0;
+        let r = t;
+        r = Math.imul(r ^ (r >>> 15), r | 1);
+        r ^= r + Math.imul(r ^ (r >>> 7), r | 61);
+        return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+    };
+}
+
+/**
+ * Inline-SVG cover image for a blog post.
+ * - variant="card" → square (1:1), used in the BlogList listing
+ * - variant="hero" → wide banner (5:2), used at the top of BlogPost
+ * Always renders as inline <svg> so there's no dependency on external files
+ * or the public/ directory.
+ *
+ * The cover picks its theme & icon by:
+ *   1. Topic detection from slug/title/tags (most specific)
+ *   2. CATEGORY_THEME fallback
+ *   3. Guides default
+ */
+const BlogCover = ({ post, variant = 'hero' }) => {
+    const theme =
+        pickTopicTheme(post) ||
+        CATEGORY_THEME[post?.category] ||
+        CATEGORY_THEME.Guides;
+    const { Icon } = theme;
+
+    const isCard = variant === 'card';
+
+    // Hero is a slim banner (5:2) so it doesn't dominate the page; cards stay 1:1.
+    const vbW = isCard ? 600 : 1200;
+    const vbH = isCard ? 600 : 480;
+    const aspectRatio = isCard ? '1 / 1' : '5 / 2';
+
+    // Deterministic randomness — same post always gets the same composition.
+    const rand = mulberry32(hashString(post?.slug || post?.title || ''));
+
+    // Decorative blurred circles (fill the background with depth).
+    const shapes = Array.from({ length: 5 }, () => ({
+        cx: rand() * vbW,
+        cy: rand() * vbH,
+        r: 60 + rand() * 180,
+        opacity: 0.06 + rand() * 0.10,
+    }));
+
+    // Diagonal accent stripe offset.
+    const lineOffset = Math.floor(rand() * 200);
+
+    // Two ghost echoes of the topic icon — small, low-opacity copies scattered
+    // across the banner so the subject is visually reinforced.
+    const echoes = isCard
+        ? []
+        : Array.from({ length: 2 }, () => ({
+              x: 120 + rand() * (vbW - 240),
+              y: 80 + rand() * (vbH - 160),
+              size: 64 + rand() * 56,
+              rotate: -20 + rand() * 40,
+              opacity: 0.10 + rand() * 0.06,
+          }));
+
+    const gradientId = `bgcover-${isCard ? 'c' : 'h'}-${(post?.slug || 'post').replace(/[^a-z0-9_-]/gi, '')}`;
+
+    // Smaller central icon for the slimmer banner.
+    const iconSize = isCard ? 140 : 110;
+
+    return (
+        <div
+            className={`blog-cover blog-cover--${variant}`}
+            aria-hidden="true"
+            style={{
+                width: '100%',
+                aspectRatio,
+                maxHeight: isCard ? 'none' : 320,
+                position: 'relative',
+                overflow: 'hidden',
+                borderRadius: 'var(--radius-md, 8px)',
+                background: `linear-gradient(135deg, ${theme.from}, ${theme.to})`,
+            }}
+        >
+            <svg
+                viewBox={`0 0 ${vbW} ${vbH}`}
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice"
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+            >
+                <defs>
+                    <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor={theme.from} />
+                        <stop offset="100%" stopColor={theme.to} />
+                    </linearGradient>
+                </defs>
+                <rect x="0" y="0" width={vbW} height={vbH} fill={`url(#${gradientId})`} />
+                {/* Decorative blurred circles, seeded by slug */}
+                {shapes.map((s, i) => (
+                    <circle
+                        key={i}
+                        cx={s.cx}
+                        cy={s.cy}
+                        r={isCard ? s.r * 0.7 : s.r}
+                        fill={theme.accent}
+                        opacity={s.opacity}
+                    />
+                ))}
+                {/* Diagonal accent stripe */}
+                <line
+                    x1="0"
+                    y1={vbH}
+                    x2={vbW}
+                    y2="0"
+                    stroke="rgba(255,255,255,0.08)"
+                    strokeWidth="2"
+                    transform={`translate(${lineOffset - 100}, 0)`}
+                />
+            </svg>
+
+            {/* Background "echo" icons — small, low-opacity copies of the topic
+                icon scattered around so the subject reads even at a glance. */}
+            {echoes.map((e, i) => (
+                <div
+                    key={i}
+                    style={{
+                        position: 'absolute',
+                        left: `${(e.x / vbW) * 100}%`,
+                        top: `${(e.y / vbH) * 100}%`,
+                        transform: `translate(-50%, -50%) rotate(${e.rotate}deg)`,
+                        color: 'rgba(255,255,255,0.95)',
+                        opacity: e.opacity,
+                        pointerEvents: 'none',
+                        lineHeight: 0,
+                    }}
+                >
+                    <Icon size={e.size} strokeWidth={1.2} />
+                </div>
+            ))}
+
+            {/* Centered topic icon — lucide-react renders inline SVG. */}
+            <div
+                style={{
+                    position: 'absolute',
+                    inset: 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'rgba(255,255,255,0.95)',
+                    filter: 'drop-shadow(0 4px 16px rgba(0,0,0,0.18))',
+                }}
+            >
+                <Icon size={iconSize} strokeWidth={1.4} />
+            </div>
+
+            {/* Subtle category badge in the corner of the hero variant */}
+            {!isCard && post?.category && (
+                <span
+                    style={{
+                        position: 'absolute',
+                        top: 14,
+                        left: 14,
+                        padding: '4px 10px',
+                        borderRadius: 999,
+                        background: 'rgba(0,0,0,0.25)',
+                        color: 'rgba(255,255,255,0.95)',
+                        fontSize: '0.7rem',
+                        fontWeight: 600,
+                        letterSpacing: '0.04em',
+                        textTransform: 'uppercase',
+                        backdropFilter: 'blur(4px)',
+                    }}
+                >
+                    {post.category}
+                </span>
+            )}
+        </div>
+    );
+};
+
+export default BlogCover;
