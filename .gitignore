@@ -42,12 +42,5 @@ capture-build.js
 .gsc-service-account.json
 *-service-account.json
 
-# Stray test artifacts
-src/lib/_test_node_modules/
-
-# Secrets & credentials — never commit
-.gsc-service-account.json
-*-service-account.json
-
-# Stray test artifacts
-src/lib/_test_node_modules/
+# Stray test artifacts (created during dev tooling validation; safe to delete manually)
+src/

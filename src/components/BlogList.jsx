@@ -1,21 +1,8 @@
 'use client';
 import Link from 'next/link';
-import { FileImage, BookOpen, Shield, Palette, ShoppingBag, Sparkles, Tag, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import React from 'react';
-
-const categoryIconMap = {
-  'Tutorials': BookOpen,
-  'Guides': FileImage,
-  'Explained': BookOpen,
-  'Privacy': Shield,
-  'Design': Palette,
-  'E-commerce': ShoppingBag,
-  'Social Media': FileImage,
-  'Optimization': Sparkles,
-  'Workflow': Tag,
-  'Updates': Sparkles,
-  'Fun': Sparkles,
-};
+import BlogCover from './BlogCover';
 
 const BlogList = ({ articles = [] }) => {
   const sortedArticles = [...articles].sort((a, b) => {
@@ -41,11 +28,8 @@ const BlogList = ({ articles = [] }) => {
           ) : (
             sortedArticles.map((article) => (
               <Link href={`/blog/${article.slug}`} key={article.slug} className="article-card">
-                <div className="article-icon">
-                  {(() => {
-                    const IconComponent = categoryIconMap[article.category] || FileImage;
-                    return <IconComponent size={32} color="var(--primary)" />;
-                  })()}
+                <div className="article-cover">
+                  <BlogCover post={article} variant="card" />
                 </div>
                 <div className="article-content">
                   <span className="article-date">{article.display_date || article.date}{article.read_time ? ` · ${article.read_time}` : ''}</span>
@@ -115,15 +99,20 @@ const BlogList = ({ articles = [] }) => {
             transform: translateY(-2px);
           }
 
-          .article-icon {
+          .article-cover {
             flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            background: var(--bg-surface);
+            width: 140px;
+            height: 140px;
             border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            overflow: hidden;
+          }
+
+          @media (max-width: 600px) {
+            .article-cover {
+              width: 100%;
+              height: auto;
+              aspect-ratio: 16 / 9;
+            }
           }
 
           .article-content {

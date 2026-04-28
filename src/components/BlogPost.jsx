@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import BlogCover from './BlogCover';
 
 const BlogPost = ({ article }) => {
   if (!article) {
@@ -55,11 +56,7 @@ const BlogPost = ({ article }) => {
           </header>
 
           <div className="post-cover-image">
-            <img
-              src={article.image || 'https://images.unsplash.com/photo-1550592704-6c76defa99ce?auto=format&fit=crop&w=1200&q=80'}
-              alt={article.title}
-              loading="lazy"
-            />
+            <BlogCover post={article} variant="hero" />
           </div>
 
           <div className="post-content">
@@ -144,12 +141,6 @@ const BlogPost = ({ article }) => {
           border-radius: var(--radius-lg);
           overflow: hidden;
           box-shadow: 0 10px 40px -10px rgba(0,0,0,0.2);
-        }
-
-        .post-cover-image img {
-          width: 100%;
-          height: auto;
-          display: block;
         }
 
         /* Markdown Styles */
