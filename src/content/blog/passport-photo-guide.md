@@ -9,10 +9,10 @@ display_date: "Feb 19, 2026"
 read_time: "7 min read"
 image: null
 tags: ["Workflow"]
-meta_title: "Free Passport Photo Maker (Exact 2026 Dimensions)"
-meta_description: "Create a biometric-approved passport photo instantly for the US, UK, EU, and more. Free, secure, and zero uploads required."
+meta_title: "Passport Photo Size Guide 2026: USA, UK, EU, India (Free)"
+meta_description: "Exact passport photo dimensions for USA, UK, EU, India, Canada and more. Resize and crop to spec free in your browser. No uploads, no watermark."
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-04-30T00:00:00.000000+00:00"
 ---
 Getting your passport photo rejected wastes time and money. This guide covers **every major country's passport photo size** so you can resize your photo to the exact dimensions at home ÔÇö for free. No need to visit a studio.
 
@@ -60,7 +60,7 @@ Follow these rules to avoid rejection at the embassy or passport office:
 
 1.  **Lighting**: Face a window for natural, even light. No harsh shadows on your face or background.
 2.  **Neutral Expression**: Mouth closed, eyes open, looking straight at the camera. No smiling for biometric passports.
-3.  **Plain White Background**: Use a white or light grey wall. No patterns, no shadows. If your wall isn't perfect, use our [AI Background Remover](/tool/remove-bg) first.
+3.  **Plain White Background**: Use a white or light grey wall. No patterns, no shadows. If your wall isn't perfect, use our [AI Background Remover](/remove-background) first.
 4.  **No Glasses**: The USA, UK, EU, and most countries now ban glasses in passport photos due to glare issues.
 5.  **Head Position**: Your head (from chin to crown) must fill **70ÔÇô80%** of the frame height. Don't crop too close.
 6.  **Recency**: The photo must be taken within the **last 6 months**.
@@ -73,7 +73,7 @@ Follow these rules to avoid rejection at the embassy or passport office:
 Stand about 1 meter (3 feet) from a white wall. Have someone else take the photo ÔÇö selfies distort facial proportions. Leave plenty of space above your head and around the sides.
 
 ### Step 2: Clean Up the Background (Optional)
-If your wall isn't perfectly white, use our [AI Background Remover](/tool/remove-bg) to replace it with solid white.
+If your wall isn't perfectly white, use our [AI Background Remover](/remove-background) to replace it with solid white.
 
 ### Step 3: Crop & Resize to Your Country's Size
 1.  Go to our [Passport Photo Resizer](/resize-passport-photo).
@@ -125,7 +125,7 @@ The most common passport photo size is **3.5 ├ù 4.5 cm** (used by the UK, EU,
 Yes! Modern smartphones have more than enough resolution. Just follow the 6 rules above and use our free tool to crop to the exact size.
 
 **What background color do I need?**
-Almost all countries require a **plain white** or off-white background. Use our [Background Remover](/tool/remove-bg) to fix a non-white background instantly.
+Almost all countries require a **plain white** or off-white background. Use our [Background Remover](/remove-background) to fix a non-white background instantly.
 
 **What are the exact passport photo dimensions?**
 Passport photo dimensions vary by country. The two most common standards are: **51 ├ù 51 mm (2 ├ù 2 inches)** used by the USA and India, and **35 ├ù 45 mm (1.38 ├ù 1.77 inches)** used by the UK, EU, Japan, Australia, and South Korea. Canada uses a larger **50 ├ù 70 mm** format.

@@ -9,10 +9,10 @@ display_date: "Jan 21, 2026"
 read_time: "3 min read"
 image: null
 tags: ["Explained"]
-meta_title: null
-meta_description: null
+meta_title: "Image Compression Explained: Shrink Files 90% (Free)"
+meta_description: "Image compression FAQ: lossy vs lossless, WebP vs JPEG vs PNG, plain-English answers. Reduce file size up to 90% free in your browser, no uploads."
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-04-30T00:00:00.000000+00:00"
 ---
 We process thousands of images every day. Here are the most common questions we get about shrinking images ÔÇö and the answers that actually help.
 

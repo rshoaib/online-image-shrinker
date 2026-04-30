@@ -9,10 +9,10 @@ display_date: "Jan 28, 2026"
 read_time: "2 min read"
 image: "/og-image.jpg"
 tags: ["Design"]
-meta_title: null
-meta_description: null
+meta_title: "Extract Color Palettes from Movies & Photos (Free)"
+meta_description: "Steal color palettes from movie scenes and photos in seconds. Free browser-based palette extractor with hex codes. No signup, no uploads."
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-04-30T00:00:00.000000+00:00"
 ---
 Great designers steal. But they don't steal artworkÔÇöthey steal **colors**. One of the best ways to find a beautiful color scheme for your website or app is to take it from a movie scene or photograph you love.
 
@@ -28,7 +28,7 @@ By "stealing" these palettes, you get a professionally color-graded harmony for 
 You don't need to manually eyedrop colors in Photoshop one by one.
 
 1.  **Find your inspiration:** Take a screenshot of a movie scene or find a photo on Pinterest.
-2.  **Open the [Palette Generator](/tool/palette-generator).**
+2.  **Open the [Palette Generator](/color-palette-generator).**
 3.  **Upload the image.**
 4.  The AI instantly finds the **Dominant Colors** and the **Accent Colors**.
 5.  **Click to Copy:** Just tap the Hex code (e.g., #FF0088) to copy it to your clipboard.
@@ -39,4 +39,4 @@ Once you have your palette, apply it using this rule:
 *   **30%** should be the secondary color (cards, headers).
 *   **10%** should be the accent color (buttons, links).
 
-[Start Extracting Palettes](/tool/palette-generator)
+[Start Extracting Palettes](/color-palette-generator)
