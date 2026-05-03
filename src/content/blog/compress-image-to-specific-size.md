@@ -12,7 +12,7 @@ tags: ["Tutorials"]
 meta_title: null
 meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-05-03T06:10:00.000000+00:00"
 ---
 You found the perfect photo. You try to upload it to a government form, job application, or online profile ÔÇö and get hit with: **"File size must be under 100KB."**
 
@@ -101,7 +101,7 @@ Different formats produce dramatically different file sizes for the same visual 
 
 ### How to convert:
 
-1.  Open the [Image Converter](/tool/image-converter).
+1.  Open the [Image Converter](/image-converter-online).
 2.  Upload your file.
 3.  Select **WebP** or **JPG** as the output.
 4.  Download the smaller file.
@@ -135,7 +135,7 @@ Government portals are the strictest. Here is the exact workflow:
 Discord is strict about emoji file sizes. Here is the workflow:
 
 1.  **Crop** to square using the [Crop Tool](/tool/crop) (1:1 ratio).
-2.  **Remove background** with our [Background Remover](/tool/remove-bg) for a clean floating emoji.
+2.  **Remove background** with our [Background Remover](/remove-background) for a clean floating emoji.
 3.  **Resize** to exactly 128x128px using the [Resize Tool](/tool/resize).
 4.  **Compress** with the [Compress Tool](/tool/compress) if still over 256KB.
 
@@ -147,10 +147,10 @@ Discord is strict about emoji file sizes. Here is the workflow:
 Not at 70-80% quality. Modern compression algorithms are "visually lossless" ÔÇö they remove data your eyes cannot perceive. You would need to zoom in 400% to spot any difference.
 
 **Can I compress without losing any quality?**
-Yes ÔÇö "lossless" compression removes only metadata (EXIF data, color profiles) without touching pixels. This typically saves 10-20%. Use our [EXIF Remover](/tool/exif) for this.
+Yes ÔÇö "lossless" compression removes only metadata (EXIF data, color profiles) without touching pixels. This typically saves 10-20%. Use our [EXIF Remover](/exif-remover) for this.
 
 **What if I need to compress a PNG with transparency?**
-Convert to WebP instead of JPG. WebP supports transparency AND is much smaller than PNG. Use our [Image Converter](/tool/image-converter).
+Convert to WebP instead of JPG. WebP supports transparency AND is much smaller than PNG. Use our [Image Converter](/image-converter-online).
 
 **Is there a way to batch compress multiple images?**
 Yes! Our [Compress Tool](/tool/compress) accepts multiple files. Drag and drop your entire folder, set the quality once, and download all compressed files.

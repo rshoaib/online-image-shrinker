@@ -12,7 +12,7 @@ tags: ["Social Media"]
 meta_title: null
 meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-05-03T06:10:00.000000+00:00"
 ---
 Discord is the heart of gaming communities, and custom emojis are their language. But there is nothing worse than uploading a perfect meme only to have it rejected because the file size is too big, or looking blurry in chat.
 
@@ -38,7 +38,7 @@ Discord will automatically crop your image, but it might cut off the best parts.
 
 ### 2. Remove the Background
 Square photos look bad as emojis. You want the subject to "float" in the chat.
-*   Use the [Background Remover](/tool/remove-bg) first.
+*   Use the [Background Remover](/remove-background) first.
 *   Download as PNG (to keep transparency).
 
 ### 3. Resize & Compress

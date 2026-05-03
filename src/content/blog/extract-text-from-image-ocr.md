@@ -12,11 +12,11 @@ tags: ["Tutorials"]
 meta_title: null
 meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-05-03T06:10:00.000000+00:00"
 ---
 Have you ever received a photo of a document ÔÇö a receipt, a whiteboard, a business card, or a scanned contract ÔÇö and needed to copy the text? Typing it out manually is tedious and error-prone. That is where **OCR (Optical Character Recognition)** comes in.
 
-Our free [OCR Tool](/tool/ocr) uses AI to read text from any image and give you a clean, copy-paste-ready result ÔÇö all without uploading your file to a server.
+Our free [OCR Tool](/image-to-text) uses AI to read text from any image and give you a clean, copy-paste-ready result ÔÇö all without uploading your file to a server.
 
 ---
 
@@ -48,7 +48,7 @@ Modern OCR engines use deep learning neural networks that can handle:
 
 ## How to Extract Text (3 Steps)
 
-1.  Go to our [OCR Tool](/tool/ocr).
+1.  Go to our [OCR Tool](/image-to-text).
 2.  **Upload or drag & drop** your image (JPG, PNG, WebP, or screenshot).
 3.  The AI scans the image and displays the extracted text instantly.
 4.  **Copy** the text with one click and paste it anywhere.
@@ -62,7 +62,7 @@ That is it. No sign-up, no email, no file limits.
 Getting accurate OCR results depends on image quality. Follow these tips:
 
 ### 1. Use High Resolution
-The higher the resolution, the more detail the AI can read. If your photo is blurry, use our [AI Upscaler](/tool/upscale) to enhance it first.
+The higher the resolution, the more detail the AI can read. If your photo is blurry, use our [AI Upscaler](/ai-image-upscaler) to enhance it first.
 
 ### 2. Good Lighting & Contrast
 Dark photos with shadows produce poor results. Make sure the text is well-lit and contrasts with the background (e.g., black text on white paper).
@@ -124,4 +124,4 @@ No hard limit. Larger images take a few extra seconds to process since everythin
 **Can it read PDFs?**
 Not directly ÔÇö but you can screenshot a PDF page and run OCR on the screenshot.
 
-[Extract Text Now](/tool/ocr)
+[Extract Text Now](/image-to-text)

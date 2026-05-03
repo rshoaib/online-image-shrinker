@@ -12,7 +12,7 @@ tags: ["Guides"]
 meta_title: null
 meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-05-03T06:10:00.000000+00:00"
 ---
 One of the most common problems in digital photography is low resolution. Maybe you cropped a photo too much, or you have an old image from a 2010 smartphone. Traditional resizing makes these images pixelated and blurry. AI Upscaling solves this.
 
@@ -29,10 +29,10 @@ Unlike standard resizing (which just stretches pixels), AI Upscaling uses machin
 
 ## How to use our AI Upscaler:
 
-1.  Go to [AI Image Upscaler](/tool/upscale).
+1.  Go to [AI Image Upscaler](/ai-image-upscaler).
 2.  Upload your small or blurry image.
 3.  Select **2x** or **4x** magnification.
 4.  Click "Start Upscaling". The AI runs directly in your browser!
 5.  Download the enhanced image.
 
-[Upscale Image Now](/tool/upscale)
+[Upscale Image Now](/ai-image-upscaler)

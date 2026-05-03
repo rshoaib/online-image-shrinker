@@ -12,7 +12,7 @@ tags: ["Privacy"]
 meta_title: null
 meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-05-03T06:10:00.000000+00:00"
 ---
 Every time you use a cloud-based image editor, your photos travel across the internet to a stranger's server. Most services log, store, or even analyze your uploads. If you care about privacy, there is a better way.
 
@@ -32,35 +32,35 @@ Reduce JPEG, PNG, and WebP file sizes by up to 90% without visible quality loss.
 Remove backgrounds from photos using a machine learning model that runs directly in your browser via TensorFlow.js. No server processing needed.
 
 *   **Use case:** Creating product photos with white backgrounds.
-*   [Try Background Remover](/tool/remove-bg)
+*   [Try Background Remover](/remove-background)
 
 ## 3. EXIF Data Remover
 
 Strip hidden metadata (GPS coordinates, camera model, timestamps) from photos before sharing them online. Prevent location tracking.
 
 *   **Use case:** Removing location data before posting on social media.
-*   [Try EXIF Remover](/tool/exif)
+*   [Try EXIF Remover](/exif-remover)
 
 ## 4. Privacy Blur / Redactor
 
 Blur or pixelate faces, license plates, addresses, and sensitive text in screenshots. The blur is irreversible, unlike black markers which can sometimes be reversed.
 
 *   **Use case:** Sharing support tickets without exposing customer data.
-*   [Try Privacy Blur](/tool/redact)
+*   [Try Privacy Blur](/blur-image-online)
 
 ## 5. AI Image Upscaler
 
 Double or quadruple image resolution using a neural network that runs in your browser. Processing stays on your GPU/CPU.
 
 *   **Use case:** Enhancing old family photos without cloud uploads.
-*   [Try AI Upscaler](/tool/upscale)
+*   [Try AI Upscaler](/ai-image-upscaler)
 
 ## 6. Image Converter
 
 Convert between JPG, PNG, WebP, and HEIC formats. The conversion uses Canvas API, entirely browser-based.
 
 *   **Use case:** Converting iPhone HEIC photos to universally compatible JPG.
-*   [Try Image Converter](/tool/image-converter)
+*   [Try Image Converter](/image-converter-online)
 
 ## 7. PDF Maker
 
@@ -74,7 +74,7 @@ Combine multiple images into a single PDF document. The PDF is generated client-
 Draw your signature on a canvas and export it as a transparent PNG. Nothing is stored or transmitted.
 
 *   **Use case:** Signing PDF contracts without printing them.
-*   [Try Signature Maker](/tool/signature-maker)
+*   [Try Signature Maker](/signature-maker)
 
 ## 9. Image Compare Tool
 
