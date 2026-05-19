@@ -22,8 +22,8 @@ WebP is a modern image format developed by Google that provides superior lossles
 
 | Feature | PNG | JPEG | WebP |
 | :--- | :--- | :--- | :--- |
-| **Transparency** | Ô£à Yes | ÔØî No | Ô£à Yes |
-| **Animation** | ÔØî No | ÔØî No | Ô£à Yes |
+| **Transparency** | ✅ Yes | ❌ No | ✅ Yes |
+| **Animation** | ❌ No | ❌ No | ✅ Yes |
 | **File Size** | Heavy | Medium | **Lightest** |
 | **Quality** | Lossless | Lossy | Hybrid |
 

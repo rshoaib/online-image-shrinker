@@ -9,12 +9,12 @@ display_date: "Jan 28, 2026"
 read_time: "2 min read"
 image: "/og-image.jpg"
 tags: ["Design"]
-meta_title: "Extract Color Palettes from Movies & Photos (Free)"
-meta_description: "Steal color palettes from movie scenes and photos in seconds. Free browser-based palette extractor with hex codes. No signup, no uploads."
+meta_title: null
+meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-04-30T00:00:00.000000+00:00"
+updated_at: "2026-05-10T06:10:00.000000+00:00"
 ---
-Great designers steal. But they don't steal artworkÔÇöthey steal **colors**. One of the best ways to find a beautiful color scheme for your website or app is to take it from a movie scene or photograph you love.
+Great designers steal. But they don't steal artwork—they steal **colors**. One of the best ways to find a beautiful color scheme for your website or app is to take it from a movie scene or photograph you love.
 
 ## Why Movie Palettes work
 Cinematographers spend millions of dollars lighting scenes to create a specific mood.

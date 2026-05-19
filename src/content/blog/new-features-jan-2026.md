@@ -12,7 +12,7 @@ tags: ["Updates"]
 meta_title: null
 meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-05-10T06:10:00.000000+00:00"
 ---
 We are constantly working to make **Image Shrinker** not just the most private tool on the web, but also the fastest. Today's update focuses on speed and a little bit of fun.
 
@@ -20,9 +20,9 @@ We are constantly working to make **Image Shrinker** not just the most private t
 We noticed many of you were downloading an image just to immediately paste it into Slack, Discord, or X (Twitter). We've removed that step.
 
 You will now find a **"Copy"** button next to the download button in:
-*   [Screenshot Beautifier](/tool/screenshot-beautifier)
-*   [Profile Picture Maker](/tool/profile-picture)
-*   [AI Upscaler](/tool/upscale)
+*   [Screenshot Beautifier](/screenshot-beautifier)
+*   [Profile Picture Maker](/profile-picture-maker)
+*   [AI Upscaler](/ai-image-upscaler)
 
 Click it, and the image is instantly in your clipboard, ready to paste (`Ctrl+V`).
 
@@ -38,4 +38,4 @@ It will launch like a native app, with no browser bars and full-speed performanc
 ## What's Next?
 We are working on **Batch Watermarking** improvements and looking into **Video Compression**. Stay tuned!
 
-[Try the Copy Button](/tool/screenshot-beautifier)
+[Try the Copy Button](/screenshot-beautifier)

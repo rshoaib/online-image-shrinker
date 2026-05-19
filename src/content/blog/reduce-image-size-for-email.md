@@ -36,12 +36,12 @@ If you need to keep the original dimensions (for printing later), compression is
 
 1.  Go to the [Compress Tool](/tool/compress).
 2.  **Drag & Drop** your images.
-3.  Adjust the quality slider ÔÇö **70-80%** gives a great balance of size and quality.
+3.  Adjust the quality slider — **70-80%** gives a great balance of size and quality.
 4.  Download the compressed versions.
 
 **Typical results:**
-*   5 MB iPhone photo ÔåÆ **800 KB** (84% smaller)
-*   8 MB DSLR photo ÔåÆ **1.2 MB** (85% smaller)
+*   5 MB iPhone photo → **800 KB** (84% smaller)
+*   8 MB DSLR photo → **1.2 MB** (85% smaller)
 
 ---
 
@@ -54,7 +54,7 @@ For email, nobody needs a 4000px wide image. Screens are typically 1920px or les
 3.  The height adjusts automatically to keep proportions.
 4.  Then run the result through the [Compress Tool](/tool/compress).
 
-**Result:** A 7 MB photo becomes **200-400 KB** ÔÇö you can attach 50+ photos in one email!
+**Result:** A 7 MB photo becomes **200-400 KB** — you can attach 50+ photos in one email!
 
 ---
 
@@ -74,6 +74,6 @@ WebP is 25-34% smaller than JPEG at the same quality.
 
 *   **Batch process:** Select multiple images at once to save time.
 *   **Check the total:** Add up all attachment sizes before hitting send.
-*   **Privacy first:** Our tools run in your browser ÔÇö your photos never leave your device.
+*   **Privacy first:** Our tools run in your browser — your photos never leave your device.
 
 [Start Compressing Now](/tool/compress)

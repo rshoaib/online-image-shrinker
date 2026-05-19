@@ -2,7 +2,7 @@
 id: 44
 slug: "extract-text-from-image-ocr"
 title: "How to Extract Text from Images Online (Free OCR Tool)"
-excerpt: "Copy text from photos, screenshots, and scanned documents instantly. No sign-up, no upload ÔÇö runs 100% in your browser."
+excerpt: "Copy text from photos, screenshots, and scanned documents instantly. No sign-up, no upload — runs 100% in your browser."
 category: "Tutorials"
 date: "Feb 28, 2026"
 display_date: "Feb 28, 2026"
@@ -14,9 +14,9 @@ meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
 updated_at: "2026-05-03T06:10:00.000000+00:00"
 ---
-Have you ever received a photo of a document ÔÇö a receipt, a whiteboard, a business card, or a scanned contract ÔÇö and needed to copy the text? Typing it out manually is tedious and error-prone. That is where **OCR (Optical Character Recognition)** comes in.
+Have you ever received a photo of a document — a receipt, a whiteboard, a business card, or a scanned contract — and needed to copy the text? Typing it out manually is tedious and error-prone. That is where **OCR (Optical Character Recognition)** comes in.
 
-Our free [OCR Tool](/image-to-text) uses AI to read text from any image and give you a clean, copy-paste-ready result ÔÇö all without uploading your file to a server.
+Our free [OCR Tool](/image-to-text) uses AI to read text from any image and give you a clean, copy-paste-ready result — all without uploading your file to a server.
 
 ---
 
@@ -71,7 +71,7 @@ Dark photos with shadows produce poor results. Make sure the text is well-lit an
 Skewed or rotated documents confuse OCR engines. Use our [Crop Tool](/tool/crop) to straighten the image before scanning.
 
 ### 4. One Language at a Time
-If your document mixes languages, the AI will still try to read them ÔÇö but accuracy is best when you process one language per image.
+If your document mixes languages, the AI will still try to read them — but accuracy is best when you process one language per image.
 
 ---
 
@@ -106,7 +106,7 @@ Photograph menus, signs, and documents in foreign languages. Extract the text an
 
 ## Privacy First
 
-Unlike Google Drive OCR or Adobe Acrobat Cloud, our tool processes **everything locally in your browser**. Your documents ÔÇö contracts, IDs, medical records ÔÇö never leave your device. You could disconnect your WiFi after loading the page, and the OCR would still work.
+Unlike Google Drive OCR or Adobe Acrobat Cloud, our tool processes **everything locally in your browser**. Your documents — contracts, IDs, medical records — never leave your device. You could disconnect your WiFi after loading the page, and the OCR would still work.
 
 ---
 
@@ -122,6 +122,6 @@ Yes, but accuracy depends on legibility. Neat handwriting works well; messy curs
 No hard limit. Larger images take a few extra seconds to process since everything runs on your CPU.
 
 **Can it read PDFs?**
-Not directly ÔÇö but you can screenshot a PDF page and run OCR on the screenshot.
+Not directly — but you can screenshot a PDF page and run OCR on the screenshot.
 
 [Extract Text Now](/image-to-text)

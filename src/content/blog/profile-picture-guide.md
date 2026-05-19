@@ -23,7 +23,7 @@ A professional profile picture (PFP) can increase LinkedIn profile views by 14x.
 4.  **The "Ring":** A colored ring around your photo can make it stand out in feeds (standard used by many creators).
 
 ## How our AI Tool Works
-We use browser-based AI to detect the person in the photo and remove everything elseÔÇö**without uploading your photo to a server**. It's 100% private.
+We use browser-based AI to detect the person in the photo and remove everything else—**without uploading your photo to a server**. It's 100% private.
 
 ## Step-by-Step Guide
 1.  Take a selfie or use an existing photo where you look approachable.

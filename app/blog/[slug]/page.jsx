@@ -22,20 +22,30 @@ export async function generateMetadata({ params }) {
     }
 
     const publishDate = article.date || article.display_date;
+    const title = article.meta_title || `${article.title} - Online Image Shrinker`;
+    const description = article.meta_description || article.excerpt;
+    const ogTitle = article.meta_title || article.title;
+    const images = article.image ? [article.image] : ['/og-image.jpg'];
 
     return {
-        title: `${article.title} - Online Image Shrinker`,
-        description: article.excerpt,
+        title,
+        description,
         alternates: {
             canonical: `/blog/${article.slug}`,
         },
         openGraph: {
-            title: article.title,
-            description: article.excerpt,
+            title: ogTitle,
+            description,
             type: 'article',
             url: `/blog/${article.slug}`,
             ...(publishDate && { publishedTime: publishDate }),
-            ...(article.image && { images: [article.image] }),
+            images,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: ogTitle,
+            description,
+            images,
         },
         other: {
             'article:published_time': publishDate || '',

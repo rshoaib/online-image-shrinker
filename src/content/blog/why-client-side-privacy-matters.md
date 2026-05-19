@@ -14,7 +14,7 @@ meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
 updated_at: "2026-03-10T16:09:50.986361+00:00"
 ---
-When you use a site like "TinyPNG" or "ILoveIMG", you are performing an **Upload**. You are physically sending your personal filesÔÇöphotos of your kids, scans of your documents, or expensive client workÔÇöto a server owned by a stranger.
+When you use a site like "TinyPNG" or "ILoveIMG", you are performing an **Upload**. You are physically sending your personal files—photos of your kids, scans of your documents, or expensive client work—to a server owned by a stranger.
 
 ## What happens on the server?
 *   **Logging**: They might keep a copy of your file.

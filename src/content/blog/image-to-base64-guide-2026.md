@@ -36,7 +36,7 @@ You embed the image data directly:
 <img src="data:image/png;base64,iVBORw0KGgo..." alt="Logo">
 ```
 
-The browser decodes the Base64 string and renders the image ÔÇö no extra file request needed.
+The browser decodes the Base64 string and renders the image — no extra file request needed.
 
 ---
 
@@ -46,14 +46,14 @@ Base64 is perfect for some use cases and terrible for others. Here's a clear bre
 
 | Use Case | Base64? | Why |
 | :--- | :--- | :--- |
-| **Tiny icons (< 5 KB)** | Ô£à Yes | Saves an HTTP request |
-| **Email templates** | Ô£à Yes | Email clients block external images |
-| **Single-file HTML reports** | Ô£à Yes | No external dependencies |
-| **CSS background patterns** | Ô£à Yes | Inline directly in your stylesheet |
-| **JSON API responses** | Ô£à Yes | Send image data inside JSON |
-| **Large photos (> 50 KB)** | ÔØî No | Base64 is 33% larger than the original |
-| **Website hero banners** | ÔØî No | Use WebP or JPEG for performance |
-| **Repeated images** | ÔØî No | Browser can't cache inline Base64 |
+| **Tiny icons (< 5 KB)** | ✅ Yes | Saves an HTTP request |
+| **Email templates** | ✅ Yes | Email clients block external images |
+| **Single-file HTML reports** | ✅ Yes | No external dependencies |
+| **CSS background patterns** | ✅ Yes | Inline directly in your stylesheet |
+| **JSON API responses** | ✅ Yes | Send image data inside JSON |
+| **Large photos (> 50 KB)** | ❌ No | Base64 is 33% larger than the original |
+| **Website hero banners** | ❌ No | Use WebP or JPEG for performance |
+| **Repeated images** | ❌ No | Browser can't cache inline Base64 |
 
 **Key rule: Use Base64 for images under 10 KB.** Anything larger should be served as a regular file and [compressed with our tool](/tool/compress) to save bandwidth.
 
@@ -61,7 +61,7 @@ Base64 is perfect for some use cases and terrible for others. Here's a clear bre
 
 ## The 33% Size Penalty
 
-Base64 encoding increases file size by approximately **33%**. A 3 KB icon becomes ~4 KB as Base64. That's fine for tiny assets, but a 100 KB photo would balloon to 133 KB ÔÇö and it can't be cached by the browser.
+Base64 encoding increases file size by approximately **33%**. A 3 KB icon becomes ~4 KB as Base64. That's fine for tiny assets, but a 100 KB photo would balloon to 133 KB — and it can't be cached by the browser.
 
 | Original Size | Base64 Size | Overhead |
 | :--- | :--- | :--- |
@@ -84,7 +84,7 @@ Base64 encoding increases file size by approximately **33%**. A 3 KB icon become
 3. The Base64 string is generated instantly.
 4. **Copy** the Data URI or raw Base64 string.
 
-Your image never leaves your browser ÔÇö it's processed 100% client-side. Perfect for sensitive logos or internal assets.
+Your image never leaves your browser — it's processed 100% client-side. Perfect for sensitive logos or internal assets.
 
 ### Method 2: JavaScript (Browser)
 
@@ -151,10 +151,10 @@ This encodes the file and copies the string to your clipboard.
 Here's how a developer typically uses Base64 in practice:
 
 1. **Export** a small icon or logo from your design tool.
-2. **Compress** it first using our [Image Compressor](/tool/compress) ÔÇö fewer bytes means a shorter Base64 string.
+2. **Compress** it first using our [Image Compressor](/tool/compress) — fewer bytes means a shorter Base64 string.
 3. **Convert** it with our [Base64 Converter](/base64-converter).
 4. **Paste** the Data URI directly into your HTML, CSS, or email template.
-5. **Test** ÔÇö the image renders without any external file dependency.
+5. **Test** — the image renders without any external file dependency.
 
 For larger assets, skip Base64. Instead, [convert to WebP](/image-converter-online) and serve them as regular image files for better performance and caching. Read more about [why WebP matters for page speed](/blog/speed-up-website-webp).
 
@@ -165,10 +165,10 @@ For larger assets, skip Base64. Instead, [convert to WebP](/image-converter-onli
 | Factor | Base64 Inline | External File |
 | :--- | :--- | :--- |
 | **HTTP Requests** | 0 (embedded) | 1 per image |
-| **Caching** | ÔØî Not cacheable | Ô£à Browser-cached |
+| **Caching** | ❌ Not cacheable | ✅ Browser-cached |
 | **File Size** | 33% larger | Original size |
-| **Portability** | Ô£à Single file | Needs hosting |
-| **SEO** | ÔØî Not crawlable | Ô£à Image search indexed |
+| **Portability** | ✅ Single file | Needs hosting |
+| **SEO** | ❌ Not crawlable | ✅ Image search indexed |
 | **Best For** | Icons, email, reports | Photos, banners, galleries |
 
 ---
@@ -185,11 +185,11 @@ Yes, by approximately **33%**. A 10 KB image becomes ~13.3 KB as Base64. This is
 Our [Base64 Converter](/base64-converter) processes images entirely in your browser. Your files never touch a server. This makes it safe for logos, internal documents, and confidential assets.
 
 **Can I convert Base64 back to an image?**
-Yes. Our tool supports both directions ÔÇö image to Base64 and Base64 back to image. Just paste the Base64 string and download the decoded file.
+Yes. Our tool supports both directions — image to Base64 and Base64 back to image. Just paste the Base64 string and download the decoded file.
 
 **Should I use Base64 for all my website images?**
 No. Only use Base64 for very small images (under 10 KB). For larger images, serve them as external files and [compress them with WebP](/image-converter-online) for best performance.
 
 ---
 
-**[ÔåÆ Convert Your Image to Base64 Now (Free)](/base64-converter)**
+**[→ Convert Your Image to Base64 Now (Free)](/base64-converter)**

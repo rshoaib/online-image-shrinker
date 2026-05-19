@@ -1,7 +1,7 @@
 ---
 id: 56
 slug: "instagram-grid-maker-guide-2026"
-title: "How to Split Photos for an Instagram Grid ÔÇö Free Online Tool (2026)"
+title: "How to Split Photos for an Instagram Grid — Free Online Tool (2026)"
 excerpt: "Split any image into a perfect 3x3 grid for your Instagram profile. Updated for the new 3:4 ratio. No sign-up, 100% free."
 category: "Tutorials"
 date: "Mar 6, 2026"
@@ -45,25 +45,25 @@ Instagram changed its profile grid preview from a **1:1 square** ratio to a tall
 
 ### New 3:4 Ratio Dimensions (Recommended)
 
-Each tile should be **1080 ├ù 1350 pixels** (4:5 aspect ratio). Multiply by your grid columns and rows:
+Each tile should be **1080 × 1350 pixels** (4:5 aspect ratio). Multiply by your grid columns and rows:
 
 | Grid Size | Total Image Dimensions | Individual Tile |
 | :--- | :--- | :--- |
-| **3x1** | 3240 ├ù 1350 px | 1080 ├ù 1350 px |
-| **3x2** | 3240 ├ù 2700 px | 1080 ├ù 1350 px |
-| **3x3** | 3240 ├ù 4050 px | 1080 ├ù 1350 px |
-| **3x4** | 3240 ├ù 5400 px | 1080 ├ù 1350 px |
-| **3x5** | 3240 ├ù 6750 px | 1080 ├ù 1350 px |
+| **3x1** | 3240 × 1350 px | 1080 × 1350 px |
+| **3x2** | 3240 × 2700 px | 1080 × 1350 px |
+| **3x3** | 3240 × 4050 px | 1080 × 1350 px |
+| **3x4** | 3240 × 5400 px | 1080 × 1350 px |
+| **3x5** | 3240 × 6750 px | 1080 × 1350 px |
 
 ### Legacy Square Dimensions (Still Works)
 
-If you prefer square tiles, you can still use **1080 ├ù 1080 pixels** per tile. Square posts display fine on your profile, though they show with top/bottom margins in the new 3:4 preview.
+If you prefer square tiles, you can still use **1080 × 1080 pixels** per tile. Square posts display fine on your profile, though they show with top/bottom margins in the new 3:4 preview.
 
 | Grid Size | Total Image Dimensions | Individual Tile |
 | :--- | :--- | :--- |
-| **3x1** | 3240 ├ù 1080 px | 1080 ├ù 1080 px |
-| **3x2** | 3240 ├ù 2160 px | 1080 ├ù 1080 px |
-| **3x3** | 3240 ├ù 3240 px | 1080 ├ù 1080 px |
+| **3x1** | 3240 × 1080 px | 1080 × 1080 px |
+| **3x2** | 3240 × 2160 px | 1080 × 1080 px |
+| **3x3** | 3240 × 3240 px | 1080 × 1080 px |
 
 > **Tip:** For maximum impact in 2026, use the **3:4 ratio** dimensions. Your tiles will fill the full preview space on mobile profiles.
 
@@ -74,10 +74,10 @@ If you prefer square tiles, you can still use **1080 ├ù 1080 pixels** per til
 No downloads. No sign-ups. No watermarks.
 
 1. Open our [Instagram Grid Maker](/instagram-grid-maker).
-2. **Upload** your image ÔÇö drag and drop or click to browse.
+2. **Upload** your image — drag and drop or click to browse.
 3. Select your grid layout: **3x1, 3x2, 3x3**, or a custom grid.
 4. Adjust the crop area to position your image within the grid.
-5. Click **Split** ÔÇö tiles are generated instantly in your browser.
+5. Click **Split** — tiles are generated instantly in your browser.
 6. **Download** all tiles as individual images.
 
 **Your image never leaves your device.** The splitting happens 100% client-side using JavaScript Canvas. You could disconnect from the internet and it would still work.
@@ -88,7 +88,7 @@ No downloads. No sign-ups. No watermarks.
 
 This is where most people mess up. If you post tiles in the wrong order, your profile grid will look scrambled.
 
-**Post from bottom-right to top-left.** For a 3x3 grid with tiles numbered 1ÔÇô9:
+**Post from bottom-right to top-left.** For a 3x3 grid with tiles numbered 1–9:
 
 | Row | Left | Center | Right |
 | :--- | :--- | :--- | :--- |
@@ -102,7 +102,7 @@ The last tile you post (tile 1) will appear at the top-left of your profile. Ins
 
 ### Timing Tips
 
-- **Post all tiles within 10ÔÇô15 minutes.** Spacing them out over days breaks the visual effect and clutters your followers' feeds multiple times.
+- **Post all tiles within 10–15 minutes.** Spacing them out over days breaks the visual effect and clutters your followers' feeds multiple times.
 - **Write unique captions** for each tile. Duplicate captions look spammy.
 - **Use the same set of hashtags** across all tiles for consistent discoverability.
 
@@ -110,7 +110,7 @@ The last tile you post (tile 1) will appear at the top-left of your profile. Ins
 
 ## Seamless Carousel Dimensions
 
-Besides profile grids, you can also create **seamless Instagram carousels** ÔÇö where one image flows across multiple swipeable slides.
+Besides profile grids, you can also create **seamless Instagram carousels** — where one image flows across multiple swipeable slides.
 
 | Slides | Total Image Width | Height |
 | :--- | :--- | :--- |
@@ -127,13 +127,13 @@ Design your panoramic image at the total width, then split it into equal vertica
 
 | Feature | **OnlineImageShrinker** | Canva | PhotoSplit (App) | Photoshop |
 | :--- | :--- | :--- | :--- | :--- |
-| **100% Client-Side** | Ô£à | ÔØî | ÔØî | Ô£à |
-| **Free (No Limits)** | Ô£à | ÔÜá´©Å (limited free) | ÔÜá´©Å (ads) | ÔØî ($22/mo) |
-| **No Sign-Up** | Ô£à | ÔØî | Ô£à | ÔØî |
-| **Custom Grid Sizes** | Ô£à | Ô£à | ÔØî (preset only) | Ô£à |
-| **Batch Download** | Ô£à | ÔØî | Ô£à | Ô£à |
-| **No Watermark** | Ô£à | ÔØî (free tier) | Ô£à | Ô£à |
-| **Works Offline (PWA)** | Ô£à | ÔØî | ÔØî | Ô£à |
+| **100% Client-Side** | ✅ | ❌ | ❌ | ✅ |
+| **Free (No Limits)** | ✅ | ⚠️ (limited free) | ⚠️ (ads) | ❌ ($22/mo) |
+| **No Sign-Up** | ✅ | ❌ | ✅ | ❌ |
+| **Custom Grid Sizes** | ✅ | ✅ | ❌ (preset only) | ✅ |
+| **Batch Download** | ✅ | ❌ | ✅ | ✅ |
+| **No Watermark** | ✅ | ❌ (free tier) | ✅ | ✅ |
+| **Works Offline (PWA)** | ✅ | ❌ | ❌ | ✅ |
 
 **Key advantage:** We never upload your photos to a server. The grid splitting runs inside your browser. Your images stay private.
 
@@ -163,7 +163,7 @@ Tell a visual story across 9 tiles. Place a quote or key moment in each tile, bu
 For the best results, prepare your source image:
 
 1. **Start high-res.** Your source image should be at least **3240 px wide** for a 3-column grid. Low-res images will look pixelated when split.
-2. **Crop to the correct ratio.** Use our [Crop Tool](/tool/crop) to set your image to the target aspect ratio (e.g., 3240 ├ù 4050 for a 3x3 grid at 3:4).
+2. **Crop to the correct ratio.** Use our [Crop Tool](/tool/crop) to set your image to the target aspect ratio (e.g., 3240 × 4050 for a 3x3 grid at 3:4).
 3. **Optimize colours and contrast.** Apply [photo filters](/photo-filters-online) to create a consistent, branded look.
 4. **Compress after splitting.** Each tile should be under 1 MB. Run them through our [Image Compressor](/tool/compress) if needed.
 5. **Add a watermark.** Protect your work with our [Watermark Tool](/watermark-photos-online) before splitting.
@@ -176,8 +176,8 @@ For the best results, prepare your source image:
 | :--- | :--- |
 | Posting tiles in the wrong order | Always post bottom-right to top-left (9, 8, 7... 1) |
 | Using a low-resolution source image | Start with at least 3240 px wide |
-| Ignoring the new 3:4 ratio | Use 1080 ├ù 1350 px tiles for full profile preview |
-| Spacing posts over multiple days | Post all tiles within 10ÔÇô15 minutes |
+| Ignoring the new 3:4 ratio | Use 1080 × 1350 px tiles for full profile preview |
+| Spacing posts over multiple days | Post all tiles within 10–15 minutes |
 | Using the same caption for every tile | Write unique text for each post |
 | Not checking the preview | View your profile after posting to confirm alignment |
 
@@ -186,7 +186,7 @@ For the best results, prepare your source image:
 ## Frequently Asked Questions
 
 **What is the best grid size for Instagram in 2026?**
-The **3x3 grid** is the most popular. It fills three full rows on your profile. Use 3240 ├ù 4050 pixels for the total image (1080 ├ù 1350 per tile) to match Instagram's new 3:4 profile preview ratio.
+The **3x3 grid** is the most popular. It fills three full rows on your profile. Use 3240 × 4050 pixels for the total image (1080 × 1350 per tile) to match Instagram's new 3:4 profile preview ratio.
 
 **Do Instagram grid posts still work in 2026?**
 Yes. Grid posts remain one of the most effective ways to create visual impact on your Instagram profile. The taller 3:4 preview ratio actually makes grid posts look even more dramatic than they did with the old square preview.
@@ -198,8 +198,8 @@ Post from **bottom-right to top-left**. For a 3x3 grid, post tile 9 first and ti
 Absolutely. Our [Instagram Grid Maker](/instagram-grid-maker) splits images for free with no watermark, no sign-up, and no file uploads. Everything runs in your browser.
 
 **What dimensions should I use for an Instagram grid?**
-For the new 3:4 profile preview: **1080 ├ù 1350 px per tile** (3240 ├ù 4050 total for 3x3). For square tiles: **1080 ├ù 1080 px per tile** (3240 ├ù 3240 total for 3x3).
+For the new 3:4 profile preview: **1080 × 1350 px per tile** (3240 × 4050 total for 3x3). For square tiles: **1080 × 1080 px per tile** (3240 × 3240 total for 3x3).
 
 ---
 
-**[ÔåÆ Split Your Photo into an Instagram Grid Now (Free)](/instagram-grid-maker)**
+**[→ Split Your Photo into an Instagram Grid Now (Free)](/instagram-grid-maker)**

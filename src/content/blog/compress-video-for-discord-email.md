@@ -14,7 +14,7 @@ meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
 updated_at: "2026-03-10T16:09:50.986361+00:00"
 ---
-You captured a great moment on your phone. You try to send it in the group chat, upload it to Discord, or email it to a client ÔÇö and you hit a wall: **"File is too large."**
+You captured a great moment on your phone. You try to send it in the group chat, upload it to Discord, or email it to a client — and you hit a wall: **"File is too large."**
 
 Modern smartphones record 4K video by default, meaning a 30-second clip can easily top 200MB. To share it anywhere, you need a [Video Compressor](/tool/video-compressor).
 

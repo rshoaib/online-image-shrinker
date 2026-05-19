@@ -18,7 +18,7 @@ You downloaded a 2-hour video podcast, a university lecture, or a music video, b
 
 The solution is simple: **Extract the audio track.**
 
-Our [Video to Audio Tool](/tool/video-to-audio) allows you to strip the sound from any video file (MP4, MOV, WebM, MKV) and save it as a lightweight MP3 file ÔÇö directly in your browser.
+Our [Video to Audio Tool](/tool/video-to-audio) allows you to strip the sound from any video file (MP4, MOV, WebM, MKV) and save it as a lightweight MP3 file — directly in your browser.
 
 ---
 
@@ -59,7 +59,7 @@ When extracting audio, you will see a setting measured in "kbps" (kilobits per s
 Higher bitrate = better sound quality, but larger file size.
 
 **The Golden Rule:** You cannot *improve* audio quality by choosing a higher bitrate than the original video had.
-If the original video was recorded with a cheap microphone at 128 kbps, extracting it at 320 kbps will not make it sound better ÔÇö it will just waste disk space. When in doubt, **192 kbps** is the safest, most universal setting.
+If the original video was recorded with a cheap microphone at 128 kbps, extracting it at 320 kbps will not make it sound better — it will just waste disk space. When in doubt, **192 kbps** is the safest, most universal setting.
 
 ---
 
