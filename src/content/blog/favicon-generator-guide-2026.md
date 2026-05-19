@@ -12,11 +12,11 @@ tags: ["Guides"]
 meta_title: null
 meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-05-10T06:10:00.000000+00:00"
 ---
 That tiny icon in your browser tab may look insignificant, but it is one of the most important branding elements on the web. A **favicon** (short for "favorites icon") appears in browser tabs, bookmarks, history, search results, and even in mobile app icons when users save your site to their home screen.
 
-Yet most website owners either skip it entirely (showing an ugly generic globe icon) or use a blurry, incorrectly sized image. This guide shows you how to create a perfect favicon in every required size and format ÔÇö for free.
+Yet most website owners either skip it entirely (showing an ugly generic globe icon) or use a blurry, incorrectly sized image. This guide shows you how to create a perfect favicon in every required size and format — for free.
 
 ---
 
@@ -36,39 +36,39 @@ Without a favicon, your site looks unfinished and unprofessional. Users are 30% 
 
 ## Favicon Size Guide 2026: Every Size You Need
 
-In 2026, a single 16├ù16 pixel ICO file is no longer enough. Modern browsers, operating systems, and devices each expect different sizes. Here is the complete cheat sheet:
+In 2026, a single 16×16 pixel ICO file is no longer enough. Modern browsers, operating systems, and devices each expect different sizes. Here is the complete cheat sheet:
 
 | Size (px) | Format | Purpose |
 | :--- | :--- | :--- |
-| **16 ├ù 16** | ICO / PNG | Browser tab (standard displays) |
-| **32 ├ù 32** | ICO / PNG | Browser tab (Retina/HiDPI displays) |
-| **48 ├ù 48** | ICO / PNG | Windows taskbar, larger browser UI |
-| **64 ├ù 64** | PNG | Windows site shortcuts |
-| **96 ├ù 96** | PNG | Google TV, high-res Chrome tabs |
-| **128 ├ù 128** | PNG | Chrome Web Store icon |
-| **180 ├ù 180** | PNG | Apple Touch Icon (iOS/iPadOS home screen) |
-| **192 ├ù 192** | PNG | Android Chrome, PWA manifest |
-| **512 ├ù 512** | PNG | PWA splash screen, Google search |
+| **16 × 16** | ICO / PNG | Browser tab (standard displays) |
+| **32 × 32** | ICO / PNG | Browser tab (Retina/HiDPI displays) |
+| **48 × 48** | ICO / PNG | Windows taskbar, larger browser UI |
+| **64 × 64** | PNG | Windows site shortcuts |
+| **96 × 96** | PNG | Google TV, high-res Chrome tabs |
+| **128 × 128** | PNG | Chrome Web Store icon |
+| **180 × 180** | PNG | Apple Touch Icon (iOS/iPadOS home screen) |
+| **192 × 192** | PNG | Android Chrome, PWA manifest |
+| **512 × 512** | PNG | PWA splash screen, Google search |
 
-> **Rule of thumb:** Start with a **512├ù512 px** source image. Our tool will generate every smaller size from it automatically, ensuring each one is crisp.
+> **Rule of thumb:** Start with a **512×512 px** source image. Our tool will generate every smaller size from it automatically, ensuring each one is crisp.
 
 ---
 
 ## Favicon Formats Explained
 
-### ICO ÔÇö The Legacy Standard
+### ICO — The Legacy Standard
 The **.ico** format is the original favicon format. It can pack multiple sizes (16, 32, 48) into a single file, making it the most compatible option across all browsers, including ancient ones.
 
 *   **Best for:** Maximum backward compatibility.
 *   **Limitation:** Larger file sizes compared to modern formats.
 
-### PNG ÔÇö The Modern Standard
+### PNG — The Modern Standard
 **PNG** favicons are lightweight, support transparency, and look crisp. Most modern browsers fully support PNG favicons.
 
 *   **Best for:** Modern websites, high-quality icons with transparency.
 *   **Limitation:** Requires separate files for each size.
 
-### SVG ÔÇö The Future
+### SVG — The Future
 **SVG** favicons are vector-based, meaning they scale to any size without losing quality. They also support CSS media queries, letting you create favicons that change based on the user's **dark mode/light mode** preference.
 
 *   **Best for:** Cutting-edge sites, dark mode support.
@@ -82,10 +82,10 @@ You don't need Photoshop or design skills. Our [Favicon Generator](/favicon-gene
 
 ### Step 1: Prepare Your Source Image
 Start with your logo or brand icon:
-*   **Size:** At least 512 ├ù 512 pixels (larger is better).
+*   **Size:** At least 512 × 512 pixels (larger is better).
 *   **Shape:** Square (1:1 ratio). If your logo is rectangular, crop it to a square first using our [Crop Tool](/tool/crop).
-*   **Background:** Transparent PNG works best. Use our [Background Remover](/tool/remove-bg) to strip the background if needed.
-*   **Simplicity:** At 16├ù16 pixels, complex details disappear. Use a simplified version of your logo ÔÇö just the icon, not the full wordmark.
+*   **Background:** Transparent PNG works best. Use our [Background Remover](/remove-background) to strip the background if needed.
+*   **Simplicity:** At 16×16 pixels, complex details disappear. Use a simplified version of your logo — just the icon, not the full wordmark.
 
 ### Step 2: Generate All Sizes
 1.  Go to our [Favicon Generator](/favicon-generator).
@@ -162,10 +162,10 @@ Place `favicon.ico` in the `/public` folder. Vite automatically serves it. Add P
 Place favicon files in `/public`. Next.js serves them at the root URL. Add `<link>` tags in your `_document.js` or use the `next/head` component.
 
 ### WordPress
-Go to **Appearance ÔåÆ Customize ÔåÆ Site Identity ÔåÆ Site Icon**. Upload your 512├ù512 PNG. WordPress auto-generates the smaller sizes.
+Go to **Appearance → Customize → Site Identity → Site Icon**. Upload your 512×512 PNG. WordPress auto-generates the smaller sizes.
 
 ### Shopify
-Go to **Online Store ÔåÆ Themes ÔåÆ Customize ÔåÆ Theme Settings ÔåÆ Favicon**. Upload a 32├ù32 or larger square PNG.
+Go to **Online Store → Themes → Customize → Theme Settings → Favicon**. Upload a 32×32 or larger square PNG.
 
 ---
 
@@ -174,9 +174,9 @@ Go to **Online Store ÔåÆ Themes ÔåÆ Customize ÔåÆ Theme Settings ÔåÆ
 | Mistake | Fix |
 | :--- | :--- |
 | Using a non-square image | Crop to 1:1 with our [Crop Tool](/tool/crop) |
-| Only providing 16├ù16 | Generate all sizes with our [Favicon Generator](/favicon-generator) |
-| Forgetting Apple Touch Icon | Include a 180├ù180 PNG in your `<head>` |
-| Using a JPEG (no transparency) | Convert to PNG using our [Image Converter](/tool/image-converter) |
+| Only providing 16×16 | Generate all sizes with our [Favicon Generator](/favicon-generator) |
+| Forgetting Apple Touch Icon | Include a 180×180 PNG in your `<head>` |
+| Using a JPEG (no transparency) | Convert to PNG using our [Image Converter](/image-converter-online) |
 | Blocking favicon in robots.txt | Allow Googlebot to crawl `/favicon.ico` |
 | Not testing dark mode | Use a colored background, avoid white or black icons |
 
@@ -185,16 +185,16 @@ Go to **Online Store ÔåÆ Themes ÔåÆ Customize ÔåÆ Theme Settings ÔåÆ
 ## Frequently Asked Questions
 
 **What is the best favicon size?**
-There is no single "best" size. You need multiple sizes: 16├ù16 and 32├ù32 for browser tabs, 180├ù180 for Apple devices, and 512├ù512 for PWA splash screens. Our [Favicon Generator](/favicon-generator) creates all of them from one upload.
+There is no single "best" size. You need multiple sizes: 16×16 and 32×32 for browser tabs, 180×180 for Apple devices, and 512×512 for PWA splash screens. Our [Favicon Generator](/favicon-generator) creates all of them from one upload.
 
 **Can I use a JPG as a favicon?**
 Technically yes, but you should not. JPG does not support transparency, so your icon will have an ugly white box around it in dark-themed browsers. Always use PNG (or ICO which contains PNG layers).
 
 **How do I make a favicon with a transparent background?**
-Start with a PNG that already has transparency. If your logo has a solid background, remove it first using our [Background Remover](/tool/remove-bg), then upload the transparent PNG to the [Favicon Generator](/favicon-generator).
+Start with a PNG that already has transparency. If your logo has a solid background, remove it first using our [Background Remover](/remove-background), then upload the transparent PNG to the [Favicon Generator](/favicon-generator).
 
 **Why doesn't my favicon show in the browser?**
-Three common reasons: (1) Browser cache ÔÇö hard-refresh with Ctrl+Shift+R. (2) Wrong file path ÔÇö make sure the `href` in your HTML matches the actual file location. (3) Missing `<link>` tags ÔÇö add the HTML code shown above to your `<head>`.
+Three common reasons: (1) Browser cache — hard-refresh with Ctrl+Shift+R. (2) Wrong file path — make sure the `href` in your HTML matches the actual file location. (3) Missing `<link>` tags — add the HTML code shown above to your `<head>`.
 
 **Does a favicon affect SEO?**
 Indirectly, yes. Google displays favicons in search results, and a recognizable icon improves click-through rates. Google also uses the presence of a favicon as a minor trust signal.

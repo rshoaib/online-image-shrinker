@@ -28,7 +28,7 @@ Our **Batch Watermarker** runs in your browser. This means:
 Navigate to the [Watermark Tool](/watermark-photos-online).
 
 ### Step 2: Select Images
-Drag and drop your entire folder of JPGs or PNGs. Don't worry about quantityÔÇöour engine handles it.
+Drag and drop your entire folder of JPGs or PNGs. Don't worry about quantity—our engine handles it.
 
 ### Step 3: Customize Your Mark
 *   **Text Mode**: Type your copyright (e.g., "┬® 2026 Studio Name"). Choose a font and color.

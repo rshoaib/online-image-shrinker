@@ -12,7 +12,7 @@ tags: ["E-commerce"]
 meta_title: null
 meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
-updated_at: "2026-03-10T16:09:50.986361+00:00"
+updated_at: "2026-05-10T06:10:00.000000+00:00"
 ---
 On Etsy, the photo *is* the product. A blurry or badly cropped thumbnail means zero clicks. Here is the cheat sheet for 2026.
 
@@ -29,7 +29,7 @@ While the listing page shows a 4:3 image, **Etsy search results often crop to a 
 
 ## White Backgrounds = More Sales
 Google Shopping integration requires a pure white background. If your photo is on a rug or table, Google might ignore it.
-*   **Solution**: Use our **[Background Remover](/tool/remove-bg)** to instantly swap your messy table for pure white (#FFFFFF).
+*   **Solution**: Use our **[Background Remover](/remove-background)** to instantly swap your messy table for pure white (#FFFFFF).
 
 ## How to optimize for Etsy
 1.  **Crop** your raw photo to 4:3 using our [Crop Tool](/tool/crop).

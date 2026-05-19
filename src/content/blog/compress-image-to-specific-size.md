@@ -14,7 +14,7 @@ meta_description: null
 created_at: "2026-03-10T16:09:50.986361+00:00"
 updated_at: "2026-05-03T06:10:00.000000+00:00"
 ---
-You found the perfect photo. You try to upload it to a government form, job application, or online profile ÔÇö and get hit with: **"File size must be under 100KB."**
+You found the perfect photo. You try to upload it to a government form, job application, or online profile — and get hit with: **"File size must be under 100KB."**
 
 Sound familiar? Whether it's 50KB for a visa application, 200KB for a forum avatar, or 2MB for an email attachment, this guide shows you exactly how to hit any target file size without destroying your image quality.
 
@@ -39,17 +39,17 @@ Here are the limits you'll encounter most often:
 
 ## Method 1: Quality Slider (Best for Most Cases)
 
-The fastest way to reduce file size is to lower the JPEG/WebP quality. Modern compression is "visually lossless" at 70-80% ÔÇö meaning your eyes cannot tell the difference, but the file is 5-10x smaller.
+The fastest way to reduce file size is to lower the JPEG/WebP quality. Modern compression is "visually lossless" at 70-80% — meaning your eyes cannot tell the difference, but the file is 5-10x smaller.
 
 ### How to do it:
 
 1.  Go to our [Compress Tool](/tool/compress).
 2.  **Upload** your image.
 3.  **Adjust the quality slider:**
-    *   **90%** ÔåÆ Minor reduction (~30% smaller). Use when quality is critical.
-    *   **80%** ÔåÆ Sweet spot (~60% smaller). Recommended for most uses.
-    *   **70%** ÔåÆ Aggressive (~75% smaller). Great for web thumbnails.
-    *   **50%** ÔåÆ Maximum compression (~85% smaller). Only for tiny icons or previews.
+    *   **90%** → Minor reduction (~30% smaller). Use when quality is critical.
+    *   **80%** → Sweet spot (~60% smaller). Recommended for most uses.
+    *   **70%** → Aggressive (~75% smaller). Great for web thumbnails.
+    *   **50%** → Maximum compression (~85% smaller). Only for tiny icons or previews.
 4.  Check the output file size shown below the preview.
 5.  **Download** when you hit your target.
 
@@ -95,9 +95,9 @@ If the quality slider alone doesn't get you under the limit, you need to reduce 
 
 Different formats produce dramatically different file sizes for the same visual quality:
 
-*   **PNG ÔåÆ JPG:** Can reduce size by **80%** (you lose transparency but gain massive savings).
-*   **JPG ÔåÆ WebP:** Another **25-34%** reduction on top of JPEG.
-*   **PNG ÔåÆ WebP:** Combined savings of **70-90%**.
+*   **PNG → JPG:** Can reduce size by **80%** (you lose transparency but gain massive savings).
+*   **JPG → WebP:** Another **25-34%** reduction on top of JPEG.
+*   **PNG → WebP:** Combined savings of **70-90%**.
 
 ### How to convert:
 
@@ -118,7 +118,7 @@ Government portals are the strictest. Here is the exact workflow:
 
 1.  Take your photo ([see our guide](/blog/us-visa-photo-size)).
 2.  Open the [Passport Photo Tool](/resize-passport-photo).
-3.  Select "US Visa" preset ÔÇö it auto-crops to 600x600.
+3.  Select "US Visa" preset — it auto-crops to 600x600.
 4.  Download as JPG.
 5.  If still over 240KB, run through [Compress](/tool/compress) at 75%.
 
@@ -144,10 +144,10 @@ Discord is strict about emoji file sizes. Here is the workflow:
 ## FAQ
 
 **Will compression make my image blurry?**
-Not at 70-80% quality. Modern compression algorithms are "visually lossless" ÔÇö they remove data your eyes cannot perceive. You would need to zoom in 400% to spot any difference.
+Not at 70-80% quality. Modern compression algorithms are "visually lossless" — they remove data your eyes cannot perceive. You would need to zoom in 400% to spot any difference.
 
 **Can I compress without losing any quality?**
-Yes ÔÇö "lossless" compression removes only metadata (EXIF data, color profiles) without touching pixels. This typically saves 10-20%. Use our [EXIF Remover](/exif-remover) for this.
+Yes — "lossless" compression removes only metadata (EXIF data, color profiles) without touching pixels. This typically saves 10-20%. Use our [EXIF Remover](/exif-remover) for this.
 
 **What if I need to compress a PNG with transparency?**
 Convert to WebP instead of JPG. WebP supports transparency AND is much smaller than PNG. Use our [Image Converter](/image-converter-online).
@@ -161,9 +161,9 @@ Yes! Our [Compress Tool](/tool/compress) accepts multiple files. Drag and drop y
 
 | "I need my image under..." | Do this |
 | :--- | :--- |
-| **50 KB** | Resize to 400px ÔåÆ Compress at 60% |
-| **100 KB** | Resize to 800px ÔåÆ Compress at 70% |
-| **200 KB** | Resize to 1200px ÔåÆ Compress at 75% |
+| **50 KB** | Resize to 400px → Compress at 60% |
+| **100 KB** | Resize to 800px → Compress at 70% |
+| **200 KB** | Resize to 1200px → Compress at 75% |
 | **500 KB** | Compress at 80% (no resize needed) |
 | **1 MB** | Compress at 80% |
 | **2 MB** | Compress at 85% |
