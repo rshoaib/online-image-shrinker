@@ -6,6 +6,19 @@
         { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
         { "key": "Cross-Origin-Embedder-Policy", "value": "require-corp" }
       ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/blog/amazon-image-requirements-2025",
+      "destination": "/blog/amazon-image-requirements-2026",
+      "permanent": true
     }
   ],
   "framework": "nextjs",
