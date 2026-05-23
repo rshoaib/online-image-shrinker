@@ -4,19 +4,21 @@ slug: "how-to-make-photo-collage-online-2026"
 title: "How to Make a Photo Collage Online: Free & Private (2026 Guide)"
 excerpt: "Learn how to make a photo collage online in seconds. Our free collage maker runs entirely in your browser--no uploads, no watermarks, and 100% private."
 category: "Tutorials"
-date: "2026-03-10"
-display_date: "March 10, 2026"
+date: "2026-05-23"
+display_date: "May 23, 2026"
 read_time: "5 min read"
 image: "/images/blog/collage_maker_hero.png"
 tags: []
 meta_title: null
 meta_description: null
 created_at: "2026-03-10T17:49:58.705043+00:00"
-updated_at: "2026-03-10T17:49:58.705043+00:00"
+updated_at: "2026-05-23T05:05:13+00:00"
 ---
 ## The Easiest Way to Combine Your Favorite Moments
 
 Whether you're creating a mood board, a birthday tribute, or summarizing a recent vacation, knowing **how to make a photo collage online** is a must-have skill. Instead of struggling with heavy desktop software or downloading suspicious mobile apps, you can build beautiful collages directly in your browser.
+
+> **Updated May 2026:** The HTML5 Canvas 2D API — the technology that powers our in-browser collage renderer — is now supported by 98%+ of global browsers ([caniuse.com](https://caniuse.com/canvas)). That means a 100% client-side collage maker works on essentially any device you'll touch in 2026, from a four-year-old Android to the latest Safari on macOS.
 
 But not all online collage makers are created equal. Many force you to create an account, slap a watermark on your final image, or upload your personal photos to their servers.
 
